@@ -10,8 +10,6 @@
 #   // repeat accordion-items ...
 # </div>
 #
-# NOTE: Ideally, the less href points to the id of the .expandable div, so that
-# when collapsing the expandable container the browser jumps back up.
 
 window.SC ||= {}
 
