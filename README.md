@@ -10,7 +10,7 @@ Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle. Done.
 ## Expandable Content
 
 #### Usage in Rails:
-Inside your manifest, usually application.js(.coffe):
+Inside your manifest, usually application.js(.coffee):
 
     #= require sc.expandable_content
 
@@ -30,7 +30,7 @@ Inside your manifest, usually application.js(.coffe):
 
 ## Accordion
 
-Inside your manifest, usually application.js(.coffe):
+Inside your manifest, usually application.js(.coffee):
 
     #= require sc.accordion
 
