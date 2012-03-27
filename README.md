@@ -7,14 +7,23 @@ Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle. Done.
   * **Expandable Content:** enables a "read more" button to show or hide additional content.
   * **Accordion:** Allows for multiple nested accordions.
 
+## Usage in Rails:
+Most components have a backbone.js dependency. Satisfy it by loading backbone.js:
+
+    gem 'rails-backbone'
+
+Then, require backbone.js and underscore.js in your manifest, usually application.js(.coffee):
+
+    #= require underscore
+    #= require backbone
+
 ## Expandable Content
 
-#### Usage in Rails:
-Inside your manifest, usually application.js(.coffee):
+Load it inside your manifest, usually application.js(.coffee):
 
     #= require sc.expandable_content
 
-#### Required Markup:  
+#### Required Markup:
 
     #jump_id.expandable
       … your content …
@@ -30,20 +39,20 @@ Inside your manifest, usually application.js(.coffee):
 
 ## Accordion
 
-Inside your manifest, usually application.js(.coffee):
+Load it inside your manifest, usually application.js(.coffee):
 
     #= require sc.accordion
 
-#### Required Markup:  
+#### Required Markup:
 
     .accordion
       .accordion-item
-        .title 
+        .title
           The clickable header of the accordion item
         .content
           … The content which is toggled by clicking the header …
 
 #### Use it:
-    
+
     $(".accordion").each ->
-      new SC.Accordion(el: $(this))          
+      new SC.Accordion(el: $(this))
