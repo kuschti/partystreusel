@@ -19,7 +19,7 @@ class window.SC.Accordion extends Backbone.View
     "click .title" : "handleClick"
 
   initialize: ->
-    @items = @el.find("> .accordion-item")
+    @items = @$("> .accordion-item")
     @open  = null
     @initiallyOpenItem()
 

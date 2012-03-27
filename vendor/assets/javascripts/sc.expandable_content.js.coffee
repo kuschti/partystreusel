@@ -22,8 +22,8 @@ class SC.ExpandableContent extends Backbone.View
     "click .less" : "handleClose"
 
   initialize: ->
-    @content = @el.find(".expandable-content")
-    @more    = @el.find(".more")
+    @content = @$(".expandable-content")
+    @more    = @$(".more")
 
   handleOpen: (event) =>
     @content.removeClass("hidden")
