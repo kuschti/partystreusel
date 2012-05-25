@@ -59,11 +59,11 @@ Load it inside your manifest, usually application.js(.coffee):
 
 #### Required Styles:
 
-  .open .content
-    display: block
+    .open .content
+      display: block
 
-  .content
-    display: none
+    .content
+      display: none
 
 #### Use it:
 
