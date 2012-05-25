@@ -27,10 +27,15 @@ Load it inside your manifest, usually application.js(.coffee):
 
     #jump_id.expandable
       … your content …
-      %a.more{ :href => '' } read more
+      %a.more{ :href => '#' } read more
       .expandable-content.hidden
         … read more content …
         %a.less{ :href => '#jump_id' } read less
+
+#### Required Styles:
+
+    .hidden
+      display: none
 
 #### Use it:
 
