@@ -57,6 +57,14 @@ Load it inside your manifest, usually application.js(.coffee):
         .content
           … The content which is toggled by clicking the header …
 
+#### Required Styles:
+
+  .open .content
+    display: block
+
+  .content
+    display: none
+
 #### Use it:
 
     $(".accordion").each ->
