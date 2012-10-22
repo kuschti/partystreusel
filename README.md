@@ -8,9 +8,10 @@ Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle. Done.
   * **Accordion:** Allows for multiple nested accordions.
 
 ## Usage in Rails:
-Most components have a backbone.js dependency. Satisfy it by loading backbone.js:
+Most components have a backbone.js dependency. Satisfy it by loading backbone.js and rails-underscore:
 
     gem 'rails-backbone'
+    gem 'underscore-rails'
 
 Then, require backbone.js and underscore.js in your manifest, usually application.js(.coffee):
 
