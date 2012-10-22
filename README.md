@@ -9,9 +9,10 @@ Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle. Done.
   * **Carousel:** Allows 2-dimensional scrolling in vertical and horizontal direction. The images are thereby divided into image-groups. The image-group to image-group scrolling is vertically, scrolling inside the image-group is horizontally.
 
 ## Usage in Rails:
-Most components have a backbone.js dependency. Satisfy it by loading backbone.js:
+Most components have a backbone.js dependency. Satisfy it by loading backbone.js and rails-underscore:
 
     gem 'rails-backbone'
+    gem 'underscore-rails'
 
 Then, require backbone.js and underscore.js in your manifest, usually application.js(.coffee):
 
