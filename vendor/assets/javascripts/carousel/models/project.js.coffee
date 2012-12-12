@@ -6,11 +6,6 @@ class SC.Project extends Backbone.Model
     @isRendered = false
     @photos = new SC.PhotosCollection(this.get 'photos')
     @currentPhoto = @photos.first()
-    @product = new SC.Product(this.get('product'))
-#    @photos.url = '/projects/' + @id + '/photos'
-#    @photos.bind "reset", this.updateCounts
-#       @projects.url = '/projects'
-#       @projects.fetch()
 
   switchToNextPhoto: ->
     @currentPhoto.hide('slideLeft')
@@ -30,7 +25,7 @@ class SC.Project extends Backbone.Model
 
   activate: (effect) ->
     @currentPhoto.show(effect)
-    this.trigger "activated"
+    this.trigger 'activated'
 
   deactivate: (effect) ->
     @currentPhoto.hide(effect)

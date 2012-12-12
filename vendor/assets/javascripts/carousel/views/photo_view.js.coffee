@@ -16,10 +16,15 @@ class SC.PhotoView extends Backbone.View
     @model.bind 'hide:slideUp', this.slideOutUp
     @model.bind 'hide:slideDown', this.slideOutDown
     @model.bind 'hide:instant', this.hide
-
+    @model.bind 'activated', this.renderDetails
 
   render:->
     $(@el).attr 'src', @model.get('image').url
+    
+  renderDetails: =>
+    console.log "reeeeeender"
+    v = new SC.PhotoDetailsView({model:@model})
+    v.render()
 
   slideOutLeft: =>
     this.slideOut('left')

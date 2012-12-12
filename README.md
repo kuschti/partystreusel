@@ -127,6 +127,10 @@ Here's an example of two image-groups. The first includes two images, the second
         … put HTML elements (e.g. a link with the title of the image-group and a paragraph with a short description of that image-group) here.
         Those elements are then rendered into '.project-detail' div …
 
+      %script{:type=>'text/template', :id=>'photo-details-template'}
+        … put HTML elements (e.g. a link with the title of the image and a paragraph with a short description of that image) here.
+        Those elements are then rendered into '.photo-detail' div …
+
       %script{:type=>'text/template', :id=>'project-template'}
         … define here the HTML element into which the images defined in the model shall be rendered (e.g. %div or %a, whatever is needed).
         The rendered elements are then put into '.stage' div …
@@ -134,6 +138,8 @@ Here's an example of two image-groups. The first includes two images, the second
       .stage
       
       %span.project-detail
+
+      %span.photo-detail
 
       %a{ :href => "#", :class => "previous-project" }
       %a{ :href => "#", :class => "next-project" }
