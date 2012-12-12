@@ -22,7 +22,6 @@ class SC.PhotoView extends Backbone.View
     $(@el).attr 'src', @model.get('image').url
     
   renderDetails: =>
-    console.log "reeeeeender"
     v = new SC.PhotoDetailsView({model:@model})
     v.render()
 
