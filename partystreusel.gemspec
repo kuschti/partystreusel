@@ -5,8 +5,8 @@ require "partystreusel/version"
 Gem::Specification.new do |s|
   s.name        = "partystreusel"
   s.version     = Partystreusel::VERSION
-  s.authors     = ["Immanuel Häussermann", "Donat Baier", "Franca Rast", "Noëlle Rosenberg"]
-  s.email       = ["haeussermann@gmail.com", "donat.baier@gmail.com", "franca.rast@screenconcept.ch", "noro660@hotmail.com"]
+  s.authors     = ["Flavio Pellanda"]
+  s.email       = ["flavio.pellanda@screenconcetch"]
   s.homepage    = "http://www.screenconcept.ch"
   s.summary     = %q{A collection uf reusable javascript components by Screen Concept}
   s.description = %q{Contains sliders, accordions, expandable contents and any other component we deem worthy of joining this collection of awesomeness.}
@@ -17,6 +17,4 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  s.add_dependency "jquery-rails"
-  s.add_development_dependency "jasmine"
 end
