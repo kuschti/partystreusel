@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/screenconcept/partystreusel.svg?branch=development)](https://travis-ci.org/screenconcept/partystreusel)
 # Partystreusel
 
 ## Installation
@@ -47,6 +48,10 @@ empty or contains only whitespaces, nothing will be displayed.
 Test with
 
     bundle exec guard
+
+Or just one run
+
+    bundle exec guard-jasmine
 
 Compare documentation on: https://github.com/netzpirat/guard-jasmine
 
