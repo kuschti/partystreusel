@@ -4,10 +4,10 @@ window.Streusel = Partystreusel
 class Partystreusel.Base
 
   @selector: ->
-    ".streusel-#{@prototype.constructor.name.toLowerCase()}"
+    "[data-streusel-#{@prototype.constructor.name.toLowerCase()}]"
 
   @init: (element = $('body')) ->
-    element.find(@selector()).each (i, el) =>
+    element.find(@selector()).map (i, el) =>
       new @(el)
 
   constructor: (el) ->
