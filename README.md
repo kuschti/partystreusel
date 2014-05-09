@@ -172,3 +172,15 @@ Here's an example of two image-groups. The first includes two images, the second
       projects = new SC.ProjectsCollection <yourModelJson>
       app = new SC.Carousel projects: projects, el: this
 
+## Development
+
+Test with
+
+    bundle exec guard
+
+Compare documentation on: https://github.com/netzpirat/guard-jasmine
+
+To help testing the following jasmine helpers alre installed:
+* https://github.com/searls/jasmine-fixture
+* https://github.com/velesin/jasmine-jquery
+
