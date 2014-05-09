@@ -8,5 +8,11 @@ I18n.translations ||=
   de:
     readmore:
       button_text:
-        open: 'Open'
-        close: 'Close'
+        open: 'Mehr lesen'
+        close: 'Weniger lesen'
+
+  fr:
+    readmore:
+      button_text:
+        open: 'Lire la suite'
+        close: 'Afficher moins'
