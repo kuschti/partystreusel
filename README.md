@@ -23,12 +23,33 @@ For example for readmore:
 
 If you only want to initialize readmore for a part of the document:
 
-    Stresuel.Readmore.init($('body article.loadedwithajax'))
+    Streusel.Readmore.init($('body article.loadedwithajax'))
 
 # Module Usage
 
 Available modules:
+* Streusel.scrollTo
 * Streusel.Readmore
+
+## Scroll To
+
+This is just a function. Usage:
+
+    # scroll to a[name=linkname]
+    Streusel.scrollTo(link: 'linkname')
+
+    # scroll to selector
+    Streusel.scrollTo('selector')
+
+    # scroll to jquery element
+    Streusel.scrollTo($('selector'))
+
+    # you can scroll to element with a pixeloffset
+    # selector will be 12px below window top
+    Streusel.scrollTo('selector', offset: -12)
+
+hint: If element to scroll to could not be found, the function returns
+false. If element was found, return the found jquery element.
 
 ## Read More
 
@@ -58,7 +79,9 @@ Or just one run
 
 Compare documentation on: https://github.com/netzpirat/guard-jasmine
 
+Help for jasmine testing:
+* http://jasmine.github.io/1.3/introduction.html
+
 To help testing the following jasmine helpers alre installed:
 * https://github.com/searls/jasmine-fixture
 * https://github.com/velesin/jasmine-jquery
-

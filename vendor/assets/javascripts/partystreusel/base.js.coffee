@@ -1,6 +1,4 @@
-window.Partystreusel = {}
-window.Streusel = Partystreusel
-
+#= require partystreusel/namespace
 class Partystreusel.Base
 
   @selector: ->
