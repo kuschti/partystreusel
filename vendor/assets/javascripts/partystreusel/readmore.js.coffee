@@ -29,7 +29,7 @@ class Readmore extends Partystreusel.Base
     classes[0]
 
   buttonText: (state = @buttonState()) ->
-    I18n.readmore[state]
+    I18n.t("readmore.button_text.#{state}")
 
   renderButton: (state) =>
     text = @buttonText(state)

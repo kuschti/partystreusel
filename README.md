@@ -5,6 +5,9 @@
 
 Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle.
 
+Partystreusel depends on i18n-js. Make sure you followed install
+instructions on: https://github.com/fnando/i18n-js
+
 Include in your application.js.coffee:
 
     #= require partystreusel/<<modulename>>

@@ -3,6 +3,7 @@ require 'jasminerice'
 require 'guard/jasmine'
 require 'sprockets/railtie'
 require 'jquery-rails'
+require 'i18n-js'
 
 class JasmineTest < Rails::Application
   routes.append do
