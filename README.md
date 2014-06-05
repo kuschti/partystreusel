@@ -12,13 +12,14 @@ Include in your application.js.coffee:
 
     #= require partystreusel/<<modulename>>
 
-    Streusel.<<Modulename>>.init()
+    $ ->
+      Streusel.<<Modulename>>.init()
 
 For example for readmore:
 
     #= require partystreusel/readmore
 
-    ->
+    $ ->
       Streusel.Readmore.init()
 
 If you only want to initialize readmore for a part of the document:
@@ -61,10 +62,22 @@ empty or contains only whitespaces, nothing will be displayed.
     - readmore do
       Your text....
 
+You can use any haml tag option. E.g.
+
+    - readmore(class: 'mycustomclass') do
+      Your text....
+
 ### Html
 
-    <div data-streusel-readmore>
+    <div class='mycustomclass' data-streusel-readmore>
       Your text....
+    </div>
+
+Will be rendered to something like:
+
+    <div class='mycustomclass' data-streusel-readmore>
+      <div>Your text....</div>
+      <a ...>Read more</a>
     </div>
 
 ## Development
@@ -72,6 +85,8 @@ empty or contains only whitespaces, nothing will be displayed.
 Test with
 
     bundle exec guard
+
+Single test rake task
 
 Or just one run
 
@@ -82,6 +97,6 @@ Compare documentation on: https://github.com/netzpirat/guard-jasmine
 Help for jasmine testing:
 * http://jasmine.github.io/1.3/introduction.html
 
-To help testing the following jasmine helpers alre installed:
+To help testing the following jasmine helpers are installed:
 * https://github.com/searls/jasmine-fixture
 * https://github.com/velesin/jasmine-jquery
