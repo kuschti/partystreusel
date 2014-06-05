@@ -86,9 +86,7 @@ Test with
 
     bundle exec guard
 
-Single test rake task
-
-Or just one run
+Or run the yasmine test directly with:
 
     bundle exec guard-jasmine
 
