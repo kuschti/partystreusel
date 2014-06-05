@@ -1,174 +1,102 @@
+[![Build Status](https://travis-ci.org/screenconcept/partystreusel.svg?branch=development)](https://travis-ci.org/screenconcept/partystreusel)
 # Partystreusel
 
 ## Installation
-Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle. Done.
 
-## Available components:
-  * **Expandable Content:** enables a "read more" button to show or hide additional content.
-  * **Accordion:** Allows for multiple nested accordions.
-  * **Carousel:** Allows 2-dimensional scrolling in vertical and horizontal direction. The images are thereby divided into image-groups. The image-group to image-group scrolling is vertically, scrolling inside the image-group is horizontally.
+Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle.
 
-## Usage in Rails:
-Most components have a backbone.js dependency. Satisfy it by loading backbone.js and rails-underscore:
+Partystreusel depends on i18n-js. Make sure you followed install
+instructions on: https://github.com/fnando/i18n-js
 
-    gem 'rails-backbone'
-    gem 'underscore-rails'
+Include in your application.js.coffee:
 
-Then, require backbone.js and underscore.js in your manifest, usually application.js(.coffee):
+    #= require partystreusel/<<modulename>>
 
-    #= require underscore
-    #= require backbone
+    $ ->
+      Streusel.<<Modulename>>.init()
 
-## Expandable Content
+For example for readmore:
 
-Load it inside your manifest, usually application.js(.coffee):
+    #= require partystreusel/readmore
 
-    #= require sc.expandable_content
+    $ ->
+      Streusel.Readmore.init()
 
-#### Required Markup:
+If you only want to initialize readmore for a part of the document:
 
-    #jump_id.expandable
-      … your content …
-      %a.more{ :href => '#' } read more
-      .expandable-content.hidden
-        … read more content …
-        %a.less{ :href => '#jump_id' } read less
+    Streusel.Readmore.init($('body article.loadedwithajax'))
 
-#### Required Styles:
+# Module Usage
 
-    .hidden
-      display: none
+Available modules:
+* Streusel.scrollTo
+* Streusel.Readmore
 
-#### Use it:
+## Scroll To
 
-    $(".expandable").each ->
-      new SC.ExpandableContent(el: $(this))
+This is just a function. Usage:
 
-## Accordion
+    # scroll to a[name=linkname]
+    Streusel.scrollTo(link: 'linkname')
 
-Load it inside your manifest, usually application.js(.coffee):
+    # scroll to selector
+    Streusel.scrollTo('selector')
 
-    #= require sc.accordion
+    # scroll to jquery element
+    Streusel.scrollTo($('selector'))
 
-#### Required Markup:
+    # you can scroll to element with a pixeloffset
+    # selector will be 12px below window top
+    Streusel.scrollTo('selector', offset: -12)
 
-    .accordion
-      .accordion-item
-        .title
-          The clickable header of the accordion item
-        .content
-          … The content which is toggled by clicking the header …
+hint: If element to scroll to could not be found, the function returns
+false. If element was found, return the found jquery element.
 
-#### Required Styles:
+## Read More
 
-    .open .content
-      display: block
+Use code below depending on environment you are in. If the content is
+empty or contains only whitespaces, nothing will be displayed.
 
-    .content
-      display: none
+### Rails
 
-#### Use it:
+    - readmore do
+      Your text....
 
-    $(".accordion").each ->
-      new SC.Accordion(el: $(this))
+You can use any haml tag option. E.g.
 
-## Carousel
+    - readmore(class: 'mycustomclass') do
+      Your text....
 
-Load it inside your manifest, usually application.js(.coffee):
+### Html
 
-    #= require sc.carousel
+    <div class='mycustomclass' data-streusel-readmore>
+      Your text....
+    </div>
 
-#### Required Model (json):
+Will be rendered to something like:
 
-The model needs a 'photos' attribute per image-group.<br />
-Inside the 'photos' the images with their specific urls are defined.<br />
-Here's an example of two image-groups. The first includes two images, the second three:
+    <div class='mycustomclass' data-streusel-readmore>
+      <div>Your text....</div>
+      <a ...>Read more</a>
+    </div>
 
-    {
-      "photos": [
-        {
-          "image": {
-            "url": <imageUrl>
-          }
-        }, 
-        {
-          "image": {
-            "url": <imageUrl>
-          }
-        }
-      ]
-    }, 
-    {
-      "photos": [
-        {
-          "image": {
-            "url": <imageUrl>
-          }
-        }, 
-        {
-          "image": {
-            "url": <imageUrl>
-          }
-        },
-        {
-          "image": {
-            "url": <imageUrl>
-          }
-        }
-      ]
-    }
+## Development
 
-#### Required Markup:
+Test with
 
-    #projects-carousel-viewport
-      %script{:type=>'text/template', :id=>'project-details-template'}
-        … put HTML elements (e.g. a link with the title of the image-group and a paragraph with a short description of that image-group) here.
-        Those elements are then rendered into '.project-detail' div …
+    bundle exec guard
 
-      %script{:type=>'text/template', :id=>'photo-details-template'}
-        … put HTML elements (e.g. a link with the title of the image and a paragraph with a short description of that image) here.
-        Those elements are then rendered into '.photo-detail' div …
+Single test rake task
 
-      %script{:type=>'text/template', :id=>'project-template'}
-        … define here the HTML element into which the images defined in the model shall be rendered (e.g. %div or %a, whatever is needed).
-        The rendered elements are then put into '.stage' div …
+Or just one run
 
-      .stage
-      
-      %span.project-detail
+    bundle exec guard-jasmine
 
-      %span.photo-detail
+Compare documentation on: https://github.com/netzpirat/guard-jasmine
 
-      %a{ :href => "#", :class => "previous-project" }
-      %a{ :href => "#", :class => "next-project" }
-      %a{ :href => "#", :class => "previous" }
-      %a{ :href => "#", :class => "next" }
+Help for jasmine testing:
+* http://jasmine.github.io/1.3/introduction.html
 
-#### Required Styles:
-    
-    #projects-carousel-viewport
-      position: relative
-
-    .stage
-      img
-        position: absolute
-        display: none
-
-    .previous-project
-      <addYourStyleHere>
-
-    .next-project
-      <addYourStyleHere>
-
-    .previous
-      <addYourStyleHere>
-
-    .next
-      <addYourStyleHere>
-
-#### Use it:
-
-    $('#projects-carousel-viewport').each ->
-      projects = new SC.ProjectsCollection <yourModelJson>
-      app = new SC.Carousel projects: projects, el: this
-
+To help testing the following jasmine helpers are installed:
+* https://github.com/searls/jasmine-fixture
+* https://github.com/velesin/jasmine-jquery
