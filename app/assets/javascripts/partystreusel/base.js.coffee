@@ -1,4 +1,5 @@
 #= require partystreusel/namespace
+#= require partystreusel/ie_fixes
 class Partystreusel.Base
 
   @selector: ->
