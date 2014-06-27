@@ -36,6 +36,10 @@ Available modules:
 
 ## Scroll To
 
+Add to applicaiton.js.coffee:
+
+    #= require partystreusel/scroll_to
+
 This is just a function. Usage:
 
     # scroll to a[name=linkname]
@@ -91,6 +95,18 @@ Will be rendered to something like:
       <div>Your text....</div>
       <a ...>Read more</a>
     </div>
+
+## Foundation Helpers
+
+Add to applicaiton.js.coffee:
+
+    #= require partystreusel/foundation_helpers
+
+Available Functions:
+
+    Streusel.FoundationHelpers.isLarge()
+    Streusel.FoundationHelpers.isMedium()
+    Streusel.FoundationHelpers.isSmall()
 
 ## Development
 
