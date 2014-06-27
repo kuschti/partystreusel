@@ -10,6 +10,8 @@ class Readmore extends Partystreusel.Base
       .addClass('hide')
     @$el.append(@contentDiv)
 
+    return if @contentDiv.text().trim() == ''
+
     @button = @renderButton('open')
     $(@button).bind 'click', @toggle
     @$el.append(@button)

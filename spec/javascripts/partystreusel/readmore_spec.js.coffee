@@ -58,3 +58,15 @@ describe 'Readmore', ->
       expect(@subject.find('div')).toHaveClass('hide')
       expect(@subject.find('div')).not.toHaveAttr('style')
       expect(@subject.find('div')).toBeHidden()
+
+  describe 'without content', ->
+
+    beforeEach ->
+      @subject = affix('[data-streusel-readmore]')
+      @subject.html('  \n  ')
+      Partystreusel.Readmore.init()
+
+    it 'removes element when no content available', ->
+      expect(@subject).not.toContain('a.button')
+
+
