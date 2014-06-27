@@ -3,7 +3,13 @@ describe 'Base', ->
   describe 'class functions', ->
 
     beforeEach ->
+      initSpy = jasmine.createSpy('initSpy')
+      @initSpy = initSpy
+
       class MyClass extends Streusel.Base
+        constructor: (el) ->
+          initSpy()
+          super(el)
 
       @subject = MyClass
 
@@ -24,3 +30,14 @@ describe 'Base', ->
       expect(tag2.data('object')).toBeDefined()
       expect(tag2.data('object')).toEqual(objects[1])
 
+    it 'does not double initialize objects', ->
+      tag1 = affix('#c1[data-streusel-myclass]')
+      objects = @subject.init()
+      expect(objects.length).toEqual(1)
+      expect(@initSpy).toHaveBeenCalled()
+
+      @initSpy.reset()
+      spyOn(Streusel, 'Base')
+      objects = @subject.init()
+      expect(objects.length).toEqual(0)
+      expect(@initSpy).not.toHaveBeenCalled()

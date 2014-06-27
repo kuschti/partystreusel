@@ -6,8 +6,9 @@ class Partystreusel.Base
     "[data-streusel-#{@prototype.constructor.name.toLowerCase()}]"
 
   @init: (element = $('body')) ->
-    element.find(@selector()).map (i, el) =>
-      new @(el)
+    element.find(@selector())
+      .filter (i, el) -> !($(el).data('object')?)
+      .map (i, el) => new @(el)
 
   constructor: (el) ->
     @$el = $(el)
