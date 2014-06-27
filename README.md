@@ -17,6 +17,8 @@ Include in your application.js.coffee:
 
 For example for readmore:
 
+    #= require i18n
+    #= require partystreusel/translations
     #= require partystreusel/readmore
 
     $ ->
@@ -56,6 +58,16 @@ false. If element was found, return the found jquery element.
 
 Use code below depending on environment you are in. If the content is
 empty or contains only whitespaces, nothing will be displayed.
+
+Readmore depends on translations and i18n js, add this to your
+application.js.coffee
+
+    #= require i18n
+    #= require partystreusel/translations
+    #= require partystreusel/readmore
+
+    $ ->
+      Streusel.Readmore.init()
 
 ### Rails
 
