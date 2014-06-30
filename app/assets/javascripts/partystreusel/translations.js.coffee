@@ -3,13 +3,13 @@ I18n.translations ||=
     readmore:
       button_text:
         open: 'Read more'
-        close: 'Read less'
+        close: 'Show less'
 
   de:
     readmore:
       button_text:
         open: 'Mehr lesen'
-        close: 'Weniger lesen'
+        close: 'Weniger anzeigen'
 
   fr:
     readmore:
