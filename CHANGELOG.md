@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.4
+* Updated readmore translations (Show less, Weniger anzeigen)
+
 ## v1.0.3 - 2014-06-23
 * IE Bugfix (toDownCase error)
 
