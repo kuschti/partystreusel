@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## v1.0.4
+## v1.0.6
+* Make partystreusel loadable in middleman
+
+## v1.0.5
 * Updated readmore translations (Show less, Weniger anzeigen)
 
 ## v1.0.3 - 2014-06-23
