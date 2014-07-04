@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/screenconcept/partystreusel.svg?branch=development)](https://travis-ci.org/screenconcept/partystreusel)
 # Partystreusel
 
-## Installation
+## Installation Rails
 
 Add **partystreusel** to your Gemfile `gem 'partystreusel'` and bundle.
 
