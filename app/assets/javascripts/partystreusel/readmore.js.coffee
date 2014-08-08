@@ -1,6 +1,7 @@
 #= require partystreusel/base
 
 class Readmore extends Partystreusel.Base
+  @className = 'Readmore'
 
   constructor: (el) ->
     super

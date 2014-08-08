@@ -7,6 +7,8 @@ describe 'Base', ->
       @initSpy = initSpy
 
       class MyClass extends Streusel.Base
+        @className = 'MyClass'
+
         constructor: (el) ->
           initSpy()
           super(el)
