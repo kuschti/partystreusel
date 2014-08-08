@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.7
+* Fixed issue which broke streusel when minified.
+
 ## v1.0.6
 * Make partystreusel loadable in middleman
 
