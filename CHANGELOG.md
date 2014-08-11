@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.8
+* IE8 fixes (readmore, ie_fixes did not work in IE8)
+
 ## v1.0.7
 * Fixed issue which broke streusel when minified.
 
