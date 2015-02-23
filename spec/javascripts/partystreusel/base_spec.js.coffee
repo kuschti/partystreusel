@@ -3,6 +3,8 @@ describe 'Base', ->
   describe 'class functions', ->
 
     beforeEach ->
+      Streusel.selectorPrefix = undefined
+      Streusel.selectorType = undefined
       initSpy = jasmine.createSpy('initSpy')
       @initSpy = initSpy
 
@@ -14,6 +16,11 @@ describe 'Base', ->
           super(el)
 
       @subject = MyClass
+
+    it 'computes selector based on class name', ->
+      Streusel.selectorPrefix = 'js'
+      Streusel.selectorType = 'css_class'
+      expect(@subject.selector()).toEqual('.js-myclass')
 
     it 'computes selector based on class name', ->
       expect(@subject.selector()).toEqual('[data-streusel-myclass]')

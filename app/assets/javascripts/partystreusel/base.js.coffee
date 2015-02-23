@@ -6,7 +6,11 @@ class Partystreusel.Base
   @className = 'Base'
 
   @selector: ->
-    "[data-streusel-#{@className.toLowerCase()}]"
+    prefix = Partystreusel.selectorPrefix || 'streusel'
+    if Streusel.selectorType == 'css_class'
+      ".#{prefix}-#{@className.toLowerCase()}"
+    else
+      "[data-#{prefix}-#{@className.toLowerCase()}]"
 
   @init: (element = $('body')) ->
     element.find(@selector())
