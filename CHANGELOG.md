@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.0pre1
+* Refactored Readmore
+* Add Offcanvas
+
 ## v1.0.8
 * IE8 fixes (readmore, ie_fixes did not work in IE8)
 
