@@ -13,7 +13,7 @@ class Partystreusel.Base
       "[data-#{prefix}-#{@className.toLowerCase()}]"
 
   @init: (element = $('body')) ->
-    element.find(@selector())
+    element.find(@selector()).addBack(@selector())
       .filter (i, el) -> !($(el).data('object')?)
       .map (i, el) => new @(el)
 
