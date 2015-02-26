@@ -5,40 +5,38 @@ class Readmore extends Partystreusel.Base
 
   constructor: (el) ->
     super
+    return if $.trim(@$el.text()) == ''
 
-    @contentDiv = $('<div/>')
-      .append(@$el.contents())
-      .addClass('hide')
-    @$el.append(@contentDiv)
+    unless @$el.hasClass('readmore--opened') || @$el.hasClass('readmore--closed')
+      @$el.addClass('readmore--closed')
 
-    return if $.trim(@contentDiv.text()) == ''
+    @button = @$el.next()
+    unless @button.hasClass('readmore__button')
+      @button = @renderButton()
+      @button.insertAfter(@$el)
 
-    @button = @renderButton('open')
     $(@button).bind 'click', @toggle
-    @$el.append(@button)
 
   toggle: (event) =>
-    @button.toggleClass('open close')
     @button.text(@buttonText())
-    @contentDiv.slideToggle =>
-      @contentDiv.toggleClass('hide')
-      @contentDiv.css('display', "")
-      @contentDiv.removeAttr('style') if @contentDiv.attr('style') == ''
+    @$el.slideToggle =>
+      @$el.toggleClass('readmore--opened readmore--closed')
+      @$el.css('display', "")
+      @$el.removeAttr('style') if @$el.attr('style') == ''
     return false
 
   buttonState: ->
-    classes = @button.attr('class').split(' ')
-    classes = classes.filter (v) -> v != 'button'
-    classes[0]
+    return 'close' if @$el.hasClass('readmore--opened')
+    'open'
 
   buttonText: (state = @buttonState()) ->
     I18n.t("readmore.button_text.#{state}")
 
-  renderButton: (state) =>
-    text = @buttonText(state)
+  renderButton: =>
+    text = @buttonText()
 
     $('<a></a>')
-      .addClass(state + ' button')
+      .addClass('readmore__button')
       .attr('href', '#')
       .html(text)
 

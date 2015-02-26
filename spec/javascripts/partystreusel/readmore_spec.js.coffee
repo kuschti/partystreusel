@@ -18,10 +18,9 @@ describe 'Readmore', ->
       @subject = Partystreusel.Readmore.init()[0]
 
     it 'renders an open button', ->
-      @subject = @subject.renderButton('open')
+      @subject = @subject.renderButton()
       expect(@subject.text()).toEqual('Read more')
-      expect(@subject).toHaveClass('button')
-      expect(@subject).toHaveClass('open')
+      expect(@subject).toHaveClass('readmore__button')
 
     it 'toggles button state', ->
       expect(@subject.buttonState()).toEqual('open')
@@ -37,27 +36,22 @@ describe 'Readmore', ->
       @subject.html('Some Test text')
       Partystreusel.Readmore.init()
 
-    it 'add a read more button to the div', ->
-      expect(@subject).toContain('a.button')
-
-    it 'moves text into a separate div', ->
-      expect(@subject).toContain('div')
-      expect(@subject.find('div')).toBeHidden()
-      expect(@subject.find('div').html()).toEqual('Some Test text')
+    it 'add a read more button after readmore', ->
+      expect(@subject.next()).toHaveClass('readmore__button')
 
     it 'toggle button on click', ->
-      @subject.find('.button').trigger('click')
-      expect(@subject.find('.button')).toHaveClass('button')
-      expect(@subject.find('.button')).toHaveClass('close')
-      expect(@subject.find('div')).not.toHaveClass('hide')
-      expect(@subject.find('div')).not.toHaveAttr('style')
-      expect(@subject.find('div')).not.toBeHidden()
-      @subject.find('.button').trigger('click')
-      expect(@subject.find('.button')).toHaveClass('button')
-      expect(@subject.find('.button')).toHaveClass('open')
-      expect(@subject.find('div')).toHaveClass('hide')
-      expect(@subject.find('div')).not.toHaveAttr('style')
-      expect(@subject.find('div')).toBeHidden()
+      expect(@subject.next()).toHaveClass('readmore__button')
+      expect(@subject).toHaveClass('readmore--closed')
+      @subject.next().trigger('click')
+      expect(@subject.next()).toHaveClass('readmore__button')
+      expect(@subject).toHaveClass('readmore--opened')
+      expect(@subject).not.toHaveAttr('style')
+      expect(@subject).not.toBeHidden()
+      @subject.next().trigger('click')
+      expect(@subject.next()).toHaveClass('readmore__button')
+      expect(@subject).toHaveClass('readmore--closed')
+      expect(@subject).not.toHaveAttr('style')
+      expect(@subject).toBeHidden()
 
   describe 'without content', ->
 
@@ -69,4 +63,12 @@ describe 'Readmore', ->
     it 'removes element when no content available', ->
       expect(@subject).not.toContain('a.button')
 
+  describe 'with custom button', ->
+
+    beforeEach ->
+      @subject = affix('[data-streusel-readmore]+button.myclass.readmore__button').html('Some Test text')
+      Partystreusel.Readmore.init()
+
+    it 'uses custom button', ->
+      expect(@subject.next()).toHaveClass('myclass')
 
