@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## v1.1.0pre1
+## v1.1.0pre2
 * Refactored Readmore
-* Add Offcanvas
+* Add Offcanvas, Tab, Accordion, Slider JS
 
 ## v1.0.8
 * IE8 fixes (readmore, ie_fixes did not work in IE8)
