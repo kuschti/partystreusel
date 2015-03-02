@@ -3,3 +3,4 @@
 #= require partystreusel/offcanvas
 #= require partystreusel/topbar
 #= require partystreusel/accordion
+#= require partystreusel/tab
