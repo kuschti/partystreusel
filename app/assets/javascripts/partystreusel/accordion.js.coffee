@@ -11,7 +11,6 @@ class Accordion extends Partystreusel.Base
     @offset = @$el.data('scroll-offset')
 
   toggleItem: (e) =>
-    console.log('x')
     item = $(e.target).closest('.accordion__item')
     currentOpen = item.hasClass('accordion__item--open')
 
