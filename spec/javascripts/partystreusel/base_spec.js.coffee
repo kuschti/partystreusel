@@ -50,3 +50,11 @@ describe 'Base', ->
       objects = @subject.init()
       expect(objects.length).toEqual(0)
       expect(@initSpy).not.toHaveBeenCalled()
+
+    it 'triggers an event', ->
+      tag1 = affix('#c1[data-streusel-myclass]')
+      @subject = @subject.init()[0]
+      spyOn(@subject.$el, 'trigger')
+      @subject.trigger('myevent', 'arg1', 'arg2')
+      expect(@subject.$el.trigger).toHaveBeenCalledWith('myclass-myevent', 'arg1', 'arg2');
+

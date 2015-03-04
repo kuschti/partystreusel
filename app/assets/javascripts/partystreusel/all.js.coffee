@@ -4,3 +4,4 @@
 #= require partystreusel/topbar
 #= require partystreusel/accordion
 #= require partystreusel/tab
+#= require partystreusel/slider

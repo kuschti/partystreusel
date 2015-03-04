@@ -23,6 +23,10 @@ class Readmore extends Partystreusel.Base
       @$el.toggleClass('readmore--opened readmore--closed')
       @$el.css('display', "")
       @$el.removeAttr('style') if @$el.attr('style') == ''
+      if @$el.hasClass('readmore--opened')
+        @trigger('open', @$el)
+      else
+        @trigger('close', @$el)
     return false
 
   buttonState: ->

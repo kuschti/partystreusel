@@ -6,7 +6,7 @@ describe 'Tab', ->
   describe 'Readmore object', ->
 
     beforeEach ->
-      @el = affix('[data-streusel-tab]')
+      @el = affix('.tab[data-streusel-tab]')
 
       @navItem1 = @el.affix('.tab__nav-item a[href="#panel1"]')
       @navItem2 = @el.affix('.tab__nav-item a[href="#panel2"]')
@@ -17,6 +17,8 @@ describe 'Tab', ->
       @panel3 = @el.affix('.tab__panel[id=panel3]')
 
       @subject = Partystreusel.Tab.init()[0]
+      spyOnEvent('.tab', 'tab-open')
+      spyOnEvent('.tab', 'tab-close')
 
     it 'has correct references', ->
       expect(@subject.$navItems.length).toEqual(3)
@@ -42,3 +44,7 @@ describe 'Tab', ->
       @navItem3.trigger('click')
       expect(@panel3).toHaveClass('tab__panel--active')
 
+    it 'triggers events', ->
+      @navItem2.trigger('click')
+      expect('tab-close').toHaveBeenTriggeredOnAndWith('.tab', 'panel1', @navItem1[0], @panel1[0])
+      expect('tab-open').toHaveBeenTriggeredOnAndWith('.tab', 'panel2', @navItem2[0], @panel2[0])

@@ -34,13 +34,21 @@ class Tab extends Partystreusel.Base
       console.log("Nav Item or panel with name #{panelName} not found")
       return
 
-    @$panels.removeClass('tab__panel--active')
-    @$navItems.removeClass('tab__nav-item--active')
+    itemAndPanelToClose = @findItemAndPanel(@currentPanelName())
+    if itemAndPanelToClose
+      closeName = @currentPanelName()
+      itemAndPanelToClose[0].removeClass('tab__nav-item--active')
+      itemAndPanelToClose[1].removeClass('tab__panel--active')
+      @trigger('close', closeName, itemAndPanelToClose[0], itemAndPanelToClose[1])
 
     itemAndPanel[0].addClass('tab__nav-item--active')
     itemAndPanel[1].addClass('tab__panel--active')
 
+    @trigger('open', @currentPanelName(), itemAndPanel[0], itemAndPanel[1])
+
   findItemAndPanel: (name) ->
+    return unless name?
+
     if name.indexOf('#') == 0
       name = name.slice(1)
 

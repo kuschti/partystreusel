@@ -20,3 +20,7 @@ class Partystreusel.Base
   constructor: (el) ->
     @$el = $(el)
     @$el.data('object', @)
+
+  trigger: (name) ->
+    arguments[0] = "#{@constructor.className.toLowerCase()}-#{name}"
+    @$el.trigger.apply(@$el, arguments)

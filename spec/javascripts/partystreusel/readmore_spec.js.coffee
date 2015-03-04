@@ -14,8 +14,10 @@ describe 'Readmore', ->
   describe 'Readmore object', ->
 
     beforeEach ->
-      affix('[data-streusel-readmore]').html('Some Test text')
+      @el = affix('.readmore[data-streusel-readmore]').html('Some Test text')
       @subject = Partystreusel.Readmore.init()[0]
+      spyOnEvent('.readmore', 'readmore-open')
+      spyOnEvent('.readmore', 'readmore-close')
 
     it 'renders an open button', ->
       @subject = @subject.renderButton()
@@ -28,6 +30,14 @@ describe 'Readmore', ->
       expect(@subject.buttonState()).toEqual('close')
       @subject.toggle()
       expect(@subject.buttonState()).toEqual('open')
+
+    it 'triggers events', ->
+      $('.readmore__button').trigger('click')
+      expect('readmore-open').toHaveBeenTriggeredOnAndWith('.readmore', @el[0])
+      expect('readmore-close').not.toHaveBeenTriggeredOnAndWith('.readmore', @el[0])
+      $('.readmore__button').trigger('click')
+      expect('readmore-open').toHaveBeenTriggeredOnAndWith('.readmore', @el[0])
+      expect('readmore-close').toHaveBeenTriggeredOnAndWith('.readmore', @el[0])
 
   describe 'Readmore tag', ->
 
@@ -71,4 +81,3 @@ describe 'Readmore', ->
 
     it 'uses custom button', ->
       expect(@subject.next()).toHaveClass('myclass')
-

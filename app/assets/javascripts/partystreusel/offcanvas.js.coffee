@@ -11,6 +11,10 @@ class Offcanvas extends Partystreusel.Base
 
   toggle: =>
     @$el.toggleClass('offcanvas--open')
+    if @$el.hasClass('offcanvas--open')
+      @trigger('open', @$el)
+    else
+      @trigger('close', @$el)
 
   toggleNavLink: (e) =>
     navLink = $(e.target).closest('.offcanvas-nav__link')
