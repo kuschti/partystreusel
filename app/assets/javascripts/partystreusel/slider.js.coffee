@@ -8,12 +8,13 @@ class Slider extends Partystreusel.Base
 
   constructor: (el) ->
     super
+    @slidelist = @$el.find('.slider__list')
     @initializeCycle()
 
   initializeCycle: ->
     # see for documenation and options:
     # https://github.com/malsup/cycle2
-    @$el.cycle
+    @slidelist.cycle
       slides: '.slider__item'
       fx: 'scrollHorz'
       speed: 300
