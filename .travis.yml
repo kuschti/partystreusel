@@ -1,3 +1,3 @@
 rvm:
   - "1.9.3-p448"
-script: 'bundle exec guard-jasmine --server-timeout=60'
+script: 'bundle exec guard-jasmine --server-timeout=120'
