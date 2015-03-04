@@ -18,9 +18,9 @@ class Readmore extends Partystreusel.Base
     $(@button).bind 'click', @toggle
 
   toggle: (event) =>
-    @button.text(@buttonText())
     @$el.slideToggle =>
       @$el.toggleClass('readmore--opened readmore--closed')
+      @button.text(@buttonText())
       @$el.css('display', "")
       @$el.removeAttr('style') if @$el.attr('style') == ''
       if @$el.hasClass('readmore--opened')

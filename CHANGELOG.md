@@ -3,6 +3,7 @@
 ## v1.1.0pre2
 * Refactored Readmore
 * Add Offcanvas, Tab, Accordion, Slider JS
+* Add events
 
 ## v1.0.8
 * IE8 fixes (readmore, ie_fixes did not work in IE8)
