@@ -21,6 +21,7 @@ class Offcanvas extends Partystreusel.Base
     subNav = navLink.next('.offcanvas-nav__sub')
     return if subNav.length == 0
     e.preventDefault()
+    navLink.toggleClass('offcanvas-nav__link--active')
     subNav.toggleClass('offcanvas-nav__sub--open')
 
 Partystreusel.Offcanvas = Offcanvas

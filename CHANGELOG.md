@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## v1.1.0pre2
+## 1.1.1
+* Mark offcanvas active link
+
+## v1.1.0
 * Refactored Readmore
 * Add Offcanvas, Tab, Accordion, Slider JS
 * Add events
