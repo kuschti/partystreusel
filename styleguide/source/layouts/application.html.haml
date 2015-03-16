@@ -1,0 +1,58 @@
+!!! 5
+/[if IE 8]
+  %html.no-js.lt-ie10.lt-ie9{ lang: I18n.locale }
+/[if IE 9]
+  %html.no-js.lt-ie10{ lang: I18n.locale }
+<!--[if gt IE 9]><!-->
+%html.no-js{ lang: I18n.locale }
+  <!--<![endif]-->
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    - if  content_for?(:head)
+      = yield(:head)
+    - else
+      %title 'Untitled'
+      %meta{ name: 'keywords', content: '' }
+      %meta{ name: 'description', content: '' }
+
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+
+    -# Favicons
+    = render 'layouts/favicons'
+
+    = stylesheet_link_tag    'application', media: 'all'
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    = javascript_include_tag 'html5shiv-printshiv'
+    = stylesheet_link_tag    'ie8', media: 'screen'
+    <![endif]-->
+
+    -# JavaScripts
+    = render 'layouts/icons'
+
+    = csrf_meta_tags
+
+  %body.js-offcanvas{ class: body_class }
+    .offcanvas__outer
+      .offcanvas__inner
+        %header.page__header{role: "banner"}
+          = render 'partials/header'
+          = render 'partials/offcanvas'
+        %main#maincontent{role: "content"}
+          = yield
+
+        %footer{role: "contentinfo"}
+          = render 'partials/footer'
+        .offcanvas__overlay
+
+    -# Typekit
+    = render 'layouts/typekit'
+
+    -# Application JavaScripts
+    != google_analytics_code
+    = javascript_include_tag 'application', async: !ScreenConcept.config.assets.debug
+
+    <!--[if lte IE 8]>
+    = javascript_include_tag 'rem'
+    <![endif]-->
