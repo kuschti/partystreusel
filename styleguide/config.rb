@@ -36,12 +36,14 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload
+end
 
 # Methods defined in the helpers block are available in templates
 helpers do
+  include Partystreusel::Helpers::IconHelper
+
   def google_analytics_code
     ''
   end
@@ -49,6 +51,7 @@ helpers do
     ''
   end
 
+  # Make render partial behave like in rails to have common templates
   def render(partial)
     names = partial.split('/')
     names[-1] = "_#{names[-1]}"
@@ -56,13 +59,8 @@ helpers do
     super nil, partial, locals: {}
   end
 
-  def streusel_icon(name, classes = '')
-    haml_tag :svg, xmlns: 'http://www.w3.org/2000/svg', title: "#{name}", class: "icon icon--#{name} #{classes}" do
-      haml_tag :use, 'xlink:href' => "#icon--#{name}"
-    end
-  end
 
-
+  # Make asset_path partial behave like in rails to have common templates
   def asset_path(*args)
     return super(*args) unless args.length == 1
 
