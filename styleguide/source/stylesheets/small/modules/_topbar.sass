@@ -1,0 +1,80 @@
+$topbar-border: rem(1) solid $grey
+
+.topbar__mobile-menu
+  display: block
+  padding: 0 rem(12)
+  background-color: $grey-light
+  border-bottom: $topbar-border
+  color: $grey-dark
+  text-align: right
+
+  button
+    border: 0
+    background-color: $grey-light
+    position: relative
+    color: $body-font-color
+    padding: rem(7) 0 rem(6) rem(6)
+    outline: none
+
+    &:hover
+      color: $grey-dark
+
+.topbar__list,
+.topbar__sub-list
+  display: none
+  list-style: none
+  padding: 0
+  margin: 0
+
+.topbar__item
+  display: block
+  background-color: $grey-light
+
+  a
+    display: block
+    padding: rem(12)
+    border-bottom: $topbar-border
+
+  > a
+    color: $grey-dark
+
+  &:hover
+    background-color: $white
+    +transition( all .1s linear )
+
+    > a
+      color: $body-font-color
+
+.topbar__sub-list
+  padding: 0
+
+.topbar__sub-item
+  display: block
+
+  > a
+    padding-left: rem(30)
+    background-color: $white
+    border-color: $white
+    color: $grey-dark
+
+    &:hover
+      color: $body-font-color
+
+// ----------------------------------------------------------
+// STATES
+// ----------------------------------------------------------
+.topbar__item--active,
+.topbar__item--active:hover
+  > a
+    background-color: $grey-light
+    color: $primary-color
+
+    &:hover
+      background-color: $white
+
+.topbar--open
+  .topbar__list
+    display: block
+
+.topbar__sub-list--open
+  display: block

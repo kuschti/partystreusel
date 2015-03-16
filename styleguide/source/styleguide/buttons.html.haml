@@ -1,0 +1,70 @@
+%article
+  %header
+    %h1 Buttons
+    %a{ href: '/styleguide/' } Back to Index
+  %hr
+  %section
+    %div
+      %pre
+        %code Default: .button
+      %a.button{href: '#'} LinkButton 1
+      %button.button{href: '#'} Button 1
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Secondary: .button.button--secondary
+      %a.button.button--secondary{href: '#'} LinkButton 2
+      %button.button.button--secondary{href: '#'} Button 2
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Tertiary: .button.button--tertiary
+      %a.button.button--tertiary{href: '#'} LinkButton 3
+      %button.button.button--tertiary{href: '#'} Button 3
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Icon: .button.button--icon
+      %a.button.button--icon{href: '#'}
+        - streusel_icon( 'folder')
+      %button.button.button--icon{href: '#'}
+        - streusel_icon( 'folder')
+
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Expanded: .button.button--expanded
+      %a.button.button--expanded{href: '#'} Linkbutton Expanded
+      %button.button.button--expanded{href: '#'} Linkbutton Expanded
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Small: .button.button--small
+      %a.button.button--small{href: '#'} LinkButton Small
+      %button.button.button--small{href: '#'} Button Small
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code Button Group: div.button__group around buttons
+      .button__group{ role: "group", :'aria-label' => "..." }
+        %a.button{href: '#'} Button in Group 1
+        %a.button{href: '#'} Button in Group 2
+        %a.button{href: '#'} Button in Group 3
+
+    %hr.sc-hr-alternate
+    %div
+      %pre
+        %code All Buttons types with Icons inside
+      %a.button{href: '#'}
+        Button with Icon
+        - streusel_icon( 'download')
+      %a.button.button--secondary{href: '#'}
+        - streusel_icon( 'download')
+        Button with Icon
+      %a.button.button--tertiary{href: '#'}
+        - streusel_icon( 'download')
+        Button with Icon
+      %a.button{href: '#'}
+        - streusel_icon( 'search')
+      %a.button.button--icon{href: '#'}
+        - streusel_icon( 'folder')

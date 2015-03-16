@@ -1,0 +1,64 @@
+$switch-width: rem(54)
+$switch-height: rem(30)
+$switch-inner-space: rem(4)
+
+$switch-radius: $switch-height
+$switch-knob-size: $switch-height - ($switch-inner-space * 2)
+
+.switch
+  display: inline-block
+  position: relative
+  margin-bottom: rem(18)
+  cursor: pointer
+  height: $switch-height
+  width: $switch-width
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+  input
+    display: none
+
+    + span
+      display: block
+      position: relative
+      height: $switch-height
+      width: 100%
+      cursor: pointer
+      background: $grey
+      border-radius: $switch-radius
+      +transition(all .15s ease-out)
+      +transform( translate3d(0, 0, 0) )
+
+      &:after
+        content: ""
+        display: block
+        background: $white
+        position: absolute
+        top: $switch-inner-space
+        left: $switch-inner-space
+        width: $switch-knob-size
+        height: $switch-knob-size
+        border-radius: $switch-radius
+        +transition(all .15s ease-out)
+
+// ----------------------------------------------------------
+// STATES
+// ----------------------------------------------------------
+.switch
+  input:checked
+
+    + span
+      background: $primary-color
+
+      &:after
+        left: $switch-width - $switch-knob-size - ($switch-inner-space)
+
+// ----------------------------------------------------------
+// IE8 Fallback
+// ----------------------------------------------------------
+.lt-ie9
+  .switch
+    input
+      display: block
+
+      + span
+        display: none

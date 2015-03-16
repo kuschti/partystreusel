@@ -1,0 +1,47 @@
+.slider__list
+  z-index: 1
+
+.slider__controls
+  display: block
+
+.slider__control-prev,
+.slider__control-next
+  display: block
+  width: rem(42)
+  height: rem(42)
+  padding-top: rem(6)
+  margin-top: rem(-21)
+  position: absolute
+  top: 50%
+  background-color: $white
+  border: 0
+  border-radius: 100%
+  cursor: pointer
+  z-index: 10
+  color: $black
+
+  &:hover
+    color: $primary-color
+
+.slider__control-prev
+  left: rem(20)
+
+.slider__control-next
+  right: rem(20)
+
+.slider__nav
+  position: absolute
+  margin: 0
+  bottom: rem(10)
+  left: 0
+  right: 0
+  z-index: 10
+
+.slider__nav-item
+  margin: 0 rem(6)
+
+  &:hover
+    border-width: rem(4)
+    width: rem(20)
+    height: rem(20)
+    margin: 0 rem(8) rem(2) rem(8)

@@ -1,0 +1,21 @@
+%article
+  %header
+    %h1 Slider
+    %a{ href: '/styleguide/' } Back to Index
+  %hr
+  %section.slider.js-slider
+    %ul.slider__list
+      %li.slider__item
+        %img{ src: 'http://placehold.it/1200x675&text=slide1', width: '1200', height: '675'}
+      %li.slider__item
+        %img{ src: 'http://placehold.it/1200x675&text=slide2', width: '1200', height: '675'}
+      %li.slider__item
+        %img{ src: 'http://placehold.it/1200x675&text=slide3', width: '1200', height: '675'}
+
+    .slider__controls
+      .slider__control-prev
+        - streusel_icon( 'arrow-left')
+      .slider__control-next
+        - streusel_icon( 'arrow-right')
+
+    .slider__nav

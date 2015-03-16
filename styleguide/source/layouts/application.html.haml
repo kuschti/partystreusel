@@ -51,7 +51,7 @@
 
     -# Application JavaScripts
     != google_analytics_code
-    = javascript_include_tag 'application', async: !ScreenConcept.config.assets.debug
+    = javascript_include_tag 'application'#, async: !ScreenConcept.config.assets.debug
 
     <!--[if lte IE 8]>
     = javascript_include_tag 'rem'

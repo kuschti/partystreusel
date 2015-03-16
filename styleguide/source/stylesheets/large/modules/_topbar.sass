@@ -1,0 +1,65 @@
+.topbar
+  font-size: rem(18)
+
+.topbar__mobile-menu
+  display: none
+
+.topbar__list
+  &,
+  .topbar--open &
+    +display(flex)
+    +align-items(center)
+    +flex-direction(row)
+
+.topbar__item
+  position: relative
+  border-right: $topbar-border
+  +flex(1 1 auto)
+
+  > a
+    padding: rem(11) rem(18)
+    text-align: center
+
+  &:last-child
+    border-right: 0
+
+    .topbar__sub-list
+      right: 0
+      left: auto
+
+.topbar__sub-list
+  position: absolute
+  left: rem(-1)
+  min-width: rem(230)
+  border: $topbar-border
+  border-top-width: 0
+  box-shadow: rem(2) rem(2) rem(3) 0 $grey-light
+
+.topbar__sub-item
+  a
+    padding: rem(11) rem(18)
+
+// ----------------------------------------------------------
+// Flexbox Fallback
+// ----------------------------------------------------------
+.no-flexbox
+  .topbar__mobile-menu
+    display: none
+
+  .topbar__list
+    width: 100%
+
+    &,
+    .topbar--open &
+      display: table
+
+  .topbar__item
+    display: table-cell
+
+// ----------------------------------------------------------
+// No-JS Fallback
+// ----------------------------------------------------------
+.no-js
+  .topbar__item:hover
+    > .topbar__sub-list
+      display: block
