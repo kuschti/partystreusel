@@ -79,13 +79,15 @@ helpers do
   end
 end
 
-set :css_dir, 'stylesheets'
+#set :source, 'app/views'
 
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
-
+set :css_dir,    'stylesheets'
+#set :js_dir,     '../assets/javascripts'
+#set :images_dir, '../assets/images'
+#set :layouts_dir, 'layouts'
 set :layout, 'application'
+
+
 
 # Build-specific configuration
 configure :build do
