@@ -1,7 +1,5 @@
 .links
   +outer-container
-  padding: 0 rem(12)
-  margin-bottom: rem(24)
 
 .links__list
   list-style-type: none
@@ -9,12 +7,16 @@
   padding: 0
 
 .links__item
-  margin-bottom: rem(18)
+  margin-bottom: rem(12)
 
-  img,
-  .icon
+  .button
     display: block
     float: left
+
+  .button--icon
+    background-color: $grey
+    border-radius: 100%
+    color: $body-font-color
 
 .links__link
   +clearfix
@@ -24,10 +26,6 @@
   padding: 0
   margin: 0
   text-decoration: none
-  font-size: rem(16)
-  font-weight: bold
-  line-height: 1.5
-  letter-spacing: rem(1)
   color: $grey-dark
 
 .links__text
@@ -35,8 +33,17 @@
   min-height: rem(56)
   margin-left: rem(54)
   border-bottom: rem(2) solid $grey
+  line-height: 1.5
 
   small
+    font-size: rem(14)
     display: block
     color: $body-font-color
-    font-weight: normal
+
+// ----------------------------------------------------------
+// STATES
+// ----------------------------------------------------------
+.links__link:hover
+  .button--icon
+    background-color: $grey-light
+    color: $grey-dark
