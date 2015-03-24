@@ -16,7 +16,6 @@
   text-transform: uppercase
   color: $white
   box-shadow: $grey-light rem(2) rem(2) rem(2) 0
-  outline: none
   +user-select(none)
   +appearance(none)
   +transition( all .1s ease-in-out )
@@ -31,30 +30,39 @@
     background: $grey-dark
     border-color: $grey-dark
 
-  &:active
+  &:active,
+  &.button--active
     color: $white
     background: $black
     border-color: $black
     box-shadow: none
     +transition( none)
 
+  &:focus
+    outline: 0
+
   // ----------------------------------------------------------
   // SECONDARY STYLE
   // ----------------------------------------------------------
   &--secondary
-    background-color: $white
-    box-shadow: $secondary-color rem(1) rem(1) rem(2) 0
+
+    &,
+    &.button--active
+      background-color: $white
+      box-shadow: $secondary-color rem(1) rem(1) rem(2) 0
 
     &,
     &:hover
       color: $body-font-color
       border-color: $secondary-color
 
-    &:hover,
-    &:active
+    &:hover
       background-color: $grey-light
 
-    &:active
+    &:active,
+    &.button--active
+      box-shadow: none
+      background-color: $grey-light
       color: $primary-color
       border-color: $grey-light
 
@@ -62,19 +70,24 @@
   // TERTIARY STYLE
   // ----------------------------------------------------------
   &--tertiary
-    box-shadow: none
-    color: $secondary-color
+
+    &,
+    &.button--active
+      box-shadow: none
+      color: $secondary-color
 
     &,
     &:hover,
-    &:active
+    &:active,
+    &.button--active
       border-color: transparent
       background-color: transparent
 
     &:hover
       color: $body-font-color
 
-    &:active
+    &:active,
+    &.button--active
       color: $primary-color
 
   // ----------------------------------------------------------
