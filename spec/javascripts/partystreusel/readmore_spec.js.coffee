@@ -71,7 +71,7 @@ describe 'Readmore', ->
       Partystreusel.Readmore.init()
 
     it 'removes element when no content available', ->
-      expect(@subject).not.toContain('a.button')
+      expect(@subject).not.toContain('a.btn')
 
   describe 'with custom button', ->
 
