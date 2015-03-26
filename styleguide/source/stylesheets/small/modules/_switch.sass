@@ -12,12 +12,13 @@ $switch-knob-size: $switch-height - ($switch-inner-space * 2)
   cursor: pointer
   height: $switch-height
   width: $switch-width
+  +user-select(none)
   -webkit-tap-highlight-color: rgba(0,0,0,0)
 
   input
     display: none
 
-    + span
+    + label
       display: block
       position: relative
       height: $switch-height
@@ -27,6 +28,7 @@ $switch-knob-size: $switch-height - ($switch-inner-space * 2)
       border-radius: $switch-radius
       +transition(all .15s ease-out)
       +transform( translate3d(0, 0, 0) )
+      +hide-text
 
       &:after
         content: ""
@@ -46,7 +48,7 @@ $switch-knob-size: $switch-height - ($switch-inner-space * 2)
 .switch
   input:checked
 
-    + span
+    + label
       background: $primary-color
 
       &:after
@@ -60,5 +62,5 @@ $switch-knob-size: $switch-height - ($switch-inner-space * 2)
     input
       display: block
 
-      + span
+      + label
         display: none
