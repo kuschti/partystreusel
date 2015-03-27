@@ -44,6 +44,7 @@
 @import small/modules/image
 @import small/modules/links
 @import small/modules/teaser
+@import small/modules/teaser_card
 
 // IMPORT STYLESHEETS FOR MEDIUM VIEWPORT */
 @media screen and (min-width: #{$medium-point})
@@ -54,6 +55,7 @@
   @import medium/modules/iconbar
   @import medium/modules/links
   @import medium/modules/teaser
+  @import medium/modules/teaser_card
 
 // IMPORT STYLESHEETS FOR LARGE VIEWPORT */
 @media screen and (min-width: #{$large-point})
@@ -73,5 +75,11 @@
   @import large/modules/image
   @import large/modules/links
   @import large/modules/teaser
+  @import large/modules/teaser_card
+
+// IMPORT STYLESHEETS FOR X-LARGE VIEWPORT */
+@media screen and (min-width: #{$xlarge-point})
+
+  @import xlarge/modules/teaser_card
 
 @import styleguide
