@@ -24,7 +24,9 @@
 
 // Project modules
 @import small/modules/icons
+@import small/modules/grid
 @import small/modules/button
+@import small/modules/dropdown
 @import small/modules/table
 @import small/modules/content
 @import small/modules/readmore
@@ -39,9 +41,14 @@
 @import small/modules/offcanvas_nav
 @import small/modules/accordion
 @import small/modules/slider
+@import small/modules/embeds
 @import small/modules/two_column
 @import small/modules/image
 @import small/modules/links
+@import small/modules/teaser
+@import small/modules/teaser_card
+@import small/modules/teaser_list
+@import small/modules/teaser_assets
 
 // IMPORT STYLESHEETS FOR MEDIUM VIEWPORT */
 @media screen and (min-width: #{$medium-point})
@@ -51,6 +58,10 @@
   @import medium/modules/form
   @import medium/modules/iconbar
   @import medium/modules/links
+  @import medium/modules/teaser
+  @import medium/modules/teaser_card
+  @import medium/modules/teaser_list
+  @import medium/modules/teaser_assets
 
 // IMPORT STYLESHEETS FOR LARGE VIEWPORT */
 @media screen and (min-width: #{$large-point})
@@ -69,3 +80,15 @@
   @import large/modules/two_column
   @import large/modules/image
   @import large/modules/links
+  @import large/modules/teaser
+  @import large/modules/teaser_card
+  @import large/modules/teaser_list
+  @import large/modules/teaser_assets
+
+// IMPORT STYLESHEETS FOR X-LARGE VIEWPORT */
+@media screen and (min-width: #{$xlarge-point})
+
+  @import xlarge/modules/teaser_card
+  @import xlarge/modules/teaser_assets
+
+@import styleguide

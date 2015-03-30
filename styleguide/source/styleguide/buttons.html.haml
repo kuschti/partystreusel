@@ -6,65 +6,65 @@
   %section
     %div
       %pre
-        %code Default: .button
-      %a.button{href: '#'} LinkButton 1
-      %button.button{href: '#'} Button 1
+        %code Default: .btn
+      %a.btn{href: '#'} LinkButton 1
+      %button.btn{href: '#'} Button 1
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Secondary: .button.button--secondary
-      %a.button.button--secondary{href: '#'} LinkButton 2
-      %button.button.button--secondary{href: '#'} Button 2
+        %code Secondary: .btn.btn--secondary
+      %a.btn.btn--secondary{href: '#'} LinkButton 2
+      %button.btn.btn--secondary{href: '#'} Button 2
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Tertiary: .button.button--tertiary
-      %a.button.button--tertiary{href: '#'} LinkButton 3
-      %button.button.button--tertiary{href: '#'} Button 3
+        %code Tertiary: .btn.btn--tertiary
+      %a.btn.btn--tertiary{href: '#'} LinkButton 3
+      %button.btn.btn--tertiary{href: '#'} Button 3
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Icon: .button.button--icon
-      %a.button.button--icon{href: '#'}
+        %code Icon: .btn.btn--icon
+      %a.btn.btn--icon{href: '#'}
         - streusel_icon( 'folder')
-      %button.button.button--icon{href: '#'}
+      %button.btn.btn--icon{href: '#'}
         - streusel_icon( 'folder')
 
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Expanded: .button.button--expanded
-      %a.button.button--expanded{href: '#'} Linkbutton Expanded
-      %button.button.button--expanded{href: '#'} Linkbutton Expanded
+        %code Expanded: .btn.btn--expanded
+      %a.btn.btn--expanded{href: '#'} Linkbutton Expanded
+      %button.btn.btn--expanded{href: '#'} Linkbutton Expanded
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Small: .button.button--small
-      %a.button.button--small{href: '#'} LinkButton Small
-      %button.button.button--small{href: '#'} Button Small
+        %code Small: .btn.btn--small
+      %a.btn.btn--small{href: '#'} LinkButton Small
+      %button.btn.btn--small{href: '#'} Button Small
     %hr.sc-hr-alternate
     %div
       %pre
-        %code Button Group: div.button__group around buttons
-      .button__group{ role: "group", :'aria-label' => "..." }
-        %a.button{href: '#'} Button in Group 1
-        %a.button{href: '#'} Button in Group 2
-        %a.button{href: '#'} Button in Group 3
+        %code Button Group: div.btn__group around buttons
+      .btn__group{ role: "group", :'aria-label' => "..." }
+        %a.btn{href: '#'} Button in Group 1
+        %a.btn{href: '#'} Button in Group 2
+        %a.btn{href: '#'} Button in Group 3
 
     %hr.sc-hr-alternate
     %div
       %pre
         %code All Buttons types with Icons inside
-      %a.button{href: '#'}
+      %a.btn{href: '#'}
         Button with Icon
         - streusel_icon( 'download')
-      %a.button.button--secondary{href: '#'}
+      %a.btn.btn--secondary{href: '#'}
         - streusel_icon( 'download')
         Button with Icon
-      %a.button.button--tertiary{href: '#'}
+      %a.btn.btn--tertiary{href: '#'}
         - streusel_icon( 'download')
         Button with Icon
-      %a.button{href: '#'}
+      %a.btn{href: '#'}
         - streusel_icon( 'search')
-      %a.button.button--icon{href: '#'}
+      %a.btn.btn--icon{href: '#'}
         - streusel_icon( 'folder')

@@ -1,0 +1,13 @@
+.teaser--list
+  .teaser__item
+    +span-columns(6)
+    +flex(0 1 auto)
+
+    &:nth-of-type(2n)
+      margin-right: 0
+
+  .teaser__content
+    padding: space(1.5) space(2) 0 space(2)
+
+    p
+      font-size: $paragraph-font-size * 1.25

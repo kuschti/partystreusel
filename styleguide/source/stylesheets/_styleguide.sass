@@ -1,0 +1,32 @@
+.styleguide-nav
+  .offcanvas-nav
+
+    > li
+      padding-top: space(2)
+      margin-bottom: space(2)
+      border-top-color: $grey
+      border-top-width: rem(2)
+
+      &:first-child
+        border: 0
+
+      > a
+        font-weight: bold
+        font-size: rem(24)
+        pointer-events: none
+
+        &:hover
+          background-color: transparent
+          cursor: default
+          color: $body-font-color
+
+  .offcanvas-nav__sub
+    display: block
+
+    a
+      color: $primary-color
+      padding: space(.5) space(1) space(.5) space(2)
+
+      &:hover
+        background-color: transparent
+        color: $grey-dark
