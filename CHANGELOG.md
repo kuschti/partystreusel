@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.0
+
+* Various modules added/moved over from rails_template
+
 ## 1.1.1
 * Mark offcanvas active link
 
