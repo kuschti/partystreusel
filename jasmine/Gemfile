@@ -18,5 +18,5 @@ group :development, :test do
   gem 'jasminerice'
   gem 'jquery-rails'
   gem 'i18n-js'
-  gem 'guard-jasmine'
+  gem 'guard-jasmine', '1.19.2'
 end
