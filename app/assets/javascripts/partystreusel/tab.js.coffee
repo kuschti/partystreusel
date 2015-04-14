@@ -48,6 +48,7 @@ class Tab extends Partystreusel.Base
 
   findItemAndPanel: (name) ->
     return unless name?
+    return unless name.length > 0
 
     if name.indexOf('#') == 0
       name = name.slice(1)
