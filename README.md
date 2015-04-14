@@ -145,6 +145,9 @@ Available Functions:
 
 ## Development
 
+In order to run the test suite, phantomjs 1.8.2 must be installed. With
+homebrew, use `brew install phantomjs182`.
+
 Test with
 
     bundle exec guard
