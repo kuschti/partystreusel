@@ -13,6 +13,9 @@ Include in your application.js.coffee:
     #= require partystreusel/<<modulename>>
 
     $ ->
+      Streusel.selectorType = 'css_class'
+      Streusel.selectorPrefix = 'js'
+
       Streusel.<<Modulename>>.init()
 
 For example for readmore:
@@ -22,6 +25,9 @@ For example for readmore:
     #= require partystreusel/readmore
 
     $ ->
+      Streusel.selectorType = 'css_class'
+      Streusel.selectorPrefix = 'js'
+
       Streusel.Readmore.init()
 
 If you only want to initialize readmore for a part of the document:
