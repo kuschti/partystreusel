@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/screenconcept/partystreusel.svg?branch=development)](https://travis-ci.org/screenconcept/partystreusel)
+[![Build Status](https://travis-ci.org/screenconcept/partystreusel.svg?branch=master)](https://travis-ci.org/screenconcept/partystreusel)
 # Partystreusel
 
 ## Installation Rails
