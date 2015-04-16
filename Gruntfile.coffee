@@ -54,7 +54,7 @@ module.exports = (grunt) ->
         options:
           cssprefix: ".icon--"
           pngpath: "icons/png"
-          pngfolder: "../../../../../../images/icons/png"
+          pngfolder: "../../../../app/assets/images/icons/png"
           urlpngcss: "icons.fallback.css.scss"
           template: "<%= config.icons_styleheets %>/_icons_stylesheet_template.hbs"
           previewTemplate: "<%= config.icons_styleheets %>/_icons_preview_template.hbs"
