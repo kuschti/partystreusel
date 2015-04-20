@@ -1,5 +1,6 @@
 module Partystreusel
   class StyleguideController < ApplicationController
+    layout 'partystreusel/layouts/application'
     def show
       template = File.join(params[:controller], params[:page])
       render template

@@ -37,13 +37,13 @@
     .offcanvas__outer
       .offcanvas__inner
         %header.page__header{role: "banner"}
-          = render 'partials/header'
-          = render 'partials/offcanvas'
+          = render 'partystreusel/partials/header'
+          = render 'partystreusel/partials/offcanvas'
         %main#maincontent{role: "content"}
           = yield
 
         %footer{role: "contentinfo"}
-          = render 'partials/footer'
+          = render 'partystreusel/partials/footer'
         .offcanvas__overlay
 
     -# Typekit
