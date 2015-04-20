@@ -18,7 +18,7 @@ module Partystreusel
     end
 
     def add_route
-      inject_into_file 'config/routes.rb', 'mount Partystreusel::Engine => "/"', after: /^end/
+      inject_into_file 'config/routes.rb', 'mount Partystreusel::Engine => "/"', before: /^end/
     end
 
     def copy_grunticon_files
