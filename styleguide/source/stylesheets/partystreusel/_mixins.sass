@@ -5,3 +5,10 @@
   font: 0/0 a
   text-shadow: none
   color: transparent
+
+=omega-reset($nth)
+  &:nth-child(#{$nth})
+    margin-right: +flex-gutter()
+
+  &:nth-child(#{$nth}+1)
+    clear: none
