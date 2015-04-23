@@ -1,5 +1,9 @@
 module Partystreusel
+  class ApplicationController < ActionController::Base
+
+  end
   class StyleguideController < ApplicationController
+    layout 'partystreusel'
     def show
       template = File.join(params[:controller].gsub('partystreusel/',''), params[:page])
       render template

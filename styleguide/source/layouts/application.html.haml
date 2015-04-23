@@ -33,7 +33,7 @@
 
     = csrf_meta_tags
 
-  %body.js-offcanvas{ class: body_class }
+  %body.js-offcanvas
     .offcanvas__outer
       .offcanvas__inner
         %header.page__header{role: "banner"}
@@ -50,7 +50,6 @@
     = render 'layouts/typekit'
 
     -# Application JavaScripts
-    != google_analytics_code
     = javascript_include_tag 'application'#, async: !ScreenConcept.config.assets.debug
 
     <!--[if lte IE 8]>
