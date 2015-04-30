@@ -34,6 +34,17 @@ If you only want to initialize readmore for a part of the document:
 
     Streusel.Readmore.init($('body article.loadedwithajax'))
 
+### Partystreusel Generator
+
+If you need to change the partystreusel views and/or stylesheets, run
+the generator:
+
+```
+rails generate partystreusel:styleguide
+```
+
+This will copy the views and stylesheets into your rails app.
+
 ## JS <-> DOM
 
 If you have the JS object use
