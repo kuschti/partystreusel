@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name        = "partystreusel"
   s.version     = Partystreusel::VERSION
   s.authors     = ["Flavio Pellanda"]
-  s.email       = ["flavio.pellanda@screenconcetch"]
-  s.homepage    = "http://www.screenconcept.ch"
+  s.email       = ["info@screenconcept.com"]
+  s.homepage    = "http://www.screenconcept.com"
   s.summary     = %q{A collection uf reusable javascript components by Screen Concept}
   s.description = %q{Contains sliders, accordions, expandable contents and any other component we deem worthy of joining this collection of awesomeness.}
 
