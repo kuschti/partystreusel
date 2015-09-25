@@ -5,7 +5,7 @@ require "partystreusel/version"
 Gem::Specification.new do |s|
   s.name        = "partystreusel"
   s.version     = Partystreusel::VERSION
-  s.authors     = ["Flavio Pellanda"]
+  s.authors     = ["Flavio Pellanda, Pascal Kuster"]
   s.email       = ["info@screenconcept.com"]
   s.homepage    = "http://www.screenconcept.com"
   s.summary     = %q{A collection uf reusable javascript components by Screen Concept}

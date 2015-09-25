@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.0.0
+
+* Last release for rails&middleman
+* fix engine mounting
+* a few bugfixes
+
 ## 1.2.0
 
 * Various modules added/moved over from rails_template
