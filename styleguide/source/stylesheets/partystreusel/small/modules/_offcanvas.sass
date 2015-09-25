@@ -3,6 +3,7 @@ $offcanvas-width: rem(300)
 .offcanvas__outer
   position: relative
   height: 100%
+  overflow-x: hidden
 
 .offcanvas__inner
   height: 100%
@@ -24,9 +25,10 @@ $offcanvas-width: rem(300)
   +transition(opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s)
 
 .offcanvas__container
-  position: absolute
+  position: fixed
   top: 0
-  left: 0
+  right: 0
+  left: auto
   overflow-y: auto
   width: $offcanvas-width
   height: 100%
@@ -34,7 +36,7 @@ $offcanvas-width: rem(300)
   background-color: $primary-color
   color: $body-font-color
   +backface-visibility(hidden)
-  +transform( translate3d(-100%, 0, 0) )
+  +transform( translate3d(100%, 0, 0) )
 
 .offcanvas__container-inner
   opacity: .7
@@ -69,13 +71,23 @@ $offcanvas-width: rem(300)
 // ----------------------------------------------------------
 // STATES
 // ----------------------------------------------------------
+.offcanvas--left // add class to body
+  .offcanvas__container
+    left: 0
+    right: auto
+    +transform( translate3d(-100%, 0, 0) )
+
 .offcanvas--open
 
   .offcanvas__outer
     overflow: hidden
 
   .offcanvas__inner
-    +transform(translate3d($offcanvas-width, 0, 0) scale3d(1, 1, 1))
+    +transform(translate3d(-$offcanvas-width, 0, 0) scale3d(1, 1, 1))
+
+  &.offcanvas--left
+    .offcanvas__inner
+      +transform(translate3d($offcanvas-width, 0, 0) scale3d(1, 1, 1))
 
   .offcanvas__container
     -webkit-overflow-scrolling: touch
