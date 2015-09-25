@@ -8,3 +8,4 @@ log/
 .sass-cache
 node_modules
 styleguide/build/
+.project

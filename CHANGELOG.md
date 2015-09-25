@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 3.0.0-beta
+
+## 2.0.0
+
+* Last release with support for rails/middleman
+
 ## 1.2.0
 
 * Various modules added/moved over from rails_template

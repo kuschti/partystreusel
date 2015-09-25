@@ -4,8 +4,8 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON("package.json")
     config: {
-      icons_styleheets: 'styleguide/source/stylesheets/fallbacks'
-      icons_images: 'app/assets/images/icons'
+      icons_styleheets: 'source/stylesheets/fallbacks'
+      icons_images: 'source/images/icons'
     },
 
     # optimize Images
@@ -54,7 +54,7 @@ module.exports = (grunt) ->
         options:
           cssprefix: ".icon--"
           pngpath: "icons/png"
-          pngfolder: "../../../../app/assets/images/icons/png"
+          pngfolder: "../../images/icons/png"
           urlpngcss: "icons.fallback.css.scss"
           template: "<%= config.icons_styleheets %>/_icons_stylesheet_template.hbs"
           previewTemplate: "<%= config.icons_styleheets %>/_icons_preview_template.hbs"

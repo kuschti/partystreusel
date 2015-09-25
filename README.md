@@ -142,18 +142,6 @@ Will be rendered to something like:
       <a ...>Read more</a>
     </div>
 
-## Foundation Helpers
-
-Add to applicaiton.js.coffee:
-
-    #= require partystreusel/foundation_helpers
-
-Available Functions:
-
-    Streusel.FoundationHelpers.isLarge()
-    Streusel.FoundationHelpers.isMedium()
-    Streusel.FoundationHelpers.isSmall()
-
 ## Development
 
 In order to run the test suite, phantomjs 1.8.2 must be installed. With

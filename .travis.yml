@@ -1,6 +1,0 @@
-before_install:
-  - wget 'https://phantomjs.googlecode.com/files/phantomjs-1.8.2-linux-x86_64.tar.bz2' --output-document=phantomjs.tar.bz2
-  - mkdir phantomjs && tar --strip-components=1 -xvf phantomjs.tar.bz2 -C phantomjs
-rvm:
-  - "2.2.2"
-script: 'cd jasmine ; bundle ; bundle exec guard-jasmine --server-timeout=120 -b ../phantomjs/bin/phantomjs'
