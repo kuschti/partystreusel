@@ -15,7 +15,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'middleman-pry'
 gem 'activesupport'
-gem 'partystreusel', path: '../'
 gem 'middleman-bourbon'
 gem 'middleman-neat'
 gem 'middleman-jquery'
