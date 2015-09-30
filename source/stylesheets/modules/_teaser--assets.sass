@@ -1,0 +1,101 @@
+.teaser--assets
+  .teaser__container
+    +display(flex)
+    +flex-direction(row)
+    +flex-wrap(wrap)
+
+  .teaser__item
+    +display(flex)
+    +span-columns(6)
+    +flex(0 1 auto)
+    +omega(2n)
+
+  .teaser__img
+    position: relative
+    margin-bottom: space(.5)
+    overflow: hidden
+
+    img
+      display: block
+
+  .teaser__content
+    display: block
+    width: 100%
+    position: absolute
+    bottom: 0
+    margin-bottom: 0
+    padding: space(1)
+    font-size: rem(16)
+    background-color: rgba($white, 0.5)
+    +transform(translate3d(0,100%,0))
+    +transition(transform 0.35s)
+
+  .teaser__btn
+    display: block
+    margin: 0
+    font: 0/0 a
+    text-shadow: none
+
+// STATES
+.teaser--assets
+  .teaser__link:hover
+    .teaser__content
+      +transform(translate3d(0,0,0))
+
+// NO CSS TRANSFORM Fallback
+.no-csstransforms3d
+  .teaser--assets
+    .teaser__content
+      display: none
+
+    .teaser__link:hover
+      .teaser__content
+        display: block
+
+// MEDIUM
+// ----------------------------------------
++mq(medium)
+  .teaser--assets
+    .teaser__item
+      &:nth-child(2n)
+        margin-right: +flex-gutter()
+
+    .teaser__item
+      +span-columns(4)
+      +omega(3n)
+
+    .teaser__btn
+      padding-right: 0
+      font-family: $body-font-family
+      font-size: rem(16)
+      font-weight: bold
+      line-height: 1.33
+
+// LARGE
+// ----------------------------------------
++mq(large)
+  .teaser--assets
+
+    .teaser__item
+      &:nth-child(3n)
+        margin-right: +flex-gutter()
+
+    .teaser__item
+      +span-columns(3)
+      +omega(4n)
+
+    .teaser__btn
+      font-size: rem(18)
+
+// XLRAGE
+// ----------------------------------------
++mq(xlarge)
+  .teaser--assets
+
+    .teaser__item
+      &:nth-child(4n)
+        margin-right: +flex-gutter()
+
+    .teaser__item
+      +span-columns(2)
+      +omega(6n)

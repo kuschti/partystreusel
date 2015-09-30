@@ -1,0 +1,33 @@
+.offcanvas-nav
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+  > li
+    border-top: rem(1) solid darken($primary-color, 5%)
+
+.offcanvas-nav__link
+  display: block
+  padding: rem(11) rem(18)
+  color: $body-font-color
+  font-size: rem(18)
+  line-height: 1.33
+
+.offcanvas-nav__sub
+  margin: 0
+  padding: 0
+  list-style-type: none
+  display: none
+
+  a
+    padding-left: rem(36)
+
+// STATES
+.offcanvas-nav__link:hover,
+.offcanvas-nav__link:focus,
+.offcanvas-nav__link--active
+  color: $white
+  background-color: darken($primary-color, 5%)
+
+.offcanvas-nav__sub--open
+  display: block

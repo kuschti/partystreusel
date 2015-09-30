@@ -1,7 +1,7 @@
-#= require libs/modernizr
-#= require libs/jquery-2.1.4.min
-#= require libs/jquery.cycle2
-#= require libs/jquery.cycle2.swipe
+#= require vendor/modernizr
+#= require vendor/jquery-2.1.4.min
+#= require vendor/jquery.cycle2
+#= require vendor/jquery.cycle2.swipe
 
 #= require i18n
 #= require views/translations

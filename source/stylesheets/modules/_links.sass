@@ -1,0 +1,66 @@
+.links
+  +outer-container
+
+.links__list
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+.links__item
+  margin-bottom: rem(12)
+
+  .btn
+    display: block
+    float: left
+
+  .btn--icon
+    background-color: $grey
+    border-radius: $border-radius--round
+    color: $body-font-color
+
+.links__link
+  +clearfix
+  display: block
+  position: relative
+  width: 100%
+  padding: 0
+  margin: 0
+  text-decoration: none
+  color: $grey-dark
+
+.links__text
+  display: block
+  min-height: rem(56)
+  margin-left: rem(54)
+  border-bottom: rem(2) solid $grey
+  line-height: 1.5
+
+  small
+    font-size: rem(14)
+    display: block
+    color: $body-font-color
+
+// STATES
+.links__link:hover
+  .btn--icon
+    background-color: $grey-light
+    color: $grey-dark
+
+// MEDIUM
+// ----------------------------------------
++mq(medium)
+  .links__item
+    +span-columns(6)
+
+    &:nth-child(2n)
+      margin-right: 0
+
+// LARGE
+// ----------------------------------------
++mq(large)
+  .links__item
+    +span-columns(4)
+    +omega(3n)
+
+    &:nth-child(2n)
+      margin-right: +flex-gutter()

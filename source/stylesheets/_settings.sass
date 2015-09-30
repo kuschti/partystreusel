@@ -1,3 +1,4 @@
+
 // This is the the base for the em/rem mixins and the grid calculation.
 $em-base: 16px
 
@@ -11,6 +12,7 @@ $gutter: em(20)
 $grid-columns: 12
 $max-width: rem(1200)
 $border-box-sizing: true
+$grid__paddings: ( small: rem(10), medium: rem(15), large: rem(20) )
 
 // Debug Grid
 $visual-grid: false  // a helper to show the columns
@@ -18,24 +20,16 @@ $visual-grid-color: #ff0000
 $visual-grid-index: back // or front
 $visual-grid-opacity: 0.1
 
-//////////////////////////////
 // MEDIA QUERIES & BREAKPOINTS
 // --------------------------
 
-// Media Query Ranges
-$medium-point: 33.75em // 540px
-$large-point:  50em    // 800px
-$xlarge-point:  75em    // 1200px
+// 640px, 800px, 1200px
+$breakpoints: ( medium: 40em, large: 50em, xlarge: 75em)
 
-$medium: new-breakpoint(min-width $medium-point 12)
-$large: new-breakpoint(min-width $large-point 12)
-$xlarge: new-breakpoint(min-width $xlarge-point 12)
-
-//////////////////////////////
-// COLOR & BASE
+// COLORS
 // --------------------------
 
-// COLOR variables
+// COLOR definitions
 $black:       #333
 $white:       #fff
 $grey-dark:   rgb(172,172,172)
@@ -130,3 +124,7 @@ $blockquote-font-family: inherit
 $blockquote-font-size: rem(16)
 $blockquote-font-style: italic
 $blockquote-margin: 0 0 $paragraph-margin-bottom 0
+
+// RADIUS
+$border-radius: 0
+$border-radius--round: 100%
