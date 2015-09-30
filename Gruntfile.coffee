@@ -71,7 +71,7 @@ module.exports = (grunt) ->
 
     shell:
       moveIconsStyleguide:
-        command: "mv <%= config.icons_styleheets %>/preview.html  app/views/styleguide/icons.html.haml"
+        command: "mv <%= config.icons_styleheets %>/preview.html  source/styleguide/icons.html.haml"
 
 
   require("load-grunt-tasks") grunt
