@@ -3,15 +3,13 @@
 #= require vendor/jquery.cycle2
 #= require vendor/jquery.cycle2.swipe
 
-#= require i18n
-#= require views/translations
 #= require views/readmore
 #= require views/offcanvas
 #= require views/topbar
 #= require views/accordion
 #= require views/tab
 #= require views/slider
-# require views/scroll_to
+#= require views/scroll_to
 
 #= require_self
 

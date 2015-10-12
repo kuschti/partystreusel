@@ -1,7 +1,7 @@
 #= require views/base
 #= require views/scroll_to
-#= require jquery.cycle2
-#= require jquery.cycle2.swipe
+#= require vendor/jquery.cycle2
+#= require vendor/jquery.cycle2.swipe
 
 class Slider extends Partystreusel.Base
   @className = 'Slider'

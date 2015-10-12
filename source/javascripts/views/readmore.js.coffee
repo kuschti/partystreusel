@@ -34,7 +34,10 @@ class Readmore extends Partystreusel.Base
     'open'
 
   buttonText: (state = @buttonState()) ->
-    I18n.t("readmore.button_text.#{state}")
+    if state is 'open'
+      return 'Read more'
+    else
+      return 'Read less'
 
   renderButton: =>
     text = @buttonText()

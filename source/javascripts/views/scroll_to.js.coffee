@@ -1,4 +1,4 @@
-#= require partystreusel/namespace
+#= require views/namespace
 Partystreusel.scrollTo = (x, relativeOffset = 0) ->
   if typeof x == 'object' && !(x instanceof $)
     # expect this is a hash and link is defined
