@@ -82,7 +82,7 @@ end
 
 #set :source, 'app/views'
 
-set :css_dir,    'stylesheets'
+set :css_dir,    'css'
 #set :js_dir,     '../assets/javascripts'
 #set :images_dir, '../assets/images'
 #set :layouts_dir, 'layouts'
