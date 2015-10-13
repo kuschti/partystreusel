@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    del = require('del'),
     sass = require('gulp-sass'),
     bourbon = require('node-bourbon').includePaths,
     neat = require('node-neat').includePaths;
@@ -22,7 +23,17 @@ gulp.task('watch', function () {
   gulp.watch(paths.sass, ['css']);
 });
 
+gulp.task('clean', function () {
+  return del([
+    'dist/css/**/*'
+  ]);
+});
+
 //---------------------------------------
-gulp.task('default', function () {
+gulp.task('default', ['clean', 'build'], function() {
   gulp.start('watch');
+});
+
+gulp.task('build', ['clean'], function() {
+  gulp.start('css');
 });
