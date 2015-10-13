@@ -1,7 +1,5 @@
 $ ->
   # Document ready...
-  I18n.locale = $('html').attr('lang') if I18n?
-
   Streusel.selectorType = 'css_class'
   Streusel.selectorPrefix = 'js'
 
