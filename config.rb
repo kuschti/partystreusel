@@ -38,7 +38,7 @@ require 'pry'
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  # activate :livereload
 end
 
 # Methods defined in the helpers block are available in templates
@@ -112,4 +112,6 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-sprockets.append_path 'app/assets'
+sprockets.append_path '../dist/'
+sprockets.import_asset 'css/application.css'
+sprockets.import_asset 'css/styleguide.css'
