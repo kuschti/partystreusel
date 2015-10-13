@@ -2,6 +2,7 @@
   "name": "partystreusel",
   "description": "",
   "version": "3.0.0-beta",
+  "license" : "MIT",
   "author": "Screen Concept",
   "repository": {
     "type": "git",
