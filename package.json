@@ -23,6 +23,7 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.4",
+    "gulp-svg-symbols": "^1.0.0",
     "load-grunt-tasks": "^3.1.0",
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2"

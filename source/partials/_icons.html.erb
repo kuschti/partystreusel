@@ -14,7 +14,7 @@
   } else {
 
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "<%= asset_path('icons/icon-sprite.svg')%>", true);
+    ajax.open("GET", "<%= asset_path('images/icon-sprite.svg')%>", true);
     ajax.onload = function(e) {
       var div = document.createElement("div");
       div.innerHTML = ajax.responseText;
