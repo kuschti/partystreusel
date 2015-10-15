@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON("package.json")
     config: {
       icons_styleheets: 'source/stylesheets/fallbacks'
-      icons_images: 'source/images/icons'
+      icons_images: 'source/icons'
     },
 
     # optimize Images
@@ -13,9 +13,9 @@ module.exports = (grunt) ->
       svg:
         files: [
           expand: true,
-          cwd: '<%= config.icons_images %>/source',
+          cwd: '<%= config.icons_images %>/svg',
           src: ['*.svg'],
-          dest: '<%= config.icons_images %>/source',
+          dest: '<%= config.icons_images %>/svg',
           ext: '.svg'
         ]
       png:
@@ -40,21 +40,21 @@ module.exports = (grunt) ->
           height: '0'
       default:
         files:
-          '<%= config.icons_images %>/icon-sprite.svg': ['<%= config.icons_images %>/source/*.svg']
+          '<%= config.icons_images %>/icon-sprite.svg': ['<%= config.icons_images %>/svg/*.svg']
 
     # Create SVG Sprite Fallback
     grunticon:
       active:
         files: [
           expand: true
-          cwd: "<%= config.icons_images %>/source"
+          cwd: "<%= config.icons_images %>/svg"
           dest: "<%= config.icons_styleheets %>"
           src: ["*.svg"]
         ]
         options:
           cssprefix: ".icon--"
           pngpath: "icons/png"
-          pngfolder: "../../images/icons/png"
+          pngfolder: "../../icons/png"
           urlpngcss: "icons.fallback.css.scss"
           template: "<%= config.icons_styleheets %>/_icons_stylesheet_template.hbs"
           previewTemplate: "<%= config.icons_styleheets %>/_icons_preview_template.hbs"
