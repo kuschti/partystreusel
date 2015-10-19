@@ -54,20 +54,26 @@ var gulpiconFiles = glob.sync(paths.icons)
       pngpath: "images/icons/png",
       pngfolder: 'icons/png',
       previewhtml: "../../source/styleguide/icons.html.haml",
-      template: 'source/icons/templates/_icons_stylesheet_template.hbs',
-      previewTemplate: 'source/icons/templates/_icons_preview_template.hbs'
+      template: 'source/icons/templates/_icons_stylesheet.hbs',
+      previewTemplate: 'source/icons/templates/_icons_preview.hbs'
     };
 
 gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
 
+gulp.task("gulpiconCleanup", function () {
+  del('dist/images/*.js');
+  // gulp.src('dist/images/*.css')
+  //   .pipe(gulp.dest('dist/css/icons'));
+});
+
 // Icon workflow
-gulp.task('icons', ['cleanIconsDist', 'imagemin', 'svgsprite', 'gulpicon']);
+gulp.task('icons', ['cleanIcons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpiconCleanup']);
 
 // Watch for file changes
 // ----------------------------------------
 gulp.task('watch', function () {
-  // watch .sass files
   gulp.watch(paths.sass, ['css']);
+  gulp.watch(paths.icons, ['icons']);
 });
 
 // Clean all dist files
@@ -80,8 +86,8 @@ gulp.task('clean', function () {
   ]);
 });
 
-gulp.task('cleanIconsDist', function () {
-  return del([
+gulp.task('cleanIcons', function () {
+  del([
     'dist/images/icons/*',
     'dist/css/icons/*'
   ]);
