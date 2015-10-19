@@ -115,4 +115,4 @@ end
 sprockets.append_path '../dist/'
 sprockets.import_asset 'css/application.css'
 sprockets.import_asset 'css/styleguide.css'
-sprockets.import_asset 'images/icon-sprite.svg'
+sprockets.import_asset 'images/icons/icon-sprite.svg'

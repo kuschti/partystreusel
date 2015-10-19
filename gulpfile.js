@@ -5,7 +5,9 @@ var gulp        = require('gulp'),
     bourbon     = require('node-bourbon').includePaths,
     neat        = require('node-neat').includePaths,
     imagemin    = require('gulp-imagemin'),
-    svgSymbols  = require('gulp-svg-symbols');
+    svgSymbols  = require('gulp-svg-symbols'),
+    glob        = require("glob"),
+    gulpicon    = require("gulpicon/tasks/gulpicon");
 
 var paths = {
   coffee:   './source/javascripts/**/*.coffee',
@@ -42,10 +44,27 @@ gulp.task('svgsprite', function () {
       title:  'icon %f',
       templates: ['source/icons/templates/icon-sprite.svg']
     }))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/images/icons'));
 });
 
-// -------
+var gulpiconFiles = glob.sync(paths.icons)
+    gulpiconOptions = {
+      dest: 'dist/images',
+      cssprefix: '.icon--',
+      pngpath: "images/icons/png",
+      pngfolder: 'icons/png',
+      previewhtml: "../../source/styleguide/icons.html.haml",
+      template: 'source/icons/templates/_icons_stylesheet_template.hbs',
+      previewTemplate: 'source/icons/templates/_icons_preview_template.hbs'
+    };
+
+gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
+
+// Icon workflow
+gulp.task('icons', ['cleanIconsDist', 'imagemin', 'svgsprite', 'gulpicon']);
+
+// Watch for file changes
+// ----------------------------------------
 gulp.task('watch', function () {
   // watch .sass files
   gulp.watch(paths.sass, ['css']);
@@ -56,7 +75,15 @@ gulp.task('watch', function () {
 gulp.task('clean', function () {
   return del([
     'dist/css/**/*',
-    'dist/js/**/*'
+    'dist/js/**/*',
+    'dist/images/**/*'
+  ]);
+});
+
+gulp.task('cleanIconsDist', function () {
+  return del([
+    'dist/images/icons/*',
+    'dist/css/icons/*'
   ]);
 });
 
