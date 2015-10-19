@@ -14,20 +14,11 @@
   "devDependencies": {
     "del": "^2.0.2",
     "glob": "^5.0.15",
-    "grunt": "~0.4.5",
-    "grunt-contrib-imagemin": "^0.9.4",
-    "grunt-grunticon": "~2.2.1",
-    "grunt-shell": "^1.1.1",
-    "grunt-svgstore": "^0.5.0",
-    "grunt-text-replace": "^0.4.0",
-    "grunticon-lib": "^1.0.3",
     "gulp": "^3.9.0",
     "gulp-imagemin": "^2.3.0",
-    "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.4",
     "gulp-svg-symbols": "^1.0.0",
     "gulpicon": "^0.1.2",
-    "load-grunt-tasks": "^3.1.0",
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2"
   }
