@@ -1,6 +1,3 @@
-#= require views/base
-#= require views/scroll_to
-
 class Accordion extends Partystreusel.Base
   @className = 'Accordion'
 

@@ -1,5 +1,3 @@
-#= require views/base
-
 class Readmore extends Partystreusel.Base
   @className = 'Readmore'
 

@@ -1,5 +1,3 @@
-#= require views/base
-
 class Offcanvas extends Partystreusel.Base
   @className = 'Offcanvas'
 

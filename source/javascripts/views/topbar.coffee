@@ -1,5 +1,3 @@
-#= require views/base
-
 class Topbar extends Partystreusel.Base
   @className = 'Topbar'
 

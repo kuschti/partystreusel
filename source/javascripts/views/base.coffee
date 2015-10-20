@@ -1,4 +1,3 @@
-#= require views/namespace
 class Partystreusel.Base
   # you must override this class variable
   # constructor.name does not work in minified js

@@ -1,7 +1,10 @@
 var gulp        = require('gulp'),
+    gutil       = require('gulp-util'),
     del         = require('del'),
-    notify      = require('gulp-notify'),
+    include     = require('gulp-include'),
+    concat      = require('gulp-concat'),
     sass        = require('gulp-sass'),
+    coffee      = require("gulp-coffee"),
     bourbon     = require('node-bourbon').includePaths,
     neat        = require('node-neat').includePaths,
     imagemin    = require('gulp-imagemin'),
@@ -10,7 +13,7 @@ var gulp        = require('gulp'),
     gulpicon    = require("gulpicon/tasks/gulpicon");
 
 var paths = {
-  coffee:   './source/javascripts/**/*.coffee',
+  coffee:   './source/javascripts/application.coffee',
   sass:     './source/stylesheets/**/*.sass',
   images:   './source/images/*',
   icons:    './source/icons/svg/*.svg'
@@ -18,12 +21,21 @@ var paths = {
 
 // STYLES
 // ----------------------------------------
-gulp.task('css', function () {
+gulp.task('sass', function () {
   gulp.src(paths.sass)
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
     .pipe(gulp.dest('./dist/css'));
+});
+
+// JS
+// ----------------------------------------
+gulp.task('coffee', function() {
+  gulp.src(paths.coffee)
+    .pipe(include())
+    .pipe(coffee())
+    .pipe(gulp.dest('./dist/js'))
 });
 
 // IMAGES
@@ -32,6 +44,14 @@ gulp.task('imagemin', function () {
   gulp.src(paths.images)
     .pipe(imagemin({
       progressive: true,
+      svgoPlugins: [{removeViewBox: false}]
+    }))
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('svgmin', function () {
+  gulp.src(paths.icons)
+    .pipe(imagemin({
       svgoPlugins: [{removeViewBox: false}]
     }))
     .pipe(gulp.dest('dist/images'));
@@ -49,11 +69,11 @@ gulp.task('svgsprite', function () {
 
 var gulpiconFiles = glob.sync(paths.icons)
     gulpiconOptions = {
-      dest: 'dist/images',
+      dest: 'dist/images/icons',
       cssprefix: '.icon--',
       pngpath: "images/icons/png",
-      pngfolder: 'icons/png',
-      previewhtml: "../../source/styleguide/icons.html.haml",
+      pngfolder: 'png',
+      previewhtml: "../../../source/styleguide/icons.html.haml",
       template: 'source/icons/templates/_icons_stylesheet.hbs',
       previewTemplate: 'source/icons/templates/_icons_preview.hbs'
     };
@@ -61,9 +81,7 @@ var gulpiconFiles = glob.sync(paths.icons)
 gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
 
 gulp.task("gulpiconCleanup", function () {
-  del('dist/images/*.js');
-  // gulp.src('dist/images/*.css')
-  //   .pipe(gulp.dest('dist/css/icons'));
+  del('dist/images/icons/*.js');
 });
 
 // Icon workflow
@@ -72,8 +90,9 @@ gulp.task('icons', ['cleanIcons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpicon
 // Watch for file changes
 // ----------------------------------------
 gulp.task('watch', function () {
-  gulp.watch(paths.sass, ['css']);
+  gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.icons, ['icons']);
+  gulp.watch(paths.coffee, ['coffee']);
 });
 
 // Clean all dist files
@@ -100,5 +119,5 @@ gulp.task('default', ['clean', 'build'], function() {
 });
 
 gulp.task('build', ['clean'], function() {
-  gulp.start('css');
+  gulp.start('icons', 'imagemin', 'sass', 'coffee');
 });
