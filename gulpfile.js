@@ -3,6 +3,7 @@ var gulp        = require('gulp'),
     del         = require('del'),
     include     = require('gulp-include'),
     concat      = require('gulp-concat'),
+    addsrc      = require('gulp-add-src'),
     sass        = require('gulp-sass'),
     coffee      = require("gulp-coffee"),
     bourbon     = require('node-bourbon').includePaths,
@@ -13,10 +14,12 @@ var gulp        = require('gulp'),
     gulpicon    = require("gulpicon/tasks/gulpicon");
 
 var paths = {
-  coffee:   './source/javascripts/application.coffee',
-  sass:     './source/stylesheets/**/*.sass',
-  images:   './source/images/*',
-  icons:    './source/icons/svg/*.svg'
+  coffee:       './source/javascripts/application.coffee',
+  jsvendor:     './source/javascripts/vendor/*.js',
+  jspolyfills:  './source/javascripts/polyfills/*',
+  sass:         './source/stylesheets/**/*.sass',
+  images:       './source/images/*',
+  icons:        './source/icons/svg/*.svg'
 }
 
 // STYLES
@@ -31,12 +34,20 @@ gulp.task('sass', function () {
 
 // JS
 // ----------------------------------------
-gulp.task('coffee', function() {
+gulp.task('js:coffee', function() {
   gulp.src(paths.coffee)
     .pipe(include())
     .pipe(coffee())
+    .pipe(addsrc.prepend(paths.jsvendor))
+    .pipe(concat("application.js"))
     .pipe(gulp.dest('./dist/js'))
 });
+
+gulp.task('js:polyfills', function() {
+  gulp.src(paths.jspolyfills)
+    .pipe(gulp.dest('./dist/js/polyfills'))
+});
+
 
 // IMAGES
 // ----------------------------------------
@@ -119,5 +130,5 @@ gulp.task('default', ['clean', 'build'], function() {
 });
 
 gulp.task('build', ['clean'], function() {
-  gulp.start('icons', 'imagemin', 'sass', 'coffee');
+  gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills');
 });

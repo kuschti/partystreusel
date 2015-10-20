@@ -83,7 +83,7 @@ end
 #set :source, 'app/views'
 
 set :css_dir,    'css'
-#set :js_dir,     '../assets/javascripts'
+set :js_dir,     'js'
 #set :images_dir, '../assets/images'
 #set :layouts_dir, 'layouts'
 set :layout, 'application'
@@ -115,4 +115,7 @@ end
 sprockets.append_path '../dist/'
 sprockets.import_asset 'css/application.css'
 sprockets.import_asset 'css/styleguide.css'
+sprockets.import_asset 'js/application.js'
+sprockets.import_asset 'js/polyfills/rem.js'
+sprockets.import_asset 'js/polyfills/html5shiv-printshiv.js'
 sprockets.import_asset 'images/icons/icon-sprite.svg'

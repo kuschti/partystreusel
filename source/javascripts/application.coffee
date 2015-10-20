@@ -1,17 +1,12 @@
-# vendor/modernizr
-# vendor/jquery-2.1.4.min
-# vendor/jquery.cycle2
-# vendor/jquery.cycle2.swipe
+#=require views/namespace.coffee
+#=require views/base.coffee
 
-//=require views/namespace.coffee
-//=require views/base.coffee
+#=require views/readmore.coffee
+#=require views/offcanvas.coffee
+#=require views/topbar.coffee
+#=require views/accordion.coffee
+#=require views/tab.coffee
+#=require views/slider.coffee
+#=require views/scroll_to.coffee
 
-//=require views/readmore.coffee
-//=require views/offcanvas.coffee
-//=require views/topbar.coffee
-//=require views/accordion.coffee
-//=require views/tab.coffee
-//=require views/slider.coffee
-//=require views/scroll_to.coffee
-
-//=require views/initializer.coffee
+#=require views/initializer.coffee
