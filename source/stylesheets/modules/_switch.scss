@@ -1,0 +1,74 @@
+$switch__width: rem(54);
+$switch__height: rem(30);
+$switch__inner-space: rem(4);
+
+$switch__radius: $switch__height;
+$switch__knob-size: $switch__height - $switch__inner-space * 2;
+
+.switch {
+  display: inline-block;
+  position: relative;
+  margin-bottom: rem(18);
+  cursor: pointer;
+  height: $switch__height;
+  width: $switch__width;
+  @include user-select(none);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  input {
+    display: none;
+    + label {
+      display: block;
+      position: relative;
+      height: $switch__height;
+      width: 100%;
+      cursor: pointer;
+      background: $grey;
+      border-radius: $switch__radius;
+      @include transition(all 0.15s ease-out);
+      @include transform(translate3d(0, 0, 0));
+      @include hide-text;
+      &:after {
+        content: "";
+        display: block;
+        background: $white;
+        position: absolute;
+        top: $switch__inner-space;
+        left: $switch__inner-space;
+        width: $switch__knob-size;
+        height: $switch__knob-size;
+        border-radius: $switch__radius;
+        @include transition(all 0.15s ease-out);
+      }
+    }
+  }
+}
+
+// STATES
+.switch:hover {
+  label {
+    background: $grey-dark;
+  }
+}
+
+.switch {
+  input:checked {
+    + label {
+      background: $primary-color;
+      &:after {
+        left: $switch__width - $switch__knob-size - $switch__inner-space;
+      }
+    }
+  }
+}
+
+// IE8 Fallback
+.lt-ie9 {
+  .switch {
+    input {
+      display: block;
+      + label {
+        display: none;
+      }
+    }
+  }
+}

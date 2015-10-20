@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+
+main {
+  @include outer-container;
+  + footer {
+    height: rem(100);
+    background-color: $primary-color;
+  }
+}
+
+article {
+  @include span-columns(12);
+  padding: 0 rem(12);
+}
+
+.page__header {
+  @include outer-container;
+  padding: 0 rem(12);
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  article,
+  .page__header {
+    padding: 0 rem(24);
+  }
+}

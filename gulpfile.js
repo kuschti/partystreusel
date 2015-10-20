@@ -17,7 +17,7 @@ var paths = {
   coffee:       './source/javascripts/application.coffee',
   jsvendor:     './source/javascripts/vendor/*.js',
   jspolyfills:  './source/javascripts/polyfills/*',
-  sass:         './source/stylesheets/**/*.sass',
+  sass:         './source/stylesheets/**/*.scss',
   images:       './source/images/*',
   icons:        './source/icons/svg/*.svg'
 }
