@@ -1,0 +1,37 @@
+doctype html
+
+//- TODO: conditionals
+html.no-js( lang=language )
+  head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Partystreusel
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    block meta
+
+    link(rel='stylesheet', href='/css/styleguide.css')
+    link(rel='stylesheet', href='/css/application.css')
+
+    //- TODO: add your favicons
+    include ../partials/_icons.jade
+    //- TODO: html5shiv with conditional
+    include ../partials/_helpers.jade
+
+  body.js-offcanvas
+    .offcanvas__outer
+      .offcanvas__inner
+        header.page__header(role='banner')
+          include ../partials/_header.jade
+          include ../partials/_offcanvas.jade
+
+        main#maincontent(role='content')
+          block content
+
+        footer(role='contentinfo')
+          include ../partials/_footer.jade
+        .offcanvas__overlay
+
+    script(src='/js/application.js', async='true')
+    block scripts
+
+    //- TODO: polyfills rem with conditional

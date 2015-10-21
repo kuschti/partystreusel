@@ -6,12 +6,14 @@ var gulp        = require('gulp'),
     addsrc      = require('gulp-add-src'),
     sass        = require('gulp-sass'),
     coffee      = require("gulp-coffee"),
+    jade        = require('gulp-jade'),
     bourbon     = require('node-bourbon').includePaths,
     neat        = require('node-neat').includePaths,
     imagemin    = require('gulp-imagemin'),
     svgSymbols  = require('gulp-svg-symbols'),
-    glob        = require("glob"),
-    gulpicon    = require("gulpicon/tasks/gulpicon");
+    glob        = require('glob'),
+    gulpicon    = require('gulpicon/tasks/gulpicon'),
+    browserSync = require('browser-sync');
 
 var paths = {
   coffee:       './source/javascripts/application.coffee',
@@ -19,7 +21,9 @@ var paths = {
   jspolyfills:  './source/javascripts/polyfills/*',
   sass:         './source/stylesheets/**/*.scss',
   images:       './source/images/*',
-  icons:        './source/icons/svg/*.svg'
+  icons:        './source/icons/svg/*.svg',
+  jade:         './source/jade/*.jade',
+  jadePartials: './source/partials/*.jade'
 }
 
 // STYLES
@@ -29,7 +33,22 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(browserSync.reload({stream: true}))
+});
+
+// JADE
+// ----------------------------------------
+gulp.task('jade', function() {
+  var YOUR_LOCALS = {};
+
+  gulp.src(paths.jade)
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 // JS
@@ -41,6 +60,7 @@ gulp.task('js:coffee', function() {
     .pipe(addsrc.prepend(paths.jsvendor))
     .pipe(concat("application.js"))
     .pipe(gulp.dest('./dist/js'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('js:polyfills', function() {
@@ -98,12 +118,22 @@ gulp.task("gulpiconCleanup", function () {
 // Icon workflow
 gulp.task('icons', ['cleanIcons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpiconCleanup']);
 
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+});
+
 // Watch for file changes
 // ----------------------------------------
 gulp.task('watch', function () {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.icons, ['icons']);
   gulp.watch(paths.coffee, ['coffee']);
+  gulp.watch([paths.jade, paths.jadePartials], ['jade']);
 });
 
 // Clean all dist files
@@ -119,16 +149,16 @@ gulp.task('clean', function () {
 gulp.task('cleanIcons', function () {
   del([
     'dist/images/icons/*',
-    'dist/css/icons/*'
+    'dist/css/icons/*',
   ]);
 });
 
 // Default & build tasks
 // ----------------------------------------
 gulp.task('default', ['clean', 'build'], function() {
-  gulp.start('watch');
+  gulp.start('browser-sync', 'watch');
 });
 
 gulp.task('build', ['clean'], function() {
-  gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills');
+  gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
 });

@@ -12,6 +12,7 @@
     "url": "https://github.com/screenconcept/partystreusel/issues"
   },
   "devDependencies": {
+    "browser-sync": "^2.9.11",
     "del": "^2.0.2",
     "glob": "^5.0.15",
     "gulp": "^3.9.0",
