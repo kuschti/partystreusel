@@ -1,7 +1,13 @@
 doctype html
-
-//- TODO: conditionals
-html.no-js( lang=language )
+<!--[if IE 8]>
+html.no-js.lt-ie10.lt-ie9(lang='en')
+<![endif]-->
+<!--[if IE 9]>
+html.no-js.lt-ie10(lang='en')
+<![endif]-->
+<!--[if gt IE 9]><!-->
+html.no-js(lang='en')
+  <!--<![endif]-->
   head
     meta(charset="utf-8")
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -14,8 +20,11 @@ html.no-js( lang=language )
 
     //- TODO: add your favicons
     include ../partials/_icons.jade
-    //- TODO: html5shiv with conditional
     include ../partials/_helpers.jade
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    script(src='/js/polyfills/html5shiv-printshiv.js')
+    <![endif]-->
 
   body.js-offcanvas
     .offcanvas__outer
@@ -34,4 +43,6 @@ html.no-js( lang=language )
     script(src='/js/application.js', async='true')
     block scripts
 
-    //- TODO: polyfills rem with conditional
+    <!--[if lte IE 8]>
+    script(src='/js/polyfills/rem.js')
+    <![endif]-->
