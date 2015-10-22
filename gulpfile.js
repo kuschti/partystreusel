@@ -4,6 +4,8 @@ var gulp        = require('gulp'),
     include     = require('gulp-include'),
     concat      = require('gulp-concat'),
     addsrc      = require('gulp-add-src'),
+    plumber     = require('gulp-plumber'),
+    notify      = require('gulp-notify'),
     sass        = require('gulp-sass'),
     coffee      = require("gulp-coffee"),
     jade        = require('gulp-jade'),
@@ -16,14 +18,14 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync');
 
 var paths = {
-  coffee:       './source/javascripts/application.coffee',
-  jsvendor:     './source/javascripts/vendor/*.js',
-  jspolyfills:  './source/javascripts/polyfills/*',
-  sass:         './source/stylesheets/**/*.scss',
-  images:       './source/images/*',
-  icons:        './source/icons/svg/*.svg',
-  jade:         './source/jade/*.jade',
-  jadePartials: './source/partials/*.jade'
+  coffee:       'source/javascripts/application.coffee',
+  jsvendor:     'source/javascripts/vendor/*.js',
+  jspolyfills:  'source/javascripts/polyfills/*',
+  sass:         'source/stylesheets/**/*.scss',
+  images:       'source/images/*',
+  icons:        'source/icons/svg/*.svg',
+  jade:         'source/styleguide/*.jade',
+  jadePartials: 'source/partials/*.jade'
 }
 
 // STYLES
@@ -43,10 +45,15 @@ gulp.task('jade', function() {
   var YOUR_LOCALS = {};
 
   gulp.src(paths.jade)
+    .pipe(plumber())
     .pipe(jade({
       locals: YOUR_LOCALS,
       pretty: true
     }))
+    .on('error', notify.onError())
+    .on('error', function(err) {
+      console.log("Error:", err);
+    })
     .pipe(gulp.dest('./dist/'))
     .pipe(browserSync.reload({stream: true}))
 });

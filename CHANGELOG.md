@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## 3.0.0-beta
+* switch from sass to scss syntax
+* switch from grunt to gulp
+* add browsersync as server
+* add gulp compilation of sass, coffee, jade, bourbon, neat, icons
+* replace grunticon with gulpicon
+* change haml files to jade
+* remove ruby & middleman dependency
 
 ## 2.0.0
 

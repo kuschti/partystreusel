@@ -1,0 +1,10 @@
+extends ../layouts/_layout.jade
+
+block module_header
+  - var moduleTitle = 'Switches'
+
+block content
+  section
+    .switch
+      input(type='checkbox', name="Switch 1", id='switch1')
+      label(for='switch1') Published

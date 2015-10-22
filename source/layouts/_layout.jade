@@ -31,10 +31,17 @@ html.no-js(lang='en')
       .offcanvas__inner
         header.page__header(role='banner')
           include ../partials/_header.jade
-          include ../partials/_offcanvas.jade
+          include ../partials/_offcanvas_nav.jade
 
         main#maincontent(role='content')
-          block content
+          article
+            block module_header
+            if moduleTitle
+              header
+                h1 #{moduleTitle}
+                a( href='/') Back to Index
+              hr
+            block content
 
         footer(role='contentinfo')
           include ../partials/_footer.jade

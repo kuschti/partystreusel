@@ -1,0 +1,22 @@
+extends ../layouts/_layout.jade
+
+block module_header
+  - var moduleTitle = 'Slider'
+
+block content
+  section.slider.js-slider
+    ul.slider__list
+      li.slider__item
+        img(src='https://unsplash.it/1200/675/?random', width='1200', height='675')
+      li.slider__item
+        img(src='https://unsplash.it/1200/675/?random', width='1200', height='675')
+      li.slider__item
+        img(src='https://unsplash.it/1200/675/?random', width='1200', height='675')
+
+    .slider__controls
+      .slider__control-prev
+        +icon('arrow-left')
+      .slider__control-next
+        +icon('arrow-right')
+
+    .slider__nav
