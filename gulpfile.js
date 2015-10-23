@@ -111,7 +111,7 @@ var gulpiconFiles = glob.sync(paths.icons)
       cssprefix: '.icon--',
       pngpath: "images/icons/png",
       pngfolder: 'png',
-      previewhtml: "../../../source/styleguide/icons.html.haml",
+      previewhtml: "../../../source/styleguide/icons.jade",
       template: 'source/icons/templates/_icons_stylesheet.hbs',
       previewTemplate: 'source/icons/templates/_icons_preview.hbs'
     };
