@@ -1,0 +1,10 @@
+linters:
+  SelectorFormat:
+    enabled: true
+    convention: '^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$'
+
+  NameFormat:
+    convention: '^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$'
+
+  PropertySortOrder:
+    enabled: false

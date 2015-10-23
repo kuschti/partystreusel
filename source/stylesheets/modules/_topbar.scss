@@ -1,19 +1,21 @@
 $topbar__border: rem(1) solid $grey;
 
 .topbar__mobile-menu {
-  display: block;
-  padding: 0 rem(12);
   background-color: $grey-light;
   border-bottom: $topbar__border;
   color: $grey-dark;
+  display: block;
+  padding: 0 rem(12);
   text-align: right;
+
   button {
-    border: 0;
     background-color: $grey-light;
-    position: relative;
+    border: 0;
     color: $body-font-color;
-    padding: rem(7) 0 rem(6) rem(6);
     outline: none;
+    padding: rem(7) 0 rem(6) rem(6);
+    position: relative;
+
     &:hover {
       color: $grey-dark;
     }
@@ -24,24 +26,28 @@ $topbar__border: rem(1) solid $grey;
 .topbar__sub-list {
   display: none;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .topbar__item {
-  display: block;
   background-color: $grey-light;
+  display: block;
+
   a {
+    border-bottom: $topbar__border;
     display: block;
     padding: rem(12);
-    border-bottom: $topbar__border;
   }
+
   > a {
     color: $grey-dark;
   }
+
   &:hover {
+    @include transition(all .1s linear);
     background-color: $white;
-    @include transition(all 0.1s linear);
+
     > a {
       color: $body-font-color;
     }
@@ -54,11 +60,13 @@ $topbar__border: rem(1) solid $grey;
 
 .topbar__sub-item {
   display: block;
+
   > a {
-    padding-left: rem(30);
     background-color: $white;
     border-color: $white;
     color: $grey-dark;
+    padding-left: rem(30);
+
     &:hover {
       color: $body-font-color;
     }
@@ -71,6 +79,7 @@ $topbar__border: rem(1) solid $grey;
   > a {
     background-color: $grey-light;
     color: $primary-color;
+
     &:hover {
       background-color: $white;
     }
@@ -93,10 +102,13 @@ $topbar__border: rem(1) solid $grey;
   .topbar {
     font-size: rem(18);
   }
+
   .topbar__mobile-menu {
     display: none;
   }
+
   .topbar__list {
+
     &,
     .topbar--open & {
       @include display(flex);
@@ -104,30 +116,36 @@ $topbar__border: rem(1) solid $grey;
       @include flex-direction(row);
     }
   }
+
   .topbar__item {
-    position: relative;
-    border-right: $topbar__border;
     @include flex(1 1 auto);
+    border-right: $topbar__border;
+    position: relative;
+
     > a {
       padding: rem(11) rem(18);
       text-align: center;
     }
+
     &:last-child {
       border-right: 0;
+
       .topbar__sub-list {
-        right: 0;
         left: auto;
+        right: 0;
       }
     }
   }
+
   .topbar__sub-list {
-    position: absolute;
-    left: rem(-1);
-    min-width: rem(230);
     border: $topbar__border;
     border-top-width: 0;
     box-shadow: rem(2) rem(2) rem(3) 0 $grey-light;
+    left: rem(-1);
+    min-width: rem(230);
+    position: absolute;
   }
+
   .topbar__sub-item {
     a {
       padding: rem(11) rem(18);
@@ -138,13 +156,16 @@ $topbar__border: rem(1) solid $grey;
     .topbar__mobile-menu {
       display: none;
     }
+
     .topbar__list {
       width: 100%;
+
       &,
       .topbar--open & {
         display: table;
       }
     }
+
     .topbar__item {
       display: table-cell;
     }

@@ -20,12 +20,14 @@
   font-weight: $header-font-weight;
   cursor: pointer;
   color: $body-font-color;
+
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
   }
+
   &:before {
     width: rem(40);
     height: rem(40);
@@ -35,11 +37,13 @@
     border: rem(1) solid $grey;
     border-radius: $border-radius--round;
   }
+
   &:after {
+    @include triangle(rem(10), currentColor, down);
     top: rem(31);
     right: rem(15);
-    @include triangle(rem(10), currentColor, down);
   }
+
   &:hover {
     color: $grey;
   }
@@ -53,12 +57,14 @@
 .accordion__item--open {
   .accordion__title {
     color: $primary-color;
+
     &:after {
+      @include triangle(rem(10), currentColor, up);
       top: rem(30);
       border-top: 0;
-      @include triangle(rem(10), currentColor, up);
     }
   }
+
   .accordion__content {
     display: block;
   }
@@ -79,9 +85,11 @@
     padding-top: rem(24);
     font-size: rem(20);
     line-height: 1.2;
+
     &:before {
       top: rem(15);
     }
+
     &:after {
       top: rem(33);
     }
