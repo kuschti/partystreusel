@@ -149,7 +149,8 @@ gulp.task('clean', function () {
   return del([
     'dist/css/**/*',
     'dist/js/**/*',
-    'dist/images/**/*'
+    'dist/images/**/*',
+    'dist/**/*.html'
   ]);
 });
 
