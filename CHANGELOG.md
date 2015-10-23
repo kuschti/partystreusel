@@ -11,7 +11,9 @@
 
 ## 2.0.0
 
-* Last release with support for rails/middleman
+* Last release for rails&middleman
+* fix engine mounting
+* a few bugfixes
 
 ## 1.2.0
 
