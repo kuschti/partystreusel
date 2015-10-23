@@ -2,7 +2,7 @@
 
 ## Getting started
 
-You will need [Node.js](http://nodejs.org) and [Ruby](https://www.ruby-lang.org)
+You will need [Node.js](http://nodejs.org)
 
 
     $ git clone https://github.com/screenconcept/partystreusel.git YOUR_APP_DIRECTORY
@@ -10,19 +10,17 @@ You will need [Node.js](http://nodejs.org) and [Ruby](https://www.ruby-lang.org)
     $ git remote rename origin upstream
 
     # Install dependencies
-    $ bundle
     $ npm install
 
     # Install Gulp globally if not already present
     $ npm install --global gulp
 
-    # Run gulp to build css files
+    # Run gulp to build all files
     $ gulp build
 
-    # Run middleman to start middleman server
-    $ bundle exec middleman
+    # Or you can run ony gulp task to start a local server
+    $ gulp
 
-    # To view styleguide, open http://localhost:4567 in your browser
 
 ## Documentation
 
