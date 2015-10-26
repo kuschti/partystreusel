@@ -1,21 +1,22 @@
-var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
-    del         = require('del'),
-    include     = require('gulp-include'),
-    concat      = require('gulp-concat'),
-    addsrc      = require('gulp-add-src'),
-    plumber     = require('gulp-plumber'),
-    notify      = require('gulp-notify'),
-    sass        = require('gulp-sass'),
-    coffee      = require("gulp-coffee"),
-    jade        = require('gulp-jade'),
-    bourbon     = require('node-bourbon').includePaths,
-    neat        = require('node-neat').includePaths,
-    imagemin    = require('gulp-imagemin'),
-    svgSymbols  = require('gulp-svg-symbols'),
-    glob        = require('glob'),
-    gulpicon    = require('gulpicon/tasks/gulpicon'),
-    browserSync = require('browser-sync');
+// Modules
+var gulp          = require('gulp'),
+    gutil         = require('gulp-util'),
+    del           = require('del'),
+    include       = require('gulp-include'),
+    concat        = require('gulp-concat'),
+    addsrc        = require('gulp-add-src'),
+    plumber       = require('gulp-plumber'),
+    notify        = require('gulp-notify'),
+    sass          = require('gulp-sass'),
+    coffee        = require("gulp-coffee"),
+    jade          = require('gulp-jade'),
+    bourbon       = require('node-bourbon').includePaths,
+    neat          = require('node-neat').includePaths,
+    imagemin      = require('gulp-imagemin'),
+    svgSymbols    = require('gulp-svg-symbols'),
+    glob          = require('glob'),
+    gulpicon      = require('gulpicon/tasks/gulpicon'),
+    browserSync   = require('browser-sync');
 
 var paths = {
   coffee:       'source/javascripts/application.coffee',
@@ -118,19 +119,20 @@ var gulpiconFiles = glob.sync(paths.icons)
 
 gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
 
-gulp.task("gulpiconCleanup", function () {
+gulp.task("gulpicon:cleanup", function () {
   del('dist/images/icons/*.js');
 });
 
 // Icon workflow
-gulp.task('icons', ['cleanIcons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpiconCleanup']);
+gulp.task('icons', ['clean:icons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpicon:cleanup']);
 
 // Static server
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./dist/"
-        }
+          baseDir: "./dist/"
+        },
+        notify: false
     });
 });
 
@@ -154,7 +156,7 @@ gulp.task('clean', function () {
   ]);
 });
 
-gulp.task('cleanIcons', function () {
+gulp.task('clean:icons', function () {
   del([
     'dist/images/icons/*',
     'dist/css/icons/*',
@@ -163,9 +165,7 @@ gulp.task('cleanIcons', function () {
 
 // Default & build tasks
 // ----------------------------------------
-gulp.task('default', ['clean', 'build', 'watch'], function() {
-  gulp.start('browser-sync');
-});
+gulp.task('default', ['browser-sync', 'watch']);
 
 gulp.task('build', ['clean'], function() {
   gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
