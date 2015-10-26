@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+
   > li {
     border-top: rem(1) solid darken($primary-color, 5%);
   }
@@ -20,6 +21,7 @@
   padding: 0;
   list-style-type: none;
   display: none;
+
   a {
     padding-left: rem(36);
   }

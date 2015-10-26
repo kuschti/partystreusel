@@ -31,7 +31,7 @@
 
 .teaser__subtitle {
   color: $grey-dark;
-  margin-bottom: space(.5);
+  margin-bottom: space(0.5);
 }
 
 .teaser__link {
@@ -41,7 +41,7 @@
 
 .teaser__img {
   height: auto;
-  margin-bottom: space(.5);
+  margin-bottom: space(0.5);
   width: 100%;
 }
 
@@ -54,7 +54,7 @@
   }
 
   .teaser__img {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 

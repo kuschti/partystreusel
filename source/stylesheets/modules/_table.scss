@@ -13,25 +13,30 @@ table {
 thead {
   color: $white;
   text-align: left;
+
   th {
     background-color: $primary-color;
+
     &:first-of-type {
-      border-radius: $table__space * 2 0 0 0;
+      border-radius: ($table__space * 2) 0 0;
     }
+
     &:last-of-type {
-      border-radius: 0 $table__space * 2 0 0;
+      border-radius: 0 ($table__space * 2) 0 0;
     }
   }
 }
 
 tbody {
   tr {
-    background-color: $secondary-color;
     @include transition(all 0.1s linear);
+    background-color: $secondary-color;
+
     &:nth-child(odd) {
       background-color: $grey-light;
       color: $grey-dark;
     }
+
     &:hover {
       background-color: $white;
       color: $body-font-color;
@@ -42,8 +47,9 @@ tbody {
 td,
 th {
   min-width: rem(100);
-  padding: $table__space $table__space $table__space $table__space;
+  padding: $table__space;
   border-right: rem(2) solid $grey-dark;
+
   &:last-child {
     border-right: 0;
   }

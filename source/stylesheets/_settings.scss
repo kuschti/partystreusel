@@ -19,7 +19,7 @@ $breakpoints: (
 
 // Debug Grid
 $visual-grid: false;
-$visual-grid-color: red;
+$visual-grid-color: #f00;
 $visual-grid-index: back;
 $visual-grid-opacity: 0.1;
 
@@ -37,8 +37,8 @@ $grid__paddings: (
 // --------------------------
 
 // COLOR definitions
-$black: #333333;
-$white: white;
+$black: #333;
+$white: #fff;
 $grey-dark: rgb(172, 172, 172);
 $grey: rgb(215, 215, 215);
 $grey-light: rgb(240, 240, 240);

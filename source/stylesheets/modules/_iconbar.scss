@@ -7,9 +7,10 @@
 }
 
 .iconbar__item {
+  @include flex(1 0 33%);
   display: block;
   min-width: 33%;
-  @include flex(1 0 33%);
+
   a {
     display: block;
     padding: rem(12);
@@ -17,7 +18,14 @@
     color: $grey-dark;
     text-align: center;
     border-bottom: rem(3) solid currentColor;
+
+    &:hover {
+      @include transition(all 0.1s linear);
+      background-color: $white;
+      color: $body-font-color;
+    }
   }
+
   .icon {
     display: block;
     margin: 0 auto rem(5);
@@ -25,14 +33,6 @@
 }
 
 // STATES
-.iconbar__item {
-  a:hover {
-    background-color: $white;
-    color: $body-font-color;
-    @include transition(all 0.1s linear);
-  }
-}
-
 .iconbar__item a:focus,
 .iconbar__item--active a,
 .iconbar__item--active a:hover {
@@ -46,6 +46,7 @@
     @include align-items(center);
     @include flex-direction(row);
   }
+
   .iconbar__item {
     @include flex(1 1 auto);
     min-width: 0;

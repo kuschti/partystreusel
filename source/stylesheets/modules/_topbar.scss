@@ -45,7 +45,7 @@ $topbar__border: rem(1) solid $grey;
   }
 
   &:hover {
-    @include transition(all .1s linear);
+    @include transition(all 0.1s linear);
     background-color: $white;
 
     > a {

@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
-  margin: 0 0 rem(18) 0;
+  margin: 0 0 rem(18);
+
   .btn {
     margin-bottom: 0;
   }
@@ -15,10 +16,11 @@
   float: left;
   min-width: rem(160);
   padding: rem(6) 0;
-  margin: rem(2) 0 0 0;
+  margin: rem(2) 0 0;
   list-style: none;
   background-color: $white;
   border: rem(1) solid $grey;
+
   a {
     display: block;
     padding: rem(5) rem(12);

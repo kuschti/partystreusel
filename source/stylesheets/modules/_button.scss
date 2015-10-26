@@ -1,10 +1,13 @@
 $btn__size: rem(23);
 
 .btn {
+  @include user-select(none);
+  @include appearance(none);
+  @include transition(all 0.1s ease-in-out);
   display: inline-block;
   position: relative;
   cursor: pointer;
-  margin: 0 0 rem(18) 0;
+  margin: 0 0 rem(18);
   padding: rem(7) rem(12) rem(8);
   background-color: $primary-color;
   border: rem(1) solid $primary-color;
@@ -16,30 +19,32 @@ $btn__size: rem(23);
   text-transform: uppercase;
   color: $white;
   box-shadow: $grey-light rem(2) rem(2) rem(2) 0;
-  @include user-select(none);
-  @include appearance(none);
-  @include transition(all 0.1s ease-in-out);
+
   .icon {
     width: $btn__size;
     height: $btn__size;
     vertical-align: top;
   }
+
   &:hover {
     color: $white;
     background: $grey-dark;
     border-color: $grey-dark;
   }
+
   &:active,
   &.btn--active {
+    @include transition(none);
     color: $white;
     background: $black;
     border-color: $black;
     box-shadow: none;
-    @include transition(none);
   }
+
   &:focus {
     outline: 0;
   }
+
   // SECONDARY STYLE
   &--secondary {
     &,
@@ -47,14 +52,17 @@ $btn__size: rem(23);
       background-color: $white;
       box-shadow: $secondary-color rem(1) rem(1) rem(2) 0;
     }
+
     &,
     &:hover {
       color: $body-font-color;
       border-color: $secondary-color;
     }
+
     &:hover {
       background-color: $grey-light;
     }
+
     &:active,
     &.btn--active {
       box-shadow: none;
@@ -63,6 +71,7 @@ $btn__size: rem(23);
       border-color: $grey-light;
     }
   }
+
   // TERTIARY STYLE
   &--tertiary {
     &,
@@ -70,6 +79,7 @@ $btn__size: rem(23);
       box-shadow: none;
       color: $secondary-color;
     }
+
     &,
     &:hover,
     &:active,
@@ -77,55 +87,66 @@ $btn__size: rem(23);
       border-color: transparent;
       background-color: transparent;
     }
+
     &:hover {
       color: $body-font-color;
     }
+
     &:active,
     &.btn--active {
       color: $primary-color;
     }
   }
+
   // ONLY ICON STYLE
   &--icon {
     width: rem(40);
     height: rem(40);
     padding: rem(8) 0;
     background: transparent;
-    border: none;
+    border: 0;
     box-shadow: none;
     color: $secondary-color;
+
     &:hover,
     &:active {
       border-radius: $border-radius--round;
       background-color: $grey-light;
     }
+
     &:hover {
       color: $body-font-color;
     }
+
     &:active {
       color: $primary-color;
     }
   }
+
   // SMALL STYLE
   &--small {
     padding-top: rem(5);
     padding-bottom: rem(5);
   }
+
   // EXPANDED STYLE
   &--expanded {
     width: 100%;
   }
+
   // GROUP CONTAINER
   &__group {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     margin: rem(12) 0 rem(18);
+
     > .btn {
       position: relative;
       float: left;
       margin-right: rem(1);
       margin-bottom: rem(1);
+
       &:last-child {
         margin-right: 0;
       }

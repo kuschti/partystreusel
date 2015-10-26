@@ -37,6 +37,7 @@ textarea {
   padding: rem(9) rem(12);
   font-size: rem(16);
   line-height: 1.5;
+
   &:focus {
     outline: 0;
     background-color: $white;
@@ -44,11 +45,12 @@ textarea {
   }
 }
 
-input[type="search"] {
+[type="search"] {
   box-sizing: border-box;
 }
 
 select {
+  @include appearance(none);
   width: 100%;
   height: rem(44);
   padding: rem(9) rem(30) rem(9) rem(12);
@@ -61,14 +63,16 @@ select {
   color: $grey-dark;
   font-size: rem(16);
   line-height: 1.5;
-  @include appearance(none);
+
   .lt-ie10 & {
     background-image: none;
     padding-right: rem(12);
   }
+
   &::-ms-expand {
     display: none;
   }
+
   &:hover {
     color: $primary-color;
     cursor: pointer;
@@ -91,6 +95,7 @@ select {
 // INPUT WITH ICON BUTTON INSIDE
 .input-overlay {
   position: relative;
+
   .input-overlay__input {
     padding-right: rem(50);
   }
@@ -102,9 +107,11 @@ select {
   bottom: 0;
   margin-bottom: 0;
   color: $body-font-color;
+
   &:hover {
     color: $grey-dark;
   }
+
   &,
   &:hover,
   &:active {
@@ -117,6 +124,7 @@ select {
   label {
     color: $alert-color;
   }
+
   input {
     border-color: $alert-color;
   }
@@ -129,10 +137,12 @@ select {
   .form--horizontal {
     @include outer-container;
     margin-bottom: rem(18);
+
     label {
       @include span-columns(3);
       padding-top: rem(9);
     }
+
     input,
     select {
       @include span-columns(9);

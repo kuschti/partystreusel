@@ -5,14 +5,16 @@
   padding: rem(7) rem(30) rem(7) 0;
   font-size: $paragraph-font-size;
   color: $grey-dark;
+
   &:after {
-    content: "";
+    @include triangle(rem(10), currentColor, down);
+    content: '';
     display: inline-block;
     position: absolute;
     top: rem(15);
     right: rem(10);
-    @include triangle(rem(10), currentColor, down);
   }
+
   &:hover {
     color: $primary-color;
   }
@@ -31,6 +33,7 @@
       border-right-color: transparent;
       border-bottom: rem(5) solid currentColor;
     }
+
     &:hover:after {
       border-bottom-color: $primary-color;
     }

@@ -4,7 +4,7 @@ $tab__space: space(1);
   @include clearfix;
   display: block;
   list-style: none;
-  padding: 0 $tab__space $tab__space $tab__space;
+  padding: 0 $tab__space $tab__space;
   margin: $tab__space 0 $tab__space * 2;
   background-color: $secondary-color;
 }
@@ -13,14 +13,17 @@ $tab__space: space(1);
   display: block;
   float: left;
   margin: $tab__space $tab__space 0 0;
+
   &:last-child {
     margin-right: 0;
   }
+
   a {
     display: block;
     background-color: $grey-light;
     color: $grey-dark;
     padding: $tab__space;
+
     &:hover {
       color: $tertiary-color;
     }
@@ -50,6 +53,7 @@ $tab__space: space(1);
     margin-top: $tab__space * 2;
     padding: 0 $tab__space * 2;
   }
+
   .tab__nav-item {
     margin: $tab__space * 2 $tab__space 0 0;
     font-size: rem(18);

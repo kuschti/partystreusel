@@ -163,8 +163,8 @@ gulp.task('cleanIcons', function () {
 
 // Default & build tasks
 // ----------------------------------------
-gulp.task('default', ['clean', 'build'], function() {
-  gulp.start('browser-sync', 'watch');
+gulp.task('default', ['clean', 'build', 'watch'], function() {
+  gulp.start('browser-sync');
 });
 
 gulp.task('build', ['clean'], function() {

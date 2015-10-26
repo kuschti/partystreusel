@@ -9,6 +9,7 @@
   &:nth-child(#{$nth}) {
     margin-right: +flex-gutter();
   }
+
   &:nth-child(#{$nth}+1) {
     clear: none;
   }
@@ -16,17 +17,17 @@
 
 // Mixin for Media Queries
 @mixin mq($mq__breakpoint, $mq__breakpoints: $breakpoints) {
-  $mq__media-query: "screen and";
+  $mq__media-query: 'screen and';
   @if $mq__breakpoint == landscape or $mq__breakpoint == portrait {
     $mq__media-query: "#{$mq-media-query} (orientation: #{$mq__breakpoint})";
-  }
-  @else {
+  } @else {
     // If $mq__breakpoint is a key that exists in
     // $mq__breakpoints, get and use the value
     @if map-has-key($mq__breakpoints, $mq__breakpoint) {
       $mq__breakpoint: map-get($mq__breakpoints, $mq__breakpoint);
     }
   }
+
   @media screen and (min-width: #{$mq__breakpoint}) {
     @content;
   }
