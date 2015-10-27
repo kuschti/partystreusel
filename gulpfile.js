@@ -16,7 +16,8 @@ var gulp          = require('gulp'),
     svgSymbols    = require('gulp-svg-symbols'),
     glob          = require('glob'),
     gulpicon      = require('gulpicon/tasks/gulpicon'),
-    browserSync   = require('browser-sync');
+    browserSync   = require('browser-sync'),
+    autoprefixer  = require('gulp-autoprefixer');;
 
 var paths = {
   coffee:       'source/javascripts/application.coffee',
@@ -36,6 +37,7 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
+    .pipe(autoprefixer('last 2 version', 'ie 9'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.reload({stream: true}))
 });
