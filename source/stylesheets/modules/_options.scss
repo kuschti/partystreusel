@@ -1,0 +1,185 @@
+$option__radio-size: rem(24);
+$option__checkbox-size: rem(20);
+$option__border-size: rem(1);
+$option__label-size: rem(42);
+$option__label-padding: ($option__label-size - $option__radio-size) / 2;
+
+$option__radio-knuble-size: $option__radio-size / 2;
+$option__radio-knuble-distance: $option__radio-knuble-size / 2;
+
+$option__checkbox-knuble-size: $option__checkbox-size / 2;
+$option__checkbox-knuble-distance: $option__checkbox-knuble-size / 2;
+
+$option--alternate-color: $white;
+
+[type="radio"],
+[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  width: rem(1);
+  height: rem(1);
+  padding: 0;
+  margin: rem(-1);
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  + label {
+    position: relative;
+    vertical-align: top;
+    padding: $option__label-padding $option__label-padding $option__label-padding $option__label-size;
+    margin-bottom: 0;
+
+    i {
+      position: absolute;
+
+      &:before {
+        content: '';
+        display: block;
+        border: $option__border-size solid $grey;
+        background-color: $white;
+      }
+
+      &:after {
+        content: '';
+        display: none;
+        position: absolute;
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &:checked,
+  &:checked:hover {
+    + label {
+      color: $primary-color;
+
+      i {
+
+        &:before {
+          color: $primary-color;
+          border-color: currentColor;
+        }
+
+        &:after {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &:not(:checked) + label:hover {
+    i:before {
+      color: $grey-dark;
+      border-color: currentColor;
+    }
+  }
+}
+
+[type="radio"] {
+  + label i {
+    display: block;
+    top: ($option__label-size - $option__radio-size) / 2;
+    left: ($option__label-size - $option__radio-size) / 2;
+
+    &:before {
+      width: $option__radio-size;
+      height: $option__radio-size;
+    }
+
+    &:after {
+      width: $option__radio-knuble-size;
+      height: $option__radio-knuble-size;
+      left: $option__radio-knuble-distance;
+      top: $option__radio-knuble-distance;
+    }
+
+    &:before,
+    &:after {
+      border-radius: $border-radius--round;
+    }
+  }
+}
+
+[type="checkbox"] {
+  + label i {
+    top: ($option__label-size - $option__checkbox-size) / 2;
+    left: ($option__label-size - $option__checkbox-size) / 2;
+
+    &:before {
+      width: $option__checkbox-size;
+      height: $option__checkbox-size;
+    }
+
+    &:after {
+      width: $option__checkbox-knuble-size;
+      height: $option__checkbox-knuble-size;
+      left: $option__checkbox-knuble-distance;
+      top: $option__checkbox-knuble-distance;
+    }
+  }
+}
+
+// --------------------------
+// STATES
+// --------------------------
+.option--alternate {
+  + label {
+    color: $option--alternate-color;
+
+    i {
+
+      &:before {
+        border-color: $option--alternate-color;
+        background-color: transparent;
+      }
+
+      &:after {
+        background-color: $option--alternate-color;
+      }
+    }
+  }
+
+  &:checked,
+  &:checked:hover {
+    + label {
+      color: $option--alternate-color;
+
+      i {
+        &:before {
+          color: $option--alternate-color;
+        }
+      }
+    }
+  }
+
+  &:not(:checked) + label:hover {
+    i:before {
+      color: $option--alternate-color;
+    }
+  }
+}
+
+// --------------------------
+// IE8 Fallback
+// --------------------------
+.lt-ie9 {
+  [type="radio"],
+  [type="checkbox"] {
+    position: inherit;
+    overflow: visible;
+    width: 20px;
+    height: 20px;
+    padding: inherit;
+    margin: inherit;
+    border: inherit;
+    clip: auto;
+
+    + label {
+      padding: 0;
+
+      i {
+        display: none;
+      }
+    }
+  }
+}

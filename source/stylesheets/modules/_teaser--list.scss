@@ -1,0 +1,61 @@
+.teaser--list {
+  .teaser__img,
+  .teaser__content {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .teaser__img {
+    width: 25%;
+    margin-right: space(1);
+    margin-bottom: 0;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .teaser__content {
+    overflow: hidden;
+    padding: space(1) space(1) 0;
+  }
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  .teaser--list {
+    .teaser__item {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    .teaser__content {
+      p {
+        font-size: $paragraph-font-size * 1.125;
+      }
+    }
+  }
+}
+
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .teaser--list {
+    .teaser__item {
+      @include span-columns(6);
+      @include flex(0 1 auto);
+      @include omega(2n);
+    }
+
+    .teaser__content {
+      padding: space(1.5) space(2) 0;
+
+      p {
+        font-size: $paragraph-font-size * 1.25;
+      }
+    }
+  }
+}

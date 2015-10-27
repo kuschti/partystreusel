@@ -1,0 +1,151 @@
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 rem(18);
+}
+
+legend {
+  text-transform: uppercase;
+  font-weight: $header-font-weight;
+  margin-bottom: rem(6);
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: rem(6);
+  cursor: pointer;
+  color: $grey-dark;
+  font-size: rem(16);
+  line-height: 1.5;
+}
+
+input {
+  @include placeholder {
+    color: $grey-dark;
+  }
+}
+
+#{$all-text-inputs},
+textarea {
+  display: block;
+  width: 100%;
+  background-color: $grey-light;
+  border: rem(1) solid $grey-light;
+  border-radius: 0;
+  box-shadow: inset rem(1) rem(1) rem(3) 0 $secondary-color;
+  padding: rem(9) rem(12);
+  font-size: rem(16);
+  line-height: 1.5;
+
+  &:focus {
+    outline: 0;
+    background-color: $white;
+    box-shadow: rem(0) rem(1) rem(2) 0 $secondary-color;
+  }
+}
+
+[type="search"] {
+  box-sizing: border-box;
+}
+
+select {
+  @include appearance(none);
+  width: 100%;
+  height: rem(44);
+  padding: rem(9) rem(30) rem(9) rem(12);
+  background-color: $white;
+  background-image: url(data:image/svg+xml;charset=US-UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2214%22%20viewBox%3D%22-281%20400%2024%2014%22%20enable-background%3D%22new%20-281%20400%2024%2014%22%3E%3Cpath%20fill%3D%22#{$primary-color}%22%20d%3D%22M-275%20406l6-6%206%206zM-263%20408l-6%206-6-6z%22%2F%3E%3C%2Fsvg%3E);
+  background-position: right rem(5) center;
+  background-repeat: no-repeat;
+  border: rem(1) solid $grey;
+  border-radius: 0;
+  color: $grey-dark;
+  font-size: rem(16);
+  line-height: 1.5;
+
+  .lt-ie10 & {
+    background-image: none;
+    padding-right: rem(12);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+// INPUT WITH BUTTON ON THE SIDE
+.input-addon {
+  @include display(flex);
+}
+
+.input-addon__field {
+  @include flex(1);
+}
+
+.input-addon__item {
+  margin-bottom: 0;
+}
+
+// INPUT WITH ICON BUTTON INSIDE
+.input-overlay {
+  position: relative;
+
+  .input-overlay__input {
+    padding-right: rem(50);
+  }
+}
+
+.input-overlay__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  color: $body-font-color;
+
+  &:hover {
+    color: $grey-dark;
+  }
+
+  &,
+  &:hover,
+  &:active {
+    background-color: transparent;
+  }
+}
+
+// STATES
+.form--field-error {
+  label {
+    color: $alert-color;
+  }
+
+  input {
+    border-color: $alert-color;
+  }
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  // STATES
+  .form--horizontal {
+    @include outer-container;
+    margin-bottom: rem(18);
+
+    label {
+      @include span-columns(3);
+      padding-top: rem(9);
+    }
+
+    input,
+    select {
+      @include span-columns(9);
+    }
+  }
+}

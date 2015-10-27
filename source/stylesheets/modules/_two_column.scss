@@ -1,0 +1,12 @@
+.two-column {
+  @include outer-container;
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .two-column__first,
+  .two-column__second {
+    @include span-columns(6);
+  }
+}
