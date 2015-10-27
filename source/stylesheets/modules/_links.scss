@@ -61,6 +61,7 @@
 @include mq(medium) {
   .links__item {
     @include span-columns(6);
+
     &:nth-child(2n) {
       margin-right: 0;
     }
@@ -74,6 +75,7 @@
   .links__item {
     @include span-columns(4);
     @include omega(3n);
+
     &:nth-child(2n) {
       margin-right: +flex-gutter();
     }

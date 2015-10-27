@@ -20,10 +20,8 @@ label {
   line-height: 1.5;
 }
 
-input {
-  @include placeholder {
-    color: $grey-dark;
-  }
+input::placeholder {
+  color: $grey-dark;
 }
 
 #{$all-text-inputs},
@@ -50,7 +48,7 @@ textarea {
 }
 
 select {
-  @include appearance(none);
+  appearance: none;
   width: 100%;
   height: rem(44);
   padding: rem(9) rem(30) rem(9) rem(12);
@@ -81,11 +79,11 @@ select {
 
 // INPUT WITH BUTTON ON THE SIDE
 .input-addon {
-  @include display(flex);
+  display: flex;
 }
 
 .input-addon__field {
-  @include flex(1);
+  flex: 1;
 }
 
 .input-addon__item {

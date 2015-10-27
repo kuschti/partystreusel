@@ -6,21 +6,19 @@ $switch__radius: $switch__height;
 $switch__knob-size: $switch__height - $switch__inner-space * 2;
 
 .switch {
-  @include user-select(none);
   display: inline-block;
   position: relative;
   margin-bottom: rem(18);
   cursor: pointer;
   height: $switch__height;
   width: $switch__width;
+  user-select: none;
   -webkit-tap-highlight-color: rgba($black, 0);
 
   input {
     display: none;
 
     + label {
-      @include transition(all 0.15s ease-out);
-      @include transform(translate3d(0, 0, 0));
       @include hide-text;
       display: block;
       position: relative;
@@ -29,9 +27,10 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
       cursor: pointer;
       background: $grey;
       border-radius: $switch__radius;
+      transition: all 0.15s ease-out;
+      transform: translate3d(0, 0, 0);
 
       &:after {
-        @include transition(all 0.15s ease-out);
         content: '';
         display: block;
         background: $white;
@@ -41,6 +40,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
         width: $switch__knob-size;
         height: $switch__knob-size;
         border-radius: $switch__radius;
+        transition: all 0.15s ease-out;
       }
     }
   }

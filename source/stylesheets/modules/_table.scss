@@ -29,7 +29,7 @@ thead {
 
 tbody {
   tr {
-    @include transition(all 0.1s linear);
+    transition: all 0.1s linear;
     background-color: $secondary-color;
 
     &:nth-child(odd) {

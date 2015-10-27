@@ -1,15 +1,15 @@
 .teaser--assets {
   .teaser__container {
-    @include display(flex);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .teaser__item {
-    @include display(flex);
     @include span-columns(6);
-    @include flex(0 1 auto);
     @include omega(2n);
+    display: flex;
+    flex: 0 1 auto;
   }
 
   .teaser__img {
@@ -23,8 +23,6 @@
   }
 
   .teaser__content {
-    @include transform(translate3d(0, 100%, 0));
-    @include transition(transform 0.35s);
     display: block;
     width: 100%;
     position: absolute;
@@ -33,6 +31,8 @@
     padding: space(1);
     font-size: rem(16);
     background-color: rgba($white, 0.5);
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.35s;
   }
 
   .teaser__btn {
@@ -45,7 +45,7 @@
   // STATES
   .teaser__link:hover {
     .teaser__content {
-      @include transform(translate3d(0, 0, 0));
+      transform: translate3d(0, 0, 0);
     }
   }
 }

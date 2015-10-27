@@ -30,6 +30,9 @@ var paths = {
   jadePartials: 'source/partials/*.jade'
 }
 
+// Browser defintion for autoprefixer
+var autoprefixerOptions = ['last 2 version', 'ie 9', '> 1%'];
+
 // STYLES
 // ----------------------------------------
 gulp.task('sass', function () {
@@ -37,7 +40,9 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
-    .pipe(autoprefixer('last 2 version', 'ie 9'))
+    .pipe(autoprefixer({
+        browsers: autoprefixerOptions
+      }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.reload({stream: true}))
 });

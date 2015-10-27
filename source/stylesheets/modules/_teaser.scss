@@ -62,9 +62,9 @@
 // ----------------------------------------
 @include mq(medium) {
   .teaser__container {
-    @include display(flex);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .teaser__container-title {
@@ -72,10 +72,10 @@
   }
 
   .teaser__item {
-    @include display(flex);
     @include span-columns(4);
-    @include flex(0 1 auto);
     @include omega(3n);
+    display: flex;
+    flex: 0 1 auto;
   }
 }
 
