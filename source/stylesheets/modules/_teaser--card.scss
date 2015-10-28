@@ -20,35 +20,13 @@
   }
 }
 
-// MEDIUM
-// ----------------------------------------
-@include mq(medium) {
-  .teaser--card {
-    .teaser__item {
-      &:nth-child(3n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
-      @include omega(2n);
-    }
-  }
-}
-
-
 // LARGE
 // ----------------------------------------
 @include mq(large) {
   .teaser--card {
     .teaser__item {
-      &:nth-child(2n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
       @include span-columns(4);
+      @include omega-reset(2n);
       @include omega(3n);
     }
   }
@@ -60,13 +38,8 @@
 @include mq(xlarge) {
   .teaser--card {
     .teaser__item {
-      &:nth-of-type(3n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
       @include span-columns(3);
+      @include omega-reset(3n);
       @include omega(4n);
     }
   }

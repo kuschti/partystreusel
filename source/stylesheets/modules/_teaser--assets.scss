@@ -31,7 +31,7 @@
     padding: space(1);
     font-size: rem(16);
     background-color: rgba($white, 0.5);
-    transform: translate3d(0, 100%, 0);
+    transform: translate(0, 100%);
     transition: transform 0.35s;
   }
 
@@ -45,22 +45,16 @@
   // STATES
   .teaser__link:hover {
     .teaser__content {
-      transform: translate3d(0, 0, 0);
+      transform: translate(0, 0);
     }
   }
 }
 
 // NO CSS TRANSFORM Fallback
-.no-csstransforms3d {
+.no-csstransforms {
   .teaser--assets {
     .teaser__content {
-      display: none;
-    }
-
-    .teaser__link:hover {
-      .teaser__content {
-        display: block;
-      }
+      display: block;
     }
   }
 }
@@ -70,13 +64,8 @@
 @include mq(medium) {
   .teaser--assets {
     .teaser__item {
-      &:nth-child(2n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
       @include span-columns(4);
+      @include omega-reset(2n);
       @include omega(3n);
     }
 
@@ -96,13 +85,8 @@
 @include mq(large) {
   .teaser--assets {
     .teaser__item {
-      &:nth-child(3n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
       @include span-columns(3);
+      @include omega-reset(3n);
       @include omega(4n);
     }
 
@@ -118,13 +102,8 @@
 @include mq(xlarge) {
   .teaser--assets {
     .teaser__item {
-      &:nth-child(4n) {
-        margin-right: +flex-gutter();
-      }
-    }
-
-    .teaser__item {
       @include span-columns(2);
+      @include omega-reset(4n);
       @include omega(6n);
     }
   }

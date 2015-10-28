@@ -43,9 +43,11 @@ textarea {
   }
 }
 
-[type="search"] {
+// scss-lint:disable QualifyingElement
+input[type="search"] {
   box-sizing: border-box;
 }
+// scss-lint:enable QualifyingElement
 
 select {
   appearance: none;
