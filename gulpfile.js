@@ -1,3 +1,5 @@
+'use strict';
+
 // Modules
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
@@ -113,7 +115,7 @@ gulp.task('svgsprite', function () {
     .pipe(gulp.dest('dist/images/icons'));
 });
 
-var gulpiconFiles = glob.sync(paths.icons)
+var gulpiconFiles = glob.sync(paths.icons),
     gulpiconOptions = {
       dest: 'dist/images/icons',
       cssprefix: '.icon--',
