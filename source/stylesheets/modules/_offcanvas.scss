@@ -7,16 +7,15 @@ $offcanvas__width: rem(300);
 }
 
 .offcanvas__inner {
-  @include backface-visibility(hidden);
-  @include transition(transform 0.3s ease);
-  @include transform(translate3d(0, 0, 0));
   height: 100%;
   position: relative;
   left: 0;
+  transition: transform 0.3s ease;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .offcanvas__overlay {
-  @include transition(opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s);
   position: absolute;
   top: 0;
   right: 0;
@@ -25,11 +24,10 @@ $offcanvas__width: rem(300);
   background: rgba($black, 0.4);
   opacity: 0;
   z-index: 100;
+  transition: opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s;
 }
 
 .offcanvas__container {
-  @include backface-visibility(hidden);
-  @include transform(translate3d(100%, 0, 0));
   position: fixed;
   top: 0;
   right: 0;
@@ -40,13 +38,15 @@ $offcanvas__width: rem(300);
   z-index: 101;
   background-color: $primary-color;
   color: $body-font-color;
+  backface-visibility: hidden;
+  transform: translate3d(100%, 0, 0);
 }
 
 .offcanvas__container-inner {
-  @include transition(opacity 300ms 100ms ease, transform 400ms ease);
-  @include transform(translate3d(-$offcanvas__width, 0, 0) scale3d(0.8, 0.8, 0.8));
-  @include transform-origin(50% 0%);
   opacity: 0.7;
+  transition: opacity 300ms 100ms ease, transform 400ms ease;
+  transform: translate3d(-$offcanvas__width, 0, 0) scale3d(0.8, 0.8, 0.8);
+  transform-origin: 50% 0%;
 }
 
 .offcanvas__opener,
@@ -82,7 +82,7 @@ $offcanvas__width: rem(300);
 // STATES
 .offcanvas--left { // add class to body
   .offcanvas__container {
-    @include transform(translate3d(-100%, 0, 0));
+    transform: translate3d(-100%, 0, 0);
     left: 0;
     right: auto;
   }
@@ -94,12 +94,12 @@ $offcanvas__width: rem(300);
   }
 
   .offcanvas__inner {
-    @include transform(translate3d(-$offcanvas__width, 0, 0) scale3d(1, 1, 1));
+    transform: translate3d(-$offcanvas__width, 0, 0) scale3d(1, 1, 1);
   }
 
   &.offcanvas--left {
     .offcanvas__inner {
-      @include transform(translate3d($offcanvas__width, 0, 0) scale3d(1, 1, 1));
+      transform: translate3d($offcanvas__width, 0, 0) scale3d(1, 1, 1);
     }
   }
 
@@ -108,19 +108,19 @@ $offcanvas__width: rem(300);
   }
 
   .offcanvas__container-inner {
-    @include transform(translate3d(0, 0, 0));
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 
   .offcanvas__overlay {
-    @include transition(opacity 0.2s);
+    transition: opacity 0.2s;
     width: 100%;
     height: 100%;
     opacity: 1;
   }
 
   .offcanvas__opener {
-    @include transition(opacity 0.3s ease);
+    transition: opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
   }

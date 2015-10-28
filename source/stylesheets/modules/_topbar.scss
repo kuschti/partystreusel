@@ -45,7 +45,7 @@ $topbar__border: rem(1) solid $grey;
   }
 
   &:hover {
-    @include transition(all 0.1s linear);
+    transition: all 0.1s linear;
     background-color: $white;
 
     > a {
@@ -111,14 +111,14 @@ $topbar__border: rem(1) solid $grey;
 
     &,
     .topbar--open & {
-      @include display(flex);
-      @include align-items(center);
-      @include flex-direction(row);
+      display: flex;
+      align-items: center;
+      flex-direction: row;
     }
   }
 
   .topbar__item {
-    @include flex(1 1 auto);
+    flex: 1 1 auto;
     border-right: $topbar__border;
     position: relative;
 

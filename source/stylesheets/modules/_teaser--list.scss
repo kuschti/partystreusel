@@ -46,8 +46,8 @@
   .teaser--list {
     .teaser__item {
       @include span-columns(6);
-      @include flex(0 1 auto);
       @include omega(2n);
+      flex: 0 1 auto;
     }
 
     .teaser__content {

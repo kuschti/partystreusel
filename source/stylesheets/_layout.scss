@@ -5,6 +5,7 @@ body {
 
 main {
   @include outer-container;
+
   + footer {
     height: rem(100);
     background-color: $primary-color;

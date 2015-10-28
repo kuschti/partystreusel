@@ -12,27 +12,36 @@
 @import 'neat';
 
 // MIXINS & HELPERS import
+// ----------------------------------------
 @import 'functions';
 @import 'mixins';
 
 // PLUGIN styles
+// ----------------------------------------
 
-// BASE styles
+
+// Core
+// ----------------------------------------
 @import 'helpers';
 @import 'typo';
 @import 'layout';
-
-// MODULES
 @import 'modules/icons';
 @import 'modules/grid';
 @import 'modules/button';
-@import 'modules/dropdown';
-@import 'modules/table';
 @import 'modules/content';
-@import 'modules/readmore';
-@import 'modules/switch';
+@import 'modules/table';
+@import 'modules/image';
+
+// Form
+// ----------------------------------------
 @import 'modules/form';
+@import 'modules/switch';
 @import 'modules/options';
+
+// Modules
+// ----------------------------------------
+@import 'modules/dropdown';
+@import 'modules/readmore';
 @import 'modules/tab';
 @import 'modules/breadcrumb';
 @import 'modules/topbar';
@@ -43,7 +52,6 @@
 @import 'modules/slider';
 @import 'modules/embeds';
 @import 'modules/two_column';
-@import 'modules/image';
 @import 'modules/links';
 @import 'modules/teaser';
 @import 'modules/teaser--card';

@@ -1,3 +1,10 @@
+// Disable Bourbon Prefixes
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      false;
+
 // This is the the base for the em/rem mixins and the grid calculation.
 $em-base: 16px;
 

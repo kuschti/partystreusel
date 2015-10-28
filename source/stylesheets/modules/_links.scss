@@ -61,9 +61,7 @@
 @include mq(medium) {
   .links__item {
     @include span-columns(6);
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
+    @include omega(2n);
   }
 }
 
@@ -73,9 +71,7 @@
 @include mq(large) {
   .links__item {
     @include span-columns(4);
+    @include omega-reset(2n);
     @include omega(3n);
-    &:nth-child(2n) {
-      margin-right: +flex-gutter();
-    }
   }
 }

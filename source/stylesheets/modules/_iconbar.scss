@@ -1,15 +1,15 @@
 .iconbar__list {
-  @include display(flex);
-  @include flex-wrap(wrap);
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .iconbar__item {
-  @include flex(1 0 33%);
   display: block;
   min-width: 33%;
+  flex: 1 0 33%;
 
   a {
     display: block;
@@ -20,9 +20,9 @@
     border-bottom: rem(3) solid currentColor;
 
     &:hover {
-      @include transition(all 0.1s linear);
       background-color: $white;
       color: $body-font-color;
+      transition: all 0.1s linear;
     }
   }
 
@@ -43,12 +43,12 @@
 // ----------------------------------------
 @include mq(medium) {
   .iconbar__list {
-    @include align-items(center);
-    @include flex-direction(row);
+    align-items: center;
+    flex-direction: row;
   }
 
   .iconbar__item {
-    @include flex(1 1 auto);
+    flex: 1 1 auto;
     min-width: 0;
   }
 }

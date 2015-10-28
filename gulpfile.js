@@ -1,3 +1,5 @@
+'use strict';
+
 // Modules
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
@@ -16,7 +18,8 @@ var gulp          = require('gulp'),
     svgSymbols    = require('gulp-svg-symbols'),
     glob          = require('glob'),
     gulpicon      = require('gulpicon/tasks/gulpicon'),
-    browserSync   = require('browser-sync');
+    browserSync   = require('browser-sync'),
+    autoprefixer  = require('gulp-autoprefixer');;
 
 var paths = {
   coffee:       'source/javascripts/application.coffee',
@@ -29,6 +32,9 @@ var paths = {
   jadePartials: 'source/partials/*.jade'
 }
 
+// Browser defintion for autoprefixer
+var autoprefixerOptions = ['last 2 version', 'ie 9', '> 1%'];
+
 // STYLES
 // ----------------------------------------
 gulp.task('sass', function () {
@@ -36,6 +42,9 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: autoprefixerOptions
+      }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.reload({stream: true}))
 });
@@ -106,7 +115,7 @@ gulp.task('svgsprite', function () {
     .pipe(gulp.dest('dist/images/icons'));
 });
 
-var gulpiconFiles = glob.sync(paths.icons)
+var gulpiconFiles = glob.sync(paths.icons),
     gulpiconOptions = {
       dest: 'dist/images/icons',
       cssprefix: '.icon--',
