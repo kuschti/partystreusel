@@ -14,6 +14,7 @@ var gulp          = require('gulp'),
     jade          = require('gulp-jade'),
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths,
+    sourcemaps    = require('gulp-sourcemaps'),
     imagemin      = require('gulp-imagemin'),
     svgSymbols    = require('gulp-svg-symbols'),
     glob          = require('glob'),
@@ -39,12 +40,14 @@ var autoprefixerOptions = ['last 2 version', 'ie 9', '> 1%'];
 // ----------------------------------------
 gulp.task('sass', function () {
   gulp.src(paths.sass)
+    .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: autoprefixerOptions
       }))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.reload({stream: true}))
 });
