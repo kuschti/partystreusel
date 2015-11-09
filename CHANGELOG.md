@@ -2,6 +2,8 @@
 
 ## dev
 * add autoprefixer (remove prefixin with bourbon)
+* update gulp plugins
+* add sourcemaps for Sass
 
 ## 3.0.0
 * switch from grunt to gulp
