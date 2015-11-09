@@ -168,6 +168,14 @@ gulp.task('clean', function () {
   ]);
 });
 
+gulp.task('clean:css', function () {
+  del('dist/css/**/*');
+});
+
+gulp.task('clean:js', function () {
+  del('dist/js/**/*');
+});
+
 gulp.task('clean:icons', function () {
   del([
     'dist/images/icons/*',
@@ -177,7 +185,11 @@ gulp.task('clean:icons', function () {
 
 // Default & build tasks
 // ----------------------------------------
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['clean', 'build'], function() {
+  gulp.start('browser-sync', 'watch');
+});
+
+gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('build', ['clean'], function() {
   gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
