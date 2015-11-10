@@ -21,7 +21,8 @@ var gulp          = require('gulp'),
     glob          = require('glob'),
     gulpicon      = require('gulpicon/tasks/gulpicon'),
     browserSync   = require('browser-sync'),
-    autoprefixer  = require('gulp-autoprefixer');;
+    autoprefixer  = require('gulp-autoprefixer'),
+    sftp          = require('gulp-sftp');
 
 var paths = {
   images:       'source/images/*',
@@ -34,7 +35,8 @@ var paths = {
                 'source/core/**/*.jade',
                 'source/ui/**/*.jade',
                 'source/modules/**/*.jade'],
-  jadePartials: 'source/partials/*.jade'
+  jadePartials: 'source/partials/*.jade',
+  remotePath:   '/home/www-data/swisscom_tell_styleguide/'
 }
 
 // Browser defintion for autoprefixer
@@ -186,6 +188,17 @@ gulp.task('clean:icons', function () {
     'dist/images/icons/*',
     'dist/css/icons/*',
   ]);
+});
+
+// DEPLOY
+// ----------------------------------------
+gulp.task('deploy', function () {
+  return gulp.src('dist/**/*')
+    .pipe(sftp({
+      host: 'php1.brandleadership.ch',
+      user: 'www-data',
+      remotePath: paths.remotePath
+    }));
 });
 
 // Default & build tasks
