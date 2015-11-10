@@ -1,0 +1,13 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.hide {
+  display: none; }
+
+.styleguide-nav ul {
+  list-style-type: none; }
+
+/*# sourceMappingURL=styleguide.css.map */
