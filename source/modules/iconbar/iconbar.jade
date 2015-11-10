@@ -1,0 +1,35 @@
+extends ../../layouts/_layout.jade
+
+block module_header
+  - var moduleTitle = 'Iconbar'
+
+block content
+  nav.iconbar(role='navigation')
+    ul.iconbar__list
+      li.iconbar__item
+        a(href='#')
+          +icon('folder')
+          |Photo
+      li.iconbar__item.iconbar__item--active
+        a(href='#')
+          +icon('folder')
+          |TechSpec
+      li.iconbar__item
+        a(href='#')
+          +icon('folder')
+          |Articles
+      li.iconbar__item
+        a(href='#')
+          +icon('folder')
+          |Favorites
+      li.iconbar__item
+        a(href='#')
+          +icon('folder')
+          |Links
+      li.iconbar__item
+        a(href='#')
+          +icon('folder')
+          |Documents
+
+  hr.sc-hr-alternate
+

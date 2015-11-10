@@ -1,0 +1,13 @@
+// Bourbon imports
+@import 'bourbon';
+@import 'neat-helpers';
+@import 'core/settings';
+@import 'neat';
+@import 'core/helpers';
+@import 'core/mixins';
+
+.styleguide-nav {
+  ul {
+    list-style-type: none;
+  }
+}

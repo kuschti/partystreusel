@@ -1,0 +1,29 @@
+extends ../../layouts/_layout.jade
+
+block module_header
+  - var moduleTitle = 'Options (radio/checkbox)'
+
+block content
+  section.sc-content
+    form
+      input(type='radio', name='dummy', id='radio1')
+      label(for='radio1')
+        i
+        | Label for Radio 1
+      input(type='radio', name='dummy', id='radio2')
+      label(for='radio2')
+        i
+        | Label for Radio 2
+  hr.sc-hr-alternate
+  section.sc-content
+    form
+      input(type='checkbox', id='checkbox1')
+      label(for='checkbox1')
+        i
+        | Label for Checkbox 1
+
+      input(type='checkbox', id='checkbox2')
+      label(for='checkbox2')
+        i
+        | Label for Checkbox 2
+
