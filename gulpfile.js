@@ -26,7 +26,7 @@ var gulp          = require('gulp'),
 var paths = {
   images:       'source/images/*',
   icons:        'source/ui/icons/svg/*.svg',
-  coffee:       'source/scripts/application.coffee',
+  coffee:       'source/**.coffee',
   vendor:       'source/vendor/*.js',
   polyfills:    'source/vendor/polyfills/*',
   sass:         'source/**/*.scss',
