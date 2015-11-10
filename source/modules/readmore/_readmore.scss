@@ -3,8 +3,8 @@
   position: relative;
   margin-bottom: rem(12);
   padding: rem(7) rem(30) rem(7) 0;
-  font-size: $paragraph-font-size;
-  color: $grey-dark;
+  font-size: $paragraph__font-size;
+  color: $color__grey--dark;
 
   &:after {
     @include triangle(rem(10), currentColor, down);
@@ -16,7 +16,7 @@
   }
 
   &:hover {
-    color: $primary-color;
+    color: $color__primary;
   }
 }
 
@@ -35,7 +35,7 @@
     }
 
     &:hover:after {
-      border-bottom-color: $primary-color;
+      border-bottom-color: $color__primary;
     }
   }
 }
@@ -44,6 +44,6 @@
 // ----------------------------------------
 @include mq(large) {
   .readmore__button {
-    font-size: $paragraph-font-size * 1.125;
+    font-size: $paragraph__font-size * 1.125;
   }
 }

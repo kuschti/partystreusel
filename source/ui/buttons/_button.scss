@@ -8,16 +8,16 @@ $btn__size: rem(23);
   cursor: pointer;
   margin: 0 0 rem(18);
   padding: rem(7) rem(12) rem(8);
-  background-color: $primary-color;
-  border: rem(1) solid $primary-color;
+  background-color: $color__primary;
+  border: rem(1) solid $color__primary;
   text-decoration: none;
   text-align: center;
   font-size: rem(18);
   font-weight: bold;
   line-height: 1.33;
   text-transform: uppercase;
-  color: $white;
-  box-shadow: $grey-light rem(2) rem(2) rem(2) 0;
+  color: $color__bright;
+  box-shadow: $color__grey--light rem(2) rem(2) rem(2) 0;
   user-select: none;
   appearance: none;
   transition: all 0.1s ease-in-out;
@@ -29,17 +29,17 @@ $btn__size: rem(23);
   }
 
   &:hover {
-    color: $white;
-    background: $grey-dark;
-    border-color: $grey-dark;
+    color: $color__bright;
+    background: $color__grey--dark;
+    border-color: $color__grey--dark;
   }
 
   &:active,
   &.btn--active {
     transition: none;
-    color: $white;
-    background: $black;
-    border-color: $black;
+    color: $color__bright;
+    background: $color__dark;
+    border-color: $color__dark;
     box-shadow: none;
   }
 
@@ -53,26 +53,26 @@ $btn__size: rem(23);
 .btn--secondary {
   &,
   &.btn--active {
-    background-color: $white;
-    box-shadow: $secondary-color rem(1) rem(1) rem(2) 0;
+    background-color: $color__bright;
+    box-shadow: $color__secondary rem(1) rem(1) rem(2) 0;
   }
 
   &,
   &:hover {
-    color: $body-font-color;
-    border-color: $secondary-color;
+    color: $body__font-color;
+    border-color: $color__secondary;
   }
 
   &:hover {
-    background-color: $grey-light;
+    background-color: $color__grey--light;
   }
 
   &:active,
   &.btn--active {
     box-shadow: none;
-    background-color: $grey-light;
-    color: $primary-color;
-    border-color: $grey-light;
+    background-color: $color__grey--light;
+    color: $color__primary;
+    border-color: $color__grey--light;
   }
 }
 
@@ -82,7 +82,7 @@ $btn__size: rem(23);
   &,
   &.btn--active {
     box-shadow: none;
-    color: $secondary-color;
+    color: $color__secondary;
   }
 
   &,
@@ -94,12 +94,12 @@ $btn__size: rem(23);
   }
 
   &:hover {
-    color: $body-font-color;
+    color: $body__font-color;
   }
 
   &:active,
   &.btn--active {
-    color: $primary-color;
+    color: $color__primary;
   }
 }
 
@@ -112,20 +112,20 @@ $btn__size: rem(23);
   background: transparent;
   border: 0;
   box-shadow: none;
-  color: $secondary-color;
+  color: $color__secondary;
 
   &:hover,
   &:active {
     border-radius: $border-radius--round;
-    background-color: $grey-light;
+    background-color: $color__grey--light;
   }
 
   &:hover {
-    color: $body-font-color;
+    color: $body__font-color;
   }
 
   &:active {
-    color: $primary-color;
+    color: $color__primary;
   }
 }
 

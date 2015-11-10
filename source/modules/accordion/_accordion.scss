@@ -6,7 +6,7 @@
 
 .accordion__item {
   display: block;
-  border-top: rem(2) solid $secondary-color;
+  border-top: rem(2) solid $color__secondary;
 }
 
 .accordion__title {
@@ -17,9 +17,9 @@
   position: relative;
   font-size: rem(16);
   line-height: 1.125;
-  font-weight: $header-font-weight;
+  font-weight: $heading__font-weight;
   cursor: pointer;
-  color: $body-font-color;
+  color: $body__font-color;
 
   &:before,
   &:after {
@@ -34,7 +34,7 @@
     position: absolute;
     top: rem(13);
     right: 0;
-    border: rem(1) solid $grey;
+    border: rem(1) solid $color__accent;
     border-radius: $border-radius--round;
   }
 
@@ -45,7 +45,7 @@
   }
 
   &:hover {
-    color: $grey;
+    color: $color__accent;
   }
 }
 
@@ -56,7 +56,7 @@
 // STATES
 .accordion__item--open {
   .accordion__title {
-    color: $primary-color;
+    color: $color__primary;
 
     &:after {
       @include triangle(rem(10), currentColor, up);

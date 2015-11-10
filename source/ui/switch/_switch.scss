@@ -15,7 +15,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
   height: $switch__height;
   width: $switch__width;
   user-select: none;
-  -webkit-tap-highlight-color: rgba($black, 0);
+  -webkit-tap-highlight-color: rgba($color__dark, 0);
 
   input {
     display: none;
@@ -27,7 +27,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
       height: $switch__height;
       width: 100%;
       cursor: pointer;
-      background: $grey;
+      background: $color__accent;
       border-radius: $switch__radius;
       transition: all 0.15s ease-out;
       transform: translate3d(0, 0, 0);
@@ -35,7 +35,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
       &:after {
         content: '';
         display: block;
-        background: $white;
+        background: $color__bright;
         position: absolute;
         top: $switch__inner-space;
         left: $switch__inner-space;
@@ -50,14 +50,14 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
   // HOVER STATE
   &:hover {
     label {
-      background: $grey-dark;
+      background: $color__grey--dark;
     }
   }
 
   // CHECKED STATE
   input:checked {
     + label {
-      background: $primary-color;
+      background: $color__primary;
 
       &:after {
         left: $switch__width - $switch__knob-size - $switch__inner-space;

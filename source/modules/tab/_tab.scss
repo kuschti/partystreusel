@@ -6,7 +6,7 @@ $tab__space: space(1);
   list-style: none;
   padding: 0 $tab__space $tab__space;
   margin: $tab__space 0 $tab__space * 2;
-  background-color: $secondary-color;
+  background-color: $color__secondary;
 }
 
 .tab__nav-item {
@@ -20,12 +20,12 @@ $tab__space: space(1);
 
   a {
     display: block;
-    background-color: $grey-light;
-    color: $grey-dark;
+    background-color: $color__grey--light;
+    color: $color__grey--dark;
     padding: $tab__space;
 
     &:hover {
-      color: $tertiary-color;
+      color: $color__tertiary;
     }
   }
 }
@@ -37,8 +37,8 @@ $tab__space: space(1);
 // STATES
 .tab__nav-item--active {
   a {
-    background-color: $white;
-    color: $primary-color;
+    background-color: $color__bright;
+    color: $color__primary;
   }
 }
 

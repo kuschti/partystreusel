@@ -4,14 +4,14 @@
   list-style-type: none;
 
   > li {
-    border-top: rem(1) solid darken($primary-color, 5%);
+    border-top: rem(1) solid darken($color__primary, 5%);
   }
 }
 
 .offcanvas-nav__link {
   display: block;
   padding: rem(11) rem(18);
-  color: $body-font-color;
+  color: $body__font-color;
   font-size: rem(18);
   line-height: 1.33;
 }
@@ -31,8 +31,8 @@
 .offcanvas-nav__link:hover,
 .offcanvas-nav__link:focus,
 .offcanvas-nav__link--active {
-  color: $white;
-  background-color: darken($primary-color, 5%);
+  color: $color__bright;
+  background-color: darken($color__primary, 5%);
 }
 
 .offcanvas-nav__sub--open {

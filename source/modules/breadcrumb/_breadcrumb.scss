@@ -13,7 +13,7 @@
   &:after {
     content: '|';
     margin: 0 rem(12);
-    color: $grey-dark;
+    color: $color__grey--dark;
   }
 
   &:last-child {
@@ -23,23 +23,23 @@
     }
 
     a {
-      color: $primary-color;
+      color: $color__primary;
     }
   }
 
   a {
     display: inline-block;
-    color: $grey-dark;
+    color: $color__grey--dark;
 
     &:hover {
-      color: $tertiary-color;
+      color: $color__tertiary;
     }
   }
 }
 
 // STATES
 .breadcrumb__item--active {
-  color: $primary-color;
+  color: $color__primary;
 }
 
 // LARGE

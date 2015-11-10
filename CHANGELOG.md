@@ -4,6 +4,8 @@
 * add autoprefixer (remove prefixin with bourbon)
 * update gulp plugins
 * add sourcemaps for Sass
+* new modular file structure
+* refactor Sass variables
 
 ## 3.0.0
 * switch from grunt to gulp

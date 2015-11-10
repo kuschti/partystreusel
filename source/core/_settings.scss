@@ -6,139 +6,138 @@ $prefix-for-opera:     false;
 $prefix-for-spec:      false;
 
 // This is the the base for the em/rem mixins and the grid calculation.
+// If your $body__font-size is 100%, leave it at 16px.
 $em-base: 16px;
 
-//////////////////////////////
 // GRID
-// --------------------------
-
+// ----------------------------------------
 // Since the typical default browser font-size is 16px,
 // that makes the calculation for grid size.
-$gutter: em(20);
-$grid-columns: 12;
-$max-width: rem(1200);
-$border-box-sizing: true;
+//
+// THIS VARIABLES ARE FOR NEAT SETTING! DON'T RENAME!
+$gutter:              em(20);
+$grid-columns:        12;
+$max-width:           rem(1200);
+$border-box-sizing:   true;
+
+// Debug Grid
+$visual-grid:         false;
+$visual-grid-color:   #f00;
+$visual-grid-index:   back;
+$visual-grid-opacity: 0.1;
+
+// MEDIAQUERIES
+// ----------------------------------------
+// 640px, 800px, 1200px
 $breakpoints: (
   medium: 40em,
   large: 50em,
   xlarge: 75em
 );
 
-// Debug Grid
-$visual-grid: false;
-$visual-grid-color: #f00;
-$visual-grid-index: back;
-$visual-grid-opacity: 0.1;
-
-// MEDIA QUERIES & BREAKPOINTS
+// COLORS
 // --------------------------
 
-// 640px, 800px, 1200px
+// DON'T USE THIS NAME SPECIFIC VARIABLES IN OTHER FILES
+$color__black:              #333;
+$color__white:              #fff;
+
+$color__grey:               rgb(215, 215, 215);
+$color__grey--light:        rgb(240, 240, 240);
+$color__grey--dark:         rgb(172, 172, 172);
+
+$color__orange:             #f08a24;
+$color__red:                #d60051;
+$color__blue--light:        #a0d3e8;
+$color__green:              #43ac6a;
+
+// COLOR NAMING
+// USE THIS VARIABLES IN OTHER FILES
+$color__primary:            $color__red;
+$color__secondary:          $color__grey;
+$color__tertiary:           $color__black;
+
+$color__dark:               $color__black;
+$color__bright:             $color__white;
+
+$color__accent:             $color__grey;
+$color__accent--light:      $color__grey--light;
+$color__accent--dark:       $color__grey--dark;
+
+$color__alert:              $color__red;
+$color__success:            $color__green;
+$color__warning:            $color__orange;
+$color__info:               $color__blue--light;
+
+// SPACES
+// ----------------------------------------
+$space__default-value: 10;  // e.g. used for paddings
+
 $grid__paddings: (
   small: rem(10),
   medium: rem(15),
   large: rem(20)
 );
 
-// COLORS
-// --------------------------
-
-// COLOR definitions
-$black: #333;
-$white: #fff;
-$grey-dark: rgb(172, 172, 172);
-$grey: rgb(215, 215, 215);
-$grey-light: rgb(240, 240, 240);
-$orange: #f08a24;
-$red: #d60051;
-$blue-light: #a0d3e8;
-$green: #43ac6a;
-
-// COLOR NAMING
-$primary-color: $red;
-$secondary-color: $grey;
-$tertiary-color: $black;
-$alert-color: $red;
-$success-color: $green;
-$warning-color: $orange;
-$info-color: $blue-light;
-
-// Use these to control various global styles
-$body-bg: $white;
-$body-font-color: $black;
-$default-space-value: 12;
-
-// SPACE
-// ----------------------------------------
-$space__default-value: 10;
-
 // TYPOGRAPHY
 // ----------------------------------------
-$line-height-factor: 1.2;
+$font__weight--light:         300;
+$font__weight--regular:       400;
+$font__weight--medium:        400;
+$font__weight--bold:          700;
 
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$body-font-size: 100%;
-$body-font-weight: normal;
-$body-font-style: normal;
-$body-line-height: $line-height-factor;
+
+$body__font-family:           "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body__font-size:             100%;
+$body__font-weight:           normal;
+$body__font-style:            normal;
+$body__font-color:            $color__black;
+$body__line-height:           1.2;
+$body__background-color:      $color__white;
 
 // HEADINGS font styles
-$header-font-family: $body-font-family;
-$header-font-weight: 900;
-$header-font-style: normal;
-$header-font-color: $body-font-color;
-$header-text-rendering: auto;
-
-// HEADINGS sizes
-// Set here the font-sizes for small,
-// use the variable in small/base and redefine it in medium/large
-$h1-font-size: rem(36);
-$h2-font-size: rem(24);
-$h3-font-size: rem(19);
-$h4-font-size: rem(16);
-
-// HEADINGS line-heights
-$h1-line-height: 1;
-$h2-line-height: 1;
-$h3-line-height: 1.26;
-$h4-line-height: 1.125;
+$heading__font-family:        $body__font-family;
+$heading__font-weight:        900;
+$heading__font-style:         normal;
+$heading__font-color:         $body__font-color;
+$heading__text-rendering:     auto;
 
 // PARAGRAPHS
-$paragraph-font-family: inherit;
-$paragraph-font-weight: normal;
-$paragraph-font-size: rem(16);
-$paragraph-line-height: 1.5;
-$paragraph-margin-bottom: rem(12);
-$paragraph-text-rendering: auto;
-
-// <SMALL>
-$small-font-color: $grey-dark;
+$paragraph__font-family:      inherit;
+$paragraph__font-weight:      normal;
+$paragraph__font-size:        rem(16);
+$paragraph__line-height:      1.5;
+$paragraph__margin-bottom:    rem(12);
+$paragraph__text-rendering:   auto;
 
 // ANCHORS
-$anchor-text-decoration: none;
-$anchor-font-color: $primary-color;
-$anchor-font-color-hover: $secondary-color;
+$anchor__text-decoration:     none;
+$anchor__font-color:          $color__primary;
+$anchor__font-color-hover:    $color__secondary;
 
 // <HR>
-$hr-margin-top: rem(18);
-$hr-margin-bottom: $hr-margin-top;
-$hr-border-width: rem(1);
-$hr-border-style: solid;
-$hr-border-color: $body-font-color;
+$hr__margin-top:              rem(18);
+$hr__margin-bottom:           $hr__margin-top;
+$hr__border-width:            rem(1);
+$hr__border-style:            solid;
+$hr__border-color:            $body__font-color;
 
 // LISTS
-$list-style-position: outside;
-$list-side-margin: 0;
-$list-nested-margin: 0;
-$list-side-padding: rem(18);
-$list-ol-side-padding: rem(23);
+$list__style-position:        outside;
+$list__side-margin:           0;
+$list__nested-margin:         0;
+$list__side-padding:          rem(18);
+$list__ol-side-padding:       rem(23);
 
 // BLOCKQUOTE
-$blockquote-font-family: inherit;
-$blockquote-font-size: rem(16);
-$blockquote-font-style: italic;
-$blockquote-margin: 0 0 $paragraph-margin-bottom 0;
+$blockquote__font-family:     inherit;
+$blockquote__font-size:       rem(16);
+$blockquote__font-style:      italic;
+$blockquote__margin:          0 0 $paragraph__margin-bottom 0;
 
 // RADIUS
-$border-radius: 0;
-$border-radius--round: 100%;
+$border-radius:               0;
+$border-radius--round:        100%;
+
+// FORM
+$form__select-arrow-color:    rgb(red($color__dark), green($color__dark), blue($color__dark));

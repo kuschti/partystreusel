@@ -1,23 +1,23 @@
-$topbar__border: rem(1) solid $grey;
+$topbar__border: rem(1) solid $color__accent;
 
 .topbar__mobile-menu {
-  background-color: $grey-light;
+  background-color: $color__grey--light;
   border-bottom: $topbar__border;
-  color: $grey-dark;
+  color: $color__grey--dark;
   display: block;
   padding: 0 rem(12);
   text-align: right;
 
   button {
-    background-color: $grey-light;
+    background-color: $color__grey--light;
     border: 0;
-    color: $body-font-color;
+    color: $body__font-color;
     outline: none;
     padding: rem(7) 0 rem(6) rem(6);
     position: relative;
 
     &:hover {
-      color: $grey-dark;
+      color: $color__grey--dark;
     }
   }
 }
@@ -31,7 +31,7 @@ $topbar__border: rem(1) solid $grey;
 }
 
 .topbar__item {
-  background-color: $grey-light;
+  background-color: $color__grey--light;
   display: block;
 
   a {
@@ -41,15 +41,15 @@ $topbar__border: rem(1) solid $grey;
   }
 
   > a {
-    color: $grey-dark;
+    color: $color__grey--dark;
   }
 
   &:hover {
     transition: all 0.1s linear;
-    background-color: $white;
+    background-color: $color__bright;
 
     > a {
-      color: $body-font-color;
+      color: $body__font-color;
     }
   }
 }
@@ -62,13 +62,13 @@ $topbar__border: rem(1) solid $grey;
   display: block;
 
   > a {
-    background-color: $white;
-    border-color: $white;
-    color: $grey-dark;
+    background-color: $color__bright;
+    border-color: $color__bright;
+    color: $color__grey--dark;
     padding-left: rem(30);
 
     &:hover {
-      color: $body-font-color;
+      color: $body__font-color;
     }
   }
 }
@@ -77,11 +77,11 @@ $topbar__border: rem(1) solid $grey;
 .topbar__item--active,
 .topbar__item--active:hover {
   > a {
-    background-color: $grey-light;
-    color: $primary-color;
+    background-color: $color__grey--light;
+    color: $color__primary;
 
     &:hover {
-      background-color: $white;
+      background-color: $color__bright;
     }
   }
 }
@@ -140,7 +140,7 @@ $topbar__border: rem(1) solid $grey;
   .topbar__sub-list {
     border: $topbar__border;
     border-top-width: 0;
-    box-shadow: rem(2) rem(2) rem(3) 0 $grey-light;
+    box-shadow: rem(2) rem(2) rem(3) 0 $color__grey--light;
     left: rem(-1);
     min-width: rem(230);
     position: absolute;

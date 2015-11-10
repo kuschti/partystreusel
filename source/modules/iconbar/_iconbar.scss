@@ -14,14 +14,14 @@
   a {
     display: block;
     padding: rem(12);
-    background-color: $grey-light;
-    color: $grey-dark;
+    background-color: $color__grey--light;
+    color: $color__grey--dark;
     text-align: center;
     border-bottom: rem(3) solid currentColor;
 
     &:hover {
-      background-color: $white;
-      color: $body-font-color;
+      background-color: $color__bright;
+      color: $body__font-color;
       transition: all 0.1s linear;
     }
   }
@@ -36,7 +36,7 @@
 .iconbar__item a:focus,
 .iconbar__item--active a,
 .iconbar__item--active a:hover {
-  color: $primary-color;
+  color: $color__primary;
 }
 
 // MEDIUM
