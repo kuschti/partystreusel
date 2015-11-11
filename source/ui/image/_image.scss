@@ -1,0 +1,32 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+.image {
+  img {
+    margin-bottom: rem(12);
+  }
+}
+
+.image__caption {
+  color: $body__font-color;
+  padding: 0 space(1);
+  font-size: rem(15);
+  line-height: 1.6;
+  margin-bottom: rem(12);
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .image {
+    img {
+      margin-bottom: rem(24);
+    }
+  }
+}

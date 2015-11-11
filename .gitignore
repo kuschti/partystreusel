@@ -9,4 +9,5 @@ log/
 node_modules
 styleguide/build/
 .project
+.publish
 dist/

@@ -1,9 +1,12 @@
+'use strict';
+
 // Modules
 var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
     del           = require('del'),
     include       = require('gulp-include'),
     concat        = require('gulp-concat'),
+    flatten        = require('gulp-flatten'),
     addsrc        = require('gulp-add-src'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
@@ -12,30 +15,46 @@ var gulp          = require('gulp'),
     jade          = require('gulp-jade'),
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths,
+    sourcemaps    = require('gulp-sourcemaps'),
     imagemin      = require('gulp-imagemin'),
     svgSymbols    = require('gulp-svg-symbols'),
     glob          = require('glob'),
     gulpicon      = require('gulpicon/tasks/gulpicon'),
-    browserSync   = require('browser-sync');
+    browserSync   = require('browser-sync'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    sftp          = require('gulp-sftp'),
+    ghPages       = require('gulp-gh-pages');
 
 var paths = {
-  coffee:       'source/javascripts/application.coffee',
-  jsvendor:     'source/javascripts/vendor/*.js',
-  jspolyfills:  'source/javascripts/polyfills/*',
-  sass:         'source/stylesheets/**/*.scss',
   images:       'source/images/*',
-  icons:        'source/icons/svg/*.svg',
-  jade:         'source/styleguide/*.jade',
-  jadePartials: 'source/partials/*.jade'
+  icons:        'source/ui/icons/svg/*.svg',
+  coffee:       'source/**.coffee',
+  vendor:       'source/vendor/*.js',
+  polyfills:    'source/vendor/polyfills/*',
+  sass:         'source/**/*.scss',
+  jade:         ['source/index.jade',
+                'source/core/**/*.jade',
+                'source/ui/**/*.jade',
+                'source/modules/**/*.jade'],
+  jadePartials: 'source/partials/*.jade',
+  remotePath:   '/home/www-data/swisscom_tell_styleguide/'
 }
+
+// Browser defintion for autoprefixer
+var autoprefixerOptions = ['last 2 version', 'ie 9', '> 1%'];
 
 // STYLES
 // ----------------------------------------
 gulp.task('sass', function () {
   gulp.src(paths.sass)
+    .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: neat
     }).on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: autoprefixerOptions
+      }))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.reload({stream: true}))
 });
@@ -55,6 +74,7 @@ gulp.task('jade', function() {
     .on('error', function(err) {
       console.log("Error:", err);
     })
+    .pipe(flatten())
     .pipe(gulp.dest('./dist/'))
     .pipe(browserSync.reload({stream: true}))
 });
@@ -65,14 +85,14 @@ gulp.task('js:coffee', function() {
   gulp.src(paths.coffee)
     .pipe(include())
     .pipe(coffee())
-    .pipe(addsrc.prepend(paths.jsvendor))
+    .pipe(addsrc.prepend(paths.vendor))
     .pipe(concat("application.js"))
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('js:polyfills', function() {
-  gulp.src(paths.jspolyfills)
+  gulp.src(paths.polyfills)
     .pipe(gulp.dest('./dist/js/polyfills'))
 });
 
@@ -101,20 +121,20 @@ gulp.task('svgsprite', function () {
     .pipe(svgSymbols({
       id:     'icon--%f',
       title:  'icon %f',
-      templates: ['source/icons/templates/icon-sprite.svg']
+      templates: ['source/ui/icons/templates/icon-sprite.svg']
     }))
     .pipe(gulp.dest('dist/images/icons'));
 });
 
-var gulpiconFiles = glob.sync(paths.icons)
+var gulpiconFiles = glob.sync(paths.icons),
     gulpiconOptions = {
       dest: 'dist/images/icons',
       cssprefix: '.icon--',
       pngpath: "images/icons/png",
       pngfolder: 'png',
-      previewhtml: "../../../source/styleguide/icons.jade",
-      template: 'source/icons/templates/_icons_stylesheet.hbs',
-      previewTemplate: 'source/icons/templates/_icons_preview.hbs'
+      previewhtml: "../../../source/ui/icons/icons.jade",
+      template: 'source/ui/icons/templates/_icons_stylesheet.hbs',
+      previewTemplate: 'source/ui/icons/templates/_icons_preview.hbs'
     };
 
 gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
@@ -156,6 +176,14 @@ gulp.task('clean', function () {
   ]);
 });
 
+gulp.task('clean:css', function () {
+  del('dist/css/**/*');
+});
+
+gulp.task('clean:js', function () {
+  del('dist/js/**/*');
+});
+
 gulp.task('clean:icons', function () {
   del([
     'dist/images/icons/*',
@@ -163,9 +191,29 @@ gulp.task('clean:icons', function () {
   ]);
 });
 
+// DEPLOY
+// ----------------------------------------
+gulp.task('push', function () {
+  return gulp.src('dist/**/*')
+    .pipe(sftp({
+      host: 'php1.brandleadership.ch',
+      user: 'www-data',
+      remotePath: paths.remotePath
+    }));
+});
+
+gulp.task('ghpages', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
 // Default & build tasks
 // ----------------------------------------
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['clean', 'build'], function() {
+  gulp.start('browser-sync', 'watch');
+});
+
+gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('build', ['clean'], function() {
   gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');

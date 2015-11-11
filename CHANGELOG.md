@@ -1,12 +1,22 @@
 # CHANGELOG
 
-## 3.0.0-beta
-* switch from sass to scss syntax
+## dev
+* add autoprefixer (remove prefixin with bourbon)
+* update gulp plugins
+* add sourcemaps for Sass
+* new modular file structure
+* refactor Sass variables
+
+## 3.0.0
 * switch from grunt to gulp
-* add browsersync as server
-* add gulp compilation of sass, coffee, jade, bourbon, neat, icons
 * replace grunticon with gulpicon
-* change haml files to jade
+* switch from sass to scss syntax
+* switch from haml to jade
+* add browser-sync for local server
+* add gulp compilation of sass, coffee, jade, bourbon, neat, icons, ...
+* add .nvrmc file for nvm
+* add scss-lint.yml (for local scss-lint in e.g. sublime) with rules
+* lint all sass files
 * remove ruby & middleman dependency
 
 ## 2.0.0

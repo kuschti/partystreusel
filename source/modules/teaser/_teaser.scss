@@ -1,0 +1,97 @@
+.teaser {
+  @include outer-container;
+  background-color: $color__grey--light;
+  padding: space(1) space(1) 0;
+}
+
+.teaser__item {
+  background-color: $color__bright;
+  box-shadow: mix($color__accent, $color__bright, 60%) rem(2) rem(2) rem(3) 0;
+  margin: 0 0 space(1);
+}
+
+.teaser__content {
+  padding: 0 space(1);
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  p {
+    font-size: $paragraph__font-size;
+    font-weight: 200;
+  }
+
+  .teaser__btn {
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+.teaser__subtitle {
+  color: $color__grey--dark;
+  margin-bottom: space(0.5);
+}
+
+.teaser__link {
+  color: currentColor;
+  display: block;
+}
+
+.teaser__img {
+  height: auto;
+  margin-bottom: space(0.5);
+  width: 100%;
+}
+
+// STATES
+.teaser__item:hover {
+  box-shadow: none;
+
+  .teaser__link {
+    color: currentColor;
+  }
+
+  .teaser__img {
+    opacity: 0.8;
+  }
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  .teaser__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .teaser__container-title {
+    width: 100%;
+  }
+
+  .teaser__item {
+    @include span-columns(4);
+    @include omega(3n);
+    display: flex;
+    flex: 0 1 auto;
+  }
+}
+
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .teaser {
+    padding: space(2) space(2) 0;
+  }
+
+  .teaser__item {
+    margin-bottom: space(2);
+  }
+
+  .teaser__img {
+    margin-bottom: space(1.5);
+  }
+}
