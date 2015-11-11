@@ -1,15 +1,19 @@
 {
   "name": "partystreusel",
   "description": "",
-  "version": "3.0.0-beta",
+  "version": "3.1.0",
   "license": "MIT",
   "author": "Screen Concept",
+  "contributors": [{
+    "name": "Pascal Kuster",
+    "email": "pascal.kuster@screenconcept.com"
+  }],
   "repository": {
     "type": "git",
-    "url": "https://github.com/screenconcept/partystreusel.git"
+    "url": "https://github.com/brandleadership/partystreusel.git"
   },
   "bugs": {
-    "url": "https://github.com/screenconcept/partystreusel/issues"
+    "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "devDependencies": {
     "browser-sync": "^2.9.12",

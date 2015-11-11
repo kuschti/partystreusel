@@ -1,11 +1,13 @@
 # CHANGELOG
 
-## dev
+## 3.1.0
 * add autoprefixer (remove prefixin with bourbon)
-* update gulp plugins
 * add sourcemaps for Sass
-* new modular file structure
-* refactor Sass variables
+* add sftp deploy
+* add gh-pages deploy
+* update gulp plugins
+* change to modular file structure
+* change Sass variables to BEM style
 
 ## 3.0.0
 * switch from grunt to gulp
