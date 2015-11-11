@@ -22,7 +22,8 @@ var gulp          = require('gulp'),
     gulpicon      = require('gulpicon/tasks/gulpicon'),
     browserSync   = require('browser-sync'),
     autoprefixer  = require('gulp-autoprefixer'),
-    sftp          = require('gulp-sftp');
+    sftp          = require('gulp-sftp'),
+    ghPages       = require('gulp-gh-pages');
 
 var paths = {
   images:       'source/images/*',
@@ -192,13 +193,18 @@ gulp.task('clean:icons', function () {
 
 // DEPLOY
 // ----------------------------------------
-gulp.task('deploy', function () {
+gulp.task('push', function () {
   return gulp.src('dist/**/*')
     .pipe(sftp({
       host: 'php1.brandleadership.ch',
       user: 'www-data',
       remotePath: paths.remotePath
     }));
+});
+
+gulp.task('ghpages', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 // Default & build tasks
