@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## dev
+- add markdown documentation for jade files (via block)
+- change jade blocks
+- change icon preview
+- change sass variable naming
+
 ## 3.1.0
 * add autoprefixer (remove prefixin with bourbon)
 * add sourcemaps for Sass
