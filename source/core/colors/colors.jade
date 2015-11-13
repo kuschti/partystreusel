@@ -1,0 +1,61 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Colors
+
+block content
+  ul.styleguide-colors
+    li
+      .styleguide-colors__circle(style="background-color: #d60051")
+      strong $color__primary
+      span #d60051
+    li
+      .styleguide-colors__circle(style="background-color: #d7d7d7")
+      strong $color__secondary
+      span #d7d7d7
+    li
+      .styleguide-colors__circle(style="background-color: #333")
+      strong $color__tertiary
+      span #333
+
+  hr
+  ul.styleguide-colors
+    li
+      .styleguide-colors__circle(style="background-color: #333")
+      span $color__dark
+      span #282828
+
+    li
+      .styleguide-colors__circle(style="background-color: #fff; border: 1px solid #ccc")
+      span $color__bright
+      span #fff
+
+  hr
+  ul.styleguide-colors
+
+    li
+      .styleguide-colors__circle(style="background-color: #f0f0f0")
+      span $color__accent--light
+      span #f0f0f0
+
+    li
+      .styleguide-colors__circle(style="background-color: #d7d7d7")
+      span $color__accent
+      span #d7d7d7
+
+    li
+      .styleguide-colors__circle(style="background-color: #acacac")
+      span $color__accent-dark
+      span #acacac
+
+  hr
+  ul.styleguide-colors
+    li
+      .styleguide-colors__circle(style="background-color: #f00")
+      span $color__alert
+      span #f00
+
+    li
+      .styleguide-colors__circle(style="background-color: #f08a24")
+      span $color__warning
+      span #f08a24

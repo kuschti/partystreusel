@@ -1,7 +1,7 @@
 extends ../../layouts/_layout.jade
 
-block module_header
-  - var moduleTitle = 'Buttons'
+block moduleTitle
+  | Button
 
 block content
   section
@@ -10,19 +10,19 @@ block content
         code Default: .btn
       a.btn(href='#') LinkButton 1
       button.btn(href='#') Button 1
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Secondary: .btn.btn--secondary
       a.btn.btn--secondary(href='#') LinkButton 2
       button.btn.btn--secondary(href='#') Button 2
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Tertiary: .btn.btn--tertiary
       a.btn.btn--tertiary(href='#') LinkButton 3
       button.btn.btn--tertiary(href='#') Button 3
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Icon: .btn.btn--icon
@@ -31,19 +31,19 @@ block content
       button.btn.btn--icon(href='#')
         +icon('folder')
 
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Expanded: .btn.btn--expanded
       a.btn.btn--expanded(href='#') Linkbutton Expanded
       button.btn.btn--expanded(href='#') Linkbutton Expanded
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Small: .btn.btn--small
       a.btn.btn--small(href='#') LinkButton Small
       button.btn.btn--small(href='#') Button Small
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code Button Group: div.btn__group around buttons
@@ -52,7 +52,7 @@ block content
         a.btn(href='#') Button in Group 2
         a.btn(href='#') Button in Group 3
 
-    hr.sc-hr-alternate
+    hr
     div
       pre
         code All Buttons types with Icons inside

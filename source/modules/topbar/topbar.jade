@@ -1,7 +1,7 @@
 extends ../../layouts/_layout.jade
 
-block module_header
-  - var moduleTitle = 'Topbar'
+block moduleTitle
+  | Topbar
 
 block content
  pre closed on small
@@ -22,7 +22,7 @@ block content
      li.topbar__item
        a(href='#') Nav last 1
 
- hr.sc-hr-alternate
+ hr
  pre 1lvl open on small (.topbar--open)
  nav.topbar.js-topbar.topbar--open(role='navigation')
     .topbar__mobile-menu
@@ -46,7 +46,7 @@ block content
      li.topbar__item
        a(href='#') Nav last 1
 
- hr.sc-hr-alternate
+ hr
  pre 1lvl open on small, 2lvl level open (.topbar__sub-list--open)
  nav.topbar.js-topbar.topbar--open(role='navigation')
     .topbar__mobile-menu
@@ -70,4 +70,4 @@ block content
      li.topbar__item
        a(href='#') Nav last 1
 
- hr.sc-hr-alternate
+ hr

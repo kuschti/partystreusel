@@ -1,3 +1,5 @@
+$form__select-arrow-color: $color__accent--dark;
+
 fieldset {
   border: 0;
   padding: 0;
@@ -48,6 +50,7 @@ input[type="search"] {
   box-sizing: border-box;
 }
 // scss-lint:enable QualifyingElement
+$form__select-arrow-color-construct: rgb(red($form__select-arrow-color), green($form__select-arrow-color), blue($form__select-arrow-color));
 
 select {
   appearance: none;

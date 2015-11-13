@@ -77,6 +77,10 @@ a {
   &:hover {
     color: $anchor__font-color-hover;
   }
+
+  &:active {
+    color: $anchor__font-color-active;
+  }
 }
 
 ul,
@@ -84,6 +88,7 @@ ol {
   list-style-position: $list__style-position;
   margin-left: $list__side-margin;
   padding-left: $list__side-padding;
+  font-size: $list__font-size;
 }
 
 ol {

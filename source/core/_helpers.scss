@@ -2,6 +2,10 @@
   display: none;
 }
 
+.no-bullet {
+  list-style-type: none;
+}
+
 %clearfix {
   @include clearfix;
 }

@@ -13,6 +13,7 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     coffee        = require("gulp-coffee"),
     jade          = require('gulp-jade'),
+    marked        = require('marked'), // For :markdown in jade
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths,
     sourcemaps    = require('gulp-sourcemaps'),
@@ -32,6 +33,9 @@ var paths = {
   vendor:       'source/vendor/*.js',
   polyfills:    'source/vendor/polyfills/*',
   sass:         'source/**/*.scss',
+  markdown:     ['source/core/**/*.md',
+                'source/ui/**/*.md',
+                'source/modules/**/*.md'],
   jade:         ['source/index.jade',
                 'source/core/**/*.jade',
                 'source/ui/**/*.jade',
@@ -50,7 +54,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: neat
-    }).on('error', sass.logError))
+    }).on('error', notify.onError()))
     .pipe(autoprefixer({
         browsers: autoprefixerOptions
       }))
@@ -161,8 +165,8 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function () {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.icons, ['icons']);
-  gulp.watch(paths.coffee, ['coffee']);
-  gulp.watch([paths.jade, paths.jadePartials], ['jade']);
+  gulp.watch(paths.coffee, ['js:coffee']);
+  gulp.watch([paths.jade, paths.markdown, paths.jadePartials], ['jade']);
 });
 
 // Clean all dist files
@@ -193,7 +197,7 @@ gulp.task('clean:icons', function () {
 
 // DEPLOY
 // ----------------------------------------
-gulp.task('push', function () {
+gulp.task('deploy', function () {
   return gulp.src('dist/**/*')
     .pipe(sftp({
       host: 'php1.brandleadership.ch',
@@ -202,7 +206,7 @@ gulp.task('push', function () {
     }));
 });
 
-gulp.task('ghpages', function() {
+gulp.task('deploy:github', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });

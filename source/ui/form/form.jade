@@ -1,7 +1,7 @@
 extends ../../layouts/_layout.jade
 
-block module_header
-  - var moduleTitle = 'Form'
+block moduleTitle
+  | Form
 
 block content
   section.sc-content
@@ -16,7 +16,7 @@ block content
       p.form--field-error
         label(for='input2') Label Error Invalid entry
         input(id='input2', type='text', name='input2', placeholder='input2 placeholder', value='Input ausgefüllt')
-  hr.sc-hr-alternate
+  hr
   section.sc-content
     form
       p.form--horizontal
@@ -29,7 +29,7 @@ block content
           option(value="starbuck") Starbuck
           option(value="hotdog") Hot Dog
           option(value="apollo") Apollo
-  hr.sc-hr-alternate
+  hr
   section.sc-content
     form
       fieldset

@@ -2,10 +2,6 @@
   font-size: rem(19);
 }
 
-.sc-hr-alternate {
-  border-color: $color__secondary;
-}
-
 // MEDIUM
 // ----------------------------------------
 @include mq(medium) {

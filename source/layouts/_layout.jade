@@ -35,13 +35,16 @@ html.no-js(lang='en')
 
         main#maincontent(role='content')
           article
-            block module_header
-            if moduleTitle
-              header
-                h1 #{moduleTitle}
-                a( href='/') Back to Index
-              hr
+            header
+              h1
+                block moduleTitle
+                  | Partystreusel
+              a( href='/') Back to Index
+            hr
             block content
+            hr
+            section.styleguide-documentation
+              block documentation
 
         footer(role='contentinfo')
         .offcanvas__overlay
