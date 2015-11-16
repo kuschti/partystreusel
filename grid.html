@@ -72,20 +72,21 @@
         <main id="maincontent" role="content">
           <article>
             <header>
-              <h1>Image</h1><a href="/">Back to Index</a>
+              <h1>Grid</h1><a href="/">Back to Index</a>
             </header>
             <hr>
-            <pre>image without caption = img tag</pre>
-            <div class="image"><img src="https://unsplash.it/1200/800/?random"></div>
+            <p>no demo</p>
             <hr>
-            <pre>image with caption = figure with figcaption</pre>
-            <figure class="image"><img src="https://unsplash.it/1200/800/?random">
-              <figcaption class="image__caption">
-                <Lorem>ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</Lorem>
-              </figcaption>
-            </figure>
-            <hr>
-            <section class="styleguide-documentation">
+            <section class="styleguide-documentation"><h2 id="documentation">Documentation</h2>
+<h3 id="grid-container">Grid Container</h3>
+<p><code>.grid__container</code> to mark an element as an outer container, centered, width grid max-width and cleared</p>
+<p>In Sass, the mixin <code>`@include outer-container()</code> can be used.
+See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#outer-container">http://thoughtbot.github.io/neat-docs/latest/#outer-container</a>]</p>
+<h3 id="grid-row">Grid Row</h3>
+<p><code>.grid__row</code> clear the floats and is diplay:block</p>
+<p>In Sass, the mixin <code>@include row()</code> can be used.
+See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#row">http://thoughtbot.github.io/neat-docs/latest/#row</a>]</p>
+
             </section>
           </article>
         </main>

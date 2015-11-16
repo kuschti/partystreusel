@@ -319,6 +319,9 @@ html {
 .hide {
   display: none; }
 
+.no-bullet {
+  list-style-type: none; }
+
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -389,12 +392,15 @@ a {
   color: #d60051; }
   a:hover {
     color: #d7d7d7; }
+  a:active {
+    color: #333; }
 
 ul,
 ol {
   list-style-position: outside;
   margin-left: 0;
-  padding-left: 1.125rem; }
+  padding-left: 1.125rem;
+  font-size: 1rem; }
 
 ol {
   padding-left: 1.4375rem; }
@@ -938,7 +944,7 @@ select {
   height: 2.75rem;
   padding: 0.5625rem 1.875rem 0.5625rem 0.75rem;
   background-color: #fff;
-  background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2214%22%20viewBox%3D%22-281%20400%2024%2014%22%20enable-background%3D%22new%20-281%20400%2024%2014%22%3E%3Cpath%20fill%3D%22#333333%22%20d%3D%22M-275%20406l6-6%206%206zM-263%20408l-6%206-6-6z%22%2F%3E%3C%2Fsvg%3E);
+  background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2214%22%20viewBox%3D%22-281%20400%2024%2014%22%20enable-background%3D%22new%20-281%20400%2024%2014%22%3E%3Cpath%20fill%3D%22#acacac%22%20d%3D%22M-275%20406l6-6%206%206zM-263%20408l-6%206-6-6z%22%2F%3E%3C%2Fsvg%3E);
   background-position: right 0.3125rem center;
   background-repeat: no-repeat;
   border: 0.0625rem solid #d7d7d7;
@@ -987,10 +993,10 @@ select {
     background-color: transparent; }
 
 .form--field-error label {
-  color: #d60051; }
+  color: #f00; }
 
 .form--field-error input {
-  border-color: #d60051; }
+  border-color: #f00; }
 
 @media screen and (min-width: 40em) {
   .form--horizontal {
@@ -1022,9 +1028,6 @@ select {
 
 .sc-lead {
   font-size: 1.1875rem; }
-
-.sc-hr-alternate {
-  border-color: #d7d7d7; }
 
 @media screen and (min-width: 40em) {
   .sc-lead {
