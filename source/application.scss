@@ -18,10 +18,11 @@
 // ----------------------------------------
 @import 'core/functions';
 @import 'core/mixins';
-@import 'core/helpers';
+@import 'core/utilities';
 @import 'core/typo/typo';
-@import 'core/layout';
 @import 'core/grid/grid';
+@import 'core/layout/layout';
+@import 'core/fonts/fonts';
 
 // UI
 // ----------------------------------------
@@ -35,6 +36,9 @@
 
 // Modules
 // ----------------------------------------
+@import 'modules/header/header';
+@import 'modules/header/offcanvas';
+@import 'modules/main-nav/main-nav';
 @import 'modules/content/content';
 @import 'modules/dropdown/dropdown';
 @import 'modules/readmore/readmore';
@@ -42,8 +46,6 @@
 @import 'modules/breadcrumb/breadcrumb';
 @import 'modules/topbar/topbar';
 @import 'modules/iconbar/iconbar';
-@import 'modules/offcanvas/offcanvas';
-@import 'modules/offcanvas/offcanvas_nav';
 @import 'modules/accordion/accordion';
 @import 'modules/slider/slider';
 @import 'modules/embeds/embeds';

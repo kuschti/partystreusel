@@ -26,28 +26,30 @@ html.no-js(lang='en')
     script(src='./js/polyfills/html5shiv-printshiv.js')
     <![endif]-->
 
-  body.js-offcanvas
-    .offcanvas__outer
-      .offcanvas__inner
-        header.page__header(role='banner')
-          include ../partials/_header.jade
-          include ../partials/_offcanvas_nav.jade
+  body
+    header
+      // Include header Module here
 
-        main#maincontent(role='content')
-          article
-            header
-              h1
-                block moduleTitle
-                  | Partystreusel
-              a( href='/') Back to Index
-            hr
-            block content
-            hr
-            section.styleguide-documentation
-              block documentation
+    main
+      article
+        .styleguide__container
+          header.styleguide__header
+            h1
+              block moduleTitle
+                | Partystreusel
+            a( href='/') Back to Index
+          hr
+          
+        // MODULE-CODE-STARTS-HERE
+        block content
+        // MODULE-CODE-ENDS-HERE
 
-        footer(role='contentinfo')
-        .offcanvas__overlay
+        .styleguide__container
+          hr
+          section.styleguide__documentation
+            block documentation
+
+    footer
 
     script(src='./js/application.js', async='true')
     block scripts

@@ -3,13 +3,16 @@ body {
   height: 100%;
 }
 
+.bg--accent {
+  background-color: $color__accent;
+}
+
+.bg--accent-light {
+  background-color: $color__accent--light;
+}
+
 main {
   @include outer-container;
-
-  + footer {
-    height: rem(100);
-    background-color: $color__primary;
-  }
 }
 
 article {
@@ -17,16 +20,10 @@ article {
   padding: 0 rem(12);
 }
 
-.page__header {
-  @include outer-container;
-  padding: 0 rem(12);
-}
-
 // LARGE
 // ----------------------------------------
 @include mq(large) {
-  article,
-  .page__header {
+  article {
     padding: 0 rem(24);
   }
 }

@@ -5,6 +5,9 @@
 - change jade blocks
 - change icon preview
 - change sass variable naming
+- add word-break mixin
+- rename utility classes
+- remove offcanvas & main-nav from layout, now modules
 
 ## 3.1.0
 * add autoprefixer (remove prefixin with bourbon)

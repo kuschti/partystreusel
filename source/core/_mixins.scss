@@ -32,3 +32,10 @@
     @content;
   }
 }
+
+// Mixin for breaking long words
+@mixin word-break() {
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}

@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "browser-sync": "^2.9.12",
     "del": "^2.0.2",
@@ -37,7 +40,7 @@
     "gulp-svg-symbols": "^1.0.0",
     "gulp-util": "^3.0.7",
     "gulpicon": "^0.1.2",
-    "marked": "^0.3.5",
+    "jstransformer-marked": "^1.0.1",
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2"
   }

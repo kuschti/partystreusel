@@ -2,7 +2,7 @@
 #=require core/base.coffee
 
 #=require modules/readmore/readmore.coffee
-#=require modules/offcanvas/offcanvas.coffee
+#=require modules/header/offcanvas.coffee
 #=require modules/topbar/topbar.coffee
 #=require modules/accordion/accordion.coffee
 #=require modules/tab/tab.coffee
