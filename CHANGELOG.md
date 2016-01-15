@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## 3.2.2
 * fix back-to-index link
 * add no-js styling for offcanvas
 
