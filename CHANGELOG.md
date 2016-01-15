@@ -1,13 +1,20 @@
 # CHANGELOG
 
+## dev
+* add header styles
+* update vendor files
+  * normalize to v3.0.2
+  * jquery to v2.2.0
+  * modernizr to v3.3.0
+
 ## 3.2.0
-- add markdown documentation for jade files (via block)
-- change jade blocks
-- change icon preview
-- change sass variable naming
-- add word-break mixin
-- rename utility classes
-- remove offcanvas & main-nav from layout, now modules
+* add markdown documentation for jade files (via block)
+* change jade blocks
+* change icon preview
+* change sass variable naming
+* add word-break mixin
+* rename utility classes
+* remove offcanvas & main-nav from layout, now modules
 
 ## 3.1.0
 * add autoprefixer (remove prefixin with bourbon)
