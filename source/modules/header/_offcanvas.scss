@@ -40,6 +40,12 @@ $offcanvas__width: rem(300);
   color: $body__font-color;
   backface-visibility: hidden;
   transform: translate3d(100%, 0, 0);
+
+  .no-js & {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
 }
 
 .offcanvas__content-inner {
@@ -47,6 +53,11 @@ $offcanvas__width: rem(300);
   transition: opacity 300ms 100ms ease, transform 400ms ease;
   transform: translate3d(-$offcanvas__width, 0, 0) scale3d(0.8, 0.8, 0.8);
   transform-origin: 50% 0%;
+
+  .no-js & {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .offcanvas__opener,
@@ -60,6 +71,10 @@ $offcanvas__width: rem(300);
 
   .icon {
     vertical-align: top;
+  }
+
+  .no-js & {
+    display: none;
   }
 }
 
