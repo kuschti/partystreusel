@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## 3.2.1
 * add header styles
 * update vendor files
   * normalize to v3.0.2
