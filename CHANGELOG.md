@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## 3.2.0
 - add markdown documentation for jade files (via block)
 - change jade blocks
 - change icon preview
