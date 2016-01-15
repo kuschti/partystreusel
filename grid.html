@@ -36,48 +36,24 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Grid</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <p>no demo</p>
-            <hr>
-            <section class="styleguide-documentation"><h2 id="documentation">Documentation</h2>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Grid</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <p>no demo</p>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation"><h2 id="documentation">Documentation</h2>
 <h3 id="grid-container">Grid Container</h3>
 <p><code>.grid__container</code> to mark an element as an outer container, centered, width grid max-width and cleared</p>
 <p>In Sass, the mixin <code>`@include outer-container()</code> can be used.
@@ -87,13 +63,11 @@ See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#
 <p>In Sass, the mixin <code>@include row()</code> can be used.
 See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#row">http://thoughtbot.github.io/neat-docs/latest/#row</a>]</p>
 
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

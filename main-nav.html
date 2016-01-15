@@ -44,17 +44,25 @@
       <article>
         <div class="styleguide__container">
           <header class="styleguide__header">
-            <h1>Switch</h1><a href="/">Back to Index</a>
+            <h1>Main-Nav</h1><a href="/">Back to Index</a>
           </header>
           <hr>
         </div>
         <!-- MODULE-CODE-STARTS-HERE-->
-        <section>
-          <div class="switch">
-            <input type="checkbox" name="Switch 1" id="switch1">
-            <label for="switch1">Published</label>
-          </div>
-        </section>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li><a href="#" class="main-nav__link">Nav Item</a></li>
+            <li><a href="#" class="main-nav__link">Nav Item</a>
+              <ul class="main-nav__sub main-nav__sub--open">
+                <li><a href="#" class="main-nav__link">Nav Item</a></li>
+                <li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
+                <li><a href="#" class="main-nav__link">Nav Item</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="main-nav__link">Nav Item</a></li>
+            <li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
+          </ul>
+        </nav>
         <!-- MODULE-CODE-ENDS-HERE-->
         <div class="styleguide__container">
           <hr>

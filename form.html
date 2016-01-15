@@ -36,145 +36,119 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Form</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <section class="sc-content">
-              <form>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                <p>
-                  <label for="input1">Label 1</label>
-                  <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
-                </p>
-                <p>
-                  <label for="input2">Label 2</label>
-                  <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
-                </p>
-                <p class="form--field-error">
-                  <label for="input2">Label Error Invalid entry</label>
-                  <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
-                </p>
-              </form>
-            </section>
-            <hr>
-            <section class="sc-content">
-              <form>
-                <p class="form--horizontal">
-                  <label for="input1">Label 1</label>
-                  <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
-                </p>
-                <p class="form--horizontal">
-                  <label for="select1">Label</label>
-                  <select id="select1">
-                    <option value="husker">Husker</option>
-                    <option value="starbuck">Starbuck</option>
-                    <option value="hotdog">Hot Dog</option>
-                    <option value="apollo">Apollo</option>
-                  </select>
-                </p>
-              </form>
-            </section>
-            <hr>
-            <section class="sc-content">
-              <form>
-                <fieldset>
-                  <legend>Fieldset Legend Titel 1</legend>
-                  <p>
-                    <label for="input1">Label 1</label>
-                    <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
-                  </p>
-                  <p>
-                    <label for="input2">Label 2</label>
-                    <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
-                  </p>
-                </fieldset>
-                <fieldset>
-                  <legend>Fieldset Legend Titel 2</legend>
-                  <p>
-                    <label for="input1">Label 1</label>
-                    <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
-                  </p>
-                  <p>
-                    <label for="input2">Label 2</label>
-                    <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
-                  </p>
-                </fieldset>
-                <fieldset>
-                  <legend>Inputs with Buttons</legend>
-                  <p>
-                    <label for="input1">Label 1</label><span class="input-addon">
-                      <input id="input1" type="text" name="input1" placeholder="input1 placeholder" class="input-addon__field">
-                      <button href="#" class="btn input-addon__item">Search</button></span>
-                  </p>
-                  <p class="input-overlay">
-                    <label for="input2">Label 2</label>
-                    <input id="input2" type="search" name="input2" placeholder="input2 placeholder" class="input-overlay__input">
-                    <button href="#" class="btn btn--icon input-overlay__button">
-                          <svg title="search" xmlns="http://www.w3.org/2000/svg" class="icon icon--search">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--search"></use>
-                          </svg>
-                    </button>
-                  </p>
-                </fieldset>
-                <fieldset>
-                  <legend>Select</legend>
-                  <p>
-                    <label for="select1">Label</label>
-                    <select id="select1">
-                      <option value="husker">Husker</option>
-                      <option value="starbuck">Starbuck</option>
-                      <option value="hotdog">Hot Dog</option>
-                      <option value="apollo">Apollo</option>
-                    </select>
-                  </p>
-                </fieldset>
-              </form>
-            </section>
-            <hr>
-            <section class="styleguide-documentation">
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Form</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <section class="sc-content">
+          <form>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
+            <p>
+              <label for="input1">Label 1</label>
+              <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
+            </p>
+            <p>
+              <label for="input2">Label 2</label>
+              <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
+            </p>
+            <p class="form--field-error">
+              <label for="input2">Label Error Invalid entry</label>
+              <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
+            </p>
+          </form>
+        </section>
+        <hr>
+        <section class="sc-content">
+          <form>
+            <p class="form--horizontal">
+              <label for="input1">Label 1</label>
+              <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
+            </p>
+            <p class="form--horizontal">
+              <label for="select1">Label</label>
+              <select id="select1">
+                <option value="husker">Husker</option>
+                <option value="starbuck">Starbuck</option>
+                <option value="hotdog">Hot Dog</option>
+                <option value="apollo">Apollo</option>
+              </select>
+            </p>
+          </form>
+        </section>
+        <hr>
+        <section class="sc-content">
+          <form>
+            <fieldset>
+              <legend>Fieldset Legend Titel 1</legend>
+              <p>
+                <label for="input1">Label 1</label>
+                <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
+              </p>
+              <p>
+                <label for="input2">Label 2</label>
+                <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Fieldset Legend Titel 2</legend>
+              <p>
+                <label for="input1">Label 1</label>
+                <input id="input1" type="text" name="input1" placeholder="input1 placeholder">
+              </p>
+              <p>
+                <label for="input2">Label 2</label>
+                <input id="input2" type="text" name="input2" placeholder="input2 placeholder" value="Input ausgefüllt">
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Inputs with Buttons</legend>
+              <p>
+                <label for="input1">Label 1</label><span class="input-addon">
+                  <input id="input1" type="text" name="input1" placeholder="input1 placeholder" class="input-addon__field">
+                  <button href="#" class="btn input-addon__item">Search</button></span>
+              </p>
+              <p class="input-overlay">
+                <label for="input2">Label 2</label>
+                <input id="input2" type="search" name="input2" placeholder="input2 placeholder" class="input-overlay__input">
+                <button href="#" class="btn btn--icon input-overlay__button">
+                      <svg title="search" xmlns="http://www.w3.org/2000/svg" class="icon icon--search">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--search"></use>
+                      </svg>
+                </button>
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Select</legend>
+              <p>
+                <label for="select1">Label</label>
+                <select id="select1">
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </p>
+            </fieldset>
+          </form>
+        </section>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation">
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

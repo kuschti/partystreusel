@@ -36,95 +36,69 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Colors</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <ul class="styleguide-colors">
-              <li>
-                <div style="background-color: #d60051" class="styleguide-colors__circle"></div><strong>$color__primary</strong><span>#d60051</span>
-              </li>
-              <li>
-                <div style="background-color: #d7d7d7" class="styleguide-colors__circle"></div><strong>$color__secondary</strong><span>#d7d7d7</span>
-              </li>
-              <li>
-                <div style="background-color: #333" class="styleguide-colors__circle"></div><strong>$color__tertiary</strong><span>#333</span>
-              </li>
-            </ul>
-            <hr>
-            <ul class="styleguide-colors">
-              <li>
-                <div style="background-color: #333" class="styleguide-colors__circle"></div><span>$color__dark</span><span>#282828</span>
-              </li>
-              <li>
-                <div style="background-color: #fff; border: 1px solid #ccc" class="styleguide-colors__circle"></div><span>$color__bright</span><span>#fff</span>
-              </li>
-            </ul>
-            <hr>
-            <ul class="styleguide-colors">
-              <li>
-                <div style="background-color: #f0f0f0" class="styleguide-colors__circle"></div><span>$color__accent--light</span><span>#f0f0f0</span>
-              </li>
-              <li>
-                <div style="background-color: #d7d7d7" class="styleguide-colors__circle"></div><span>$color__accent</span><span>#d7d7d7</span>
-              </li>
-              <li>
-                <div style="background-color: #acacac" class="styleguide-colors__circle"></div><span>$color__accent-dark</span><span>#acacac</span>
-              </li>
-            </ul>
-            <hr>
-            <ul class="styleguide-colors">
-              <li>
-                <div style="background-color: #f00" class="styleguide-colors__circle"></div><span>$color__alert</span><span>#f00</span>
-              </li>
-              <li>
-                <div style="background-color: #f08a24" class="styleguide-colors__circle"></div><span>$color__warning</span><span>#f08a24</span>
-              </li>
-            </ul>
-            <hr>
-            <section class="styleguide-documentation">
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Colors</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <ul class="styleguide-colors">
+          <li>
+            <div style="background-color: #d60051" class="styleguide-colors__circle"></div><strong>$color__primary</strong><span>#d60051</span>
+          </li>
+          <li>
+            <div style="background-color: #d7d7d7" class="styleguide-colors__circle"></div><strong>$color__secondary</strong><span>#d7d7d7</span>
+          </li>
+          <li>
+            <div style="background-color: #333" class="styleguide-colors__circle"></div><strong>$color__tertiary</strong><span>#333</span>
+          </li>
+        </ul>
+        <hr>
+        <ul class="styleguide-colors">
+          <li>
+            <div style="background-color: #333" class="styleguide-colors__circle"></div><span>$color__dark</span><span>#282828</span>
+          </li>
+          <li>
+            <div style="background-color: #fff; border: 1px solid #ccc" class="styleguide-colors__circle"></div><span>$color__bright</span><span>#fff</span>
+          </li>
+        </ul>
+        <hr>
+        <ul class="styleguide-colors">
+          <li>
+            <div style="background-color: #f0f0f0" class="styleguide-colors__circle"></div><span>$color__accent--light</span><span>#f0f0f0</span>
+          </li>
+          <li>
+            <div style="background-color: #d7d7d7" class="styleguide-colors__circle"></div><span>$color__accent</span><span>#d7d7d7</span>
+          </li>
+          <li>
+            <div style="background-color: #acacac" class="styleguide-colors__circle"></div><span>$color__accent-dark</span><span>#acacac</span>
+          </li>
+        </ul>
+        <hr>
+        <ul class="styleguide-colors">
+          <li>
+            <div style="background-color: #f00" class="styleguide-colors__circle"></div><span>$color__alert</span><span>#f00</span>
+          </li>
+          <li>
+            <div style="background-color: #f08a24" class="styleguide-colors__circle"></div><span>$color__warning</span><span>#f08a24</span>
+          </li>
+        </ul>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation">
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

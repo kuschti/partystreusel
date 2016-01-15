@@ -36,90 +36,64 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Tab</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <section>
+          <div class="tab js-tab">
+            <ul role="tablist" class="tab__nav">
+              <li role="presentation" class="tab__nav-item"><a href="#panel1" role="tab">Tab titel 1</a></li>
+              <li role="presentation" class="tab__nav-item"><a href="#panel2" role="tab">Tab second 2</a></li>
+              <li role="presentation" class="tab__nav-item tab__nav-item--active"><a href="#panel3" role="tab">Tab active 3</a></li>
+              <li role="presentation" class="tab__nav-item"><a href="#panel4" role="tab">Tab long title 4</a></li>
+              <li role="presentation" class="tab__nav-item"><a href="#panel5" role="tab">Tab long title 5</a></li>
+            </ul>
+            <div class="tab__panels">
+              <section role="tabpanel" id="panel1" class="tab__panel">
+                <section class="sc-content">
+                  <p>Content 1! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </section>
+              </section>
+              <section role="tabpanel" id="panel2" class="tab__panel">
+                <section class="sc-content">
+                  <p>Content 2! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </section>
+              </section>
+              <section role="tabpanel" id="panel3" class="tab__panel tab__panel--active">
+                <section class="sc-content">
+                  <p>Content 3! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </section>
+              </section>
+              <section role="tabpanel" id="panel4" class="tab__panel">
+                <section class="sc-content">
+                  <p>Content 4! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </section>
+              </section>
+              <section role="tabpanel" id="panel5" class="tab__panel">
+                <p>Content 5! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+              </section>
             </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Tab</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <section>
-              <div class="tab js-tab">
-                <ul role="tablist" class="tab__nav">
-                  <li role="presentation" class="tab__nav-item"><a href="#panel1" role="tab">Tab titel 1</a></li>
-                  <li role="presentation" class="tab__nav-item"><a href="#panel2" role="tab">Tab second 2</a></li>
-                  <li role="presentation" class="tab__nav-item tab__nav-item--active"><a href="#panel3" role="tab">Tab active 3</a></li>
-                  <li role="presentation" class="tab__nav-item"><a href="#panel4" role="tab">Tab long title 4</a></li>
-                  <li role="presentation" class="tab__nav-item"><a href="#panel5" role="tab">Tab long title 5</a></li>
-                </ul>
-                <div class="tab__panels">
-                  <section role="tabpanel" id="panel1" class="tab__panel">
-                    <section class="sc-content">
-                      <p>Content 1! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    </section>
-                  </section>
-                  <section role="tabpanel" id="panel2" class="tab__panel">
-                    <section class="sc-content">
-                      <p>Content 2! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    </section>
-                  </section>
-                  <section role="tabpanel" id="panel3" class="tab__panel tab__panel--active">
-                    <section class="sc-content">
-                      <p>Content 3! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    </section>
-                  </section>
-                  <section role="tabpanel" id="panel4" class="tab__panel">
-                    <section class="sc-content">
-                      <p>Content 4! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                    </section>
-                  </section>
-                  <section role="tabpanel" id="panel5" class="tab__panel">
-                    <p>Content 5! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                  </section>
-                </div>
-              </div>
-            </section>
-            <hr>
-            <section class="styleguide-documentation">
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+          </div>
+        </section>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation">
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

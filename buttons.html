@@ -36,116 +36,90 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Button</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <section>
-              <div>
-                <pre><code>Default: .btn</code></pre><a href="#" class="btn">LinkButton 1</a>
-                <button href="#" class="btn">Button 1</button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Secondary: .btn.btn--secondary</code></pre><a href="#" class="btn btn--secondary">LinkButton 2</a>
-                <button href="#" class="btn btn--secondary">Button 2</button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Tertiary: .btn.btn--tertiary</code></pre><a href="#" class="btn btn--tertiary">LinkButton 3</a>
-                <button href="#" class="btn btn--tertiary">Button 3</button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Icon: .btn.btn--icon</code></pre><a href="#" class="btn btn--icon">
-                      <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
-                      </svg></a>
-                <button href="#" class="btn btn--icon">
-                      <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
-                      </svg>
-                </button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Expanded: .btn.btn--expanded</code></pre><a href="#" class="btn btn--expanded">Linkbutton Expanded</a>
-                <button href="#" class="btn btn--expanded">Linkbutton Expanded</button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Small: .btn.btn--small</code></pre><a href="#" class="btn btn--small">LinkButton Small</a>
-                <button href="#" class="btn btn--small">Button Small</button>
-              </div>
-              <hr>
-              <div>
-                <pre><code>Button Group: div.btn__group around buttons</code></pre>
-                <div role="group" aria-label="..." class="btn__group"><a href="#" class="btn">Button in Group 1</a><a href="#" class="btn">Button in Group 2</a><a href="#" class="btn">Button in Group 3</a></div>
-              </div>
-              <hr>
-              <div>
-                <pre><code>All Buttons types with Icons inside</code></pre><a href="#" class="btn">Button with Icon
-                      <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
-                      </svg></a><a href="#" class="btn btn--secondary">
-                      <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
-                      </svg>Button with Icon</a><a href="#" class="btn btn--tertiary">
-                      <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
-                      </svg>Button with Icon</a><a href="#" class="btn">
-                      <svg title="search" xmlns="http://www.w3.org/2000/svg" class="icon icon--search">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--search"></use>
-                      </svg></a><a href="#" class="btn btn--icon">
-                      <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
-                      </svg></a>
-              </div>
-            </section>
-            <hr>
-            <section class="styleguide-documentation">
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Button</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <section>
+          <div>
+            <pre><code>Default: .btn</code></pre><a href="#" class="btn">LinkButton 1</a>
+            <button href="#" class="btn">Button 1</button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Secondary: .btn.btn--secondary</code></pre><a href="#" class="btn btn--secondary">LinkButton 2</a>
+            <button href="#" class="btn btn--secondary">Button 2</button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Tertiary: .btn.btn--tertiary</code></pre><a href="#" class="btn btn--tertiary">LinkButton 3</a>
+            <button href="#" class="btn btn--tertiary">Button 3</button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Icon: .btn.btn--icon</code></pre><a href="#" class="btn btn--icon">
+                  <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
+                  </svg></a>
+            <button href="#" class="btn btn--icon">
+                  <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
+                  </svg>
+            </button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Expanded: .btn.btn--expanded</code></pre><a href="#" class="btn btn--expanded">Linkbutton Expanded</a>
+            <button href="#" class="btn btn--expanded">Linkbutton Expanded</button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Small: .btn.btn--small</code></pre><a href="#" class="btn btn--small">LinkButton Small</a>
+            <button href="#" class="btn btn--small">Button Small</button>
+          </div>
+          <hr>
+          <div>
+            <pre><code>Button Group: div.btn__group around buttons</code></pre>
+            <div role="group" aria-label="..." class="btn__group"><a href="#" class="btn">Button in Group 1</a><a href="#" class="btn">Button in Group 2</a><a href="#" class="btn">Button in Group 3</a></div>
+          </div>
+          <hr>
+          <div>
+            <pre><code>All Buttons types with Icons inside</code></pre><a href="#" class="btn">Button with Icon
+                  <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
+                  </svg></a><a href="#" class="btn btn--secondary">
+                  <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
+                  </svg>Button with Icon</a><a href="#" class="btn btn--tertiary">
+                  <svg title="download" xmlns="http://www.w3.org/2000/svg" class="icon icon--download">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--download"></use>
+                  </svg>Button with Icon</a><a href="#" class="btn">
+                  <svg title="search" xmlns="http://www.w3.org/2000/svg" class="icon icon--search">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--search"></use>
+                  </svg></a><a href="#" class="btn btn--icon">
+                  <svg title="folder" xmlns="http://www.w3.org/2000/svg" class="icon icon--folder">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--folder"></use>
+                  </svg></a>
+          </div>
+        </section>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation">
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

@@ -36,121 +36,95 @@
     </noscript><!--[if (lt IE 9) & (!IEMobile)]>
     <script src="./js/polyfills/html5shiv-printshiv.js"></script><![endif]-->
   </head>
-  <body class="js-offcanvas">
-    <div class="offcanvas__outer">
-      <div class="offcanvas__inner">
-        <header role="banner" class="page__header">
-          <button href="#" class="offcanvas__opener js-offcanvas__toggler">
-                <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                </svg>
-            <Menu></Menu>
-          </button>
-          <nav role="navigation" class="offcanvas__container">
-            <div class="offcanvas__container-inner">
-              <button href="#" class="offcanvas__close js-offcanvas__toggler">
-                    <svg title="close" xmlns="http://www.w3.org/2000/svg" class="icon icon--close">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--close"></use>
-                    </svg>
-                <Close></Close>
-              </button>
-              <ul class="offcanvas-nav">
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a>
-                  <ul class="offcanvas-nav__sub offcanvas-nav__sub--open">
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-                    <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="offcanvas-nav__link">Nav Item</a></li>
-                <li><a href="#" class="offcanvas-nav__link offcanvas-nav__link--active">Nav Item</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <main id="maincontent" role="content">
-          <article>
-            <header>
-              <h1>Topbar</h1><a href="/">Back to Index</a>
-            </header>
-            <hr>
-            <pre>closed on small</pre>
-            <nav role="navigation" class="topbar js-topbar">
-              <div class="topbar__mobile-menu">
-                <button>
-                  <Menu></Menu>
-                      <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                      </svg>
-                </button>
-              </div>
-            </nav>
-            <ul class="topbar__list">
-              <li class="topbar__item"><a href="#">Nav content 1</a></li>
-              <li class="topbar__item topbar__item--active"><a href="#">Nav active 1</a></li>
-              <li class="topbar__item"><a href="#">Nav long long 1</a></li>
-              <li class="topbar__item"><a href="#">Nav another 1</a></li>
-              <li class="topbar__item"><a href="#">Nav last 1</a></li>
+  <body>
+    <header>
+      <!-- Include header Module here-->
+    </header>
+    <main>
+      <article>
+        <div class="styleguide__container">
+          <header class="styleguide__header">
+            <h1>Topbar</h1><a href="/">Back to Index</a>
+          </header>
+          <hr>
+        </div>
+        <!-- MODULE-CODE-STARTS-HERE-->
+        <pre>closed on small</pre>
+        <nav role="navigation" class="topbar js-topbar">
+          <div class="topbar__mobile-menu">
+            <button>
+              <Menu></Menu>
+                  <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
+                  </svg>
+            </button>
+          </div>
+        </nav>
+        <ul class="topbar__list">
+          <li class="topbar__item"><a href="#">Nav content 1</a></li>
+          <li class="topbar__item topbar__item--active"><a href="#">Nav active 1</a></li>
+          <li class="topbar__item"><a href="#">Nav long long 1</a></li>
+          <li class="topbar__item"><a href="#">Nav another 1</a></li>
+          <li class="topbar__item"><a href="#">Nav last 1</a></li>
+        </ul>
+        <hr>
+        <pre>1lvl open on small (.topbar--open)</pre>
+        <nav role="navigation" class="topbar js-topbar topbar--open">
+          <div class="topbar__mobile-menu">
+            <button>
+              <Menu></Menu>
+                  <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
+                  </svg>
+            </button>
+          </div>
+        </nav>
+        <ul class="topbar__list">
+          <li class="topbar__item"><a href="#">Nav content 1</a></li>
+          <li class="topbar__item topbar__item--active"><a href="#">Nav active 1</a>
+            <ul class="topbar__sub-list">
+              <li class="topbar__sub-item"><a href="#">Nav content 1</a></li>
+              <li class="topbar__sub-item"><a href="#">Nav active 1</a></li>
             </ul>
-            <hr>
-            <pre>1lvl open on small (.topbar--open)</pre>
-            <nav role="navigation" class="topbar js-topbar topbar--open">
-              <div class="topbar__mobile-menu">
-                <button>
-                  <Menu></Menu>
-                      <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                      </svg>
-                </button>
-              </div>
-            </nav>
-            <ul class="topbar__list">
-              <li class="topbar__item"><a href="#">Nav content 1</a></li>
-              <li class="topbar__item topbar__item--active"><a href="#">Nav active 1</a>
-                <ul class="topbar__sub-list">
-                  <li class="topbar__sub-item"><a href="#">Nav content 1</a></li>
-                  <li class="topbar__sub-item"><a href="#">Nav active 1</a></li>
-                </ul>
-              </li>
-              <li class="topbar__item"><a href="#">Nav long long 1</a></li>
-              <li class="topbar__item"><a href="#">Nav another 1</a></li>
-              <li class="topbar__item"><a href="#">Nav last 1</a></li>
+          </li>
+          <li class="topbar__item"><a href="#">Nav long long 1</a></li>
+          <li class="topbar__item"><a href="#">Nav another 1</a></li>
+          <li class="topbar__item"><a href="#">Nav last 1</a></li>
+        </ul>
+        <hr>
+        <pre>1lvl open on small, 2lvl level open (.topbar__sub-list--open)</pre>
+        <nav role="navigation" class="topbar js-topbar topbar--open">
+          <div class="topbar__mobile-menu">
+            <button>
+              <Menu></Menu>
+                  <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
+                  </svg>
+            </button>
+          </div>
+        </nav>
+        <ul class="topbar__list">
+          <li class="topbar__item"><a href="#">Nav with sub 1</a></li>
+          <li class="topbar__item topbar__item--active"><a href="#">Nav with sub 1</a>
+            <ul class="topbar__sub-list topbar__sub-list--open">
+              <li class="topbar__sub-item"><a href="#">Nav content 1</a></li>
+              <li class="topbar__sub-item"><a href="#">Nav active 1</a></li>
             </ul>
-            <hr>
-            <pre>1lvl open on small, 2lvl level open (.topbar__sub-list--open)</pre>
-            <nav role="navigation" class="topbar js-topbar topbar--open">
-              <div class="topbar__mobile-menu">
-                <button>
-                  <Menu></Menu>
-                      <svg title="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon--menu">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--menu"></use>
-                      </svg>
-                </button>
-              </div>
-            </nav>
-            <ul class="topbar__list">
-              <li class="topbar__item"><a href="#">Nav with sub 1</a></li>
-              <li class="topbar__item topbar__item--active"><a href="#">Nav with sub 1</a>
-                <ul class="topbar__sub-list topbar__sub-list--open">
-                  <li class="topbar__sub-item"><a href="#">Nav content 1</a></li>
-                  <li class="topbar__sub-item"><a href="#">Nav active 1</a></li>
-                </ul>
-              </li>
-              <li class="topbar__item"><a href="#">Nav long long 1 Nav long long 1 Nav long long 1</a></li>
-              <li class="topbar__item"><a href="#">Nav another 1</a></li>
-              <li class="topbar__item"><a href="#">Nav last 1</a></li>
-            </ul>
-            <hr>
-            <hr>
-            <section class="styleguide-documentation">
-            </section>
-          </article>
-        </main>
-        <footer role="contentinfo"></footer>
-        <div class="offcanvas__overlay"></div>
-      </div>
-    </div>
+          </li>
+          <li class="topbar__item"><a href="#">Nav long long 1 Nav long long 1 Nav long long 1</a></li>
+          <li class="topbar__item"><a href="#">Nav another 1</a></li>
+          <li class="topbar__item"><a href="#">Nav last 1</a></li>
+        </ul>
+        <hr>
+        <!-- MODULE-CODE-ENDS-HERE-->
+        <div class="styleguide__container">
+          <hr>
+          <section class="styleguide__documentation">
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
     <script src="./js/application.js" async="true"></script><!--[if lte IE 8]>
     <script src="./js/polyfills/rem.js"></script><![endif]-->
   </body>

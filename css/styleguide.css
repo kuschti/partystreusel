@@ -4,11 +4,28 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.hide {
+.u-hide {
   display: none; }
 
-.no-bullet {
+.u-no-bullet {
   list-style-type: none; }
+
+.u-hide-text {
+  font: 0 / 0 a;
+  text-shadow: none;
+  color: transparent; }
+
+.styleguide__container {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .styleguide__container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.styleguide__header {
+  overflow: hidden; }
 
 .styleguide-icons__icon-list {
   max-width: 75rem;
@@ -57,5 +74,16 @@ html {
   height: 12.5rem;
   margin: 0 auto 0.625rem;
   border-radius: 100%; }
+
+.styleguide-bg {
+  background-color: #ccc; }
+
+.styleguide-spacer {
+  width: 100%;
+  height: 3.125rem; }
+  .styleguide-spacer::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 /*# sourceMappingURL=styleguide.css.map */

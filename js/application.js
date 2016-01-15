@@ -2062,7 +2062,7 @@ window.Modernizr = (function( window, document, undefined ) {
       Offcanvas.__super__.constructor.apply(this, arguments);
       this.$el.find('.js-offcanvas__toggler').on('click', this.toggle);
       this.$el.find('.offcanvas__overlay').on('click', this.toggle);
-      this.$el.find('.offcanvas-nav__link').on('click', this.toggleNavLink);
+      this.$el.find('.main-nav__link').on('click', this.toggleNavLink);
     }
 
     Offcanvas.prototype.toggle = function() {
@@ -2076,14 +2076,14 @@ window.Modernizr = (function( window, document, undefined ) {
 
     Offcanvas.prototype.toggleNavLink = function(e) {
       var navLink, subNav;
-      navLink = $(e.target).closest('.offcanvas-nav__link');
-      subNav = navLink.next('.offcanvas-nav__sub');
+      navLink = $(e.target).closest('.main-nav__link');
+      subNav = navLink.next('.main-nav__sub');
       if (subNav.length === 0) {
         return;
       }
       e.preventDefault();
-      navLink.toggleClass('offcanvas-nav__link--active');
-      return subNav.toggleClass('offcanvas-nav__sub--open');
+      navLink.toggleClass('main-nav__link--active');
+      return subNav.toggleClass('main-nav__sub--open');
     };
 
     return Offcanvas;
