@@ -152,7 +152,7 @@ $topbar__border: rem(1) solid $color__accent;
     }
   }
   // Flexbox Fallback
-  .no-flexbox {
+  .no-flexbox.no-flexboxtweener {
     .topbar__mobile-menu {
       display: none;
     }
