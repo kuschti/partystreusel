@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## dev
+* fix back-to-index link
+* add no-js styling for offcanvas
+
 ## 3.2.1
 * add header styles
 * update vendor files
