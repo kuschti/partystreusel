@@ -13,7 +13,6 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     coffee        = require("gulp-coffee"),
     jade          = require('gulp-jade'),
-    marked        = require('marked'), // For :markdown in jade
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths,
     sourcemaps    = require('gulp-sourcemaps'),
