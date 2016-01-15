@@ -64,8 +64,11 @@ $offcanvas__width: rem(300);
 }
 
 .offcanvas__opener {
+  color: $color__bright;
+  margin-right: rem(10);
+
   &:hover {
-    color: $color__primary;
+    color: $color__dark;
   }
 }
 
