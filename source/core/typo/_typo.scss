@@ -167,7 +167,7 @@ blockquote {
 @include mq(large) {
   h1,
   .h1 {
-    font-size: 72;
+    font-size: rem(72);
     margin-bottom: rem(13);
   }
 
@@ -182,7 +182,7 @@ blockquote {
   .h4,
   .h5,
   .h6 {
-    font-size: 20;
+    font-size: rem(20);
     line-height: 1.2;
   }
 

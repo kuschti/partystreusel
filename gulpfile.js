@@ -27,6 +27,7 @@ var gulp          = require('gulp'),
 
 var paths = {
   images:       'source/images/*',
+  fonts:        'source/core/fonts/*.{eot,woff,woff2,ttf,svg}',
   icons:        'source/ui/icons/svg/*.svg',
   coffee:       'source/**.coffee',
   vendor:       'source/vendor/*.js',
@@ -65,12 +66,9 @@ gulp.task('sass', function () {
 // JADE
 // ----------------------------------------
 gulp.task('jade', function() {
-  var YOUR_LOCALS = {};
-
   gulp.src(paths.jade)
     .pipe(plumber())
     .pipe(jade({
-      locals: YOUR_LOCALS,
       pretty: true
     }))
     .on('error', notify.onError())
@@ -159,6 +157,13 @@ gulp.task('browser-sync', function() {
     });
 });
 
+// Fonts
+// ----------------------------------------
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+   .pipe(gulp.dest('./dist/fonts'));
+});
+
 // Watch for file changes
 // ----------------------------------------
 gulp.task('watch', function () {
@@ -219,5 +224,5 @@ gulp.task('default', ['clean', 'build'], function() {
 gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('build', ['clean'], function() {
-  gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
+  gulp.start('icons', 'fonts', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
 });
