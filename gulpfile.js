@@ -13,7 +13,6 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     coffee        = require("gulp-coffee"),
     jade          = require('gulp-jade'),
-    marked        = require('marked'), // For :markdown in jade
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths,
     sourcemaps    = require('gulp-sourcemaps'),
@@ -28,6 +27,7 @@ var gulp          = require('gulp'),
 
 var paths = {
   images:       'source/images/*',
+  fonts:        'source/core/fonts/*.{eot,woff,woff2,ttf,svg}',
   icons:        'source/ui/icons/svg/*.svg',
   coffee:       'source/**.coffee',
   vendor:       'source/vendor/*.js',
@@ -37,9 +37,9 @@ var paths = {
                 'source/ui/**/*.md',
                 'source/modules/**/*.md'],
   jade:         ['source/index.jade',
-                'source/core/**/*.jade',
-                'source/ui/**/*.jade',
-                'source/modules/**/*.jade'],
+                'source/core/**/!(_)*.jade',
+                'source/ui/**/!(_)*.jade',
+                'source/modules/**/!(_)*.jade'],
   jadePartials: 'source/partials/*.jade',
   remotePath:   '/home/www-data/swisscom_tell_styleguide/'
 }
@@ -66,12 +66,9 @@ gulp.task('sass', function () {
 // JADE
 // ----------------------------------------
 gulp.task('jade', function() {
-  var YOUR_LOCALS = {};
-
   gulp.src(paths.jade)
     .pipe(plumber())
     .pipe(jade({
-      locals: YOUR_LOCALS,
       pretty: true
     }))
     .on('error', notify.onError())
@@ -160,6 +157,13 @@ gulp.task('browser-sync', function() {
     });
 });
 
+// Fonts
+// ----------------------------------------
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+   .pipe(gulp.dest('./dist/fonts'));
+});
+
 // Watch for file changes
 // ----------------------------------------
 gulp.task('watch', function () {
@@ -174,6 +178,7 @@ gulp.task('watch', function () {
 gulp.task('clean', function () {
   return del([
     'dist/css/**/*',
+    'dist/fonts/**/*',
     'dist/js/**/*',
     'dist/images/**/*',
     'dist/**/*.html'
@@ -220,5 +225,5 @@ gulp.task('default', ['clean', 'build'], function() {
 gulp.task('serve', ['browser-sync', 'watch']);
 
 gulp.task('build', ['clean'], function() {
-  gulp.start('icons', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
+  gulp.start('icons', 'fonts', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
 });
