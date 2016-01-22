@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 3.2.3
+* fix typo.scss
+* cleanup gulfpile & requires
+* add font files handling in gulp
+* add .editorconfig
+* update packages
+  * gulp-include
+  * gulp-sass
+  * del
+  * browser-sync
+
 ## 3.2.2
 * fix back-to-index link
 * add no-js styling for offcanvas
