@@ -37,9 +37,9 @@ var paths = {
                 'source/ui/**/*.md',
                 'source/modules/**/*.md'],
   jade:         ['source/index.jade',
-                'source/core/**/*.jade',
-                'source/ui/**/*.jade',
-                'source/modules/**/*.jade'],
+                'source/core/**/!(_)*.jade',
+                'source/ui/**/!(_)*.jade',
+                'source/modules/**/!(_)*.jade'],
   jadePartials: 'source/partials/*.jade',
   remotePath:   '/home/www-data/swisscom_tell_styleguide/'
 }
@@ -178,6 +178,7 @@ gulp.task('watch', function () {
 gulp.task('clean', function () {
   return del([
     'dist/css/**/*',
+    'dist/fonts/**/*',
     'dist/js/**/*',
     'dist/images/**/*',
     'dist/**/*.html'
