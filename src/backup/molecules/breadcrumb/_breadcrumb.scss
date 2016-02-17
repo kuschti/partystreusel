@@ -1,0 +1,51 @@
+.breadcrumb {
+  @include clearfix;
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 rem(12);
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  padding: rem(8) 0;
+
+  &:after {
+    content: '|';
+    margin: 0 rem(12);
+    color: $color__grey--dark;
+  }
+
+  &:last-child {
+    &:after {
+      content: '';
+      display: none;
+    }
+
+    a {
+      color: $color__primary;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: $color__grey--dark;
+
+    &:hover {
+      color: $color__tertiary;
+    }
+  }
+}
+
+// STATES
+.breadcrumb__item--active {
+  color: $color__primary;
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .breadcrumb {
+    margin-bottom: rem(24);
+  }
+}

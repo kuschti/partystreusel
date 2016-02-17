@@ -1,0 +1,71 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Button
+
+block content
+  section
+    div
+      pre
+        code Default: .btn
+      a.btn(href='#') LinkButton 1
+      button.btn(href='#') Button 1
+    hr
+    div
+      pre
+        code Secondary: .btn.btn--secondary
+      a.btn.btn--secondary(href='#') LinkButton 2
+      button.btn.btn--secondary(href='#') Button 2
+    hr
+    div
+      pre
+        code Tertiary: .btn.btn--tertiary
+      a.btn.btn--tertiary(href='#') LinkButton 3
+      button.btn.btn--tertiary(href='#') Button 3
+    hr
+    div
+      pre
+        code Icon: .btn.btn--icon
+      a.btn.btn--icon(href='#')
+        +icon('folder')
+      button.btn.btn--icon(href='#')
+        +icon('folder')
+
+    hr
+    div
+      pre
+        code Expanded: .btn.btn--expanded
+      a.btn.btn--expanded(href='#') Linkbutton Expanded
+      button.btn.btn--expanded(href='#') Linkbutton Expanded
+    hr
+    div
+      pre
+        code Small: .btn.btn--small
+      a.btn.btn--small(href='#') LinkButton Small
+      button.btn.btn--small(href='#') Button Small
+    hr
+    div
+      pre
+        code Button Group: div.btn__group around buttons
+      .btn__group( role="group", aria-label='...' )
+        a.btn(href='#') Button in Group 1
+        a.btn(href='#') Button in Group 2
+        a.btn(href='#') Button in Group 3
+
+    hr
+    div
+      pre
+        code All Buttons types with Icons inside
+      a.btn(href='#')
+        | Button with Icon
+        +icon('download')
+      a.btn.btn--secondary(href='#')
+        +icon('download')
+        | Button with Icon
+      a.btn.btn--tertiary(href='#')
+        +icon('download')
+        | Button with Icon
+      a.btn(href='#')
+        +icon('search')
+      a.btn.btn--icon(href='#')
+        +icon('folder')

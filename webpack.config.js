@@ -7,8 +7,8 @@ module.exports = function(fabricatorConfig) {
 
 	var config = {
 		entry: {
-			'fabricator/scripts/f': fabricatorConfig.src.scripts.fabricator,
-			'toolkit/scripts/toolkit': fabricatorConfig.src.scripts.toolkit
+			'partystreusel/scripts/p': fabricatorConfig.src.scripts.fabricator,
+			'scripts/application': fabricatorConfig.src.scripts.application
 		},
 		output: {
 			path: path.resolve(__dirname, fabricatorConfig.dest, 'assets'),

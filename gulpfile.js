@@ -40,12 +40,15 @@ var config = {
 	dev: gutil.env.dev === true ? true : false,
 	src: {
 		scripts: {
-			fabricator: './src/_styleguide/fabricator/scripts/fabricator.js',
-			toolkit: './src/_styleguide/fabricator/scripts/fabricator.js'
+			fabricator: [
+        './src/_styleguide/fabricator/scripts/fabricator.js',
+				'./src/_styleguide/fabricator/scripts/partystreusel.js'
+      ],
+			application: './src/application.js'
 		},
 		styles: {
 			fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
-			toolkit: 'src/application.scss'
+			application: 'src/application.scss'
 		},
 		images: 'src/images/**/*',
 		views: 'src/_styleguide/fabricator/views/*.html'
@@ -66,27 +69,28 @@ gulp.task('partystreusel:clean', function () {
 // styles
 gulp.task('partystreusel:styles:fabricator', function () {
 	return gulp.src(config.src.styles.fabricator)
-		.pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: neat
+    }).on('error', sass.logError))
 		.pipe(autoprefixer(config.browsers))
 		.pipe(gulpif(!config.dev, csso()))
-		.pipe(rename('f.css'))
-		.pipe(gulp.dest(config.dest + '/assets/fabricator/styles'))
+		.pipe(rename('p.css'))
+		.pipe(gulp.dest(config.dest + '/assets/partystreusel/styles'))
 		.pipe(gulpif(config.dev, browserSync.reload({stream:true})));
 });
 
-gulp.task('partystreusel:styles:toolkit', function () {
-	return gulp.src(config.src.styles.toolkit)
+gulp.task('partystreusel:styles:application', function () {
+	return gulp.src(config.src.styles.application)
 		.pipe(sass({
-        includePaths: neat
-      })
-    .on('error', sass.logError))
+      includePaths: neat
+    }).on('error', sass.logError))
 		.pipe(autoprefixer(config.browsers))
 		.pipe(gulpif(!config.dev, csso()))
 		.pipe(gulp.dest(config.dest + '/assets/styles'))
 		.pipe(gulpif(config.dev, browserSync.reload({stream:true})));
 });
 
-gulp.task('partystreusel:styles', ['partystreusel:styles:fabricator', 'partystreusel:styles:toolkit']);
+gulp.task('partystreusel:styles', ['partystreusel:styles:fabricator', 'partystreusel:styles:application']);
 
 // scripts
 gulp.task('partystreusel:scripts', function (done) {
@@ -109,7 +113,7 @@ gulp.task('partystreusel:scripts', function (done) {
 gulp.task('partystreusel:images', function () {
 	return gulp.src(config.src.images)
 		.pipe(imagemin())
-		.pipe(gulp.dest(config.dest + '/assets/toolkit/images'));
+		.pipe(gulp.dest(config.dest + '/assets/images'));
 });
 
 // assemble
@@ -119,7 +123,7 @@ gulp.task('partystreusel:assemble', function (done) {
     layouts: 'src/_styleguide/fabricator/layouts/*',
     layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
     views: 'src/_styleguide/fabricator/views/**/*',
-    materials: 'src/materials/**/*.{html}',
+    materials: 'src/materials/**/*.html',
     data: 'src/materials/**/*.{json,yml}',
     docs: ['docs/**/*.md', 'src/materials/**/*.md']
 	});
@@ -162,8 +166,8 @@ gulp.task('partystreusel:serve', function () {
 	gulp.task('partystreusel:styles:fabricator:watch', ['partystreusel:styles:fabricator']);
 	gulp.watch('src/_styleguide/fabricator/styles/**/*.scss', ['partystreusel:styles:fabricator:watch']);
 
-	gulp.task('partystreusel:styles:toolkit:watch', ['partystreusel:styles:toolkit']);
-	gulp.watch('src/**/*.scss', ['partystreusel:styles:toolkit:watch']);
+	gulp.task('partystreusel:styles:application:watch', ['partystreusel:styles:application']);
+	gulp.watch('src/**/*.scss', ['partystreusel:styles:application:watch']);
 
 	gulp.task('partystreusel:scripts:watch', ['partystreusel:scripts'], browserSync.reload);
 	gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['partystreusel:scripts:watch']).on('change', webpackCache);

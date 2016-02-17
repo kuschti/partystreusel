@@ -1,0 +1,23 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Main-Nav
+
+block content
+  nav.main-nav
+    ul.main-nav__list
+      li
+        a.main-nav__link(href='#') Nav Item
+      li
+        a.main-nav__link(href='#') Nav Item
+        ul.main-nav__sub.main-nav__sub--open
+          li
+            a.main-nav__link(href='#') Nav Item
+          li
+            a.main-nav__link.main-nav__link--active(href='#') Nav Item
+          li
+            a.main-nav__link(href='#') Nav Item
+      li
+        a.main-nav__link(href='#') Nav Item
+      li
+        a.main-nav__link.main-nav__link--active(href='#') Nav Item

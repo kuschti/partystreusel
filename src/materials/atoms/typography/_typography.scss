@@ -1,0 +1,201 @@
+body {
+  font-family: $body__font-family;
+  font-weight: $body__font-weight;
+  font-style: $body__font-style;
+  font-size: $body__font-size;
+  line-height: $body__line-height;
+  background-color: $body__background-color;
+  color: $body__font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $heading__font-family;
+  font-weight: $heading__font-weight;
+  font-style: $heading__font-style;
+  text-rendering: $heading__text-rendering;
+  color: $heading__font-color;
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  font-size: rem(36);
+  line-height: 1;
+  margin: rem(30) 0 rem(12);
+}
+
+h2,
+.h2 {
+  font-size: rem(24);
+  line-height: 1;
+  margin: rem(27) 0 rem(9);
+}
+
+h3,
+.h3 {
+  font-size: rem(19);
+  line-height: 1.26;
+  margin: rem(24) 0 rem(3);
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-size: rem(16);
+  line-height: 1.125;
+  margin: rem(21) 0 rem(3);
+}
+
+p {
+  font-family: $paragraph__font-family;
+  font-weight: $paragraph__font-weight;
+  font-size: $paragraph__font-size;
+  line-height: $paragraph__line-height;
+  margin-top: 0;
+  margin-bottom: $paragraph__margin-bottom;
+  text-rendering: $paragraph__text-rendering;
+}
+
+a {
+  text-decoration: $anchor__text-decoration;
+  color: $anchor__font-color;
+
+  &:hover {
+    color: $anchor__font-color-hover;
+  }
+
+  &:active {
+    color: $anchor__font-color-active;
+  }
+}
+
+ul,
+ol {
+  list-style-position: $list__style-position;
+  margin-left: $list__side-margin;
+  padding-left: $list__side-padding;
+  font-size: $list__font-size;
+}
+
+ol {
+  padding-left: $list__ol-side-padding;
+}
+
+ul ul,
+ol ol {
+  margin-left: $list__nested-margin;
+}
+
+hr {
+  border-width: $hr__border-width;
+  border-style: $hr__border-style;
+  border-color: $hr__border-color;
+  margin-top: $hr__margin-top;
+  margin-bottom: $hr__margin-bottom;
+}
+
+small {
+  color: $color__grey--dark;
+}
+
+blockquote {
+  font-family: $blockquote__font-family;
+  font-size: $blockquote__font-size;
+  font-style: $blockquote__font-style;
+  margin: $blockquote__margin;
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  h1,
+  .h1 {
+    font-size: rem(54);
+    margin-bottom: rem(14);
+  }
+
+  h2,
+  .h2 {
+    font-size: rem(36);
+    line-height: 1;
+  }
+
+  h3,
+  .h3 {
+    font-size: rem(20);
+    line-height: 1.26;
+    margin-bottom: rem(6);
+  }
+
+  h4,
+  h5,
+  h6,
+  .h4,
+  .h5,
+  .h6 {
+    font-size: rem(18);
+    margin-bottom: rem(6);
+    line-height: 1;
+  }
+
+  p {
+    font-size: $paragraph__font-size * 1.125;
+  }
+
+  blockquote {
+    font-size: rem(18);
+  }
+}
+
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  h1,
+  .h1 {
+    font-size: rem(72);
+    margin-bottom: rem(13);
+  }
+
+  h3,
+  .h3 {
+    font-size: rem(24);
+  }
+
+  h4,
+  h5,
+  h6,
+  .h4,
+  .h5,
+  .h6 {
+    font-size: rem(20);
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: $paragraph__font-size * 1.25;
+  }
+
+  hr {
+    margin-top: rem(24);
+    margin-bottom: rem(34);
+  }
+
+  blockquote {
+    font-size: rem(20);
+  }
+}

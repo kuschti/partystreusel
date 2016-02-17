@@ -1,0 +1,14 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Layout
+
+block documentation
+  include:marked README.md
+
+block content
+  .styleguide__container.bg--accent
+    code class: bg--accent / only background-color
+  br
+  .styleguide__container.bg--accent-light
+    code class: bg--accent-light / only background-color

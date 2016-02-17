@@ -1,0 +1,12 @@
+.header {
+  background-color: $color__primary;
+  color: $color__bright;
+  min-height: rem(64);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  a {
+    outline-color: $color__dark;
+  }
+}

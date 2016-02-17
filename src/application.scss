@@ -20,7 +20,7 @@
 @import 'materials/atoms/functions';
 @import 'materials/atoms/mixins';
 @import 'materials/atoms/utilities';
-@import 'materials/atoms/typo/typo';
+@import 'materials/atoms/typography/typography';
 @import 'materials/atoms/grid/grid';
 @import 'materials/atoms/layout/layout';
 @import 'materials/atoms/fonts/fonts';
@@ -34,6 +34,7 @@
 
 // Molecules
 // ----------------------------------------
+@import 'materials/molecules/button-group/button-group';
 @import 'materials/molecules/main-nav/main-nav';
 @import 'materials/molecules/dropdown/dropdown';
 @import 'materials/molecules/readmore/readmore';

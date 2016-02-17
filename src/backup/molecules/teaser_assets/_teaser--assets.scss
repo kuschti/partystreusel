@@ -1,0 +1,110 @@
+.teaser--assets {
+  .teaser__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .teaser__item {
+    @include span-columns(6);
+    @include omega(2n);
+    display: flex;
+    flex: 0 1 auto;
+  }
+
+  .teaser__img {
+    position: relative;
+    margin-bottom: space(0.5);
+    overflow: hidden;
+
+    img {
+      display: block;
+    }
+  }
+
+  .teaser__content {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    padding: space(1);
+    font-size: rem(16);
+    background-color: rgba($color__bright, 0.5);
+    transform: translate(0, 100%);
+    transition: transform 0.35s;
+  }
+
+  .teaser__btn {
+    display: block;
+    margin: 0;
+    font: 0 / 0 a;
+    text-shadow: none;
+  }
+
+  // STATES
+  .teaser__link:hover {
+    .teaser__content {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+// NO CSS TRANSFORM Fallback
+.no-csstransforms {
+  .teaser--assets {
+    .teaser__content {
+      display: block;
+    }
+  }
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  .teaser--assets {
+    .teaser__item {
+      @include span-columns(4);
+      @include omega-reset(2n);
+      @include omega(3n);
+    }
+
+    .teaser__btn {
+      padding-right: 0;
+      font-family: $body__font-family;
+      font-size: rem(16);
+      font-weight: bold;
+      line-height: 1.33;
+    }
+  }
+}
+
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .teaser--assets {
+    .teaser__item {
+      @include span-columns(3);
+      @include omega-reset(3n);
+      @include omega(4n);
+    }
+
+    .teaser__btn {
+      font-size: rem(18);
+    }
+  }
+}
+
+
+// XLRAGE
+// ----------------------------------------
+@include mq(xlarge) {
+  .teaser--assets {
+    .teaser__item {
+      @include span-columns(2);
+      @include omega-reset(4n);
+      @include omega(6n);
+    }
+  }
+}

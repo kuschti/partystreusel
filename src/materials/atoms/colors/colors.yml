@@ -1,8 +1,17 @@
 colors:
-  primary:
-    Dark: "rgb(30, 30, 30)"
-    Light: "rgb(242, 242, 242)"
-  secondary:
-    Red: "rgb(201, 55, 6)"
-    Yellow: "rgb(252, 207, 80)"
-    Blue: "rgb(39, 102, 143)"
+  brand:
+    primary: "#d60051"
+    secondary: "#d7d7d7"
+    tertiary: "#333"
+  base:
+    dark: "#333"
+    light: "#fff"
+  accent:
+    accent--light: "#f0f0f0"
+    accent: "#d7d7d7"
+    accent--dark: "#acacac"
+  states:
+    warning: "#f08a24"
+    alert: "#f00"
+    info: "#a0d3e8"
+    success: "#43ac6a"

@@ -1,0 +1,26 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Breadcrumb
+
+block content
+  section.sc-content
+    ol.breadcrumb(aria-label='You are here:', vocab="http://schema.org/" typeof="BreadcrumbList")
+      li.breadcrumb__item(property="itemListElement" typeof="ListItem")
+        a(href='#', property="item" typeof="WebPage")
+          span(property="name") Stufe 1
+        meta(property="position", content="1")
+
+      li.breadcrumb__item(property="itemListElement" typeof="ListItem")
+        a(href='#', property="item" typeof="WebPage")
+          span(property="name") Stufe 2
+        meta(property="position", content="2")
+
+      li.breadcrumb__item(property="itemListElement" typeof="ListItem")
+        a(href='#', property="item" typeof="WebPage")
+          span(property="name") Stufe 3
+        meta(property="position", content="3")
+
+      li.breadcrumb__item.breadcrumb__item--active(property="itemListElement" typeof="ListItem")
+        span(property="name") Stufe 4
+        meta(property="position", content="4")

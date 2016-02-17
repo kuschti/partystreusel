@@ -1,0 +1,72 @@
+extends ../../layouts/_layout.jade
+
+block moduleTitle
+  | Form
+
+block content
+  section.sc-content
+    form
+      p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+      p
+        label(for='input1') Label 1
+        input(id='input1', type='text', name='input1', placeholder='input1 placeholder')
+      p
+        label(for='input2') Label 2
+        input(id='input2', type='text', name='input2', placeholder='input2 placeholder', value='Input ausgefüllt')
+      p.form--field-error
+        label(for='input2') Label Error Invalid entry
+        input(id='input2', type='text', name='input2', placeholder='input2 placeholder', value='Input ausgefüllt')
+  hr
+  section.sc-content
+    form
+      p.form--horizontal
+        label(for='input1') Label 1
+        input(id='input1', type='text', name='input1', placeholder='input1 placeholder')
+      p.form--horizontal
+        label(for='select1') Label
+        select(id='select1' )
+          option(value="husker") Husker
+          option(value="starbuck") Starbuck
+          option(value="hotdog") Hot Dog
+          option(value="apollo") Apollo
+  hr
+  section.sc-content
+    form
+      fieldset
+        legend Fieldset Legend Titel 1
+        p
+          label(for='input1') Label 1
+          input(id='input1', type='text', name='input1', placeholder='input1 placeholder')
+        p
+          label(for='input2') Label 2
+          input(id='input2', type='text', name='input2', placeholder='input2 placeholder', value='Input ausgefüllt')
+      fieldset
+        legend Fieldset Legend Titel 2
+        p
+          label(for='input1') Label 1
+          input(id='input1', type='text', name='input1', placeholder='input1 placeholder')
+        p
+          label(for='input2') Label 2
+          input(id='input2', type='text', name='input2', placeholder='input2 placeholder', value='Input ausgefüllt')
+      fieldset
+        legend Inputs with Buttons
+        p
+          label(for='input1') Label 1
+          span.input-addon
+            input.input-addon__field(id='input1', type='text', name='input1', placeholder='input1 placeholder')
+            button.btn.input-addon__item(href='#') Search
+
+        p.input-overlay
+          label(for='input2') Label 2
+          input.input-overlay__input(id='input2', type='search', name='input2', placeholder='input2 placeholder')
+          button.btn.btn--icon.input-overlay__button(href='#')
+            +icon('search')
+      fieldset
+        legend Select
+        p
+          label(for='select1') Label
+          select(id='select1' )
+            option(value="husker") Husker
+            option(value="starbuck") Starbuck
+            option(value="hotdog") Hot Dog
+            option(value="apollo") Apollo

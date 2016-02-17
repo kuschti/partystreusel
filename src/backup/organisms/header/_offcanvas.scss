@@ -1,0 +1,158 @@
+$offcanvas__width: rem(300);
+
+.offcanvas {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.offcanvas__pusher {
+  height: 100%;
+  position: relative;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.offcanvas__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: rgba($color__dark, 0.4);
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s;
+}
+
+.offcanvas__content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  overflow-y: auto;
+  width: $offcanvas__width;
+  height: 100%;
+  z-index: 101;
+  background-color: $color__primary;
+  color: $body__font-color;
+  backface-visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+
+  .no-js & {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+}
+
+.offcanvas__content-inner {
+  opacity: 0.7;
+  transition: opacity 300ms 100ms ease, transform 400ms ease;
+  transform: translate3d(-$offcanvas__width, 0, 0) scale3d(0.8, 0.8, 0.8);
+  transform-origin: 50% 0%;
+
+  .no-js & {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.offcanvas__opener,
+.offcanvas__close {
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  line-height: 1.9;
+  padding: rem(5) 0;
+
+  .icon {
+    vertical-align: top;
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+.offcanvas__opener {
+  color: $color__bright;
+  margin-right: rem(10);
+
+  &:hover {
+    color: $color__dark;
+  }
+}
+
+.offcanvas__close {
+  width: 100%;
+  padding: rem(11) rem(12);
+  text-align: left;
+
+  &:hover {
+    color: $color__bright;
+  }
+}
+
+// STATES
+.offcanvas--left { // add class to body
+  .offcanvas__content {
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+    right: auto;
+  }
+}
+
+.offcanvas--open {
+  .offcanvas {
+    overflow: hidden;
+  }
+
+  .offcanvas__pusher {
+    transform: translate3d(-$offcanvas__width, 0, 0) scale3d(1, 1, 1);
+  }
+
+  &.offcanvas--left {
+    .offcanvas__pusher {
+      transform: translate3d($offcanvas__width, 0, 0) scale3d(1, 1, 1);
+    }
+  }
+
+  .offcanvas__content {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .offcanvas__content-inner {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  .offcanvas__overlay {
+    transition: opacity 0.2s;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .offcanvas__opener {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// NO CSS TRANSFORM Fallback
+.no-csstransforms3d {
+  .offcanvas__content {
+    display: none;
+  }
+
+  .offcanvas--open {
+    .offcanvas__content {
+      display: block;
+    }
+  }
+}
