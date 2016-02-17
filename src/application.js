@@ -1,0 +1,5 @@
+/**
+ * Partystreusel JavaScript
+ */
+
+'use strict';
