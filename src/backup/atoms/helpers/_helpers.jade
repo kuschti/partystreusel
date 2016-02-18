@@ -1,9 +1,0 @@
-mixin icon(name, classes)
-  svg.icon(xmlns='http://www.w3.org/2000/svg', class='icon--'+name, class=classes)
-      use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#icon--'+name)
-
-//- Repeat a block without writing inline JS
-mixin times(limit)
-  - for (var i = 1; i <= limit; i++) {
-    block
-  - }
