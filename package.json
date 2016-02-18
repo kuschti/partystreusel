@@ -1,7 +1,9 @@
 {
   "name": "partystreusel",
   "description": "",
-  "version": "3.1.0",
+  "version": "4.0.0-beta",
+  "homepage": "brandleadership.github.io/partystreusel",
+  "main": "README.md",
   "license": "MIT",
   "author": "Screen Concept",
   "contributors": [
