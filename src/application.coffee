@@ -1,13 +1,13 @@
-#=require core/namespace.coffee
-#=require core/base.coffee
+#=require namespace.coffee
+#=require base.coffee
 
-#=require modules/readmore/readmore.coffee
-#=require modules/header/offcanvas.coffee
-#=require modules/topbar/topbar.coffee
-#=require modules/accordion/accordion.coffee
-#=require modules/tab/tab.coffee
-#=require modules/slider/slider.coffee
-#=require modules/scroll_to/scroll_to.coffee
+#=require 02-molecules/readmore/readmore.coffee
+#=require 02-molecules/header/offcanvas.coffee
+#=require 02-molecules/topbar/topbar.coffee
+#=require 02-molecules/accordion/accordion.coffee
+#=require 02-molecules/tab/tab.coffee
+#=require 02-molecules/slider/slider.coffee
+#=require 02-molecules/scroll_to/scroll_to.coffee
 
 $ ->
   # Document ready...

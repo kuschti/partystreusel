@@ -129,7 +129,8 @@ gulp.task('partystreusel:images', function () {
 gulp.task('partystreusel:assemble', function (done) {
 	assemble({
 		logErrors: config.dev,
-    layouts: 'src/_styleguide/fabricator/layouts/*',
+    layout: 'partystreusel'
+    layouts: 'src/materials/04-templates/*.html',
     layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
     views: 'src/_styleguide/fabricator/views/**/*',
     materials: 'src/materials/**/*.html',

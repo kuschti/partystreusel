@@ -19,21 +19,21 @@
 // ----------------------------------------
 @import 'materials/01-atoms/functions';
 @import 'materials/01-atoms/mixins';
-@import 'materials/01-atoms/utilities';
-@import 'materials/01-atoms/typography/typography';
-@import 'materials/01-atoms/grid/grid';
-@import 'materials/01-atoms/layout/layout';
+@import 'materials/01-atoms/helpers/utilities';
+@import 'materials/01-atoms/02-typography/typography';
 @import 'materials/01-atoms/fonts/fonts';
 @import 'materials/01-atoms/icons/icons';
 @import 'materials/01-atoms/buttons/button';
 @import 'materials/01-atoms/table/table';
 @import 'materials/01-atoms/image/image';
-@import 'materials/01-atoms/switch/switch';
-@import 'materials/01-atoms/options/options';
 @import 'materials/01-atoms/form/form';
+@import 'materials/01-atoms/form/options';
 
 // Molecules
 // ----------------------------------------
+@import 'materials/02-molecules/grid/grid';
+@import 'materials/02-molecules/layout/layout';
+@import 'materials/02-molecules/switch/switch';
 @import 'materials/02-molecules/button-group/button-group';
 @import 'materials/02-molecules/main-nav/main-nav';
 @import 'materials/02-molecules/dropdown/dropdown';

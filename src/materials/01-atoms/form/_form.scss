@@ -151,6 +151,16 @@ select {
   }
 }
 
+.form--field-valid {
+  label {
+    color: $color__success;
+  }
+
+  input {
+    border-color: $color__success;
+  }
+}
+
 // MEDIUM
 // ----------------------------------------
 @include mq(medium) {

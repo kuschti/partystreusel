@@ -152,7 +152,9 @@ blockquote {
     line-height: 1;
   }
 
-  p {
+  p,
+  ul,
+  ol {
     font-size: $paragraph__font-size * 1.125;
   }
 
@@ -186,7 +188,9 @@ blockquote {
     line-height: 1.2;
   }
 
-  p {
+  p,
+  ul,
+  ol {
     font-size: $paragraph__font-size * 1.25;
   }
 
