@@ -9,18 +9,38 @@
 			<a href="index.html" class="f-menu__heading">Overview</a>
 		</li>
 
-		{{#each materials}}
 		<li>
-			<a href="{{@key}}.html" class="f-menu__heading">{{name}}</a>
+			<a href="atoms.html" class="f-menu__heading">Atoms</a>
 			<ul>
-				{{#each items}}
+				{{#each materials.atoms.items}}
 				<li>
-					<a href="{{@../key}}.html#{{@key}}">{{name}}</a>
+					<a href="atoms.html#{{@key}}">{{name}}</a>
 				</li>
 				{{/each}}
 			</ul>
 		</li>
-		{{/each}}
+
+		<li>
+			<a href="molecules.html" class="f-menu__heading">Molecules</a>
+			<ul>
+				{{#each materials.molecules.items}}
+				<li>
+					<a href="molecules.html#{{@key}}">{{name}}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</li>
+
+		<li>
+			<a href="organisms.html" class="f-menu__heading">Organisms</a>
+			<ul>
+				{{#each materials.organisms.items}}
+				<li>
+					<a href="organisms.html#{{@key}}">{{name}}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</li>
 
 		{{#each views}}
 		<li>

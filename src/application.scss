@@ -6,7 +6,7 @@
 
 // Project settings
 @import 'neat-helpers';
-@import 'materials/01-atoms/settings';
+@import 'materials/atoms/settings';
 
 // Bourbon Neat imports
 @import 'neat';
@@ -17,43 +17,43 @@
 
 // Atoms
 // ----------------------------------------
-@import 'materials/01-atoms/functions';
-@import 'materials/01-atoms/mixins';
-@import 'materials/01-atoms/helpers/utilities';
-@import 'materials/01-atoms/02-typography/typography';
-@import 'materials/01-atoms/fonts/fonts';
-@import 'materials/01-atoms/icons/icons';
-@import 'materials/01-atoms/buttons/button';
-@import 'materials/01-atoms/table/table';
-@import 'materials/01-atoms/image/image';
-@import 'materials/01-atoms/form/form';
-@import 'materials/01-atoms/form/options';
+@import 'materials/atoms/functions';
+@import 'materials/atoms/mixins';
+@import 'materials/atoms/helpers/utilities';
+@import 'materials/atoms/02-typography/typography';
+@import 'materials/atoms/fonts/fonts';
+@import 'materials/atoms/icons/icons';
+@import 'materials/atoms/buttons/button';
+@import 'materials/atoms/table/table';
+@import 'materials/atoms/image/image';
+@import 'materials/atoms/form/form';
+@import 'materials/atoms/form/options';
 
 // Molecules
 // ----------------------------------------
-@import 'materials/02-molecules/grid/grid';
-@import 'materials/02-molecules/layout/layout';
-@import 'materials/02-molecules/switch/switch';
-@import 'materials/02-molecules/button-group/button-group';
-@import 'materials/02-molecules/main-nav/main-nav';
-@import 'materials/02-molecules/dropdown/dropdown';
-@import 'materials/02-molecules/readmore/readmore';
-@import 'materials/02-molecules/tab/tab';
-@import 'materials/02-molecules/breadcrumb/breadcrumb';
-@import 'materials/02-molecules/topbar/topbar';
-@import 'materials/02-molecules/iconbar/iconbar';
-@import 'materials/02-molecules/accordion/accordion';
-@import 'materials/02-molecules/slider/slider';
-@import 'materials/02-molecules/embeds/embeds';
-@import 'materials/02-molecules/two_column/two_column';
-@import 'materials/02-molecules/linklist/linklist';
-@import 'materials/02-molecules/teaser/teaser';
-@import 'materials/02-molecules/teaser_card/teaser--card';
-@import 'materials/02-molecules/teaser_list/teaser--list';
-@import 'materials/02-molecules/teaser_assets/teaser--assets';
+@import 'materials/molecules/grid/grid';
+@import 'materials/molecules/layout/layout';
+@import 'materials/molecules/switch/switch';
+@import 'materials/molecules/button-group/button-group';
+@import 'materials/molecules/main-nav/main-nav';
+@import 'materials/molecules/dropdown/dropdown';
+@import 'materials/molecules/readmore/readmore';
+@import 'materials/molecules/tab/tab';
+@import 'materials/molecules/breadcrumb/breadcrumb';
+@import 'materials/molecules/topbar/topbar';
+@import 'materials/molecules/iconbar/iconbar';
+@import 'materials/molecules/accordion/accordion';
+@import 'materials/molecules/slider/slider';
+@import 'materials/molecules/embeds/embeds';
+@import 'materials/molecules/two_column/two_column';
+@import 'materials/molecules/linklist/linklist';
+@import 'materials/molecules/teaser/teaser';
+@import 'materials/molecules/teaser_card/teaser--card';
+@import 'materials/molecules/teaser_list/teaser--list';
+@import 'materials/molecules/teaser_assets/teaser--assets';
 
 // Organisms
 // ----------------------------------------
-@import 'materials/03-organisms/header/offcanvas';
-@import 'materials/03-organisms/header/header';
-@import 'materials/03-organisms/content/content';
+@import 'materials/organisms/header/offcanvas';
+@import 'materials/organisms/header/header';
+@import 'materials/organisms/content/content';

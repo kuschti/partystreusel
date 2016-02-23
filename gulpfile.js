@@ -1,18 +1,9 @@
 'use strict';
 
 // modules
-
-var include       = require('gulp-include'),
-    concat        = require('gulp-concat'),
-    flatten       = require('gulp-flatten'),
-    addsrc        = require('gulp-add-src'),
-    plumber       = require('gulp-plumber'),
-    coffee        = require("gulp-coffee"),
-    svgSymbols    = require('gulp-svg-symbols'),
+var svgSymbols    = require('gulp-svg-symbols'),
     glob          = require('glob'),
-    gulpicon      = require('gulpicon/tasks/gulpicon'),
-    sftp          = require('gulp-sftp'),
-    ghPages       = require('gulp-gh-pages');
+    gulpicon      = require('gulpicon/tasks/gulpicon');
 
 
 var gulp          = require('gulp');
@@ -25,6 +16,10 @@ var assemble      = require('fabricator-assemble');
 var webpack       = require('webpack');
 var runSequence   = require('run-sequence');
 var browserSync   = require('browser-sync');
+var coffee        = require("gulp-coffee");
+var include       = require('gulp-include');
+var concat        = require('gulp-concat');
+var addsrc        = require('gulp-add-src');
 var imagemin      = require('gulp-imagemin');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
@@ -32,12 +27,12 @@ var bourbon       = require('node-bourbon').includePaths;
 var neat          = require('node-neat').includePaths;
 var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
-var ghPages       = require('gulp-gh-pages');
 var sftp          = require('gulp-sftp');
 var ghPages       = require('gulp-gh-pages');
 var metadata      = require('./package.json');
 
 // configuration
+// ----------------------------------------
 var config = {
 	dev: gutil.env.dev === true ? true : false,
 	src: {
@@ -46,30 +41,36 @@ var config = {
         './src/_styleguide/fabricator/scripts/fabricator.js',
 				'./src/_styleguide/fabricator/scripts/partystreusel.js'
       ],
-			application: './src/application.js'
+			application: './src/application.coffee',
+      vendor:      './src/vendor/*.js',
+      polyfills:   'src/vendor/polyfills/*'
 		},
 		styles: {
 			fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
 			application: 'src/application.scss'
 		},
+    fonts:  'src/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
 		images: 'src/images/**/*',
-		views: 'src/_styleguide/fabricator/views/*.html'
+    icons:  'src/materials/atoms/icons'
 	},
 	dest: 'dist',
-  remotePath:   '/home/www-data/swisscom_tell_styleguide/',
+  remotePath:   '/home/www-data/REPLACEME/',
   browsers: ['last 2 versions', 'ie 9', '> 1%']
 };
 
 // webpack
+// ----------------------------------------
 var webpackConfig = require('./webpack.config')(config);
 var webpackCompiler = webpack(webpackConfig);
 
 // clean
+// ----------------------------------------
 gulp.task('partystreusel:clean', function () {
 	return del([config.dest]);
 });
 
-// styles
+// STYLES
+// ----------------------------------------
 gulp.task('partystreusel:styles:fabricator', function () {
 	return gulp.src(config.src.styles.fabricator)
     .pipe(sass({
@@ -97,25 +98,42 @@ gulp.task('partystreusel:styles:application', function () {
 
 gulp.task('partystreusel:styles', ['partystreusel:styles:fabricator', 'partystreusel:styles:application']);
 
-// scripts
+// SCRIPTS
+// ----------------------------------------
 gulp.task('partystreusel:scripts', function (done) {
-	webpackCompiler.run(function (error, result) {
-		if (error) {
-			gutil.log(gutil.colors.red(error));
-      notify.onError()
-		}
-		result = result.toJson();
-		if (result.errors.length) {
-			result.errors.forEach(function (error) {
-				gutil.log(gutil.colors.red(error));
-			});
-		}
-		done();
-	});
+	// webpackCompiler.run(function (error, result) {
+	// 	if (error) {
+	// 		gutil.log(gutil.colors.red(error));
+  //     notify.onError()
+	// 	}
+	// 	result = result.toJson();
+	// 	if (result.errors.length) {
+	// 		result.errors.forEach(function (error) {
+	// 			gutil.log(gutil.colors.red(error));
+	// 		});
+	// 	}
+	// 	done();
+	// });
+});
+
+gulp.task('partystreusel:coffee', function() {
+  gulp.src(config.src.scripts.application)
+    .pipe(include())
+    .pipe(coffee())
+    .pipe(addsrc.prepend(config.src.scripts.vendor))
+    .pipe(concat("application.js"))
+    .pipe(gulp.dest(config.dest + '/assets/scripts'))
+    .pipe(browserSync.reload({stream: true}))
+});
+
+gulp.task('partystreusel:polyfills', function() {
+  gulp.src(config.src.scripts.polyfills)
+    .pipe(gulp.dest(config.dest + '/assets/scripts/polyfills'))
 });
 
 
-// images
+// IMAGES
+// ----------------------------------------
 gulp.task('partystreusel:images', function () {
 	return gulp.src(config.src.images)
     .pipe(imagemin({
@@ -125,14 +143,61 @@ gulp.task('partystreusel:images', function () {
 		.pipe(gulp.dest(config.dest + '/assets/images'));
 });
 
+// ICONS
+// ----------------------------------------
+
+gulp.task('partystreusel:svgmin', function () {
+	return gulp.src(config.src.icons + '/svg/*.svg')
+    .pipe(imagemin({
+      svgoPlugins: [{removeViewBox: false}]
+    }));
+});
+
+
+gulp.task('partystreusel:svgsprite', function () {
+  gulp.src(config.src.icons + '/svg/*.svg')
+    .pipe(svgSymbols({
+      id:     'icon--%f',
+      title:  'icon %f',
+      templates: [config.src.icons + '/templates/icon-sprite.svg']
+    }))
+    .pipe(gulp.dest(config.dest + '/assets/images/icons'));
+});
+
+var gulpiconFiles = glob.sync(config.src.icons + '/svg/*.svg'),
+    gulpiconOptions = {
+      dest: config.dest + '/assets/images/icons',
+      cssprefix: '.icon--',
+      pngpath: "images/icons/png",
+      pngfolder: 'png',
+      previewhtml: "../../../src/materials/atoms/icons/icons.html",
+      template: config.src.icons + '/templates/_icons_stylesheet.hbs',
+      previewTemplate: config.src.icons + '/templates/_icons_preview.hbs'
+    };
+
+gulp.task("partystreusel:gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
+
+
+// Icon workflow
+gulp.task('partystreusel:icons', ['partystreusel:svgmin', 'partystreusel:svgsprite', 'partystreusel:gulpicon']);
+
+
+// Fonts
+// ----------------------------------------
+gulp.task('fonts', function() {
+  return gulp.src(config.src.fonts)
+   .pipe(gulp.dest(config.dest + '/assets/fonts'));
+});
+
 // assemble
+// ----------------------------------------
 gulp.task('partystreusel:assemble', function (done) {
 	assemble({
 		logErrors: config.dev,
-    layout: 'partystreusel'
-    layouts: 'src/materials/04-templates/*.html',
+    layout: 'partystreusel',
+    layouts: 'src/materials/templates/*.html',
     layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
-    views: 'src/_styleguide/fabricator/views/**/*',
+    views: ['src/_styleguide/fabricator/views/**/*', 'src/pages/**/*'],
     materials: 'src/materials/**/*.html',
     data: 'src/materials/**/*.{json,yml}',
     docs: ['docs/**/*.md', 'src/materials/**/*.md'],
@@ -161,7 +226,8 @@ gulp.task('partystreusel:deploy:github', function() {
     .pipe(ghPages());
 });
 
-// server
+// SERVER
+// ----------------------------------------
 gulp.task('partystreusel:serve', function () {
 
 	browserSync({
@@ -200,22 +266,29 @@ gulp.task('partystreusel:serve', function () {
 	gulp.task('partystreusel:styles:application:watch', ['partystreusel:styles:application']);
 	gulp.watch('src/**/*.scss', ['partystreusel:styles:application:watch']);
 
-	gulp.task('partystreusel:scripts:watch', ['partystreusel:scripts'], browserSync.reload);
-	gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['partystreusel:scripts:watch']).on('change', webpackCache);
+	// gulp.task('partystreusel:scripts:watch', ['partystreusel:scripts'], browserSync.reload);
+	// gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['partystreusel:scripts:watch']).on('change', webpackCache);
 
-	gulp.task('partystreusel:images:watch', ['partystreusel:images'], browserSync.reload);
+  gulp.task('partystreusel:coffee:watch', ['partystreusel:coffee'], browserSync.reload);
+	gulp.watch('src/materials/**/*.coffee', ['partystreusel:coffee:watch']);
+
+  	gulp.task('partystreusel:images:watch', ['partystreusel:images'], browserSync.reload);
 	gulp.watch(config.src.images, ['partystreusel:images:watch']);
 
 });
 
 gulp.task('partystreusel', ['default']);
 
-// default build task
+// DEFAULT BUILD TASK
+// ----------------------------------------
 gulp.task('default', ['partystreusel:clean'], function () {
 	// define build tasks
 	var tasks = [
 		'partystreusel:styles',
-		'partystreusel:scripts',
+    // 'partystreusel:scripts',
+		'partystreusel:coffee',
+    'partystreusel:polyfills',
+    'partystreusel:fonts',
 		'partystreusel:images',
 		'partystreusel:assemble'
 	];
@@ -227,106 +300,4 @@ gulp.task('default', ['partystreusel:clean'], function () {
 		}
 	});
 
-});
-
-//------------------------------------------------------------------------------
-// OLD STREUSEL
-
-var paths = {
-  images:       'src/images/*',
-  fonts:        'src/core/fonts/*.{eot,woff,woff2,ttf,svg}',
-  icons:        'src/ui/icons/svg/*.svg',
-  coffee:       'src/**.coffee',
-  vendor:       'src/vendor/*.js',
-  polyfills:    'src/vendor/polyfills/*',
-  sass:         'src/**/*.scss',
-  markdown:     ['src/core/**/*.md',
-                'src/ui/**/*.md',
-                'src/modules/**/*.md'],
-  jade:         ['src/index.jade',
-                'src/core/**/!(_)*.jade',
-                'src/ui/**/!(_)*.jade',
-                'src/modules/**/!(_)*.jade'],
-  jadePartials: 'src/partials/*.jade',
-
-}
-
-// JS
-// ----------------------------------------
-gulp.task('js:coffee', function() {
-  gulp.src(paths.coffee)
-    .pipe(include())
-    .pipe(coffee())
-    .pipe(addsrc.prepend(paths.vendor))
-    .pipe(concat("application.js"))
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('js:polyfills', function() {
-  gulp.src(paths.polyfills)
-    .pipe(gulp.dest('./dist/js/polyfills'))
-});
-
-
-// IMAGES
-// ----------------------------------------
-gulp.task('svgsprite', function () {
-  gulp.src(paths.icons)
-    .pipe(svgSymbols({
-      id:     'icon--%f',
-      title:  'icon %f',
-      templates: ['src/ui/icons/templates/icon-sprite.svg']
-    }))
-    .pipe(gulp.dest('dist/images/icons'));
-});
-
-var gulpiconFiles = glob.sync(paths.icons),
-    gulpiconOptions = {
-      dest: 'dist/images/icons',
-      cssprefix: '.icon--',
-      pngpath: "images/icons/png",
-      pngfolder: 'png',
-      previewhtml: "../../../src/ui/icons/icons.jade",
-      template: 'src/ui/icons/templates/_icons_stylesheet.hbs',
-      previewTemplate: 'src/ui/icons/templates/_icons_preview.hbs'
-    };
-
-gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
-
-gulp.task("gulpicon:cleanup", function () {
-  del('dist/images/icons/*.js');
-});
-
-// Icon workflow
-gulp.task('icons', ['clean:icons', 'imagemin', 'svgsprite', 'gulpicon', 'gulpicon:cleanup']);
-
-
-// Fonts
-// ----------------------------------------
-gulp.task('fonts', function() {
-  return gulp.src(paths.fonts)
-   .pipe(gulp.dest('./dist/fonts'));
-});
-
-// // Watch for file changes
-// // ----------------------------------------
-// gulp.task('watch', function () {
-//   gulp.watch(paths.sass, ['sass']);
-//   gulp.watch(paths.icons, ['icons']);
-//   gulp.watch(paths.coffee, ['js:coffee']);
-//   gulp.watch([paths.jade, paths.markdown, paths.jadePartials], ['jade']);
-// });
-
-
-// Default & build tasks
-// ----------------------------------------
-gulp.task('old', ['build'], function() {
-  gulp.start('browser-sync', 'watch');
-});
-
-gulp.task('serve', ['browser-sync', 'watch']);
-
-gulp.task('build', function() {
-  gulp.start('icons', 'fonts', 'imagemin', 'sass', 'js:coffee', 'js:polyfills', 'jade');
 });

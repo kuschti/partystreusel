@@ -1,5 +1,0 @@
-/**
- * Partystreusel JavaScript
- */
-
-'use strict';
