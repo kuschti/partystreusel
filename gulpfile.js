@@ -50,8 +50,12 @@ var config = {
 			application: 'src/application.scss'
 		},
     fonts:  'src/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
-		images: 'src/images/**/*',
-    icons:  'src/materials/atoms/icons'
+		images: [
+      'src/images/**/*',
+      '!src/images/icons/*'
+    ],
+    icons:  'src/images/icons/*.svg',
+    iconsystem:  'src/materials/atoms/icons'
 	},
 	dest: 'dist',
   remotePath:   '/home/www-data/REPLACEME/',
@@ -101,19 +105,19 @@ gulp.task('partystreusel:styles', ['partystreusel:styles:fabricator', 'partystre
 // SCRIPTS
 // ----------------------------------------
 gulp.task('partystreusel:scripts', function (done) {
-	// webpackCompiler.run(function (error, result) {
-	// 	if (error) {
-	// 		gutil.log(gutil.colors.red(error));
-  //     notify.onError()
-	// 	}
-	// 	result = result.toJson();
-	// 	if (result.errors.length) {
-	// 		result.errors.forEach(function (error) {
-	// 			gutil.log(gutil.colors.red(error));
-	// 		});
-	// 	}
-	// 	done();
-	// });
+	webpackCompiler.run(function (error, result) {
+		if (error) {
+			gutil.log(gutil.colors.red(error));
+      notify.onError()
+		}
+		result = result.toJson();
+		if (result.errors.length) {
+			result.errors.forEach(function (error) {
+				gutil.log(gutil.colors.red(error));
+			});
+		}
+		done();
+	});
 });
 
 gulp.task('partystreusel:coffee', function() {
@@ -137,8 +141,7 @@ gulp.task('partystreusel:polyfills', function() {
 gulp.task('partystreusel:images', function () {
 	return gulp.src(config.src.images)
     .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}]
+      progressive: true
     }))
 		.pipe(gulp.dest(config.dest + '/assets/images'));
 });
@@ -147,36 +150,35 @@ gulp.task('partystreusel:images', function () {
 // ----------------------------------------
 
 gulp.task('partystreusel:svgmin', function () {
-	return gulp.src(config.src.icons + '/svg/*.svg')
+	return gulp.src(config.src.icons)
     .pipe(imagemin({
       svgoPlugins: [{removeViewBox: false}]
     }));
 });
 
-
 gulp.task('partystreusel:svgsprite', function () {
-  gulp.src(config.src.icons + '/svg/*.svg')
+  gulp.src(config.src.icons)
     .pipe(svgSymbols({
       id:     'icon--%f',
       title:  'icon %f',
-      templates: [config.src.icons + '/templates/icon-sprite.svg']
+      templates: [config.src.iconsystem + '/_icon-sprite.svg']
     }))
+    .pipe(rename('icon-sprite.svg'))
     .pipe(gulp.dest(config.dest + '/assets/images/icons'));
 });
 
-var gulpiconFiles = glob.sync(config.src.icons + '/svg/*.svg'),
+var gulpiconFiles = glob.sync(config.src.icons),
     gulpiconOptions = {
       dest: config.dest + '/assets/images/icons',
       cssprefix: '.icon--',
       pngpath: "images/icons/png",
       pngfolder: 'png',
-      previewhtml: "../../../src/materials/atoms/icons/icons.html",
-      template: config.src.icons + '/templates/_icons_stylesheet.hbs',
-      previewTemplate: config.src.icons + '/templates/_icons_preview.hbs'
+      previewhtml: "../../../../src/materials/atoms/icons/all-icons.html",
+      template: config.src.iconsystem + '/_icons_stylesheet.hbs',
+      previewTemplate: config.src.iconsystem + '/_icons_preview.hbs'
     };
 
 gulp.task("partystreusel:gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
-
 
 // Icon workflow
 gulp.task('partystreusel:icons', ['partystreusel:svgmin', 'partystreusel:svgsprite', 'partystreusel:gulpicon']);
@@ -184,7 +186,7 @@ gulp.task('partystreusel:icons', ['partystreusel:svgmin', 'partystreusel:svgspri
 
 // Fonts
 // ----------------------------------------
-gulp.task('fonts', function() {
+gulp.task('partystreusel:fonts', function() {
   return gulp.src(config.src.fonts)
    .pipe(gulp.dest(config.dest + '/assets/fonts'));
 });
@@ -266,8 +268,8 @@ gulp.task('partystreusel:serve', function () {
 	gulp.task('partystreusel:styles:application:watch', ['partystreusel:styles:application']);
 	gulp.watch('src/**/*.scss', ['partystreusel:styles:application:watch']);
 
-	// gulp.task('partystreusel:scripts:watch', ['partystreusel:scripts'], browserSync.reload);
-	// gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['partystreusel:scripts:watch']).on('change', webpackCache);
+	gulp.task('partystreusel:scripts:watch', ['partystreusel:scripts'], browserSync.reload);
+	gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['partystreusel:scripts:watch']).on('change', webpackCache);
 
   gulp.task('partystreusel:coffee:watch', ['partystreusel:coffee'], browserSync.reload);
 	gulp.watch('src/materials/**/*.coffee', ['partystreusel:coffee:watch']);
@@ -285,11 +287,12 @@ gulp.task('default', ['partystreusel:clean'], function () {
 	// define build tasks
 	var tasks = [
 		'partystreusel:styles',
-    // 'partystreusel:scripts',
+    'partystreusel:scripts',
 		'partystreusel:coffee',
     'partystreusel:polyfills',
     'partystreusel:fonts',
 		'partystreusel:images',
+    'partystreusel:icons',
 		'partystreusel:assemble'
 	];
 

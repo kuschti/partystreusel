@@ -19,3 +19,11 @@ $settings: (
 @import 'partials/item';
 @import 'partials/layout';
 @import 'partials/menu';
+
+/**
+ * Partystreusel styles
+ * @author Pascal Kuster
+ * Class selectors are namespaced with "p-"
+ */
+
+@import 'partials/icons';
