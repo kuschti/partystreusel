@@ -1,0 +1,18 @@
+<aside class="teaser teaser--card">
+  <div class="teaser__container">
+    {{#iterate 6}}
+      <section class="teaser__item">
+          <a href="#" class="teaser__link"><img src="https://unsplash.it/300/300/?random" class="teaser__img"/>
+            <div class="teaser__content">
+              <h3>Produkt oder Bereich</h3>
+              <p>Preis 12 CHF oder ein Produkt Eigenschaft</p>
+              <button class="btn btn--tertiary teaser__btn">Kaufen</button>
+            </div>
+          </a>
+          <a href="http://google.com" class="btn btn--icon teaser__link--secondary">
+            {{> icons.icon icon-name="download"}}
+          </a>
+      </section>
+    {{/iterate}}
+  </div>
+</aside>

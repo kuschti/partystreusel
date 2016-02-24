@@ -1,0 +1,12 @@
+<aside class="teaser teaser--assets">
+  <div class="teaser__container">
+    {{#iterate 10}}
+      <section class="teaser__item"><a href="#" class="teaser__link">
+        <div class="teaser__img"><img src="https://unsplash.it/200/200/?random"/>
+          <p class="teaser__content">Bildbeschreibung oder Legende</p>
+        </div>
+        <button class="btn btn--tertiary teaser__btn">Download{{> icons.icon icon-name="folder"}}</button></a>
+      </section>
+    {{/iterate}}
+  </div>
+</aside>

@@ -20,6 +20,7 @@
 @import 'materials/atoms/functions';
 @import 'materials/atoms/mixins';
 @import 'materials/atoms/helpers/utilities';
+@import 'materials/atoms/helpers/layout';
 @import 'materials/atoms/02-typography/typography';
 @import 'materials/atoms/fonts/fonts';
 @import 'materials/atoms/icons/icons';
@@ -32,7 +33,6 @@
 // Molecules
 // ----------------------------------------
 @import 'materials/molecules/grid/grid';
-@import 'materials/molecules/layout/layout';
 @import 'materials/molecules/switch/switch';
 @import 'materials/molecules/button-group/button-group';
 @import 'materials/molecules/main-nav/main-nav';
@@ -51,9 +51,9 @@
 @import 'materials/molecules/teaser_card/teaser--card';
 @import 'materials/molecules/teaser_list/teaser--list';
 @import 'materials/molecules/teaser_assets/teaser--assets';
+@import 'materials/molecules/content/content';
 
 // Organisms
 // ----------------------------------------
 @import 'materials/organisms/header/offcanvas';
 @import 'materials/organisms/header/header';
-@import 'materials/organisms/content/content';

@@ -1,0 +1,20 @@
+items:
+  1:
+    text: Photo
+    icon-name: search
+  2:
+    text: TechSpec
+    icon-name: folder
+    active: true
+  3:
+    text: Articles
+    icon-name: folder
+  4:
+    text: Favorites
+    icon-name: folder
+  5:
+    text: Links
+    icon-name: folder
+  6:
+    text: Documents
+    icon-name: folder

@@ -14,3 +14,52 @@ Name: 'neuer Button'
 ---
 {{{material 'buttons.default' form-checkbox}}}
 ```
+
+
+#### front-matter
+```
+---
+icolist2:
+  - this
+  - that
+  - there
+---
+{{#test2}}
+  {{this}}
+{{/test2}}
+
+```
+
+```
+---
+icolist:
+  item1:
+    test: gugug
+    title: sdfsdf
+  item2:
+    test: gsdf
+    title: sdfsdfsdf
+  item3:
+    test: sdfsdf
+    title: sdfsdf
+---
+// name of material file = iconbar/iconbar.html
+{{#each iconbar-iconbar.icolist}}
+  {{test}}
+  {{title}}
+{{/each}}
+
+```
+
+#### material data in fabricator views
+front-matter inside material
+
+    ---
+    foo: bar
+    ---
+
+use data inside view and materials loop
+
+    {{#each items}}
+    {{data.foo}}
+    {{/each}}

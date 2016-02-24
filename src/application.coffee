@@ -7,6 +7,8 @@
 #=require materials/molecules/tab/tab.coffee
 #=require materials/molecules/slider/slider.coffee
 #=require materials/molecules/scroll_to/scroll_to.coffee
+#=require materials/molecules/dropdown/dropdown.coffee
+
 #=require materials/organisms/header/offcanvas.coffee
 
 $ ->
@@ -14,9 +16,10 @@ $ ->
   Streusel.selectorType = 'css_class'
   Streusel.selectorPrefix = 'js'
 
-  # Streusel.Readmore.init()
+  Streusel.Readmore.init()
   Streusel.Offcanvas.init()
   Streusel.Topbar.init()
   Streusel.Accordion.init()
   Streusel.Tab.init()
   Streusel.Slider.init()
+  Streusel.Dropdown.init()
