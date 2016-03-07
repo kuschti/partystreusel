@@ -6,7 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Partystreusel</title>
+	<title>Organisms - Partystreusel</title>
 
 	<link rel="stylesheet" href="/assets/partystreusel/styles/p.css">
 
@@ -244,21 +244,117 @@
 
 
 	
-<h1>Partystreusel</h1>
+<h1 data-f-toggle="labels">Organisms</h1>
 
-<strong>Version: 4.0.0-beta</strong>
-<hr />
-<p>This UI toolkit is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.</p>
 
-<p>This guide contains real working examples, code snippets, documentation, and style guidelines.</p>
+<div class="f-item-group" id="header">
 
-<h2>Usage</h2>
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Header</h2>
+	</div>
+		<div class="f-item-group" id="header.header">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Header</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<!-- <div class="js-offcanvas">
+  <div class="offcanvas">
+    <div class="offcanvas__pusher"> -->
+<header class="header">
+	<div class="header__logo">
+		<!-- Insert Logo here-->
+	</div>
+	<div class="offcanvas__content header__content">
+		<div class="offcanvas__content-inner">
+			<button href="#" class="offcanvas__close js-offcanvas__toggler"><svg class="icon icon--close " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <use xlink:href="#icon--close" />
+</svg>Close</button>
+			<div class="header__nav">
+				<nav class="main-nav">
+					<ul class="main-nav__list">
+						<li><a href="#" class="main-nav__link">Nav Item</a></li>
+						<li><a href="#" class="main-nav__link">Nav Item</a>
+							<ul class="main-nav__sub main-nav__sub--open">
+								<li><a href="#" class="main-nav__link">Nav Item</a></li>
+								<li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
+								<li><a href="#" class="main-nav__link">Nav Item</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="main-nav__link">Nav Item</a></li>
+						<li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header__meta">
+				<!-- Insert meta-nav here-->
+			</div>
+		</div>
+	</div>
+	<button href="#" class="offcanvas__opener js-offcanvas__toggler"><svg class="icon icon--menu " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <use xlink:href="#icon--menu" />
+</svg>Menu</button>
+</header>
+<!-- <main></main> -->
+<!-- <div class="offcanvas__overlay"></div>
+    </div>
+  </div>
+</div> -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;!-- &lt;div class=&quot;js-offcanvas&quot;&gt;
+  &lt;div class=&quot;offcanvas&quot;&gt;
+    &lt;div class=&quot;offcanvas__pusher&quot;&gt; --&gt;
+&lt;header class=&quot;header&quot;&gt;
+	&lt;div class=&quot;header__logo&quot;&gt;
+		&lt;!-- Insert Logo here--&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;offcanvas__content header__content&quot;&gt;
+		&lt;div class=&quot;offcanvas__content-inner&quot;&gt;
+			&lt;button href=&quot;#&quot; class=&quot;offcanvas__close js-offcanvas__toggler&quot;&gt;&lt;svg class=&quot;icon icon--close &quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+  &lt;use xlink:href=&quot;#icon--close&quot; /&gt;
+&lt;/svg&gt;Close&lt;/button&gt;
+			&lt;div class=&quot;header__nav&quot;&gt;
+				&lt;nav class=&quot;main-nav&quot;&gt;
+					&lt;ul class=&quot;main-nav__list&quot;&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;
+							&lt;ul class=&quot;main-nav__sub main-nav__sub--open&quot;&gt;
+								&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link main-nav__link--active&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;main-nav__link main-nav__link--active&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/nav&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;header__meta&quot;&gt;
+				&lt;!-- Insert meta-nav here--&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;button href=&quot;#&quot; class=&quot;offcanvas__opener js-offcanvas__toggler&quot;&gt;&lt;svg class=&quot;icon icon--menu &quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+  &lt;use xlink:href=&quot;#icon--menu&quot; /&gt;
+&lt;/svg&gt;Menu&lt;/button&gt;
+&lt;/header&gt;
+&lt;!-- &lt;main&gt;&lt;/main&gt; --&gt;
+&lt;!-- &lt;div class=&quot;offcanvas__overlay&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; --&gt;</code></pre>
+</div>
 
-<p>Start by adding the following files to your page:</p>
+		</div>
 
-<pre class="language-markup"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/styles/application.css&quot;&gt;</code></pre>
+</div>
 
-<pre class="language-markup"><code class="language-markup">&lt;script src=&quot;assets/scripts/application.js&quot;&gt;&lt;/script&gt;</code></pre>
 
 
 

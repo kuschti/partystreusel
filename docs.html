@@ -6,7 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Partystreusel</title>
+	<title></title>
 
 	<link rel="stylesheet" href="/assets/partystreusel/styles/p.css">
 
@@ -244,21 +244,257 @@
 
 
 	
-<h1>Partystreusel</h1>
+<h1 data-f-toggle="labels">Docs</h1>
 
-<strong>Version: 4.0.0-beta</strong>
-<hr />
-<p>This UI toolkit is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.</p>
 
-<p>This guide contains real working examples, code snippets, documentation, and style guidelines.</p>
+	<div class="f-item-group">
+		<h2 id="fabricator"><a href="#fabricator">Fabricator</a></h2>
+		<h3>Data</h3>
+<p>Im atoms/form/checkbox.html einen Button einbinden und daten via yml übergeben.</p>
+<p>checkboxdata.yml (liegt im selben Ordner wie html)
+{{{material 'buttons.default' checkboxdata}}}</p>
+<p>im button.html kann so auf die Daten im yml zugegriffen werden.</p>
+<p>Oder, via front-matter im checkbox.html, mit <code>form-checkbox</code> (gleich wie Ordern+Dateiname) werden die front-matter Daten übergeben</p>
+<pre><code>---
+Name: 'neuer Button'
+---
+{{{material 'buttons.default' form-checkbox}}}
+</code></pre>
+<h4>front-matter</h4>
+<pre><code>---
+icolist2:
+  - this
+  - that
+  - there
+---
+{{#test2}}
+  {{this}}
+{{/test2}}
 
-<h2>Usage</h2>
+</code></pre>
+<pre><code>---
+icolist:
+  item1:
+    test: gugug
+    title: sdfsdf
+  item2:
+    test: gsdf
+    title: sdfsdfsdf
+  item3:
+    test: sdfsdf
+    title: sdfsdf
+---
+// name of material file = iconbar/iconbar.html
+{{#each iconbar-iconbar.icolist}}
+  {{test}}
+  {{title}}
+{{/each}}
 
-<p>Start by adding the following files to your page:</p>
+</code></pre>
+<h4>material data in fabricator views</h4>
+<p>front-matter inside material</p>
+<pre><code>---
+foo: bar
+---
+</code></pre>
+<p>use data inside view and materials loop</p>
+<pre><code>{{#each items}}
+{{data.foo}}
+{{/each}}
+</code></pre>
 
-<pre class="language-markup"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/styles/application.css&quot;&gt;</code></pre>
+	</div>
 
-<pre class="language-markup"><code class="language-markup">&lt;script src=&quot;assets/scripts/application.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+	<div class="f-item-group">
+		<h2 id="gulp"><a href="#gulp">Gulp</a></h2>
+		<h3>Build &amp; Server</h3>
+<ul>
+<li>Use <code>$ gulp</code> to clean &amp; build files and start a server</li>
+</ul>
+<h3>Server</h3>
+<ul>
+<li>Use <code>$ gulp serve</code> to start a server &amp; watch for file changes</li>
+</ul>
+<h3>Watch</h3>
+<ul>
+<li>Use <code>$ gulp watch</code> to watch for file changes</li>
+</ul>
+<h3>Cleanup files in dist folder</h3>
+<ul>
+<li>Use <code>$ gulp clean</code> to clean all files</li>
+<li>Use <code>$ gulp clean:css</code> to clean css files</li>
+<li>Use <code>$ gulp clean:js</code> to clean js files</li>
+<li>Use <code>$ gulp clean:icons</code> to clean icon files</li>
+</ul>
+<h3>Build files</h3>
+<ul>
+<li>Use <code>$ gulp build</code> to build all files</li>
+<li>Use <code>$ gulp sass</code> to build css files</li>
+<li>Use <code>$ gulp jade</code> to build jade files</li>
+<li>Use <code>$ gulp js:coffee</code> to build js files</li>
+<li>Use <code>$ gulp js:polyfills</code> to build js polfill files</li>
+</ul>
+<h3>Deploy Styleguide</h3>
+<ul>
+<li>Use <code>$ gulp deploy</code> to deploy on staging</li>
+<li>Use <code>$ gulp deploy:github</code> to deploy to GitHub-Pages</li>
+</ul>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="javascript"><a href="#javascript">Javascript</a></h2>
+		<h3>JS &lt;-&gt; DOM</h3>
+<p>If you have the JS object use</p>
+<pre><code>myJsObject.$el
+</code></pre>
+<p>to access the corresponding DOM element.</p>
+<p>If you have the DOM element use</p>
+<pre><code>$('.myselector').data('object')
+</code></pre>
+<p>to access the correspoindg partystreusel JS object.</p>
+<h3>Events</h3>
+<p>Partystreusel components tirgger some events. All events are
+prefixed with the moulename. Eg. Readmore triggers the event
+'readmore-open' and 'readmore-close'.</p>
+<p>You can trigger an event directly on the JS object. Eg.
+if you have a readmore object:</p>
+<pre><code>readmoreObject = $('.myreadmore).data('object')
+readmoreObject.trigger('myevent')
+</code></pre>
+<p>Would triger a new event on $('.myreadmore') with name
+'readmore-event'.</p>
+<h3>Module Usage</h3>
+<p>Available modules:</p>
+<ul>
+<li>Streusel.scrollTo</li>
+<li>Streusel.Readmore</li>
+</ul>
+<h4>Scroll To</h4>
+<p>Add to application.js.coffee:</p>
+<pre><code>#= require partystreusel/scroll_to
+</code></pre>
+<p>This is just a function. Usage:</p>
+<pre><code># scroll to a[name=linkname]
+Streusel.scrollTo(link: 'linkname')
+
+# scroll to selector
+Streusel.scrollTo('selector')
+
+# scroll to jquery element
+Streusel.scrollTo($('selector'))
+
+# you can scroll to element with a pixeloffset
+# selector will be 12px below window top
+Streusel.scrollTo('selector', offset: -12)
+</code></pre>
+<p>hint: If element to scroll to could not be found, the function returns
+false. If element was found, return the found jquery element.</p>
+<h4>Read More</h4>
+<p>Use code below depending on environment you are in. If the content is
+empty or contains only whitespaces, nothing will be displayed.</p>
+<pre><code>#= require partystreusel/readmore
+
+$ -&gt;
+  Streusel.Readmore.init()
+</code></pre>
+<p>If you only want to initialize readmore for a part of the document:</p>
+<pre><code>Streusel.Readmore.init($('body article.loadedwithajax'))
+</code></pre>
+<h5>Html</h5>
+<pre><code>&lt;div class='mycustomclass' data-streusel-readmore&gt;
+  Your text....
+&lt;/div&gt;
+</code></pre>
+<p>Will be rendered to something like:</p>
+<pre><code>&lt;div class='mycustomclass' data-streusel-readmore&gt;
+  &lt;div&gt;Your text....&lt;/div&gt;
+  &lt;a ...&gt;Read more&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="Icons"><a href="#Icons">Icons</a></h2>
+		<p><strong>The icons are generated by gulp task. Don't change the all-icons.html file directly!</strong></p>
+<p>Use the following atom to build a icon inside the styleguide:</p>
+<pre><code>{{&gt; icons.icon icon-name=&quot;folder&quot;}}
+</code></pre>
+<p>You can add additional classes to the icon, e.g. for size modifiers (icon--m, icon--l) :</p>
+<pre><code>{{&gt; icons.icon icon-name=&quot;folder&quot; icon-modifier=&quot;icon--m&quot;}}
+</code></pre>
+<p>Or embed the icon directly with the svg/use html syntax:</p>
+<pre><code>&lt;svg title=&quot;NAME&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; class=&quot;icon icon--NAME&quot;&gt;&lt;use  xlink:href=&quot;#icon--NAME&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+</code></pre>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="Grid"><a href="#Grid">Grid</a></h2>
+		<h2>Documentation</h2>
+<h3>Grid Container</h3>
+<p><code>.grid__container</code> to mark an element as an outer container, centered, width grid max-width and cleared</p>
+<p>In Sass, the mixin ```@include outer-container()`` can be used.
+See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#outer-container">http://thoughtbot.github.io/neat-docs/latest/#outer-container</a>]</p>
+<h3>Grid Row</h3>
+<p><code>.grid__row</code> clear the floats and is diplay:block</p>
+<p>In Sass, the mixin <code>@include row()</code> can be used.
+See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#row">http://thoughtbot.github.io/neat-docs/latest/#row</a>]</p>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="Header"><a href="#Header">Header</a></h2>
+		<h2>Documentation</h2>
+<p>This component is a combination of the <code>&lt;header class=&quot;header&quot; /&gt;</code> and all containers &amp; buttons for the off-canvas part.</p>
+<ul>
+<li>small and middle screen =&gt; off-canvas navigation</li>
+<li>large screens =&gt; default navigation/header</li>
+</ul>
+<h3>DOM</h3>
+<p>**The DOM of the page should look like this (example is simplified): **</p>
+<pre><code>&lt;body class=&quot;js-offcanvas&quot;&gt;
+  &lt;div class=&quot;offcanvas&quot;&gt;
+    &lt;div class=&quot;offcanvas__pusher&quot;&gt;
+
+      &lt;header class=&quot;header&quot;&gt;
+
+        &lt;div class=&quot;offcanvas__content&quot;&gt;
+          &lt;button class=&quot;offcanvas__close&quot;&gt;&lt;/button&gt;
+
+          &lt;div class=&quot;header__nav&quot;&gt;
+            &lt;nav class=&quot;main-nav&quot;&gt; main navigation...&lt;/nav&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;header__meta&quot;&gt;
+            meta-nav...
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;button class=&quot;offcanvas__opener&quot;&gt;&lt;/button&gt;
+
+      &lt;/header&gt;
+
+      &lt;main&gt; Her comes the content...&lt;/main&gt;
+      &lt;footer&gt;footer of page&lt;/footer&gt;
+
+      &lt;div class=&quot;offcanvas__overlay&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h3>JS</h3>
+<p>The class <code>js-offcanvas</code> is to initialize the off-canvas functions (toggle with buttons). Toggle Buttons needs the class <code>js-offcanvas__toggler</code> for the eventhandler.</p>
+
+	</div>
+
 
 
 
