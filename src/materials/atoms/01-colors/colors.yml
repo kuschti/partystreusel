@@ -1,0 +1,17 @@
+colors:
+  brand:
+    primary: "#d60051"
+    secondary: "#d7d7d7"
+    tertiary: "#333"
+  base:
+    dark: "#333"
+    light: "#fff"
+  accent:
+    accent--light: "#f0f0f0"
+    accent: "#d7d7d7"
+    accent--dark: "#acacac"
+  states:
+    warning: "#f08a24"
+    alert: "#f00"
+    info: "#a0d3e8"
+    success: "#43ac6a"

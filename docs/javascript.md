@@ -1,6 +1,4 @@
-# JS
-
-## JS <-> DOM
+### JS <-> DOM
 
 If you have the JS object use
 
@@ -14,7 +12,7 @@ If you have the DOM element use
 
 to access the correspoindg partystreusel JS object.
 
-## Events
+### Events
 
 Partystreusel components tirgger some events. All events are
 prefixed with the moulename. Eg. Readmore triggers the event
@@ -26,16 +24,16 @@ if you have a readmore object:
     readmoreObject = $('.myreadmore).data('object')
     readmoreObject.trigger('myevent')
 
-Would triger a new event on $('.myreadmore') with name 
+Would triger a new event on $('.myreadmore') with name
 'readmore-event'.
 
-## Module Usage
+### Module Usage
 
 Available modules:
 * Streusel.scrollTo
 * Streusel.Readmore
 
-### Scroll To
+#### Scroll To
 
 Add to application.js.coffee:
 
@@ -59,7 +57,7 @@ This is just a function. Usage:
 hint: If element to scroll to could not be found, the function returns
 false. If element was found, return the found jquery element.
 
-### Read More
+#### Read More
 
 Use code below depending on environment you are in. If the content is
 empty or contains only whitespaces, nothing will be displayed.
@@ -73,7 +71,7 @@ If you only want to initialize readmore for a part of the document:
 
     Streusel.Readmore.init($('body article.loadedwithajax'))
 
-#### Html
+##### Html
 
     <div class='mycustomclass' data-streusel-readmore>
       Your text....

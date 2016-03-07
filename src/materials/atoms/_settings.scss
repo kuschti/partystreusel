@@ -1,0 +1,144 @@
+// Disable Bourbon Prefixes
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      false;
+
+// This is the the base for the em/rem mixins and the grid calculation.
+// If your $body__font-size is 100%, leave it at 16px.
+$em-base: 16px;
+
+// GRID
+// ----------------------------------------
+// Since the typical default browser font-size is 16px,
+// that makes the calculation for grid size.
+//
+// THIS VARIABLES ARE FOR NEAT SETTING! DON'T RENAME!
+$gutter:              em(20);
+$grid-columns:        12;
+$max-width:           rem(1200);
+$border-box-sizing:   true;
+
+// Debug Grid
+$visual-grid:         false;
+$visual-grid-color:   #f00;
+$visual-grid-index:   back;
+$visual-grid-opacity: 0.1;
+
+// MEDIAQUERIES
+// ----------------------------------------
+// 640px, 800px, 1200px
+$breakpoints: (
+  medium:   40em,
+  large:    50em,
+  xlarge:   75em
+);
+
+// COLORS
+// --------------------------
+
+// DON'T USE THIS NAME SPECIFIC VARIABLES IN OTHER FILES
+$color__black:              #333;
+$color__white:              #fff;
+
+$color__grey:               #d7d7d7;
+$color__grey--light:        #f0f0f0;
+$color__grey--dark:         #acacac;
+
+$color__orange:             #f08a24;
+$color__red:                #f00;
+$color__blue--light:        #a0d3e8;
+$color__green:              #43ac6a;
+
+$color__brand--one:         #d60051;
+$color__brand--two:         $color__grey;
+
+// COLOR NAMING
+// USE THIS VARIABLES IN OTHER FILES
+$color__primary:            $color__brand--one;
+$color__secondary:          $color__brand--two;
+$color__tertiary:           $color__black;
+
+$color__dark:               $color__black;
+$color__bright:             $color__white;
+
+$color__accent:             $color__grey;
+$color__accent--light:      $color__grey--light;
+$color__accent--dark:       $color__grey--dark;
+
+$color__alert:              $color__red;
+$color__success:            $color__green;
+$color__warning:            $color__orange;
+$color__info:               $color__blue--light;
+
+// SPACES
+// ----------------------------------------
+$space__default-value: 10;  // e.g. used for paddings
+
+$grid__paddings: (
+  small: rem(10),
+  medium: rem(15),
+  large: rem(20)
+);
+
+// TYPOGRAPHY
+// ----------------------------------------
+$font-weight--light:         300;
+$font-weight--regular:       400;
+$font-weight--medium:        400;
+$font-weight--bold:          700;
+
+$body__font-family:           "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body__font-size:             100%;
+$body__font-weight:           normal;
+$body__font-style:            normal;
+$body__font-color:            $color__dark;
+$body__line-height:           1.2;
+$body__background-color:      $color__bright;
+
+// HEADINGS font styles
+$heading__font-family:        $body__font-family;
+$heading__font-weight:        900;
+$heading__font-style:         normal;
+$heading__font-color:         $body__font-color;
+$heading__text-rendering:     auto;
+
+// PARAGRAPHS
+$paragraph__font-family:      inherit;
+$paragraph__font-weight:      normal;
+$paragraph__font-size:        rem(16);
+$paragraph__line-height:      1.5;
+$paragraph__margin-bottom:    rem(12);
+$paragraph__text-rendering:   auto;
+
+// ANCHORS
+$anchor__text-decoration:     none;
+$anchor__font-color:          $color__primary;
+$anchor__font-color-hover:    $color__secondary;
+$anchor__font-color-active:   $color__tertiary;
+
+// <HR>
+$hr__margin-top:              rem(18);
+$hr__margin-bottom:           $hr__margin-top;
+$hr__border-width:            rem(1);
+$hr__border-style:            solid;
+$hr__border-color:            $body__font-color;
+
+// LISTS
+$list__style-position:        outside;
+$list__side-margin:           0;
+$list__nested-margin:         0;
+$list__side-padding:          rem(18);
+$list__ol-side-padding:       rem(23);
+$list__font-size:             $paragraph__font-size;
+
+// BLOCKQUOTE
+$blockquote__font-family:     inherit;
+$blockquote__font-size:       rem(16);
+$blockquote__font-style:      italic;
+$blockquote__margin:          0 0 $paragraph__margin-bottom 0;
+
+// RADIUS
+$border-radius:               0;
+$border-radius--round:        100%;

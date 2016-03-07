@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{title}}</title>
+
+	{{#if fabricator}}<link rel="stylesheet" href="{{baseurl}}/assets/partystreusel/styles/p.css">{{/if}}
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="{{baseurl}}/assets/styles/application.css">
+	<!-- /toolkit styles -->
+
+	{{> p-icons-include}}
+
+</head>
+<body>
+
+	{{#if fabricator}}
+		{{> f-icons}}
+		{{> f-menu}}
+		<div class="f-container">
+			{{> f-control-bar}}
+	{{/if}}
+
+
+	{% body %}
+
+
+	{{#if fabricator}}
+		</div>
+	<script src="{{baseurl}}/assets/partystreusel/scripts/p.js"></script>
+	{{/if}}
+
+	<!-- toolkit scripts -->
+	<script src="{{baseurl}}/assets/scripts/application.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
