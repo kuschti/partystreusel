@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 4.0.0-beta
+* change structure to atomic design
+* use fabricator-assemble package
+* switch from jade to html (with handlebars)
+* extend media-query mixin
+* update packages
+  * gulp
+  * gulp-sass
+  
 ## 3.2.3
 * fix typo.scss
 * cleanup gulfpile & requires
