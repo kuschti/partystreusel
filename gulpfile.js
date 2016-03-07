@@ -1,11 +1,6 @@
 'use strict';
 
 // modules
-var svgSymbols    = require('gulp-svg-symbols'),
-    glob          = require('glob'),
-    gulpicon      = require('gulpicon/tasks/gulpicon');
-
-
 var gulp          = require('gulp');
 var gutil         = require('gulp-util');
 var gulpif        = require('gulp-if');
@@ -21,6 +16,9 @@ var include       = require('gulp-include');
 var concat        = require('gulp-concat');
 var addsrc        = require('gulp-add-src');
 var imagemin      = require('gulp-imagemin');
+var svgSymbols    = require('gulp-svg-symbols');
+var glob          = require('glob');
+var gulpicon      = require('gulpicon/tasks/gulpicon');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var bourbon       = require('node-bourbon').includePaths;
