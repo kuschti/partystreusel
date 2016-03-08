@@ -18,7 +18,6 @@ var addsrc        = require('gulp-add-src');
 var imagemin      = require('gulp-imagemin');
 var svgSymbols    = require('gulp-svg-symbols');
 var glob          = require('glob');
-var gulpicon      = require('gulpicon/tasks/gulpicon');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var bourbon       = require('node-bourbon').includePaths;
@@ -159,27 +158,19 @@ gulp.task('svgsprite', function () {
     .pipe(svgSymbols({
       id:     'icon--%f',
       title:  'icon %f',
-      templates: [config.src.iconsystem + '/_icon-sprite.svg']
+      templates: [
+				config.src.iconsystem + '/_icon-sprite-template.svg',
+				config.src.iconsystem + '/_icons-preview-template.html'
+			]
     }))
-    .pipe(rename('icon-sprite.svg'))
-    .pipe(gulp.dest(config.dest + '/assets/images/icons'));
+		.pipe(gulpif( /[.]svg$/, rename('icon-sprite.svg')))
+    .pipe(gulpif( /[.]svg$/, gulp.dest(config.dest + '/assets/images/icons')))
+		.pipe(gulpif( /[.]html$/, rename('all-icons.html')))
+		.pipe(gulpif( /[.]html$/, gulp.dest(config.src.iconsystem)));
 });
 
-var gulpiconFiles = glob.sync(config.src.icons),
-    gulpiconOptions = {
-      dest: config.dest + '/assets/images/icons',
-      cssprefix: '.icon--',
-      pngpath: "images/icons/png",
-      pngfolder: 'png',
-      previewhtml: "../../../../src/materials/atoms/icons/all-icons.html",
-      template: config.src.iconsystem + '/_icons_stylesheet.hbs',
-      previewTemplate: config.src.iconsystem + '/_icons_preview.hbs'
-    };
-
-gulp.task("gulpicon", gulpicon(gulpiconFiles, gulpiconOptions));
-
 // Icon workflow
-gulp.task('icons', ['svgmin', 'svgsprite', 'gulpicon']);
+gulp.task('icons', ['svgmin', 'svgsprite']);
 
 
 // Fonts
