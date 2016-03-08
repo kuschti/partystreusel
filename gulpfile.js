@@ -268,7 +268,7 @@ gulp.task('serve', function () {
 
 });
 
-gulp.task('partystreusel', ['default']);
+gulp.task('build', ['default']);
 
 // DEFAULT BUILD TASK
 // ----------------------------------------

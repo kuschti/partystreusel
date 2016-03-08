@@ -1,24 +1,21 @@
 ### Build & Server
-- Use ```$ gulp``` to clean & build files and start a server
+- Use ```$ gulp --dev``` to clean & build files and start a server
 
 ### Server
 - Use ```$ gulp serve``` to start a server & watch for file changes
 
-### Watch
-- Use ```$ gulp watch``` to watch for file changes
 
 ### Cleanup files in dist folder
 - Use ```$ gulp clean``` to clean all files
-- Use ```$ gulp clean:css``` to clean css files
-- Use ```$ gulp clean:js``` to clean js files
-- Use ```$ gulp clean:icons``` to clean icon files
 
-### Build files
+### Single build tasks
 - Use ```$ gulp build``` to build all files
-- Use ```$ gulp sass``` to build css files
-- Use ```$ gulp jade``` to build jade files
-- Use ```$ gulp js:coffee``` to build js files
-- Use ```$ gulp js:polyfills``` to build js polfill files
+- Use ```$ gulp styles``` to build css files
+- Use ```$ gulp scripts``` to build js files
+- Use ```$ gulp polyfills``` to build js polfill files
+- Use ```$ gulp fonts``` to copy font files to dist
+- Use ```$ gulp images``` to minify & copy image files
+- Use ```$ gulp icons``` to generate sprite & demo site
 
 ### Deploy Styleguide
 - Use ```$ gulp deploy``` to deploy on staging

@@ -16,10 +16,10 @@ You will need [Node.js](http://nodejs.org)
     $ npm install --global gulp
 
     # Run gulp to build all files
-    $ gulp build
-
-    # Or you can run ony gulp task to start a local server
     $ gulp
+
+    # Or you can run in dev env to build & start a local server
+    $ gulp --dev
 
 
 ## Documentation

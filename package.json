@@ -20,10 +20,10 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "gulp": "gulp partystreusel",
+    "gulp": "gulp",
     "prestart": "npm install",
-    "build": "npm install && gulp partystreusel",
-    "start": "gulp partystreusel --dev",
+    "build": "npm install && gulp",
+    "start": "gulp --dev",
     "test": "npm run build"
   },
   "devDependencies": {

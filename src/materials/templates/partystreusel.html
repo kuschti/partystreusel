@@ -1,43 +1,49 @@
 <!doctype html>
-<html lang="">
-<head>
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="no-js lt-ie10"></html><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+	<head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{{title}}</title>
+		<title>{{title}}</title>
 
-	{{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/assets/partystreusel/styles/p.css">{{/if}}
+		{{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/assets/partystreusel/styles/p.css">{{/if}}
 
-	<!-- toolkit styles -->
-	<link rel="stylesheet" href="./{{baseurl}}/assets/styles/application.css">
-	<!-- /toolkit styles -->
+		<!-- toolkit styles -->
+		<link rel="stylesheet" href="./{{baseurl}}/assets/styles/application.css">
+		<!-- /toolkit styles -->
 
-	{{> p-icons-include}}
+		{{> p-icons-include}}
 
-</head>
-<body>
+	</head>
+	<body>
 
-	{{#if fabricator}}
-		{{> f-icons}}
-		{{> f-menu}}
-		<div class="f-container">
-			{{> f-control-bar}}
-	{{/if}}
-
-
-	{% body %}
+		{{#if fabricator}}
+			{{> f-icons}}
+			{{> f-menu}}
+			<div class="f-container">
+				{{> f-control-bar}}
+		{{/if}}
 
 
-	{{#if fabricator}}
-		</div>
-	<script src="./{{baseurl}}/assets/partystreusel/scripts/p.js"></script>
-	{{/if}}
+		{% body %}
 
-	<!-- toolkit scripts -->
-	<script src="./{{baseurl}}/assets/scripts/application.js"></script>
-	<!-- /toolkit scripts -->
 
-</body>
+		{{#if fabricator}}
+			</div>
+		<script src="./{{baseurl}}/assets/partystreusel/scripts/p.js"></script>
+		{{/if}}
+
+		<!-- toolkit scripts -->
+		<script src="./{{baseurl}}/assets/scripts/application.js"></script>
+		<!-- /toolkit scripts -->
+
+	</body>
 </html>
