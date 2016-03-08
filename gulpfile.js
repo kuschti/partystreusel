@@ -189,7 +189,7 @@ gulp.task('assemble', function (done) {
     layouts: 'src/materials/templates/*.html',
     layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
     views: ['src/_styleguide/fabricator/views/**/*', 'src/pages/**/*'],
-    materials: 'src/materials/**/*.html',
+    materials: 'src/materials/**/!(_)*.html',
     data: 'src/materials/**/*.{json,yml}',
     docs: ['docs/**/*.md', 'src/materials/**/*.md'],
     helpers: {
