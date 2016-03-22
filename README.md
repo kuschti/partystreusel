@@ -9,6 +9,10 @@ You will need [Node.js](http://nodejs.org)
     $ cd YOUR_APP_DIRECTORY
     $ git remote rename origin upstream
 
+    # Use node version defined in .nvrmc
+    # if you use nvm as node version manager ->
+    $ nvm use
+
     # Install dependencies
     $ npm install
 
