@@ -1,14 +1,21 @@
 # CHANGELOG
 
-## 4.0.0-beta
+## 4.0.0
 * change structure to atomic design
 * use fabricator-assemble package
 * switch from jade to html (with handlebars)
 * extend media-query mixin
+* simplify icon system
+  * remove gulpicon, remove png fallbacks
 * update packages
   * gulp
   * gulp-sass
-  
+  * babel to v6
+  * gulp-csso
+  * webpack
+  * node-bourbon
+* define node.js version to v4.4.1 in nvrmc
+
 ## 3.2.3
 * fix typo.scss
 * cleanup gulfpile & requires
