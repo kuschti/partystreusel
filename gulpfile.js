@@ -17,7 +17,6 @@ var concat        = require('gulp-concat');
 var addsrc        = require('gulp-add-src');
 var imagemin      = require('gulp-imagemin');
 var svgSymbols    = require('gulp-svg-symbols');
-var glob          = require('glob');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var bourbon       = require('node-bourbon').includePaths;
