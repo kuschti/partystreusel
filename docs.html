@@ -1,249 +1,242 @@
 <!doctype html>
-<html lang="">
-<head>
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="no-js lt-ie10"></html><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+	<head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title></title>
+		<title></title>
 
-	<link rel="stylesheet" href=".//assets/partystreusel/styles/p.css">
+		<link rel="stylesheet" href=".//assets/partystreusel/styles/p.css">
 
-	<!-- toolkit styles -->
-	<link rel="stylesheet" href=".//assets/styles/application.css">
-	<!-- /toolkit styles -->
+		<!-- toolkit styles -->
+		<link rel="stylesheet" href=".//assets/styles/application.css">
+		<!-- /toolkit styles -->
 
-	<script>
-	  var supportsSvg = function() {
-	    var div = document.createElement('div');
-	    div.innerHTML = '<svg/>';
-	    return (div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
-	  };
-	  if (!supportsSvg()) {
-	    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);
-	    grunticon(["", ".//assets/images/icons/icons.data.png.css", ".//assets/images/icons/icons.fallback.css"]);
-	  } else {
-	    var ajax = new XMLHttpRequest();
-	    ajax.open("GET", ".//assets/images/icons/icon-sprite.svg", true);
-	    ajax.onload = function(e) {
-	      var div = document.createElement("div");
-	      div.innerHTML = ajax.responseText;
-	      document.body.insertBefore(div, document.body.childNodes[0]);
-	    }
-	    ajax.send();
-	  }
-	</script>
-	<noscript>
-	  <link rel="stylesheet" href=".//assets/images/icons/icons.fallback.css"/>
-	</noscript>
+		<script>
+		  var ajax = new XMLHttpRequest();
+		  ajax.open("GET", ".//assets/images/icons/icon-sprite.svg", true);
+		  ajax.onload = function(e) {
+		    var div = document.createElement("div");
+		    div.innerHTML = ajax.responseText;
+		    document.body.insertBefore(div, document.body.childNodes[0]);
+		  }
+		  ajax.send();
+		</script>
 
-</head>
-<body>
+	</head>
+	<body>
 
-		<!-- fabricator icons -->
-		<svg style="display: none;">
-			<symbol id="f-icon-code" viewBox="0 0 512 512">
-				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
-			</symbol>
-			<symbol id="f-icon-notes" viewBox="0 0 512 512">
-				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
-			</symbol>
-			<symbol id="f-icon-labels" viewBox="0 0 512 512">
-				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
-			</symbol>
-			<symbol id="f-icon-menu" viewBox="0 0 512 512">
-				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
-			</symbol>
-			<symbol id="f-icon-settings" viewBox="0 0 512 512">
-				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
-			</symbol>
-		</svg>
-		<!-- /fabricator icons -->
-		<!-- fabricator menu -->
-		<div class="f-menu">
-		
-			<div class="f-controls">
-				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
-					<svg>
-						<use xlink:href="#f-icon-labels" />
-					</svg>
+			<!-- fabricator icons -->
+			<svg style="display: none;">
+				<symbol id="f-icon-code" viewBox="0 0 512 512">
+					<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+				</symbol>
+				<symbol id="f-icon-notes" viewBox="0 0 512 512">
+					<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+				</symbol>
+				<symbol id="f-icon-labels" viewBox="0 0 512 512">
+					<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+				</symbol>
+				<symbol id="f-icon-menu" viewBox="0 0 512 512">
+					<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+				</symbol>
+				<symbol id="f-icon-settings" viewBox="0 0 512 512">
+					<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+				</symbol>
+			</svg>
+			<!-- /fabricator icons -->
+			<!-- fabricator menu -->
+			<div class="f-menu">
+			
+				<div class="f-controls">
+					<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+						<svg>
+							<use xlink:href="#f-icon-labels" />
+						</svg>
+					</div>
+					<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+						<svg>
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</div>
+					<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</div>
 				</div>
-				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
-					<svg>
-						<use xlink:href="#f-icon-notes" />
-					</svg>
-				</div>
-				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
-					<svg>
-						<use xlink:href="#f-icon-code" />
-					</svg>
-				</div>
+			
+				<ul>
+			
+					<li>
+						<a href="index.html" class="f-menu__heading">Overview</a>
+					</li>
+			
+					<li>
+						<a href="atoms.html" class="f-menu__heading">Atoms</a>
+						<ul>
+							<li>
+								<a href="atoms.html#01-colors">Colors</a>
+							</li>
+							<li>
+								<a href="atoms.html#02-typography">Typography</a>
+							</li>
+							<li>
+								<a href="atoms.html#buttons">Buttons</a>
+							</li>
+							<li>
+								<a href="atoms.html#form">Form</a>
+							</li>
+							<li>
+								<a href="atoms.html#helpers">Helpers</a>
+							</li>
+							<li>
+								<a href="atoms.html#icons">Icons</a>
+							</li>
+							<li>
+								<a href="atoms.html#image">Image</a>
+							</li>
+							<li>
+								<a href="atoms.html#table">Table</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="molecules.html" class="f-menu__heading">Molecules</a>
+						<ul>
+							<li>
+								<a href="molecules.html#accordion">Accordion</a>
+							</li>
+							<li>
+								<a href="molecules.html#breadcrumb">Breadcrumb</a>
+							</li>
+							<li>
+								<a href="molecules.html#button-group">Button Group</a>
+							</li>
+							<li>
+								<a href="molecules.html#content">Content</a>
+							</li>
+							<li>
+								<a href="molecules.html#dropdown">Dropdown</a>
+							</li>
+							<li>
+								<a href="molecules.html#embeds">Embeds</a>
+							</li>
+							<li>
+								<a href="molecules.html#grid">Grid</a>
+							</li>
+							<li>
+								<a href="molecules.html#iconbar">Iconbar</a>
+							</li>
+							<li>
+								<a href="molecules.html#linklist">Linklist</a>
+							</li>
+							<li>
+								<a href="molecules.html#main-nav">Main Nav</a>
+							</li>
+							<li>
+								<a href="molecules.html#readmore">Readmore</a>
+							</li>
+							<li>
+								<a href="molecules.html#search">Search</a>
+							</li>
+							<li>
+								<a href="molecules.html#slider">Slider</a>
+							</li>
+							<li>
+								<a href="molecules.html#switch">Switch</a>
+							</li>
+							<li>
+								<a href="molecules.html#tab">Tab</a>
+							</li>
+							<li>
+								<a href="molecules.html#teaser">Teaser</a>
+							</li>
+							<li>
+								<a href="molecules.html#teaser_assets">Teaser Assets</a>
+							</li>
+							<li>
+								<a href="molecules.html#teaser_card">Teaser Card</a>
+							</li>
+							<li>
+								<a href="molecules.html#teaser_list">Teaser List</a>
+							</li>
+							<li>
+								<a href="molecules.html#topbar">Topbar</a>
+							</li>
+							<li>
+								<a href="molecules.html#two_column">Two Column</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="organisms.html" class="f-menu__heading">Organisms</a>
+						<ul>
+							<li>
+								<a href="organisms.html#header">Header</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="pages.html" class="f-menu__heading">Pages</a>
+						<ul>
+							<li>
+								<a href="pages/demo.html" target="_blank">Demo</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="docs.html" class="f-menu__heading">Docs</a>
+						<ul>
+							<li>
+								<a href="docs.html#fabricator">Fabricator</a>
+							</li>
+							<li>
+								<a href="docs.html#gulp">Gulp</a>
+							</li>
+							<li>
+								<a href="docs.html#javascript">Javascript</a>
+							</li>
+							<li>
+								<a href="docs.html#Icons">Icons</a>
+							</li>
+							<li>
+								<a href="docs.html#Grid">Grid</a>
+							</li>
+							<li>
+								<a href="docs.html#Header">Header</a>
+							</li>
+						</ul>
+					</li>
+			
+				</ul>
+			
+			
 			</div>
-		
-			<ul>
-		
-				<li>
-					<a href="index.html" class="f-menu__heading">Overview</a>
-				</li>
-		
-				<li>
-					<a href="atoms.html" class="f-menu__heading">Atoms</a>
-					<ul>
-						<li>
-							<a href="atoms.html#01-colors">Colors</a>
-						</li>
-						<li>
-							<a href="atoms.html#02-typography">Typography</a>
-						</li>
-						<li>
-							<a href="atoms.html#buttons">Buttons</a>
-						</li>
-						<li>
-							<a href="atoms.html#form">Form</a>
-						</li>
-						<li>
-							<a href="atoms.html#helpers">Helpers</a>
-						</li>
-						<li>
-							<a href="atoms.html#icons">Icons</a>
-						</li>
-						<li>
-							<a href="atoms.html#image">Image</a>
-						</li>
-						<li>
-							<a href="atoms.html#table">Table</a>
-						</li>
-					</ul>
-				</li>
-		
-				<li>
-					<a href="molecules.html" class="f-menu__heading">Molecules</a>
-					<ul>
-						<li>
-							<a href="molecules.html#accordion">Accordion</a>
-						</li>
-						<li>
-							<a href="molecules.html#breadcrumb">Breadcrumb</a>
-						</li>
-						<li>
-							<a href="molecules.html#button-group">Button Group</a>
-						</li>
-						<li>
-							<a href="molecules.html#content">Content</a>
-						</li>
-						<li>
-							<a href="molecules.html#dropdown">Dropdown</a>
-						</li>
-						<li>
-							<a href="molecules.html#embeds">Embeds</a>
-						</li>
-						<li>
-							<a href="molecules.html#grid">Grid</a>
-						</li>
-						<li>
-							<a href="molecules.html#iconbar">Iconbar</a>
-						</li>
-						<li>
-							<a href="molecules.html#linklist">Linklist</a>
-						</li>
-						<li>
-							<a href="molecules.html#main-nav">Main Nav</a>
-						</li>
-						<li>
-							<a href="molecules.html#readmore">Readmore</a>
-						</li>
-						<li>
-							<a href="molecules.html#search">Search</a>
-						</li>
-						<li>
-							<a href="molecules.html#slider">Slider</a>
-						</li>
-						<li>
-							<a href="molecules.html#switch">Switch</a>
-						</li>
-						<li>
-							<a href="molecules.html#tab">Tab</a>
-						</li>
-						<li>
-							<a href="molecules.html#teaser">Teaser</a>
-						</li>
-						<li>
-							<a href="molecules.html#teaser_assets">Teaser Assets</a>
-						</li>
-						<li>
-							<a href="molecules.html#teaser_card">Teaser Card</a>
-						</li>
-						<li>
-							<a href="molecules.html#teaser_list">Teaser List</a>
-						</li>
-						<li>
-							<a href="molecules.html#topbar">Topbar</a>
-						</li>
-						<li>
-							<a href="molecules.html#two_column">Two Column</a>
-						</li>
-					</ul>
-				</li>
-		
-				<li>
-					<a href="organisms.html" class="f-menu__heading">Organisms</a>
-					<ul>
-						<li>
-							<a href="organisms.html#header">Header</a>
-						</li>
-					</ul>
-				</li>
-		
-				<li>
-					<a href="pages.html" class="f-menu__heading">Pages</a>
-					<ul>
-						<li>
-							<a href="pages/demo.html" target="_blank">Demo</a>
-						</li>
-					</ul>
-				</li>
-		
-				<li>
-					<a href="docs.html" class="f-menu__heading">Docs</a>
-					<ul>
-						<li>
-							<a href="docs.html#fabricator">Fabricator</a>
-						</li>
-						<li>
-							<a href="docs.html#gulp">Gulp</a>
-						</li>
-						<li>
-							<a href="docs.html#javascript">Javascript</a>
-						</li>
-						<li>
-							<a href="docs.html#Icons">Icons</a>
-						</li>
-						<li>
-							<a href="docs.html#Grid">Grid</a>
-						</li>
-						<li>
-							<a href="docs.html#Header">Header</a>
-						</li>
-					</ul>
-				</li>
-		
-			</ul>
-		
-		
-		</div>
-		<!-- /fabricator menu -->
-		<div class="f-container">
-			<div class="f-control-bar">
-				<div class="f-control f-menu-toggle">
-					<svg>
-						<use xlink:href="#f-icon-menu" />
-					</svg>
+			<!-- /fabricator menu -->
+			<div class="f-container">
+				<div class="f-control-bar">
+					<div class="f-control f-menu-toggle">
+						<svg>
+							<use xlink:href="#f-icon-menu" />
+						</svg>
+					</div>
 				</div>
-			</div>
 
 
-	
+		
 <h1 data-f-toggle="labels">Docs</h1>
 
 
@@ -310,30 +303,25 @@ foo: bar
 		<h2 id="gulp"><a href="#gulp">Gulp</a></h2>
 		<h3>Build &amp; Server</h3>
 <ul>
-<li>Use <code>$ gulp</code> to clean &amp; build files and start a server</li>
+<li>Use <code>$ gulp --dev</code> to clean &amp; build files and start a server</li>
 </ul>
 <h3>Server</h3>
 <ul>
 <li>Use <code>$ gulp serve</code> to start a server &amp; watch for file changes</li>
 </ul>
-<h3>Watch</h3>
-<ul>
-<li>Use <code>$ gulp watch</code> to watch for file changes</li>
-</ul>
 <h3>Cleanup files in dist folder</h3>
 <ul>
 <li>Use <code>$ gulp clean</code> to clean all files</li>
-<li>Use <code>$ gulp clean:css</code> to clean css files</li>
-<li>Use <code>$ gulp clean:js</code> to clean js files</li>
-<li>Use <code>$ gulp clean:icons</code> to clean icon files</li>
 </ul>
-<h3>Build files</h3>
+<h3>Single build tasks</h3>
 <ul>
 <li>Use <code>$ gulp build</code> to build all files</li>
-<li>Use <code>$ gulp sass</code> to build css files</li>
-<li>Use <code>$ gulp jade</code> to build jade files</li>
-<li>Use <code>$ gulp js:coffee</code> to build js files</li>
-<li>Use <code>$ gulp js:polyfills</code> to build js polfill files</li>
+<li>Use <code>$ gulp styles</code> to build css files</li>
+<li>Use <code>$ gulp scripts</code> to build js files</li>
+<li>Use <code>$ gulp polyfills</code> to build js polfill files</li>
+<li>Use <code>$ gulp fonts</code> to copy font files to dist</li>
+<li>Use <code>$ gulp images</code> to minify &amp; copy image files</li>
+<li>Use <code>$ gulp icons</code> to generate sprite &amp; demo site</li>
 </ul>
 <h3>Deploy Styleguide</h3>
 <ul>
@@ -498,12 +486,12 @@ See (Neat documentation)[<a href="http://thoughtbot.github.io/neat-docs/latest/#
 
 
 
-		</div>
-	<script src=".//assets/partystreusel/scripts/p.js"></script>
+			</div>
+		<script src=".//assets/partystreusel/scripts/p.js"></script>
 
-	<!-- toolkit scripts -->
-	<script src=".//assets/scripts/application.js"></script>
-	<!-- /toolkit scripts -->
+		<!-- toolkit scripts -->
+		<script src=".//assets/scripts/application.js"></script>
+		<!-- /toolkit scripts -->
 
-</body>
+	</body>
 </html>

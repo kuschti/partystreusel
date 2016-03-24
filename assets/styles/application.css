@@ -403,7 +403,7 @@ article {
   article:last-child {
     margin-right: 0; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   article {
     padding: 0 1.5rem; } }
 
@@ -510,7 +510,7 @@ blockquote {
   font-style: italic;
   margin: 0 0 0.75rem 0; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   h1,
   .h1 {
     font-size: 3.375rem;
@@ -540,7 +540,7 @@ blockquote {
   blockquote {
     font-size: 1.125rem; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   h1,
   .h1 {
     font-size: 4.5rem;
@@ -611,7 +611,7 @@ blockquote {
      -moz-appearance: none;
           appearance: none;
   -webkit-transition: all 0.1s ease-in-out;
-          transition: all 0.1s ease-in-out; }
+  transition: all 0.1s ease-in-out; }
   .btn .icon {
     width: 1.4375rem;
     height: 1.4375rem;
@@ -622,7 +622,7 @@ blockquote {
     border-color: #acacac; }
   .btn:active, .btn.btn--active {
     -webkit-transition: none;
-            transition: none;
+    transition: none;
     color: #fff;
     background: #333;
     border-color: #333;
@@ -704,7 +704,7 @@ thead {
 
 tbody tr {
   -webkit-transition: all 0.1s linear;
-          transition: all 0.1s linear;
+  transition: all 0.1s linear;
   background-color: #d7d7d7; }
   tbody tr:nth-child(odd) {
     background-color: #f0f0f0;
@@ -722,7 +722,7 @@ th {
   th:last-child {
     border-right: 0; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .table-wrapper {
     overflow-x: hidden; } }
 
@@ -743,7 +743,7 @@ figure {
   line-height: 1.6;
   margin-bottom: 0.75rem; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .image img {
     margin-bottom: 1.5rem; } }
 
@@ -778,7 +778,7 @@ input:-ms-input-placeholder {
 input::placeholder {
   color: #acacac; }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 textarea {
   display: block;
   width: 100%;
@@ -789,7 +789,7 @@ textarea {
   padding: 0.5625rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5; }
-  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   textarea:focus {
     outline: 0;
     background-color: #fff;
@@ -875,7 +875,7 @@ select {
 .form--field-valid input {
   border-color: #43ac6a; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .form--horizontal {
     max-width: 75rem;
     margin-left: auto;
@@ -1054,7 +1054,7 @@ select {
       background: #d7d7d7;
       border-radius: 1.875rem;
       -webkit-transition: all 0.15s ease-out;
-              transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out;
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0); }
       .switch input + label:after {
@@ -1068,7 +1068,7 @@ select {
         height: 1.375rem;
         border-radius: 1.875rem;
         -webkit-transition: all 0.15s ease-out;
-                transition: all 0.15s ease-out; }
+        transition: all 0.15s ease-out; }
   .switch:hover label {
     background: #acacac; }
   .switch input:checked + label {
@@ -1185,7 +1185,7 @@ select {
 .readmore--opened + .readmore__button:hover:after {
   border-bottom-color: #d60051; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .readmore__button {
     font-size: 1.125rem; } }
 
@@ -1224,7 +1224,7 @@ select {
 .tab__panel--active {
   display: block; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .tab__nav {
     margin-top: 1.25rem;
     padding: 0 1.25rem; }
@@ -1263,7 +1263,7 @@ select {
 .breadcrumb__item--active {
   color: #d60051; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .breadcrumb {
     margin-bottom: 1.5rem; } }
 
@@ -1302,7 +1302,7 @@ select {
     color: #acacac; }
   .topbar__item:hover {
     -webkit-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    transition: all 0.1s linear;
     background-color: #fff; }
     .topbar__item:hover > a {
       color: #333; }
@@ -1334,7 +1334,7 @@ select {
 .topbar__sub-list--open {
   display: block; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .topbar {
     font-size: 1.125rem; }
   .topbar__mobile-menu {
@@ -1420,7 +1420,7 @@ select {
       background-color: #fff;
       color: #333;
       -webkit-transition: all 0.1s linear;
-              transition: all 0.1s linear; }
+      transition: all 0.1s linear; }
   .iconbar__item .icon {
     display: block;
     margin: 0 auto 0.3125rem; }
@@ -1430,11 +1430,12 @@ select {
 .iconbar__item--active a:hover {
   color: #d60051; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .iconbar__list {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
+                -ms-grid-row-align: center;
             align-items: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1511,7 +1512,7 @@ select {
 .no-js .accordion__content {
   display: block; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .accordion__title {
     min-height: 4.375rem;
     padding-top: 1.5rem;
@@ -1571,7 +1572,7 @@ select {
 .slider__nav-item--active {
   background-color: #d60051; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .slider__list {
     z-index: 1; }
   .slider__controls {
@@ -1642,7 +1643,7 @@ select {
     content: "";
     display: table; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .two-column__first,
   .two-column__second {
     float: left;
@@ -1705,7 +1706,7 @@ select {
   background-color: #f0f0f0;
   color: #acacac; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .links__item {
     float: left;
     display: block;
@@ -1718,7 +1719,7 @@ select {
     .links__item:nth-child(2n+1) {
       clear: left; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .links__item {
     float: left;
     display: block;
@@ -1783,7 +1784,7 @@ select {
   .teaser__item:hover .teaser__img {
     opacity: 0.8; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .teaser__container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1819,7 +1820,7 @@ select {
     .teaser__item:nth-child(3n+1) {
       clear: left; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .teaser {
     padding: 1.25rem 1.25rem 0; }
   .teaser__item {
@@ -1867,7 +1868,7 @@ select {
   bottom: 0;
   right: 0.625rem; }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .teaser--card .teaser__item {
     float: left;
     display: block;
@@ -1884,7 +1885,7 @@ select {
     .teaser--card .teaser__item:nth-child(3n+1) {
       clear: left; } }
 
-@media screen and (min-width: 75em) {
+@media (min-width: 75em) {
   .teaser--card .teaser__item {
     float: left;
     display: block;
@@ -1918,14 +1919,14 @@ select {
   overflow: hidden;
   padding: 0.625rem 0.625rem 0; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .teaser--list .teaser__item {
     margin-right: 0;
     width: 100%; }
   .teaser--list .teaser__content p {
     font-size: 1.125rem; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .teaser--list .teaser__item {
     float: left;
     display: block;
@@ -2000,7 +2001,9 @@ select {
       -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);
   -webkit-transition: -webkit-transform 0.35s;
-          transition: transform 0.35s; }
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s; }
 
 .teaser--assets .teaser__btn {
   display: block;
@@ -2016,7 +2019,7 @@ select {
 .no-csstransforms .teaser--assets .teaser__content {
   display: block; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .teaser--assets .teaser__item {
     float: left;
     display: block;
@@ -2039,7 +2042,7 @@ select {
     font-weight: bold;
     line-height: 1.33; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .teaser--assets .teaser__item {
     float: left;
     display: block;
@@ -2058,7 +2061,7 @@ select {
   .teaser--assets .teaser__btn {
     font-size: 1.125rem; } }
 
-@media screen and (min-width: 75em) {
+@media (min-width: 75em) {
   .teaser--assets .teaser__item {
     float: left;
     display: block;
@@ -2078,11 +2081,11 @@ select {
 .content--lead {
   font-size: 1.1875rem; }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
   .content--lead {
     font-size: 1.25rem; } }
 
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
   .content {
     max-width: 48.75rem; }
   .content--lead {
@@ -2098,7 +2101,9 @@ select {
   position: relative;
   left: 0;
   -webkit-transition: -webkit-transform 0.3s ease;
-          transition: transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -2114,7 +2119,7 @@ select {
   opacity: 0;
   z-index: 100;
   -webkit-transition: opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s;
-          transition: opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s; }
+  transition: opacity 0.2s, width 0.1s 0.2s, height 0.1s 0.2s; }
 
 .offcanvas__content {
   position: fixed;
@@ -2141,7 +2146,9 @@ select {
 .offcanvas__content-inner {
   opacity: 0.7;
   -webkit-transition: opacity 300ms 100ms ease, -webkit-transform 400ms ease;
-          transition: opacity 300ms 100ms ease, transform 400ms ease;
+  transition: opacity 300ms 100ms ease, -webkit-transform 400ms ease;
+  transition: opacity 300ms 100ms ease, transform 400ms ease;
+  transition: opacity 300ms 100ms ease, transform 400ms ease, -webkit-transform 400ms ease;
   -webkit-transform: translate3d(-18.75rem, 0, 0) scale3d(0.8, 0.8, 0.8);
           transform: translate3d(-18.75rem, 0, 0) scale3d(0.8, 0.8, 0.8);
   -webkit-transform-origin: 50% 0%;
@@ -2208,14 +2215,14 @@ select {
 
 .offcanvas--open .offcanvas__overlay {
   -webkit-transition: opacity 0.2s;
-          transition: opacity 0.2s;
+  transition: opacity 0.2s;
   width: 100%;
   height: 100%;
   opacity: 1; }
 
 .offcanvas--open .offcanvas__opener {
   -webkit-transition: opacity 0.3s ease;
-          transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none; }
 
