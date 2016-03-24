@@ -20,14 +20,16 @@
   $mq__query: '';
 
   @if $mq__breakpoint == landscape or $mq__breakpoint == portrait {
-    $mq__query: "#{$mq__media} (orientation: #{$mq__breakpoint})";
-  } @else {
+    $mq__query: '#{$mq__media} (orientation: #{$mq__breakpoint})';
+  }
+
+  @else {
     // If $mq__breakpoint is a key that exists in
     // $mq__breakpoints, get and use the value
     @if map-has-key($mq__breakpoints, $mq__breakpoint) {
       $mq__breakpoint: map-get($mq__breakpoints, $mq__breakpoint);
     }
-    $mq__query: "#{$mq__media} (#{$mq__direction}: #{$mq__breakpoint})";
+    $mq__query: '#{$mq__media} (#{$mq__direction}: #{$mq__breakpoint})';
   }
 
   @media #{$mq__query} {

@@ -34,14 +34,14 @@ $option--alternate-color: $color__bright;
     i {
       position: absolute;
 
-      &:before {
+      &::before {
         content: '';
         display: block;
         border: $option__border-size solid $color__accent;
         background-color: $color__bright;
       }
 
-      &:after {
+      &::after {
         content: '';
         display: none;
         position: absolute;
@@ -57,12 +57,12 @@ $option--alternate-color: $color__bright;
 
       i {
 
-        &:before {
+        &::before {
           color: $color__primary;
           border-color: currentColor;
         }
 
-        &:after {
+        &::after {
           display: inline-block;
         }
       }
@@ -83,20 +83,20 @@ $option--alternate-color: $color__bright;
     top: ($option__label-size - $option__radio-size) / 2;
     left: ($option__label-size - $option__radio-size) / 2;
 
-    &:before {
+    &::before {
       width: $option__radio-size;
       height: $option__radio-size;
     }
 
-    &:after {
+    &::after {
       width: $option__radio-knuble-size;
       height: $option__radio-knuble-size;
       left: $option__radio-knuble-distance;
       top: $option__radio-knuble-distance;
     }
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       border-radius: $border-radius--round;
     }
   }
@@ -107,12 +107,12 @@ $option--alternate-color: $color__bright;
     top: ($option__label-size - $option__checkbox-size) / 2;
     left: ($option__label-size - $option__checkbox-size) / 2;
 
-    &:before {
+    &::before {
       width: $option__checkbox-size;
       height: $option__checkbox-size;
     }
 
-    &:after {
+    &::after {
       width: $option__checkbox-knuble-size;
       height: $option__checkbox-knuble-size;
       left: $option__checkbox-knuble-distance;
@@ -130,12 +130,12 @@ $option--alternate-color: $color__bright;
 
     i {
 
-      &:before {
+      &::before {
         border-color: $option--alternate-color;
         background-color: transparent;
       }
 
-      &:after {
+      &::after {
         background-color: $option--alternate-color;
       }
     }
@@ -147,7 +147,7 @@ $option--alternate-color: $color__bright;
       color: $option--alternate-color;
 
       i {
-        &:before {
+        &::before {
           color: $option--alternate-color;
         }
       }
@@ -155,7 +155,7 @@ $option--alternate-color: $color__bright;
   }
 
   &:not(:checked) + label:hover {
-    i:before {
+    i::before {
       color: $option--alternate-color;
     }
   }

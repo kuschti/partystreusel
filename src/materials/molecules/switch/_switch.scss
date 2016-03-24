@@ -32,7 +32,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
       transition: all 0.15s ease-out;
       transform: translate3d(0, 0, 0);
 
-      &:after {
+      &::after {
         content: '';
         display: block;
         background: $color__bright;
@@ -59,7 +59,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
     + label {
       background: $color__primary;
 
-      &:after {
+      &::after {
         left: $switch__width - $switch__knob-size - $switch__inner-space;
       }
     }

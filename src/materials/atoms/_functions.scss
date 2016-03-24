@@ -1,3 +1,4 @@
+/* stylelint-disable string-quotes */
 @function space($factor) {
   @return rem($space__default-value) * $factor;
 }
@@ -6,6 +7,7 @@
   @if map-has-key($grid__paddings, $key) {
     @return map-get($grid__paddings, $key);
   }
+
   @warn "Unknown '#{$key}' in $grid__paddings.";
   @return null;
 }
@@ -19,3 +21,4 @@
 
   @return $string;
 }
+/* stylelint-enable string-quotes */

@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-colon-space-after */
 // Disable Bourbon Prefixes
 $prefix-for-webkit:    false;
 $prefix-for-mozilla:   false;
@@ -89,7 +90,7 @@ $font-weight--regular:       400;
 $font-weight--medium:        400;
 $font-weight--bold:          700;
 
-$body__font-family:           "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body__font-family:           'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 $body__font-size:             100%;
 $body__font-weight:           normal;
 $body__font-style:            normal;
@@ -142,3 +143,4 @@ $blockquote__margin:          0 0 $paragraph__margin-bottom 0;
 // RADIUS
 $border-radius:               0;
 $border-radius--round:        100%;
+/* stylelint-enable declaration-colon-space-after */
