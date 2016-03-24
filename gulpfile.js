@@ -25,6 +25,10 @@ var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
 var sftp          = require('gulp-sftp');
 var ghPages       = require('gulp-gh-pages');
+var postcss     	= require('gulp-postcss');
+var postcss_syntax_scss = require('postcss-scss');
+var reporter    	= require('postcss-reporter');
+var stylelint   	= require('stylelint');
 var metadata      = require('./package.json');
 
 // configuration
@@ -71,6 +75,7 @@ gulp.task('clean', function () {
 
 // STYLES
 // ----------------------------------------
+
 gulp.task('styles:fabricator', function () {
 	return gulp.src(config.src.styles.fabricator)
     .pipe(sass({
@@ -96,7 +101,26 @@ gulp.task('styles:application', function () {
 		.pipe(gulpif(config.dev, browserSync.reload({stream:true})));
 });
 
-gulp.task('styles', ['styles:fabricator', 'styles:application']);
+gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
+
+//lint styles
+gulp.task("styles:lint", function() {
+	var processors = [
+    stylelint(),
+    // Pretty reporting config
+    reporter({
+      clearMessages: true,
+      throwError: false
+    })
+  ];
+
+  return gulp.src(
+      ['src/**/*.scss',
+      // Ignore linting vendor assets:
+      '!src/vendor/*']
+    )
+    .pipe(postcss(processors, {syntax: postcss_syntax_scss}));
+});
 
 // SCRIPTS
 // ----------------------------------------
