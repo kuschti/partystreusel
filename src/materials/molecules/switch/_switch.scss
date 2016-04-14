@@ -1,5 +1,3 @@
-// scss-lint:disable NestingDepth
-
 $switch__width: rem(54);
 $switch__height: rem(30);
 $switch__inner-space: rem(4);
@@ -22,59 +20,53 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
 
     + label {
       @include hide-text;
+    }
+  }
+
+  label {
+    display: block;
+    position: relative;
+    height: $switch__height;
+    width: 100%;
+    cursor: pointer;
+    background: $color__accent;
+    border-radius: $switch__radius;
+    transition: all 0.15s ease-out;
+    transform: translate3d(0, 0, 0);
+
+    &:after {
+      content: '';
       display: block;
-      position: relative;
-      height: $switch__height;
-      width: 100%;
-      cursor: pointer;
-      background: $color__accent;
+      background: $color__bright;
+      position: absolute;
+      top: $switch__inner-space;
+      left: $switch__inner-space;
+      width: $switch__knob-size;
+      height: $switch__knob-size;
       border-radius: $switch__radius;
       transition: all 0.15s ease-out;
-      transform: translate3d(0, 0, 0);
-
-      &:after {
-        content: '';
-        display: block;
-        background: $color__bright;
-        position: absolute;
-        top: $switch__inner-space;
-        left: $switch__inner-space;
-        width: $switch__knob-size;
-        height: $switch__knob-size;
-        border-radius: $switch__radius;
-        transition: all 0.15s ease-out;
-      }
-    }
-  }
-
-  // HOVER STATE
-  &:hover {
-    label {
-      background: $color__grey--dark;
-    }
-  }
-
-  // CHECKED STATE
-  input:checked {
-    + label {
-      background: $color__primary;
-
-      &:after {
-        left: $switch__width - $switch__knob-size - $switch__inner-space;
-      }
     }
   }
 }
 
-// IE8 Fallback
-.lt-ie9 {
-  .switch {
-    input {
-      display: block;
+// HOVER STATE
+.switch:hover {
+  label {
+    background: $color__grey--dark;
+  }
+}
 
-      + label {
-        display: none;
+// CHECKED STATE
+.switch {
+  input:checked {
+    + label {
+      background: $color__primary;
+
+      // scss-lint:disable NestingDepth
+      &:after {
+        left: $switch__width - $switch__knob-size - $switch__inner-space;
       }
+      // scss-lint:enable NestingDepth
     }
   }
 }
