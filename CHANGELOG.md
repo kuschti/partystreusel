@@ -1,7 +1,8 @@
 # CHANGELOG
 
 #dev
-* add new stylelint rules
+* add new stylelint
+* update gulpfile, run csso in production
 * update packages
   * babel-core
   * browser-sync
