@@ -1,5 +1,8 @@
 # CHANGELOG
 
+#dev
+- add new stylelint rules
+
 ## 4.0.0
 * change structure to atomic design
 * use fabricator-assemble package
