@@ -47,7 +47,9 @@ var config = {
     },
     styles: {
       fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
-      application: 'src/application.scss'
+      fabricatorpartials: 'src/_styleguide/**/*.scss',
+      application: 'src/application.scss',
+      applicationpartials: 'src/materials/**/*.scss'
     },
     fonts:  'src/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
     images: [
@@ -85,7 +87,7 @@ gulp.task('styles:fabricator', function () {
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
     .pipe(gulp.dest(config.dest + '/assets/partystreusel/styles'))
-    .pipe(gulpif(config.dev, browserSync.reload({stream:true})));
+    .pipe(gulpif(config.dev, browserSync.stream({match: '**/*.css'})));
 });
 
 gulp.task('styles:application', function () {
@@ -98,7 +100,7 @@ gulp.task('styles:application', function () {
     .pipe(gulpif(!config.dev, csso()))
     .pipe(gulpif(config.dev, sourcemaps.write('./')))
     .pipe(gulp.dest(config.dest + '/assets/styles'))
-    .pipe(gulpif(config.dev, browserSync.reload({stream:true})));
+    .pipe(gulpif(config.dev, browserSync.stream({match: '**/*.css'})));
 });
 
 gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
@@ -275,10 +277,10 @@ gulp.task('serve', function () {
   gulp.watch(['docs/*.md','src/**/*.{html,md,json,yml}'], ['assemble:watch']);
 
   gulp.task('styles:fabricator:watch', ['styles:fabricator']);
-  gulp.watch('src/_styleguide/fabricator/styles/**/*.scss', ['styles:fabricator:watch']);
+  gulp.watch(config.src.styles.fabricatorpartials, ['styles:fabricator:watch']);
 
   gulp.task('styles:application:watch', ['styles:application']);
-  gulp.watch('src/**/*.scss', ['styles:application:watch']);
+  gulp.watch(config.src.styles.applicationpartials, ['styles:application:watch']);
 
   gulp.task('scripts:watch', ['scripts'], browserSync.reload);
   gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['scripts:watch']).on('change', webpackCache);

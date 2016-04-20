@@ -1,6 +1,7 @@
 # CHANGELOG
 
 #dev
+* refactor switch
 * add stylelint
 * remove scss-lint
 * update gulpfile, run csso in production
