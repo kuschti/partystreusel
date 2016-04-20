@@ -1,7 +1,14 @@
 # CHANGELOG
 
 #dev
-- add new stylelint rules
+* add new stylelint rules
+* update packages
+  * babel-core
+  * browser-sync
+  * gulp-coffee
+  * gulp-csso
+  * stylelint
+  * webpack
 
 ## 4.0.0
 * change structure to atomic design
