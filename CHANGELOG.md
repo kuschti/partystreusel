@@ -1,7 +1,8 @@
 # CHANGELOG
 
 #dev
-* add new stylelint
+* add stylelint
+* remove scss-lint
 * update gulpfile, run csso in production
 * update packages
   * babel-core
