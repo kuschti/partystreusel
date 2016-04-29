@@ -29,6 +29,7 @@ var postcss     	= require('gulp-postcss');
 var postcss_syntax_scss = require('postcss-scss');
 var reporter    	= require('postcss-reporter');
 var stylelint   	= require('stylelint');
+var doiuse        = require('doiuse');
 var metadata      = require('./package.json');
 
 // configuration
@@ -61,7 +62,7 @@ var config = {
   },
   dest: 'dist',
   remotePath:   '/home/www-data/REPLACEME/',
-  browsers: ['last 2 versions', 'ie 9', '> 1%']
+  browsers: ['last 2 versions', 'ie >= 9', '> 1% in CH']
 };
 
 // webpack
@@ -103,8 +104,6 @@ gulp.task('styles:application', function () {
     .pipe(gulpif(config.dev, browserSync.stream({match: '**/*.css'})));
 });
 
-gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
-
 //lint styles
 gulp.task("styles:lint", function() {
   var processors = [
@@ -119,10 +118,36 @@ gulp.task("styles:lint", function() {
   return gulp.src(
       ['src/**/*.scss',
       // Ignore linting vendor assets:
+      '!src/_styleguide/**/*.scss',
       '!src/vendor/*']
     )
     .pipe(postcss(processors, {syntax: postcss_syntax_scss}));
 });
+
+gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
+
+//check styles wit caniuse/doiuse
+gulp.task("styles:doiuse", function() {
+  var processors = [
+    doiuse({
+      browsers: config.browsers,
+      ignore: ['rem', 'flexbox']
+    }),
+    // Pretty reporting config
+    reporter({
+      clearMessages: true,
+      throwError: false
+    })
+  ];
+
+  return gulp.src(
+      ['src/**/*.scss',
+      '!src/_styleguide/**/*.scss',
+      '!src/vendor/*']
+    )
+    .pipe(postcss(processors, {syntax: postcss_syntax_scss}));
+});
+
 
 // SCRIPTS
 // ----------------------------------------
