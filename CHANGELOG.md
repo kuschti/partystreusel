@@ -1,15 +1,21 @@
 # CHANGELOG
 
 #dev
-* refactor switch
 * add stylelint
+* add gulp-uglify
+* refactor switch
+* lint styles
 * remove scss-lint
+* remove html5shiv & rem polyfills
 * update gulpfile, run csso in production
 * update packages
   * babel-core
   * browser-sync
   * gulp-coffee
+  * gulp-if
   * gulp-csso
+  * gulp-sass
+  * gulp-postcss
   * stylelint
   * webpack
 

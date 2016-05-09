@@ -14,6 +14,7 @@ var browserSync   = require('browser-sync');
 var coffee        = require("gulp-coffee");
 var include       = require('gulp-include');
 var concat        = require('gulp-concat');
+var uglify        = require('gulp-uglify');
 var addsrc        = require('gulp-add-src');
 var imagemin      = require('gulp-imagemin');
 var svgSymbols    = require('gulp-svg-symbols');
@@ -173,6 +174,7 @@ gulp.task('coffee', function() {
     .pipe(coffee())
     .pipe(addsrc.prepend(config.src.scripts.vendor))
     .pipe(concat("application.js"))
+    .pipe(gulpif(!config.dev, uglify()))
     .pipe(gulp.dest(config.dest + '/assets/scripts'))
     .pipe(browserSync.reload({stream: true}))
 });

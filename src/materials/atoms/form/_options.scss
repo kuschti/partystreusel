@@ -1,4 +1,4 @@
-// scss-lint:disable NestingDepth
+// stylelint-disable max-nesting-depth,no-descending-specificity,selector-max-specificity
 
 $option__radio-size: rem(24);
 $option__checkbox-size: rem(20);
@@ -14,8 +14,8 @@ $option__checkbox-knuble-distance: $option__checkbox-knuble-size / 2;
 
 $option--alternate-color: $color__bright;
 
-[type="radio"],
-[type="checkbox"] {
+[type='radio'],
+[type='checkbox'] {
   position: absolute;
   overflow: hidden;
   width: rem(1);
@@ -56,7 +56,6 @@ $option--alternate-color: $color__bright;
       color: $color__primary;
 
       i {
-
         &::before {
           color: $color__primary;
           border-color: currentColor;
@@ -70,14 +69,14 @@ $option--alternate-color: $color__bright;
   }
 
   &:not(:checked) + label:hover {
-    i:before {
+    i::before {
       color: $color__grey--dark;
       border-color: currentColor;
     }
   }
 }
 
-[type="radio"] {
+[type='radio'] {
   + label i {
     display: block;
     top: ($option__label-size - $option__radio-size) / 2;
@@ -102,7 +101,7 @@ $option--alternate-color: $color__bright;
   }
 }
 
-[type="checkbox"] {
+[type='checkbox'] {
   + label i {
     top: ($option__label-size - $option__checkbox-size) / 2;
     left: ($option__label-size - $option__checkbox-size) / 2;
@@ -129,7 +128,6 @@ $option--alternate-color: $color__bright;
     color: $option--alternate-color;
 
     i {
-
       &::before {
         border-color: $option--alternate-color;
         background-color: transparent;
@@ -165,8 +163,8 @@ $option--alternate-color: $color__bright;
 // IE8 Fallback
 // --------------------------
 .lt-ie9 {
-  [type="radio"],
-  [type="checkbox"] {
+  [type='radio'],
+  [type='checkbox'] {
     position: inherit;
     overflow: visible;
     width: 20px;
@@ -185,3 +183,5 @@ $option--alternate-color: $color__bright;
     }
   }
 }
+
+// stylelint-enable max-nesting-depth,no-descending-specificity,selector-max-specificity

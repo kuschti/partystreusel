@@ -52,7 +52,6 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
 
 // HOVER STATE
 .switch:hover {
-
   label {
     background: $color__grey--dark;
   }
@@ -60,9 +59,7 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
 
 // CHECKED STATE
 .switch {
-
   input:checked {
-
     + label {
       background: $color__primary;
 
