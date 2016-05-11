@@ -56,8 +56,6 @@
   }
 }
 
-// MEDIUM
-// ----------------------------------------
 @include mq(medium) {
   .links__item {
     @include span-columns(6);
@@ -65,9 +63,6 @@
   }
 }
 
-
-// LARGE
-// ----------------------------------------
 @include mq(large) {
   .links__item {
     @include span-columns(4);

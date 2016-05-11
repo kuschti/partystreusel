@@ -46,7 +46,7 @@ textarea {
 }
 
 // scss-lint:disable QualifyingElement
-input[type="search"] {
+input[type='search'] {
   box-sizing: border-box;
 }
 // scss-lint:enable QualifyingElement
@@ -61,7 +61,7 @@ select {
   height: rem(44);
   padding: rem(9) rem(30) rem(9) rem(12);
   background-color: $color__bright;
-  background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-11%2013%2024%2024%22%3E%3Cpath%20fill%3D%22#{$form__select-arrow-color}%22%20d%3D%22M0.7%2C36.7l-6.4-6.4l1.6-1.6l4.8%2C4.8l4.8-4.8l1.6%2C1.6L0.7%2C36.7z%22%2F%3E%0A%09%3Cpath%20fill%3D%22#{$form__select-arrow-color}%22%20d%3D%22M0.7%2C13l6.4%2C6.4L5.5%2C21l-4.8-4.8L-4.1%2C21l-1.6-1.6L0.7%2C13z%22%2F%3E%3C%2Fsvg%3E%0A);
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-11%2013%2024%2024%22%3E%3Cpath%20fill%3D%22#{$form__select-arrow-color}%22%20d%3D%22M0.7%2C36.7l-6.4-6.4l1.6-1.6l4.8%2C4.8l4.8-4.8l1.6%2C1.6L0.7%2C36.7z%22%2F%3E%0A%09%3Cpath%20fill%3D%22#{$form__select-arrow-color}%22%20d%3D%22M0.7%2C13l6.4%2C6.4L5.5%2C21l-4.8-4.8L-4.1%2C21l-1.6-1.6L0.7%2C13z%22%2F%3E%3C%2Fsvg%3E%0A');
   background-position: right rem(5) center;
   background-repeat: no-repeat;
   border: rem(1) solid $color__accent;
@@ -96,7 +96,7 @@ select {
   &:focus {
     outline: 0;
     color: $color__primary;
-    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-11%2013%2024%2024%22%3E%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C36.7l-6.4-6.4l1.6-1.6l4.8%2C4.8l4.8-4.8l1.6%2C1.6L0.7%2C36.7z%22%2F%3E%0A%09%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C13l6.4%2C6.4L5.5%2C21l-4.8-4.8L-4.1%2C21l-1.6-1.6L0.7%2C13z%22%2F%3E%3C%2Fsvg%3E%0A);
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-11%2013%2024%2024%22%3E%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C36.7l-6.4-6.4l1.6-1.6l4.8%2C4.8l4.8-4.8l1.6%2C1.6L0.7%2C36.7z%22%2F%3E%0A%09%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C13l6.4%2C6.4L5.5%2C21l-4.8-4.8L-4.1%2C21l-1.6-1.6L0.7%2C13z%22%2F%3E%3C%2Fsvg%3E%0A');
   }
 }
 

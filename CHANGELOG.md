@@ -1,6 +1,30 @@
 # CHANGELOG
 
-- refactor switch
+## 4.1.0
+* lint styles
+* refactor switch
+* improve form semantic
+
+## packages/gulp
+* add stylelint
+* add gulp-uglify
+* update gulpfile
+  * run csso in production
+  * improve minify of images/icons
+* update packages
+  * babel-core
+  * browser-sync
+  * gulp-coffee
+  * gulp-if
+  * gulp-csso
+  * gulp-sass
+  * gulp-postcss
+  * stylelint
+  * webpack
+* remove scss-lint
+* remove polyfills
+  * html5shiv
+  * rem
 
 ## 4.0.0
 * change structure to atomic design

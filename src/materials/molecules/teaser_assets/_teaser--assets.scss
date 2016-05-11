@@ -59,8 +59,6 @@
   }
 }
 
-// MEDIUM
-// ----------------------------------------
 @include mq(medium) {
   .teaser--assets {
     .teaser__item {
@@ -79,9 +77,6 @@
   }
 }
 
-
-// LARGE
-// ----------------------------------------
 @include mq(large) {
   .teaser--assets {
     .teaser__item {
@@ -96,9 +91,6 @@
   }
 }
 
-
-// XLRAGE
-// ----------------------------------------
 @include mq(xlarge) {
   .teaser--assets {
     .teaser__item {

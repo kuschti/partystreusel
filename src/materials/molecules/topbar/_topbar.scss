@@ -108,7 +108,6 @@ $topbar__border: rem(1) solid $color__accent;
   }
 
   .topbar__list {
-
     &,
     .topbar--open & {
       display: flex;
@@ -129,11 +128,6 @@ $topbar__border: rem(1) solid $color__accent;
 
     &:last-child {
       border-right: 0;
-
-      .topbar__sub-list {
-        left: auto;
-        right: 0;
-      }
     }
   }
 
@@ -144,6 +138,11 @@ $topbar__border: rem(1) solid $color__accent;
     left: rem(-1);
     min-width: rem(230);
     position: absolute;
+
+    .topbar__item:last-child & {
+      left: auto;
+      right: 0;
+    }
   }
 
   .topbar__sub-item {
@@ -151,31 +150,34 @@ $topbar__border: rem(1) solid $color__accent;
       padding: rem(11) rem(18);
     }
   }
+
   // Flexbox Fallback
-  .no-flexbox.no-flexboxtweener {
-    .topbar__mobile-menu {
-      display: none;
-    }
-
-    .topbar__list {
-      width: 100%;
-
-      &,
-      .topbar--open & {
-        display: table;
-      }
-    }
-
-    .topbar__item {
-      display: table-cell;
-    }
-  }
-  // No-JS Fallback
-  .no-js {
-    .topbar__item:hover {
-      > .topbar__sub-list {
-        display: block;
-      }
-    }
-  }
+  //stylelint-disable selector-max-specificity
+  // .no-flexbox.no-flexboxtweener {
+  //   .topbar__mobile-menu {
+  //     display: none;
+  //   }
+  //
+  //   .topbar__list {
+  //     width: 100%;
+  //
+  //     &,
+  //     .topbar--open & {
+  //       display: table;
+  //     }
+  //   }
+  //
+  //   .topbar__item {
+  //     display: table-cell;
+  //   }
+  // }
+  // // No-JS Fallback
+  // .no-js {
+  //   .topbar__item:hover {
+  //     > .topbar__sub-list {
+  //       display: block;
+  //     }
+  //   }
+  // }
+  //stylelint-enable selector-max-specificity
 }

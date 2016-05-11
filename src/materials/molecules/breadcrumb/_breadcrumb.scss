@@ -10,14 +10,14 @@
   display: inline-block;
   padding: rem(8) 0;
 
-  &:after {
+  &::after {
     content: '|';
     margin: 0 rem(12);
     color: $color__grey--dark;
   }
 
   &:last-child {
-    &:after {
+    &::after {
       content: '';
       display: none;
     }

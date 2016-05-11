@@ -6,7 +6,7 @@
   font-size: $paragraph__font-size;
   color: $color__grey--dark;
 
-  &:after {
+  &::after {
     @include triangle(rem(10), currentColor, down);
     content: '';
     display: inline-block;
@@ -27,14 +27,14 @@
 
 .readmore--opened {
   + .readmore__button {
-    &:after {
+    &::after {
       border-top: 0;
       border-left-color: transparent;
       border-right-color: transparent;
       border-bottom: rem(5) solid currentColor;
     }
 
-    &:hover:after {
+    &:hover::after {
       border-bottom-color: $color__primary;
     }
   }
