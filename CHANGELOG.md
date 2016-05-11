@@ -5,7 +5,7 @@
 * refactor switch
 * improve form semantic
 
-## packages/gulp
+### packages/gulp
 * add stylelint
 * add gulp-uglify
 * update gulpfile
