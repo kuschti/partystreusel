@@ -54,11 +54,12 @@ var config = {
       applicationpartials: 'src/materials/**/*.scss'
     },
     fonts:  'src/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
+    imagesfolder: 'src/images/',
     images: [
       'src/images/**/*',
       '!src/images/icons/*'
     ],
-    icons:  'src/images/icons/*.svg',
+    icons:  'src/images/icons/',
     iconsystem:  'src/materials/atoms/icons'
   },
   dest: 'dist',
@@ -192,6 +193,7 @@ gulp.task('images', function () {
     .pipe(imagemin({
       progressive: true
     }))
+    .pipe(gulp.dest(config.src.imagesfolder))
     .pipe(gulp.dest(config.dest + '/assets/images'));
 });
 
@@ -199,13 +201,18 @@ gulp.task('images', function () {
 // ----------------------------------------
 
 gulp.task('svgmin', function () {
-  return gulp.src(config.src.icons)
+  return gulp.src(config.src.icons + '*.svg')
     .pipe(imagemin({
-      svgoPlugins: [{removeViewBox: false}]
-    }));
+      svgoPlugins: [
+        { removeViewBox: false },
+        { removeDesc: true },
+        { removeTitle: true }
+      ]
+    }))
+    .pipe(gulp.dest(config.src.icons));
 });
 
-gulp.task('svgsprite', function () {
+gulp.task('svgsprite', ['svgmin'], function () {
   gulp.src(config.src.icons)
     .pipe(svgSymbols({
       id:     'icon--%f',
