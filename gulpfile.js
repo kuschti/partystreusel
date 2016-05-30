@@ -213,7 +213,7 @@ gulp.task('svgmin', function () {
 });
 
 gulp.task('svgsprite', ['svgmin'], function () {
-  gulp.src(config.src.icons)
+  gulp.src(config.src.icons + '*.svg')
     .pipe(svgSymbols({
       id:     'icon--%f',
       title:  'icon %f',
