@@ -12,6 +12,8 @@
 #=require materials/organisms/header/offcanvas.coffee
 
 $ ->
+  $('html').removeClass('no-js')
+
   # Document ready...
   Streusel.selectorType = 'css_class'
   Streusel.selectorPrefix = 'js'
