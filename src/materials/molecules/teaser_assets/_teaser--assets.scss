@@ -43,11 +43,16 @@
   }
 
   // STATES
+
+  // TODO refactor specificity
+  //stylelint-disable selector-max-specificity
   .teaser__link:hover {
     .teaser__content {
       transform: translate(0, 0);
     }
   }
+  //stylelint-enable selector-max-specificity
+
 }
 
 // NO CSS TRANSFORM Fallback

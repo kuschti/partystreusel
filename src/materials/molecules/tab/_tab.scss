@@ -23,10 +23,17 @@ $tab__space: space(1);
     background-color: $color__grey--light;
     color: $color__grey--dark;
     padding: $tab__space;
+  }
 
-    &:hover {
-      color: $color__tertiary;
+  &--active {
+    a {
+      background-color: $color__bright;
+      color: $color__primary;
     }
+  }
+
+  a:hover {
+    color: $color__tertiary;
   }
 }
 
@@ -35,13 +42,6 @@ $tab__space: space(1);
 }
 
 // STATES
-.tab__nav-item--active {
-  a {
-    background-color: $color__bright;
-    color: $color__primary;
-  }
-}
-
 .tab__panel--active {
   display: block;
 }

@@ -20,8 +20,6 @@
   }
 }
 
-// LARGE
-// ----------------------------------------
 @include mq(large) {
   .teaser--card {
     .teaser__item {
@@ -32,9 +30,6 @@
   }
 }
 
-
-// XLARGE
-// ----------------------------------------
 @include mq(xlarge) {
   .teaser--card {
     .teaser__item {

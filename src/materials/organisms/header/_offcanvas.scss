@@ -72,10 +72,6 @@ $offcanvas__width: rem(300);
   .icon {
     vertical-align: top;
   }
-
-  .no-js & {
-    display: none;
-  }
 }
 
 .offcanvas__opener {
@@ -154,5 +150,13 @@ $offcanvas__width: rem(300);
     .offcanvas__content {
       display: block;
     }
+  }
+}
+
+// NO-JS FALLBACK
+.no-js {
+  .offcanvas__opener,
+  .offcanvas__close {
+    display: none;
   }
 }
