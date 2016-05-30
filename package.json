@@ -5,11 +5,11 @@
   "homepage": "http://brandleadership.github.io/partystreusel",
   "main": "README.md",
   "license": "MIT",
-  "author": "Screen Concept",
+  "author": "Calydo",
   "contributors": [
     {
       "name": "Pascal Kuster",
-      "email": "pascal.kuster@screenconcept.com"
+      "email": "pascal.kuster@calydo.com"
     }
   ],
   "repository": {
@@ -61,7 +61,7 @@
     "postcss-scss": "^0.1.7",
     "run-sequence": "^1.1.5",
     "script-loader": "^0.7.0",
-    "stylelint": "^6.3.3",
+    "stylelint": "^6.5.1",
     "webpack": "^1.13.0"
   }
 }
