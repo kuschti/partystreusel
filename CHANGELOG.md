@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## dev
+* move grid from molecules to atoms
+* update stylelint config
+* update gulp tasks for imagemin (because of imagemin update)
+* update packages
+  * browser-sync
+  * webpack
+  * babel-core
+  * babel-preset-es2015
+  * gulp-include
+  * postcss-scss
+  * run-sequence
+  * gulp-imagemin
+
 ## 4.1.0
 * lint styles
 * refactor switch
