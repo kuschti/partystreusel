@@ -62,6 +62,7 @@
     "run-sequence": "^1.2.1",
     "script-loader": "^0.7.0",
     "stylelint": "^6.5.1",
+    "stylelint-config-partystreusel": "^1.0.2",
     "webpack": "^1.13.1"
   }
 }
