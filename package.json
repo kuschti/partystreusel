@@ -1,7 +1,7 @@
 {
   "name": "partystreusel",
   "description": "",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "homepage": "http://brandleadership.github.io/partystreusel",
   "main": "README.md",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-2": "^6.1.12",
-    "browser-sync": "^2.12.10",
+    "browser-sync": "^2.12.12",
     "del": "^2.2.0",
     "doiuse": "^2.3.0",
     "fabricator-assemble": "^1.1.11",

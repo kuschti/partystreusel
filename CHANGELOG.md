@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## dev
+## 4.2.0
 * move grid from molecules to atoms
 * update stylelint config as dependency (stylelint-config-partystreusel)
 * update gulp tasks for imagemin (because of imagemin update)
