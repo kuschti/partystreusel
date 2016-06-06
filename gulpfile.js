@@ -190,9 +190,9 @@ gulp.task('polyfills', function() {
 // ----------------------------------------
 gulp.task('images', function () {
   return gulp.src(config.src.images)
-    .pipe(imagemin({
-      progressive: true
-    }))
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true})
+    ]))
     .pipe(gulp.dest(config.src.imagesfolder))
     .pipe(gulp.dest(config.dest + '/assets/images'));
 });
@@ -202,13 +202,15 @@ gulp.task('images', function () {
 
 gulp.task('svgmin', function () {
   return gulp.src(config.src.icons + '*.svg')
-    .pipe(imagemin({
-      svgoPlugins: [
-        { removeViewBox: false },
-        { removeDesc: true },
-        { removeTitle: true }
-      ]
-    }))
+    .pipe(imagemin([
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: false },
+          { removeDesc: true },
+          { removeTitle: true }
+        ]
+      })
+    ]))
     .pipe(gulp.dest(config.src.icons));
 });
 

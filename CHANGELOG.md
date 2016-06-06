@@ -1,5 +1,21 @@
 # CHANGELOG
 
+
+## 4.2.0
+* move grid from molecules to atoms
+* update stylelint config as dependency (stylelint-config-partystreusel)
+* update gulp tasks for imagemin (because of imagemin update)
+* update packages
+  * stylelint-config-partystreusel
+  * browser-sync
+  * webpack
+  * babel-core
+  * babel-preset-es2015
+  * gulp-include
+  * postcss-scss
+  * run-sequence
+  * gulp-imagemin
+
 ## 4.1.1
 * fix gulp task "svgsprite"
 * fix no-js handling
