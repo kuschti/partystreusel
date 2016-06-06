@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.1
+* fix gulp task "svgsprite"
+* fix no-js handling
+
 ## 4.1.0
 * lint styles
 * refactor switch
