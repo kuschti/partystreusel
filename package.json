@@ -1,7 +1,7 @@
 {
   "name": "partystreusel",
   "description": "",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "homepage": "http://brandleadership.github.io/partystreusel",
   "main": "README.md",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.1",
+    "gulp-sass": "^2.3.2",
     "gulp-sftp": "^0.1.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svg-symbols": "^1.0.0",

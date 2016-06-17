@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 4.2.1
+* add styling for styleguide notes
+* update packages
+  * browser-sync
+  * stylelint
+  * stylelint-config-partystreusel
+  * gulp-sass
 
 ## 4.2.0
 * move grid from molecules to atoms
