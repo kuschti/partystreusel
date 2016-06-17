@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## dev
+* update gulp deploy task to run clean/build/deploy:github
+
 ## 4.2.1
 * add styling for styleguide notes
 * update packages
