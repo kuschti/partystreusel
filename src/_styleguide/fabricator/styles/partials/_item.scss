@@ -84,4 +84,20 @@
 
 .f-item-notes {
   font-size: 0.875rem;
+  padding: 2.5rem 1.25rem 1.25rem 1.25rem;
+  position: relative;
+  border: 1px solid color(light);
+  margin-bottom: 1.25rem;
+
+  &::before {
+    content: 'Notes:';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: color(ultralight);
+    padding: 0.5rem;
+    color: color(medium);
+    font-weight: bold;
+  }
 }
