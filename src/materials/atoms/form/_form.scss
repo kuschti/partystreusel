@@ -17,21 +17,21 @@ label {
   max-width: 100%;
   margin-bottom: rem(6);
   cursor: pointer;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   font-size: rem(16);
   line-height: 1.5;
 }
 
 input::placeholder {
-  color: $color__grey--dark;
+  color: $color__accent--dark;
 }
 
 #{$all-text-inputs},
 textarea {
   display: block;
   width: 100%;
-  background-color: $color__grey--light;
-  border: rem(1) solid $color__grey--light;
+  background-color: $color__accent--light;
+  border: rem(1) solid $color__accent--light;
   border-radius: 0;
   box-shadow: inset rem(1) rem(1) rem(3) 0 $color__secondary;
   padding: rem(9) rem(12);
@@ -66,7 +66,7 @@ select {
   background-repeat: no-repeat;
   border: rem(1) solid $color__accent;
   border-radius: 0;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   font-size: rem(16);
   line-height: 1.5;
 
@@ -74,18 +74,13 @@ select {
     color: $body__font-color;
   }
 
-  .lt-ie10 & {
-    background-image: none;
-    padding-right: rem(12);
-  }
-
   &::-ms-expand {
     display: none;
   }
 
-  &:focus::-ms-value {
-    color: $color__primary;
-    background-color: transparent;
+  .lt-ie10 & {
+    background-image: none;
+    padding-right: rem(12);
   }
 
   &:hover {
@@ -97,7 +92,13 @@ select {
     outline: 0;
     color: $color__primary;
     background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%22-11%2013%2024%2024%22%3E%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C36.7l-6.4-6.4l1.6-1.6l4.8%2C4.8l4.8-4.8l1.6%2C1.6L0.7%2C36.7z%22%2F%3E%0A%09%3Cpath%20fill%3D%22#{$form__select-arrow-color--focus}%22%20d%3D%22M0.7%2C13l6.4%2C6.4L5.5%2C21l-4.8-4.8L-4.1%2C21l-1.6-1.6L0.7%2C13z%22%2F%3E%3C%2Fsvg%3E%0A');
+
+    &::-ms-value {
+      color: $color__primary;
+      background-color: transparent;
+    }
   }
+
 }
 
 // INPUT WITH BUTTON ON THE SIDE
@@ -129,14 +130,14 @@ select {
   margin-bottom: 0;
   color: $body__font-color;
 
-  &:hover {
-    color: $color__grey--dark;
-  }
-
   &,
   &:hover,
   &:active {
     background-color: transparent;
+  }
+
+  &:hover {
+    color: $color__accent--dark;
   }
 }
 

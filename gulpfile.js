@@ -264,7 +264,7 @@ gulp.task('assemble', function (done) {
 
 // DEPLOY
 // ----------------------------------------
-gulp.task('deploy', function () {
+  gulp.task('deploy:remote', function () {
   return gulp.src('dist/**/*')
     .pipe(sftp({
       host: 'php1.brandleadership.ch',
@@ -276,6 +276,23 @@ gulp.task('deploy', function () {
 gulp.task('deploy:github', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
+});
+
+gulp.task('deploy', function() {
+  runSequence(
+    'clean',
+    [
+      'styles',
+      'scripts',
+      'coffee',
+      'polyfills',
+      'fonts',
+      'images',
+      'icons',
+      'assemble'
+    ],
+    'deploy:github'
+  );
 });
 
 // SERVER
@@ -324,7 +341,7 @@ gulp.task('serve', function () {
   gulp.task('coffee:watch', ['coffee'], browserSync.reload);
   gulp.watch('src/materials/**/*.coffee', ['coffee:watch']);
 
-    gulp.task('images:watch', ['images'], browserSync.reload);
+  gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
 
 });

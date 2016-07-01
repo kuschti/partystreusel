@@ -14,8 +14,8 @@
   a {
     display: block;
     padding: rem(12);
-    background-color: $color__grey--light;
-    color: $color__grey--dark;
+    background-color: $color__accent--light;
+    color: $color__accent--dark;
     text-align: center;
     border-bottom: rem(3) solid currentColor;
 
@@ -32,12 +32,17 @@
   }
 }
 
+//TODO refactor
+//stylelint-disable no-descending-specificity
+
 // STATES
 .iconbar__item a:focus,
 .iconbar__item--active a,
 .iconbar__item--active a:hover {
   color: $color__primary;
 }
+
+//stylelint-enable no-descending-specificity
 
 // MEDIUM
 // ----------------------------------------

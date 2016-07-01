@@ -1,15 +1,16 @@
+//stylelint-disable no-descending-specificity
 $topbar__border: rem(1) solid $color__accent;
 
 .topbar__mobile-menu {
-  background-color: $color__grey--light;
+  background-color: $color__accent--light;
   border-bottom: $topbar__border;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   display: block;
   padding: 0 rem(12);
   text-align: right;
 
   button {
-    background-color: $color__grey--light;
+    background-color: $color__accent--light;
     border: 0;
     color: $body__font-color;
     outline: none;
@@ -17,7 +18,7 @@ $topbar__border: rem(1) solid $color__accent;
     position: relative;
 
     &:hover {
-      color: $color__grey--dark;
+      color: $color__accent--dark;
     }
   }
 }
@@ -31,7 +32,7 @@ $topbar__border: rem(1) solid $color__accent;
 }
 
 .topbar__item {
-  background-color: $color__grey--light;
+  background-color: $color__accent--light;
   display: block;
 
   a {
@@ -41,7 +42,7 @@ $topbar__border: rem(1) solid $color__accent;
   }
 
   > a {
-    color: $color__grey--dark;
+    color: $color__accent--dark;
   }
 
   &:hover {
@@ -58,13 +59,13 @@ $topbar__border: rem(1) solid $color__accent;
   padding: 0;
 }
 
-.topbar__sub-item {
+.topbar__sub {
   display: block;
 
   > a {
     background-color: $color__bright;
     border-color: $color__bright;
-    color: $color__grey--dark;
+    color: $color__accent--dark;
     padding-left: rem(30);
 
     &:hover {
@@ -77,7 +78,7 @@ $topbar__border: rem(1) solid $color__accent;
 .topbar__item--active,
 .topbar__item--active:hover {
   > a {
-    background-color: $color__grey--light;
+    background-color: $color__accent--light;
     color: $color__primary;
 
     &:hover {
@@ -134,7 +135,7 @@ $topbar__border: rem(1) solid $color__accent;
   .topbar__sub-list {
     border: $topbar__border;
     border-top-width: 0;
-    box-shadow: rem(2) rem(2) rem(3) 0 $color__grey--light;
+    box-shadow: rem(2) rem(2) rem(3) 0 $color__accent--light;
     left: rem(-1);
     min-width: rem(230);
     position: absolute;
@@ -181,3 +182,5 @@ $topbar__border: rem(1) solid $color__accent;
   // }
   //stylelint-enable selector-max-specificity
 }
+
+//stylelint-enable no-descending-specificity

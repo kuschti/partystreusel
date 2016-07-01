@@ -31,7 +31,7 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
 }
 
 .links__text {
@@ -51,8 +51,8 @@
 // STATES
 .links__link:hover {
   .btn--icon {
-    background-color: $color__grey--light;
-    color: $color__grey--dark;
+    background-color: $color__accent--light;
+    color: $color__accent--dark;
   }
 }
 
