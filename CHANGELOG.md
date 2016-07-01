@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## 4.3.0
 * add stylelint rules
 * lint styles (descending specificity)
 * update gulp deploy task to run clean/build/deploy:github
