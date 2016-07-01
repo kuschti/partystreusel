@@ -17,7 +17,7 @@ $btn__size: rem(23);
   line-height: 1.33;
   text-transform: uppercase;
   color: $color__bright;
-  box-shadow: $color__grey--light rem(2) rem(2) rem(2) 0;
+  box-shadow: $color__accent--light rem(2) rem(2) rem(2) 0;
   user-select: none;
   appearance: none;
   transition: all 0.1s ease-in-out;
@@ -30,8 +30,8 @@ $btn__size: rem(23);
 
   &:hover {
     color: $color__bright;
-    background: $color__grey--dark;
-    border-color: $color__grey--dark;
+    background: $color__accent--dark;
+    border-color: $color__accent--dark;
   }
 
   &:active,
@@ -64,15 +64,15 @@ $btn__size: rem(23);
   }
 
   &:hover {
-    background-color: $color__grey--light;
+    background-color: $color__accent--light;
   }
 
   &:active,
   &.btn--active {
     box-shadow: none;
-    background-color: $color__grey--light;
+    background-color: $color__accent--light;
     color: $color__primary;
-    border-color: $color__grey--light;
+    border-color: $color__accent--light;
   }
 }
 
@@ -117,7 +117,7 @@ $btn__size: rem(23);
   &:hover,
   &:active {
     border-radius: $border-radius--round;
-    background-color: $color__grey--light;
+    background-color: $color__accent--light;
   }
 
   &:hover {

@@ -70,7 +70,7 @@ $option--alternate-color: $color__bright;
 
   &:not(:checked) + label:hover {
     i::before {
-      color: $color__grey--dark;
+      color: $color__accent--dark;
       border-color: currentColor;
     }
   }

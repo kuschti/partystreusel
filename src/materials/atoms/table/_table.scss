@@ -33,8 +33,8 @@ tbody {
     background-color: $color__secondary;
 
     &:nth-child(odd) {
-      background-color: $color__grey--light;
-      color: $color__grey--dark;
+      background-color: $color__accent--light;
+      color: $color__accent--dark;
     }
 
     &:hover {
@@ -48,7 +48,7 @@ td,
 th {
   min-width: rem(100);
   padding: $table__space;
-  border-right: rem(2) solid $color__grey--dark;
+  border-right: rem(2) solid $color__accent--dark;
 
   &:last-child {
     border-right: 0;

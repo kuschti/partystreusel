@@ -17,21 +17,21 @@ label {
   max-width: 100%;
   margin-bottom: rem(6);
   cursor: pointer;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   font-size: rem(16);
   line-height: 1.5;
 }
 
 input::placeholder {
-  color: $color__grey--dark;
+  color: $color__accent--dark;
 }
 
 #{$all-text-inputs},
 textarea {
   display: block;
   width: 100%;
-  background-color: $color__grey--light;
-  border: rem(1) solid $color__grey--light;
+  background-color: $color__accent--light;
+  border: rem(1) solid $color__accent--light;
   border-radius: 0;
   box-shadow: inset rem(1) rem(1) rem(3) 0 $color__secondary;
   padding: rem(9) rem(12);
@@ -66,7 +66,7 @@ select {
   background-repeat: no-repeat;
   border: rem(1) solid $color__accent;
   border-radius: 0;
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   font-size: rem(16);
   line-height: 1.5;
 
@@ -130,7 +130,7 @@ select {
   color: $body__font-color;
 
   &:hover {
-    color: $color__grey--dark;
+    color: $color__accent--dark;
   }
 
   &,
