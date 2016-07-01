@@ -1,3 +1,7 @@
 {
   "extends": "stylelint-config-partystreusel",
+  "rules": {
+    "no-descending-specificity": true,
+    "selector-type-case": "lower"
+  }
 }

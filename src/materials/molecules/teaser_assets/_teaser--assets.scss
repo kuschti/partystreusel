@@ -55,15 +55,6 @@
 
 }
 
-// NO CSS TRANSFORM Fallback
-.no-csstransforms {
-  .teaser--assets {
-    .teaser__content {
-      display: block;
-    }
-  }
-}
-
 @include mq(medium) {
   .teaser--assets {
     .teaser__item {

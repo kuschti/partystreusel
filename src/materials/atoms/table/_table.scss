@@ -8,22 +8,26 @@ $table__space: rem(8);
 
 table {
   width: 100%;
+  border-spacing: 0;
 }
 
 thead {
   color: $color__bright;
   text-align: left;
+}
 
-  th {
-    background-color: $color__primary;
+th {
+  background-color: $color__primary;
+}
 
-    &:first-of-type {
-      border-radius: ($table__space * 2) 0 0;
-    }
+td,
+th {
+  min-width: rem(100);
+  padding: $table__space;
+  border-right: rem(2) solid $color__accent--dark;
 
-    &:last-of-type {
-      border-radius: 0 ($table__space * 2) 0 0;
-    }
+  &:last-child {
+    border-right: 0;
   }
 }
 
@@ -41,17 +45,6 @@ tbody {
       background-color: $color__bright;
       color: $body__font-color;
     }
-  }
-}
-
-td,
-th {
-  min-width: rem(100);
-  padding: $table__space;
-  border-right: rem(2) solid $color__accent--dark;
-
-  &:last-child {
-    border-right: 0;
   }
 }
 

@@ -32,12 +32,17 @@
   }
 }
 
+//TODO refactor
+//stylelint-disable no-descending-specificity
+
 // STATES
 .iconbar__item a:focus,
 .iconbar__item--active a,
 .iconbar__item--active a:hover {
   color: $color__primary;
 }
+
+//stylelint-enable no-descending-specificity
 
 // MEDIUM
 // ----------------------------------------

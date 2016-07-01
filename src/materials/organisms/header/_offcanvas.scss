@@ -140,19 +140,6 @@ $offcanvas__width: rem(300);
   }
 }
 
-// NO CSS TRANSFORM Fallback
-.no-csstransforms3d {
-  .offcanvas__content {
-    display: none;
-  }
-
-  .offcanvas--open {
-    .offcanvas__content {
-      display: block;
-    }
-  }
-}
-
 // NO-JS FALLBACK
 .no-js {
   .offcanvas__opener,

@@ -10,6 +10,15 @@
   display: inline-block;
   padding: rem(8) 0;
 
+  a {
+    display: inline-block;
+    color: $color__grey--dark;
+
+    &:hover {
+      color: $color__tertiary;
+    }
+  }
+
   &::after {
     content: '|';
     margin: 0 rem(12);
@@ -24,15 +33,6 @@
 
     a {
       color: $color__primary;
-    }
-  }
-
-  a {
-    display: inline-block;
-    color: $color__grey--dark;
-
-    &:hover {
-      color: $color__tertiary;
     }
   }
 }

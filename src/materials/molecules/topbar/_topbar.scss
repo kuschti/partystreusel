@@ -1,3 +1,4 @@
+//stylelint-disable no-descending-specificity
 $topbar__border: rem(1) solid $color__accent;
 
 .topbar__mobile-menu {
@@ -58,7 +59,7 @@ $topbar__border: rem(1) solid $color__accent;
   padding: 0;
 }
 
-.topbar__sub-item {
+.topbar__sub {
   display: block;
 
   > a {
@@ -181,3 +182,5 @@ $topbar__border: rem(1) solid $color__accent;
   // }
   //stylelint-enable selector-max-specificity
 }
+
+//stylelint-enable no-descending-specificity

@@ -1,11 +1,22 @@
 # CHANGELOG
 
 ## dev
+* add stylelint rules
+* lint styles (descending specificity)
 * update gulp deploy task to run clean/build/deploy:github
+* update use of Sass color variables
+* update devDependencies
+  * babel-core
+  * babel-preset-stage-2
+  * del
+  * gulp-include
+  * gulp-uglify
+  * run-sequence
+  * stylelint
 
 ## 4.2.1
 * add styling for styleguide notes
-* update packages
+* update devDependencies
   * browser-sync
   * stylelint
   * stylelint-config-partystreusel
@@ -15,7 +26,7 @@
 * move grid from molecules to atoms
 * update stylelint config as dependency (stylelint-config-partystreusel)
 * update gulp tasks for imagemin (because of imagemin update)
-* update packages
+* update devDependencies
   * stylelint-config-partystreusel
   * browser-sync
   * webpack
@@ -41,7 +52,7 @@
 * update gulpfile
   * run csso in production
   * improve minify of images/icons
-* update packages
+* update devDependencies
   * babel-core
   * browser-sync
   * gulp-coffee
@@ -63,7 +74,7 @@
 * extend media-query mixin
 * simplify icon system
   * remove gulpicon, remove png fallbacks
-* update packages
+* update devDependencies
   * gulp
   * gulp-sass
   * babel to v6
@@ -77,7 +88,7 @@
 * cleanup gulfpile & requires
 * add font files handling in gulp
 * add .editorconfig
-* update packages
+* update devDependencies
   * gulp-include
   * gulp-sass
   * del
