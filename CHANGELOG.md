@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## dev
+* update devDependencies
+  * fabricator-assemble
+  * postcss-repoter
+
 ## 4.3.0
 * add stylelint rules
 * lint styles (descending specificity)
