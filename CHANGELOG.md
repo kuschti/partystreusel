@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## dev
+* remove read-more molecule
 * update devDependencies
   * fabricator-assemble
   * postcss-repoter
