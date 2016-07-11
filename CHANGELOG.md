@@ -4,6 +4,7 @@
 * update devDependencies
   * fabricator-assemble
   * postcss-repoter
+  * stylelint
 
 ## 4.3.0
 * add stylelint rules
