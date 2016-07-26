@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## dev
+* update color variables (naming)
 * remove read-more molecule
 * update npm script tasks
 * update devDependencies
