@@ -21,7 +21,7 @@ var svgSymbols    = require('gulp-svg-symbols');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
 var bourbon       = require('node-bourbon').includePaths;
-var neat          = require('node-neat').includePaths;
+var neat          = require('bourbon-neat').includePaths;
 var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
 var sftp          = require('gulp-sftp');
@@ -64,7 +64,7 @@ var config = {
   },
   dest: 'dist',
   remotePath:   '/home/www-data/REPLACEME/',
-  browsers: ['last 2 versions', 'ie >= 9', '> 1% in CH']
+  browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH']
 };
 
 // webpack
@@ -84,7 +84,7 @@ gulp.task('clean', function () {
 gulp.task('styles:fabricator', function () {
   return gulp.src(config.src.styles.fabricator)
     .pipe(sass({
-      includePaths: neat
+      includePaths: [neat, bourbon]
     }).on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
@@ -97,7 +97,7 @@ gulp.task('styles:application', function () {
   return gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
     .pipe(sass({
-      includePaths: neat
+      includePaths: [neat, bourbon]
     }).on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))

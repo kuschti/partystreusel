@@ -2,10 +2,16 @@
 
 ## dev
 * remove read-more molecule
+* update npm script tasks
 * update devDependencies
   * fabricator-assemble
   * postcss-repoter
   * stylelint
+  * doiuse
+  * babel-core
+  * gulp-imagemin
+  * postcss-scss
+  * bourbon-neat (replaced node-neat)
 
 ## 4.3.0
 * add stylelint rules

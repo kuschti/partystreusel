@@ -35,12 +35,14 @@
     transition: transform 0.35s;
   }
 
+  // stylelint-disable font-family-name-quotes
   .teaser__btn {
     display: block;
     margin: 0;
     font: 0 / 0 a;
     text-shadow: none;
   }
+  // stylelint-enable font-family-name-quotes
 
   // STATES
 
