@@ -45,7 +45,7 @@ $option--alternate-color: $color__bright;
         content: '';
         display: none;
         position: absolute;
-        background-color: $color__primary;
+        background-color: $color__brand--one;
       }
     }
   }
@@ -53,11 +53,11 @@ $option--alternate-color: $color__bright;
   &:checked,
   &:checked:hover {
     + label {
-      color: $color__primary;
+      color: $color__brand--one;
 
       i {
         &::before {
-          color: $color__primary;
+          color: $color__brand--one;
           border-color: currentColor;
         }
 

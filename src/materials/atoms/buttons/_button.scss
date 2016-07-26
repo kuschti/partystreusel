@@ -8,8 +8,8 @@ $btn__size: rem(23);
   cursor: pointer;
   margin: 0 0 rem(18);
   padding: rem(7) rem(12) rem(8);
-  background-color: $color__primary;
-  border: rem(1) solid $color__primary;
+  background-color: $color__brand--one;
+  border: rem(1) solid $color__brand--one;
   text-decoration: none;
   text-align: center;
   font-size: rem(18);
@@ -54,13 +54,13 @@ $btn__size: rem(23);
   &,
   &.btn--active {
     background-color: $color__bright;
-    box-shadow: $color__secondary rem(1) rem(1) rem(2) 0;
+    box-shadow: $color__brand--two rem(1) rem(1) rem(2) 0;
   }
 
   &,
   &:hover {
     color: $body__font-color;
-    border-color: $color__secondary;
+    border-color: $color__brand--two;
   }
 
   &:hover {
@@ -71,7 +71,7 @@ $btn__size: rem(23);
   &.btn--active {
     box-shadow: none;
     background-color: $color__accent--light;
-    color: $color__primary;
+    color: $color__brand--one;
     border-color: $color__accent--light;
   }
 }
@@ -82,7 +82,7 @@ $btn__size: rem(23);
   &,
   &.btn--active {
     box-shadow: none;
-    color: $color__secondary;
+    color: $color__brand--two;
   }
 
   &,
@@ -99,7 +99,7 @@ $btn__size: rem(23);
 
   &:active,
   &.btn--active {
-    color: $color__primary;
+    color: $color__brand--one;
   }
 }
 
@@ -112,7 +112,7 @@ $btn__size: rem(23);
   background: transparent;
   border: 0;
   box-shadow: none;
-  color: $color__secondary;
+  color: $color__brand--two;
 
   &:hover,
   &:active {
@@ -125,7 +125,7 @@ $btn__size: rem(23);
   }
 
   &:active {
-    color: $color__primary;
+    color: $color__brand--one;
   }
 }
 

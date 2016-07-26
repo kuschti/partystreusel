@@ -17,7 +17,7 @@ thead {
 }
 
 th {
-  background-color: $color__primary;
+  background-color: $color__brand--one;
 }
 
 td,
@@ -34,7 +34,7 @@ th {
 tbody {
   tr {
     transition: all 0.1s linear;
-    background-color: $color__secondary;
+    background-color: $color__brand--two;
 
     &:nth-child(odd) {
       background-color: $color__accent--light;

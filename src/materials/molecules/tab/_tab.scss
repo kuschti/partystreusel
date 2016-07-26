@@ -6,7 +6,7 @@ $tab__space: space(1);
   list-style: none;
   padding: 0 $tab__space $tab__space;
   margin: $tab__space 0 $tab__space * 2;
-  background-color: $color__secondary;
+  background-color: $color__brand--two;
 }
 
 .tab__nav-item {
@@ -28,12 +28,12 @@ $tab__space: space(1);
   &--active {
     a {
       background-color: $color__bright;
-      color: $color__primary;
+      color: $color__brand--one;
     }
   }
 
   a:hover {
-    color: $color__tertiary;
+    color: $color__dark;
   }
 }
 

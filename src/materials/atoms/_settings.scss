@@ -39,39 +39,22 @@ $breakpoints: (
 // COLORS
 // --------------------------
 
-// DON'T USE THIS NAME SPECIFIC VARIABLES IN OTHER FILES
-$color__black:              #333;
-$color__white:              #fff;
-
-$color__grey:               #d7d7d7;
-$color__grey--light:        #f0f0f0;
-$color__grey--dark:         #acacac;
-
-$color__orange:             #f08a24;
-$color__red:                #f00;
-$color__blue--light:        #a0d3e8;
-$color__green:              #43ac6a;
+// COLOR NAMING
+// use general variable naming!
+$color__dark:               #333;
+$color__bright:             #fff;
 
 $color__brand--one:         #d60051;
-$color__brand--two:         $color__grey;
+$color__brand--two:         #d7d7d7;
 
-// COLOR NAMING
-// USE THIS VARIABLES IN OTHER FILES
-$color__primary:            $color__brand--one;
-$color__secondary:          $color__brand--two;
-$color__tertiary:           $color__black;
+$color__accent:             $color__brand--two;
+$color__accent--light:      #f0f0f0;
+$color__accent--dark:       #acacac;
 
-$color__dark:               $color__black;
-$color__bright:             $color__white;
-
-$color__accent:             $color__grey;
-$color__accent--light:      $color__grey--light;
-$color__accent--dark:       $color__grey--dark;
-
-$color__alert:              $color__red;
-$color__success:            $color__green;
-$color__warning:            $color__orange;
-$color__info:               $color__blue--light;
+$color__alert:              #f00;
+$color__success:            #43ac6a;
+$color__warning:            #f08a24;
+$color__info:               #a0d3e8;
 
 // SPACES
 // ----------------------------------------
@@ -115,9 +98,9 @@ $paragraph__text-rendering:   auto;
 
 // ANCHORS
 $anchor__text-decoration:     none;
-$anchor__font-color:          $color__primary;
-$anchor__font-color-hover:    $color__secondary;
-$anchor__font-color-active:   $color__tertiary;
+$anchor__font-color:          $color__brand--one;
+$anchor__font-color-hover:    $color__brand--two;
+$anchor__font-color-active:   $color__dark;
 
 // <HR>
 $hr__margin-top:              rem(18);
