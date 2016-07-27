@@ -1,7 +1,6 @@
 #=require namespace.coffee
 #=require base.coffee
 
-#=require materials/molecules/readmore/readmore.coffee
 #=require materials/molecules/topbar/topbar.coffee
 #=require materials/molecules/accordion/accordion.coffee
 #=require materials/molecules/tab/tab.coffee
@@ -18,7 +17,6 @@ $ ->
   Streusel.selectorType = 'css_class'
   Streusel.selectorPrefix = 'js'
 
-  Streusel.Readmore.init()
   Streusel.Offcanvas.init()
   Streusel.Topbar.init()
   Streusel.Accordion.init()

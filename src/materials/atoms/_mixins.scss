@@ -1,8 +1,10 @@
+// stylelint-disable font-family-name-quotes
 @mixin hide-text {
-  font: 0 / 0 a;
+  font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
+// stylelint-enable font-family-name-quotes
 
 // Mixin to reset the neat omega mixin
 @mixin omega-reset($nth) {

@@ -4,7 +4,7 @@
   list-style-type: none;
 
   > li {
-    border-top: rem(1) solid darken($color__primary, 5%);
+    border-top: rem(1) solid darken($color__brand--one, 5%);
   }
 }
 
@@ -32,7 +32,7 @@
 .main-nav__link:focus,
 .main-nav__link--active {
   color: $color__bright;
-  background-color: darken($color__primary, 5%);
+  background-color: darken($color__brand--one, 5%);
 }
 
 .main-nav__sub--open {

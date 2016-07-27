@@ -1,8 +1,7 @@
 colors:
   brand:
-    primary: "#d60051"
-    secondary: "#d7d7d7"
-    tertiary: "#333"
+    one: "#d60051"
+    two: "#d7d7d7"
   base:
     dark: "#333"
     light: "#fff"

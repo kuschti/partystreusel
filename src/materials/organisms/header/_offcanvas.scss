@@ -36,7 +36,7 @@ $offcanvas__width: rem(300);
   width: $offcanvas__width;
   height: 100%;
   z-index: 101;
-  background-color: $color__primary;
+  background-color: $color__brand--one;
   color: $body__font-color;
   backface-visibility: hidden;
   transform: translate3d(100%, 0, 0);

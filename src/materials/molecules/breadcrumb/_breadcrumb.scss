@@ -12,17 +12,17 @@
 
   a {
     display: inline-block;
-    color: $color__grey--dark;
+    color: $color__accent--dark;
 
     &:hover {
-      color: $color__tertiary;
+      color: $color__dark;
     }
   }
 
   &::after {
     content: '|';
     margin: 0 rem(12);
-    color: $color__grey--dark;
+    color: $color__accent--dark;
   }
 
   &:last-child {
@@ -32,14 +32,14 @@
     }
 
     a {
-      color: $color__primary;
+      color: $color__brand--one;
     }
   }
 }
 
 // STATES
 .breadcrumb__item--active {
-  color: $color__primary;
+  color: $color__brand--one;
 }
 
 // LARGE

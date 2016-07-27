@@ -42,7 +42,7 @@
   clear: none;
   display: inline-block;
   margin: 0 rem(6);
-  background-color: $color__secondary;
+  background-color: $color__brand--two;
   border: rem(6) solid $color__bright;
   border-radius: $border-radius--round;
 }
@@ -50,7 +50,7 @@
 // STATES
 .slider__nav-item:hover,
 .slider__nav-item--active {
-  background-color: $color__primary;
+  background-color: $color__brand--one;
 }
 
 // LARGE
@@ -80,7 +80,7 @@
     color: $color__dark;
 
     &:hover {
-      color: $color__primary;
+      color: $color__brand--one;
     }
   }
 

@@ -20,21 +20,22 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "gulp": "gulp",
     "prestart": "npm install",
-    "build": "npm install && gulp",
     "start": "gulp --dev",
-    "test": "npm run build"
+    "build": "gulp --production",
+    "deploy": "gulp deploy:github",
+    "test": "gulp styles:lint && gulp styles:doiuse"
   },
   "devDependencies": {
-    "babel-core": "^6.10.4",
+    "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-2": "^6.11.0",
+    "bourbon-neat": "^1.8.0",
     "browser-sync": "^2.13.0",
     "del": "^2.2.1",
-    "doiuse": "^2.3.0",
-    "fabricator-assemble": "^1.1.12",
+    "doiuse": "^2.4.1",
+    "fabricator-assemble": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -43,7 +44,7 @@
     "gulp-csso": "^2.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.1",
+    "gulp-imagemin": "^3.0.2",
     "gulp-include": "^2.3.0",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.1.1",
@@ -56,13 +57,12 @@
     "gulp-util": "^3.0.7",
     "jstransformer-marked": "^1.0.1",
     "node-bourbon": "^4.2.8",
-    "node-neat": "^1.7.2",
-    "postcss-reporter": "^1.3.3",
-    "postcss-scss": "^0.1.8",
+    "postcss-reporter": "^1.4.1",
+    "postcss-scss": "^0.1.9",
     "run-sequence": "^1.2.2",
     "script-loader": "^0.7.0",
-    "stylelint": "^6.8.0",
-    "stylelint-config-partystreusel": "^1.1.0",
+    "stylelint": "^7.0.3",
+    "stylelint-config-partystreusel": "^2.0.1",
     "webpack": "^1.13.1"
   }
 }

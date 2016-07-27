@@ -79,7 +79,7 @@ $topbar__border: rem(1) solid $color__accent;
 .topbar__item--active:hover {
   > a {
     background-color: $color__accent--light;
-    color: $color__primary;
+    color: $color__brand--one;
 
     &:hover {
       background-color: $color__bright;

@@ -1,6 +1,6 @@
 .teaser {
   @include outer-container;
-  background-color: $color__grey--light;
+  background-color: $color__accent--light;
   padding: space(1) space(1) 0;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .teaser__subtitle {
-  color: $color__grey--dark;
+  color: $color__accent--dark;
   margin-bottom: space(0.5);
 }
 
