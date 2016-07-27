@@ -6,52 +6,24 @@
 * replace button class `btn--secondary` with `btn--primary`
 * remove read-more molecule
 * update npm script tasks
-* update devDependencies
-  * fabricator-assemble
-  * postcss-repoter
-  * stylelint
-  * doiuse
-  * babel-core
-  * gulp-imagemin
-  * postcss-scss
-  * bourbon-neat (replaced node-neat)
+* update dependencies
 
 ## 4.3.0
 * add stylelint rules
 * lint styles (descending specificity)
 * update gulp deploy task to run clean/build/deploy:github
 * update use of Sass color variables
-* update devDependencies
-  * babel-core
-  * babel-preset-stage-2
-  * del
-  * gulp-include
-  * gulp-uglify
-  * run-sequence
-  * stylelint
+* update dependencies
 
 ## 4.2.1
 * add styling for styleguide notes
-* update devDependencies
-  * browser-sync
-  * stylelint
-  * stylelint-config-partystreusel
-  * gulp-sass
+* update dependencies
 
 ## 4.2.0
 * move grid from molecules to atoms
 * update stylelint config as dependency (stylelint-config-partystreusel)
 * update gulp tasks for imagemin (because of imagemin update)
-* update devDependencies
-  * stylelint-config-partystreusel
-  * browser-sync
-  * webpack
-  * babel-core
-  * babel-preset-es2015
-  * gulp-include
-  * postcss-scss
-  * run-sequence
-  * gulp-imagemin
+* update dependencies
 
 ## 4.1.1
 * fix gulp task "svgsprite"
@@ -68,16 +40,7 @@
 * update gulpfile
   * run csso in production
   * improve minify of images/icons
-* update devDependencies
-  * babel-core
-  * browser-sync
-  * gulp-coffee
-  * gulp-if
-  * gulp-csso
-  * gulp-sass
-  * gulp-postcss
-  * stylelint
-  * webpack
+* update dependencies
 * remove scss-lint
 * remove polyfills
   * html5shiv
@@ -90,13 +53,7 @@
 * extend media-query mixin
 * simplify icon system
   * remove gulpicon, remove png fallbacks
-* update devDependencies
-  * gulp
-  * gulp-sass
-  * babel to v6
-  * gulp-csso
-  * webpack
-  * node-bourbon
+* update dependencies
 * define node.js version to v4.4.1 in nvrmc
 
 ## 3.2.3
@@ -104,11 +61,7 @@
 * cleanup gulfpile & requires
 * add font files handling in gulp
 * add .editorconfig
-* update devDependencies
-  * gulp-include
-  * gulp-sass
-  * del
-  * browser-sync
+* update dependencies
 
 ## 3.2.2
 * fix back-to-index link
