@@ -2,6 +2,8 @@
 
 ## dev
 * update color variables (naming)
+* update button styles
+* replace button class `btn--secondary` with `btn--primary`
 * remove read-more molecule
 * update npm script tasks
 * update devDependencies

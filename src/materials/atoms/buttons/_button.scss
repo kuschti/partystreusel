@@ -8,16 +8,15 @@ $btn__size: rem(23);
   cursor: pointer;
   margin: 0 0 rem(18);
   padding: rem(7) rem(12) rem(8);
-  background-color: $color__brand--one;
-  border: rem(1) solid $color__brand--one;
+  background-color: $color__accent--light;
+  border: rem(1) solid $color__accent--light;
   text-decoration: none;
   text-align: center;
   font-size: rem(18);
   font-weight: bold;
   line-height: 1.33;
   text-transform: uppercase;
-  color: $color__bright;
-  box-shadow: $color__accent--light rem(2) rem(2) rem(2) 0;
+  color: $color__accent--dark;
   user-select: none;
   appearance: none;
   transition: all 0.1s ease-in-out;
@@ -29,18 +28,17 @@ $btn__size: rem(23);
   }
 
   &:hover {
-    color: $color__bright;
-    background: $color__accent--dark;
-    border-color: $color__accent--dark;
+    color: $color__dark;
+    background: $color__accent--light;
+    border-color: $color__accent--light;
   }
 
   &:active,
   &.btn--active {
     transition: none;
-    color: $color__bright;
-    background: $color__dark;
-    border-color: $color__dark;
-    box-shadow: none;
+    color: $color__dark;
+    background: $color__accent;
+    border-color: $color__accent;
   }
 
   &:focus {
@@ -50,40 +48,29 @@ $btn__size: rem(23);
 
 // Secondary Button
 // ----------------------------------------
-.btn--secondary {
-  &,
-  &.btn--active {
-    background-color: $color__bright;
-    box-shadow: $color__brand--two rem(1) rem(1) rem(2) 0;
-  }
-
-  &,
-  &:hover {
-    color: $body__font-color;
-    border-color: $color__brand--two;
-  }
+.btn--primary {
+  color: $color__bright;
+  background-color: $color__brand--one;
+  border-color: $color__brand--one;
 
   &:hover {
-    background-color: $color__accent--light;
+    color: $color__bright;
+    background-color: $color__accent--dark;
+    border-color: $color__accent--dark;
   }
 
   &:active,
   &.btn--active {
-    box-shadow: none;
-    background-color: $color__accent--light;
-    color: $color__brand--one;
-    border-color: $color__accent--light;
+    color: $color__bright;
+    background-color: $color__dark;
+    border-color: $color__dark;
   }
 }
 
 // Tertiary Button
 // ----------------------------------------
-.btn--tertiary {
-  &,
-  &.btn--active {
-    box-shadow: none;
-    color: $color__brand--two;
-  }
+.btn--blank {
+  color: $color__accent;
 
   &,
   &:hover,
@@ -94,12 +81,12 @@ $btn__size: rem(23);
   }
 
   &:hover {
-    color: $body__font-color;
+    color: $color__accent--dark;
   }
 
   &:active,
   &.btn--active {
-    color: $color__brand--one;
+    color: $color__dark;
   }
 }
 
@@ -111,21 +98,17 @@ $btn__size: rem(23);
   padding: rem(8) 0;
   background: transparent;
   border: 0;
-  box-shadow: none;
+  border-radius: $border-radius--round;
   color: $color__brand--two;
 
-  &:hover,
-  &:active {
-    border-radius: $border-radius--round;
+  &:hover {
+    color: $color__accent--dark;
     background-color: $color__accent--light;
   }
 
-  &:hover {
-    color: $body__font-color;
-  }
-
   &:active {
-    color: $color__brand--one;
+    color: $color__dark;
+    background-color: $color__accent;
   }
 }
 
