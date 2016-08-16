@@ -24,7 +24,6 @@ var bourbon       = require('node-bourbon').includePaths;
 var neat          = require('bourbon-neat').includePaths;
 var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
-var sftp          = require('gulp-sftp');
 var ghPages       = require('gulp-gh-pages');
 var postcss     	= require('gulp-postcss');
 var postcss_syntax_scss = require('postcss-scss');
@@ -63,7 +62,6 @@ var config = {
     iconsystem:  'src/materials/atoms/icons'
   },
   dest: 'dist',
-  remotePath:   '/home/www-data/REPLACEME/',
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH']
 };
 
@@ -264,15 +262,6 @@ gulp.task('assemble', function (done) {
 
 // DEPLOY
 // ----------------------------------------
-  gulp.task('deploy:remote', function () {
-  return gulp.src('dist/**/*')
-    .pipe(sftp({
-      host: 'php1.brandleadership.ch',
-      user: 'www-data',
-      remotePath: config.remotePath
-    }));
-});
-
 gulp.task('deploy:github', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
@@ -294,6 +283,17 @@ gulp.task('deploy', function() {
     'deploy:github'
   );
 });
+
+// // Install & require 'gulp-sftp' for this task
+// gulp.task('deploy:remote', function () {
+//   return gulp.src('dist/**/*')
+//     .pipe(sftp({
+//       host: 'php1.brandleadership.ch',
+//       user: 'www-data',
+//       remotePath: '/home/www-data/REPLACEME/'
+//     }));
+// });
+
 
 // SERVER
 // ----------------------------------------
