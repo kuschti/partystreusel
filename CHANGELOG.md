@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## dev
+  * node v4.5.0 is defined in nvrmc
+  * update dependencies
+  * fix image markup
+
 ## 4.4.0
 * update color variables (naming)
 * update button styles
