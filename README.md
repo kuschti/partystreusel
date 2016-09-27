@@ -30,3 +30,6 @@ You will need [Node.js](http://nodejs.org)
 
 - [gulp tasks](docs/gulp.md)
 - [javascript modules](docs/javascript.md)
+
+## License information for included plugins
+* Flickity may be used in commercial projects and applications with the one-time purchase of a commercial license. http://flickity.metafizzy.co/license.html
