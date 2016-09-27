@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## 4.4.1
   * node v4.5.0 is defined in nvrmc
   * update dependencies
   * fix image markup
