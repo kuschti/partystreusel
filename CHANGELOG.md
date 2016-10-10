@@ -1,9 +1,13 @@
 # CHANGELOG
 
+## dev
+* node v4.6.0 is defined in nvrmc
+* update dependencies
+
 ## 4.4.1
-  * node v4.5.0 is defined in nvrmc
-  * update dependencies
-  * fix image markup
+* node v4.5.0 is defined in nvrmc
+* update dependencies
+* fix image markup
 
 ## 4.4.0
 * update color variables (naming)
