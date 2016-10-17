@@ -8,6 +8,20 @@
   fill: currentColor;
 }
 
+// sprite with all icons as symbol
+//stylelint-disable declaration-no-important
+.icon__sprite {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+//stylelint-enable declaration-no-important
+
 .icon--m {
   width: rem(40);
   height: rem(40);
