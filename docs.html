@@ -1,11 +1,5 @@
 <!doctype html>
-<!--[if IE 8]>
-<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="no-js lt-ie10"></html><![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html class="no-js" lang="DE">
 	<head>
 
 		<meta charset="utf-8">
@@ -16,9 +10,11 @@
 
 		<link rel="stylesheet" href=".//assets/partystreusel/styles/p.css">
 
-		<!-- toolkit styles -->
+		<!-- Pattern Libary styles&scripts -->
 		<link rel="stylesheet" href=".//assets/styles/application.css">
-		<!-- /toolkit styles -->
+
+		<script src=".//assets/scripts/polyfills/picturefill.min.js"></script>
+		<!-- /Pattern Libary styles&scripts -->
 
 		<script>
 		  var ajax = new XMLHttpRequest();
@@ -135,12 +131,6 @@
 								<a href="molecules.html#embeds">Embeds</a>
 							</li>
 							<li>
-								<a href="molecules.html#iconbar">Iconbar</a>
-							</li>
-							<li>
-								<a href="molecules.html#linklist">Linklist</a>
-							</li>
-							<li>
 								<a href="molecules.html#main-nav">Main Nav</a>
 							</li>
 							<li>
@@ -156,18 +146,6 @@
 								<a href="molecules.html#tab">Tab</a>
 							</li>
 							<li>
-								<a href="molecules.html#teaser">Teaser</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_assets">Teaser Assets</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_card">Teaser Card</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_list">Teaser List</a>
-							</li>
-							<li>
 								<a href="molecules.html#topbar">Topbar</a>
 							</li>
 							<li>
@@ -181,6 +159,9 @@
 						<ul>
 							<li>
 								<a href="organisms.html#header">Header</a>
+							</li>
+							<li>
+								<a href="organisms.html#offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -207,13 +188,16 @@
 								<a href="docs.html#javascript">Javascript</a>
 							</li>
 							<li>
+								<a href="docs.html#plugins">Plugins</a>
+							</li>
+							<li>
 								<a href="docs.html#Grid">Grid</a>
 							</li>
 							<li>
 								<a href="docs.html#Icons">Icons</a>
 							</li>
 							<li>
-								<a href="docs.html#Header">Header</a>
+								<a href="docs.html#Offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -404,6 +388,43 @@ $ -&gt;
 
 
 	<div class="f-item-group">
+		<h2 id="plugins"><a href="#plugins">Plugins</a></h2>
+		<h3>recommendation</h3>
+<ul>
+<li>see <a href="http://www.vanillalist.com/">http://www.vanillalist.com/</a> for plain JS Plugins</li>
+<li>see <a href="http://www.unheap.com/">http://www.unheap.com/</a> for JS Plugins (some with jQuery)</li>
+</ul>
+<h4>slider</h4>
+<ul>
+<li>flickity (<a href="http://flickity.metafizzy.co/">http://flickity.metafizzy.co/</a>)</li>
+<li>cycle2 (<a href="http://jquery.malsup.com/cycle2/">http://jquery.malsup.com/cycle2/</a>)</li>
+</ul>
+<h4>Range Slider (input)</h4>
+<ul>
+<li>rangeslider.js (<a href="http://rangeslider.js.org/">http://rangeslider.js.org/</a>)</li>
+<li>noUiSlider (<a href="https://refreshless.com/nouislider/">https://refreshless.com/nouislider/</a>)</li>
+</ul>
+<h4>Tables</h4>
+<ul>
+<li>tablesaw (<a href="https://github.com/filamentgroup/tablesaw">https://github.com/filamentgroup/tablesaw</a>)</li>
+</ul>
+<h4>Modal</h4>
+<ul>
+<li>Modaal (<a href="http://humaan.com/modaal/">http://humaan.com/modaal/</a>)</li>
+</ul>
+<h4>Lazyload</h4>
+<ul>
+<li>lazysizes (<a href="http://afarkas.github.io/lazysizes/">http://afarkas.github.io/lazysizes/</a>)</li>
+</ul>
+<h4>Sticky</h4>
+<ul>
+<li>stickr.js  (<a href="http://banago.github.io/Stickr.js/">http://banago.github.io/Stickr.js/</a>)</li>
+</ul>
+
+	</div>
+
+
+	<div class="f-item-group">
 		<h2 id="Grid"><a href="#Grid">Grid</a></h2>
 		<h2>Documentation</h2>
 <h3>Grid Container</h3>
@@ -435,7 +456,7 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 
 
 	<div class="f-item-group">
-		<h2 id="Header"><a href="#Header">Header</a></h2>
+		<h2 id="Offcanvas"><a href="#Offcanvas">Offcanvas</a></h2>
 		<h2>Documentation</h2>
 <p>This component is a combination of the <code>&lt;header class=&quot;header&quot; /&gt;</code> and all containers &amp; buttons for the off-canvas part.</p>
 <ul>
@@ -487,7 +508,7 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 		<script src=".//assets/partystreusel/scripts/p.js"></script>
 
 		<!-- toolkit scripts -->
-		<script src=".//assets/scripts/application.js"></script>
+		<script src=".//assets/scripts/application.js" async></script>
 		<!-- /toolkit scripts -->
 
 	</body>

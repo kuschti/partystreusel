@@ -1,11 +1,5 @@
 <!doctype html>
-<!--[if IE 8]>
-<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="no-js lt-ie10"></html><![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html class="no-js" lang="DE">
 	<head>
 
 		<meta charset="utf-8">
@@ -16,9 +10,11 @@
 
 		<link rel="stylesheet" href=".//assets/partystreusel/styles/p.css">
 
-		<!-- toolkit styles -->
+		<!-- Pattern Libary styles&scripts -->
 		<link rel="stylesheet" href=".//assets/styles/application.css">
-		<!-- /toolkit styles -->
+
+		<script src=".//assets/scripts/polyfills/picturefill.min.js"></script>
+		<!-- /Pattern Libary styles&scripts -->
 
 		<script>
 		  var ajax = new XMLHttpRequest();
@@ -135,12 +131,6 @@
 								<a href="molecules.html#embeds">Embeds</a>
 							</li>
 							<li>
-								<a href="molecules.html#iconbar">Iconbar</a>
-							</li>
-							<li>
-								<a href="molecules.html#linklist">Linklist</a>
-							</li>
-							<li>
 								<a href="molecules.html#main-nav">Main Nav</a>
 							</li>
 							<li>
@@ -156,18 +146,6 @@
 								<a href="molecules.html#tab">Tab</a>
 							</li>
 							<li>
-								<a href="molecules.html#teaser">Teaser</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_assets">Teaser Assets</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_card">Teaser Card</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_list">Teaser List</a>
-							</li>
-							<li>
 								<a href="molecules.html#topbar">Topbar</a>
 							</li>
 							<li>
@@ -181,6 +159,9 @@
 						<ul>
 							<li>
 								<a href="organisms.html#header">Header</a>
+							</li>
+							<li>
+								<a href="organisms.html#offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -207,13 +188,16 @@
 								<a href="docs.html#javascript">Javascript</a>
 							</li>
 							<li>
+								<a href="docs.html#plugins">Plugins</a>
+							</li>
+							<li>
 								<a href="docs.html#Grid">Grid</a>
 							</li>
 							<li>
 								<a href="docs.html#Icons">Icons</a>
 							</li>
 							<li>
-								<a href="docs.html#Header">Header</a>
+								<a href="docs.html#Offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -268,8 +252,12 @@
 		<div class="f-color-chip__color">#d60051</div>
 	</div>
 	<div class="f-color-chip">
+		<div class="f-color-chip__name">dark</div>
+		<div class="f-color-chip__color">#381c2e</div>
+	</div>
+	<div class="f-color-chip">
 		<div class="f-color-chip__name">two</div>
-		<div class="f-color-chip__color">#d7d7d7</div>
+		<div class="f-color-chip__color">#00d2d3</div>
 	</div>
 </div>
 <div class="f-color-chips">
@@ -289,11 +277,11 @@
 	</div>
 	<div class="f-color-chip">
 		<div class="f-color-chip__name">accent</div>
-		<div class="f-color-chip__color">#d7d7d7</div>
+		<div class="f-color-chip__color">#acacac</div>
 	</div>
 	<div class="f-color-chip">
 		<div class="f-color-chip__name">accent--dark</div>
-		<div class="f-color-chip__color">#acacac</div>
+		<div class="f-color-chip__color">#6e6e6e</div>
 	</div>
 </div>
 <div class="f-color-chips">
@@ -322,8 +310,12 @@
 		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#d60051&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;f-color-chip&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-chip__name&quot;&gt;dark&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#381c2e&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color-chip&quot;&gt;
 		&lt;div class&#x3D;&quot;f-color-chip__name&quot;&gt;two&lt;/div&gt;
-		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#d7d7d7&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#00d2d3&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;f-color-chips&quot;&gt;
@@ -343,11 +335,11 @@
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;f-color-chip&quot;&gt;
 		&lt;div class&#x3D;&quot;f-color-chip__name&quot;&gt;accent&lt;/div&gt;
-		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#d7d7d7&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#acacac&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;f-color-chip&quot;&gt;
 		&lt;div class&#x3D;&quot;f-color-chip__name&quot;&gt;accent--dark&lt;/div&gt;
-		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#acacac&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-chip__color&quot;&gt;#6e6e6e&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;f-color-chips&quot;&gt;
@@ -1408,7 +1400,7 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 				</div>
 			</div><div class="f-item-preview">
 	<figure class="image">
-	<img src="https://unsplash.it/1200/800/?random" />
+	<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://source.unsplash.com/1200x800/weekly" />
 	<figcaption class="image__caption">
 		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
 	</figcaption>
@@ -1416,7 +1408,7 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;figure class&#x3D;&quot;image&quot;&gt;
-	&lt;img src&#x3D;&quot;https://unsplash.it/1200/800/?random&quot; /&gt;
+	&lt;img class&#x3D;&quot;lazyload&quot; src&#x3D;&quot;data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw&#x3D;&#x3D;&quot; data-src&#x3D;&quot;https://source.unsplash.com/1200x800/weekly&quot; /&gt;
 	&lt;figcaption class&#x3D;&quot;image__caption&quot;&gt;
 		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
 	&lt;/figcaption&gt;
@@ -1436,12 +1428,12 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 				</div>
 			</div><div class="f-item-preview">
 	<div class="image">
-	<img src="https://unsplash.it/1200/800/?random" />
+	<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://source.unsplash.com/1200x800/weekly" />
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;image&quot;&gt;
-	&lt;img src&#x3D;&quot;https://unsplash.it/1200/800/?random&quot; /&gt;
+	&lt;img class&#x3D;&quot;lazyload&quot; src&#x3D;&quot;data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw&#x3D;&#x3D;&quot; data-src&#x3D;&quot;https://source.unsplash.com/1200x800/weekly&quot; /&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
@@ -1608,7 +1600,7 @@ See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentati
 		<script src=".//assets/partystreusel/scripts/p.js"></script>
 
 		<!-- toolkit scripts -->
-		<script src=".//assets/scripts/application.js"></script>
+		<script src=".//assets/scripts/application.js" async></script>
 		<!-- /toolkit scripts -->
 
 	</body>

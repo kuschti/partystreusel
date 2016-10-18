@@ -1,11 +1,5 @@
 <!doctype html>
-<!--[if IE 8]>
-<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="no-js lt-ie10"></html><![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html class="no-js" lang="DE">
 	<head>
 
 		<meta charset="utf-8">
@@ -16,9 +10,11 @@
 
 		<link rel="stylesheet" href=".//assets/partystreusel/styles/p.css">
 
-		<!-- toolkit styles -->
+		<!-- Pattern Libary styles&scripts -->
 		<link rel="stylesheet" href=".//assets/styles/application.css">
-		<!-- /toolkit styles -->
+
+		<script src=".//assets/scripts/polyfills/picturefill.min.js"></script>
+		<!-- /Pattern Libary styles&scripts -->
 
 		<script>
 		  var ajax = new XMLHttpRequest();
@@ -135,12 +131,6 @@
 								<a href="molecules.html#embeds">Embeds</a>
 							</li>
 							<li>
-								<a href="molecules.html#iconbar">Iconbar</a>
-							</li>
-							<li>
-								<a href="molecules.html#linklist">Linklist</a>
-							</li>
-							<li>
 								<a href="molecules.html#main-nav">Main Nav</a>
 							</li>
 							<li>
@@ -156,18 +146,6 @@
 								<a href="molecules.html#tab">Tab</a>
 							</li>
 							<li>
-								<a href="molecules.html#teaser">Teaser</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_assets">Teaser Assets</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_card">Teaser Card</a>
-							</li>
-							<li>
-								<a href="molecules.html#teaser_list">Teaser List</a>
-							</li>
-							<li>
 								<a href="molecules.html#topbar">Topbar</a>
 							</li>
 							<li>
@@ -181,6 +159,9 @@
 						<ul>
 							<li>
 								<a href="organisms.html#header">Header</a>
+							</li>
+							<li>
+								<a href="organisms.html#offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -207,13 +188,16 @@
 								<a href="docs.html#javascript">Javascript</a>
 							</li>
 							<li>
+								<a href="docs.html#plugins">Plugins</a>
+							</li>
+							<li>
 								<a href="docs.html#Grid">Grid</a>
 							</li>
 							<li>
 								<a href="docs.html#Icons">Icons</a>
 							</li>
 							<li>
-								<a href="docs.html#Header">Header</a>
+								<a href="docs.html#Offcanvas">Offcanvas</a>
 							</li>
 						</ul>
 					</li>
@@ -253,92 +237,118 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<!-- <div class="js-offcanvas">
-  <div class="offcanvas">
-    <div class="offcanvas__pusher"> -->
-<header class="header">
+	<header class="header">
 	<div class="header__logo">
 		<!-- Insert Logo here-->
 	</div>
-	<div class="offcanvas__content header__content">
-		<div class="offcanvas__content-inner">
-			<button href="#" class="offcanvas__close js-offcanvas__toggler"><svg class="icon icon--close " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <use xlink:href="#icon--close" />
-</svg>Close</button>
-			<div class="header__nav">
-				<nav class="main-nav">
-					<ul class="main-nav__list">
-						<li><a href="#" class="main-nav__link">Nav Item</a></li>
-						<li><a href="#" class="main-nav__link">Nav Item</a>
-							<ul class="main-nav__sub main-nav__sub--open">
-								<li><a href="#" class="main-nav__link">Nav Item</a></li>
-								<li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
-								<li><a href="#" class="main-nav__link">Nav Item</a></li>
-							</ul>
-						</li>
-						<li><a href="#" class="main-nav__link">Nav Item</a></li>
-						<li><a href="#" class="main-nav__link main-nav__link--active">Nav Item</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="header__meta">
-				<!-- Insert meta-nav here-->
-			</div>
+	<div class="header__content">
+		<div class="header__nav">
+			<nav class="main-nav">
+				<ul class="main-nav__list">
+					<li><a href="#" class="main-nav__link">Nav Item</a></li>
+					<li><a href="#" class="main-nav__link main-nav--active">Nav Item</a></li>
+					<li><a href="#" class="main-nav__link">Nav Item</a></li>
+					<li><a href="#" class="main-nav__link">Nav Item</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="header__meta">
+			<!-- Insert meta-nav here-->
 		</div>
 	</div>
-	<button href="#" class="offcanvas__opener js-offcanvas__toggler"><svg class="icon icon--menu " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <use xlink:href="#icon--menu" />
-</svg>Menu</button>
 </header>
-<!-- <main></main> -->
-<!-- <div class="offcanvas__overlay"></div>
-    </div>
-  </div>
-</div> -->
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;!-- &lt;div class&#x3D;&quot;js-offcanvas&quot;&gt;
-  &lt;div class&#x3D;&quot;offcanvas&quot;&gt;
-    &lt;div class&#x3D;&quot;offcanvas__pusher&quot;&gt; --&gt;
-&lt;header class&#x3D;&quot;header&quot;&gt;
+	<pre><code class="language-markup">&lt;header class&#x3D;&quot;header&quot;&gt;
 	&lt;div class&#x3D;&quot;header__logo&quot;&gt;
 		&lt;!-- Insert Logo here--&gt;
 	&lt;/div&gt;
-	&lt;div class&#x3D;&quot;offcanvas__content header__content&quot;&gt;
-		&lt;div class&#x3D;&quot;offcanvas__content-inner&quot;&gt;
-			&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;offcanvas__close js-offcanvas__toggler&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--close &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
-  &lt;use xlink:href&#x3D;&quot;#icon--close&quot; /&gt;
-&lt;/svg&gt;Close&lt;/button&gt;
-			&lt;div class&#x3D;&quot;header__nav&quot;&gt;
-				&lt;nav class&#x3D;&quot;main-nav&quot;&gt;
-					&lt;ul class&#x3D;&quot;main-nav__list&quot;&gt;
-						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;
-							&lt;ul class&#x3D;&quot;main-nav__sub main-nav__sub--open&quot;&gt;
-								&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-								&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link main-nav__link--active&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-								&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-							&lt;/ul&gt;
-						&lt;/li&gt;
-						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link main-nav__link--active&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
-					&lt;/ul&gt;
-				&lt;/nav&gt;
-			&lt;/div&gt;
-			&lt;div class&#x3D;&quot;header__meta&quot;&gt;
-				&lt;!-- Insert meta-nav here--&gt;
-			&lt;/div&gt;
+	&lt;div class&#x3D;&quot;header__content&quot;&gt;
+		&lt;div class&#x3D;&quot;header__nav&quot;&gt;
+			&lt;nav class&#x3D;&quot;main-nav&quot;&gt;
+				&lt;ul class&#x3D;&quot;main-nav__list&quot;&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link main-nav--active&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;main-nav__link&quot;&gt;Nav Item&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/nav&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;header__meta&quot;&gt;
+			&lt;!-- Insert meta-nav here--&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;offcanvas__opener js-offcanvas__toggler&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--menu &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
+&lt;/header&gt;</code></pre>
+</div>
+
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="offcanvas">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Offcanvas</h2>
+	</div>
+		<div class="f-item-group" id="offcanvas.offcanvas">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Offcanvas</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+						<svg>
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-notes" data-f-toggle="notes">
+	<p>Not final!</p>
+
+</div>
+<div class="f-item-preview">
+	<div class="js-offcanvas">
+	<div class="offcanvas">
+		<div class="offcanvas__pusher">
+			INSERT HEADER
+			<div class="offcanvas__content">
+				<div class="offcanvas__content-inner">
+					<button href="#" class="offcanvas__close js-offcanvas__toggler"><svg class="icon icon--close " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <use xlink:href="#icon--close" />
+</svg>Close</button> INSERT NAV
+				</div>
+			</div>
+			<button href="#" class="offcanvas__opener js-offcanvas__toggler"><svg class="icon icon--menu " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <use xlink:href="#icon--menu" />
+</svg>Menu</button> INSERT MAIN
+			<div class="offcanvas__overlay"></div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;js-offcanvas&quot;&gt;
+	&lt;div class&#x3D;&quot;offcanvas&quot;&gt;
+		&lt;div class&#x3D;&quot;offcanvas__pusher&quot;&gt;
+			INSERT HEADER
+			&lt;div class&#x3D;&quot;offcanvas__content&quot;&gt;
+				&lt;div class&#x3D;&quot;offcanvas__content-inner&quot;&gt;
+					&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;offcanvas__close js-offcanvas__toggler&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--close &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
+  &lt;use xlink:href&#x3D;&quot;#icon--close&quot; /&gt;
+&lt;/svg&gt;Close&lt;/button&gt; INSERT NAV
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;offcanvas__opener js-offcanvas__toggler&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--menu &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
   &lt;use xlink:href&#x3D;&quot;#icon--menu&quot; /&gt;
-&lt;/svg&gt;Menu&lt;/button&gt;
-&lt;/header&gt;
-&lt;!-- &lt;main&gt;&lt;/main&gt; --&gt;
-&lt;!-- &lt;div class&#x3D;&quot;offcanvas__overlay&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt; --&gt;</code></pre>
+&lt;/svg&gt;Menu&lt;/button&gt; INSERT MAIN
+			&lt;div class&#x3D;&quot;offcanvas__overlay&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
 		</div>
@@ -352,7 +362,7 @@
 		<script src=".//assets/partystreusel/scripts/p.js"></script>
 
 		<!-- toolkit scripts -->
-		<script src=".//assets/scripts/application.js"></script>
+		<script src=".//assets/scripts/application.js" async></script>
 		<!-- /toolkit scripts -->
 
 	</body>
