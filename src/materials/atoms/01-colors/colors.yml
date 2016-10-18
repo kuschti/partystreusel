@@ -1,14 +1,15 @@
 colors:
   brand:
     one: "#d60051"
-    two: "#d7d7d7"
+    dark: "#381c2e"
+    two: "#00d2d3"
   base:
     dark: "#333"
     light: "#fff"
   accent:
     accent--light: "#f0f0f0"
-    accent: "#d7d7d7"
-    accent--dark: "#acacac"
+    accent: "#acacac"
+    accent--dark: "#6e6e6e"
   states:
     warning: "#f08a24"
     alert: "#f00"
