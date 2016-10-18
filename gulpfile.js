@@ -217,6 +217,7 @@ gulp.task('svgsprite', ['svgmin'], function () {
     .pipe(svgSymbols({
       id:     'icon--%f',
       title:  'icon %f',
+      svgClassname: 'icon__sprite',
       templates: [
         config.src.iconsystem + '/_icon-sprite-template.svg',
         config.src.iconsystem + '/_icons-preview-template.html'

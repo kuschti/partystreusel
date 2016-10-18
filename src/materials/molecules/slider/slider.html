@@ -1,12 +1,11 @@
 <section class="slider js-slider">
-  <ul class="slider__list">
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
-  </ul>
-  <div class="slider__controls">
-    <div class="slider__control slider__control-prev">{{> icons.icon icon-name="arrow-left"}}</div>
-    <div class="slider__control slider__control-next">{{> icons.icon icon-name="arrow-right"}}</div>
+  <div class="slider__inner">
+    <div class="slider__items">
+      {{#iterate 3}}
+        <div class="slider__item">
+          <img class="slider__image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alt Text" data-flickity-lazyload="https://source.unsplash.com/1200x675/weekly" width="1200" height="675"/>
+        </div>
+      {{/iterate}}
+    </div>
   </div>
-  <div class="slider__nav"></div>
 </section>

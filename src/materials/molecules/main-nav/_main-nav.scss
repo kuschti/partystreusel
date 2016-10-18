@@ -2,16 +2,15 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-
-  > li {
-    border-top: rem(1) solid darken($color__brand--one, 5%);
-  }
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .main-nav__link {
   display: block;
   padding: rem(11) rem(18);
-  color: $body__font-color;
+  color: $color__accent--light;
   font-size: rem(18);
   line-height: 1.33;
 }
@@ -30,9 +29,9 @@
 // STATES
 .main-nav__link:hover,
 .main-nav__link:focus,
-.main-nav__link--active {
+.main-nav--active {
   color: $color__bright;
-  background-color: darken($color__brand--one, 5%);
+  background-color: $color__brand--one;
 }
 
 .main-nav__sub--open {

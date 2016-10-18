@@ -33,7 +33,6 @@ textarea {
   background-color: $color__accent--light;
   border: rem(1) solid $color__accent--light;
   border-radius: 0;
-  box-shadow: inset rem(1) rem(1) rem(3) 0 $color__brand--two;
   padding: rem(9) rem(12);
   font-size: rem(16);
   line-height: 1.5;
@@ -41,7 +40,7 @@ textarea {
   &:focus {
     outline: 0;
     background-color: $color__bright;
-    box-shadow: rem(0) rem(1) rem(2) 0 $color__brand--two;
+    border-color: $color__accent;
   }
 }
 

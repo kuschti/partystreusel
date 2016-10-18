@@ -9,14 +9,14 @@ class Accordion extends Partystreusel.Base
 
   toggleItem: (e) =>
     item = $(e.target).closest('.accordion__item')
-    currentOpen = item.hasClass('accordion__item--open')
+    currentOpen = item.hasClass('accordion--open')
 
-    @items.filter('.accordion__item--open').each (_, i) =>
+    @items.filter('.accordion--open').each (_, i) =>
       @trigger('close', $(i))
 
-    @items.removeClass('accordion__item--open')
+    @items.removeClass('accordion--open')
     unless currentOpen
-      item.toggleClass('accordion__item--open')
+      item.toggleClass('accordion--open')
       @trigger('open', item)
 
     e.preventDefault()

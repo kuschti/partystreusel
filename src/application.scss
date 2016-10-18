@@ -13,6 +13,7 @@
 
 // PLUGIN styles
 // ----------------------------------------
+@import 'vendor/flickity';
 
 // Atoms
 // ----------------------------------------
@@ -39,19 +40,13 @@
 @import 'materials/molecules/tab/tab';
 @import 'materials/molecules/breadcrumb/breadcrumb';
 @import 'materials/molecules/topbar/topbar';
-@import 'materials/molecules/iconbar/iconbar';
 @import 'materials/molecules/accordion/accordion';
 @import 'materials/molecules/slider/slider';
 @import 'materials/molecules/embeds/embeds';
 @import 'materials/molecules/two-column/two-column';
-@import 'materials/molecules/linklist/linklist';
-@import 'materials/molecules/teaser/teaser';
-@import 'materials/molecules/teaser_card/teaser--card';
-@import 'materials/molecules/teaser_list/teaser--list';
-@import 'materials/molecules/teaser_assets/teaser--assets';
 @import 'materials/molecules/content/content';
 
 // Organisms
 // ----------------------------------------
-@import 'materials/organisms/header/offcanvas';
 @import 'materials/organisms/header/header';
+@import 'materials/organisms/offcanvas/offcanvas';
