@@ -1,11 +1,5 @@
 <!doctype html>
-<!--[if IE 8]>
-<html lang="en" class="no-js lt-ie10 lt-ie9"></html><![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="no-js lt-ie10"></html><![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html class="no-js" lang="DE">
 	<head>
 
 		<meta charset="utf-8">
@@ -16,9 +10,11 @@
 
 		{{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/assets/partystreusel/styles/p.css">{{/if}}
 
-		<!-- toolkit styles -->
+		<!-- Pattern Libary styles&scripts -->
 		<link rel="stylesheet" href="./{{baseurl}}/assets/styles/application.css">
-		<!-- /toolkit styles -->
+
+		<script src="./{{baseurl}}/assets/scripts/polyfills/picturefill.min.js"></script>
+		<!-- /Pattern Libary styles&scripts -->
 
 		{{> p-icons-include}}
 
@@ -42,7 +38,7 @@
 		{{/if}}
 
 		<!-- toolkit scripts -->
-		<script src="./{{baseurl}}/assets/scripts/application.js"></script>
+		<script src="./{{baseurl}}/assets/scripts/application.js" async></script>
 		<!-- /toolkit scripts -->
 
 	</body>

@@ -2,6 +2,8 @@
 
 ## dev
 * remove molecules teaser, linklist, iconbar
+* remove jquery cycle plugin (used for slider)
+* add vendor flickity.js (used for slider)
 * update vendor jquery to 3.1.1
 * update node version in nvrmc
 * update dependencies
