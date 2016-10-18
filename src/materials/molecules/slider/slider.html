@@ -1,8 +1,8 @@
 <section class="slider js-slider">
   <ul class="slider__list">
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
-    <li class="slider__item"><img src="https://unsplash.it/1200/675/?random" width="1200" height="675"/></li>
+    {{#iterate 3}}
+      <li class="slider__item"><img src="//source.unsplash.com/1200x675/weekly" width="1200" height="675"/></li>
+    {{/iterate}}
   </ul>
   <div class="slider__controls">
     <div class="slider__control slider__control-prev">{{> icons.icon icon-name="arrow-left"}}</div>
