@@ -1,8 +1,12 @@
 # CHANGELOG
 
 ## dev
-* node v4.6.0 is defined in nvrmc
+* remove molecules teaser, linklist, iconbar
+* update node version in nvrmc
 * update dependencies
+* update colors
+* update placeholder images
+* update active class names in topbar, main-nav, accordion (BREAKING)
 
 ## 4.4.1
 * node v4.5.0 is defined in nvrmc
