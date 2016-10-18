@@ -2,6 +2,7 @@
 
 ## dev
 * remove molecules teaser, linklist, iconbar
+* update vendor jquery to 3.1.1
 * update node version in nvrmc
 * update dependencies
 * update colors
