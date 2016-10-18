@@ -30,7 +30,7 @@
 // STATES
 .main-nav__link:hover,
 .main-nav__link:focus,
-.main-nav__link--active {
+.main-nav--active {
   color: $color__bright;
   background-color: darken($color__brand--one, 5%);
 }

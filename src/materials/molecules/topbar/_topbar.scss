@@ -57,6 +57,7 @@ $topbar__border: rem(1) solid $color__accent;
 
 .topbar__sub-list {
   padding: 0;
+  background-color: $color__bright;
 }
 
 .topbar__sub {
@@ -75,15 +76,12 @@ $topbar__border: rem(1) solid $color__accent;
 }
 
 // STATES
-.topbar__item--active,
-.topbar__item--active:hover {
-  > a {
-    background-color: $color__accent--light;
-    color: $color__brand--one;
+.topbar--active {
+  background-color: $color__accent--light;
+  color: $color__brand--one;
 
-    &:hover {
-      background-color: $color__bright;
-    }
+  &:hover {
+    background-color: $color__bright;
   }
 }
 
@@ -135,7 +133,6 @@ $topbar__border: rem(1) solid $color__accent;
   .topbar__sub-list {
     border: $topbar__border;
     border-top-width: 0;
-    box-shadow: rem(2) rem(2) rem(3) 0 $color__accent--light;
     left: rem(-1);
     min-width: rem(230);
     position: absolute;
@@ -152,7 +149,7 @@ $topbar__border: rem(1) solid $color__accent;
     }
   }
 
-  // Flexbox Fallback
+  // Flexbox Fallback, used for Projects with old browser support
   //stylelint-disable selector-max-specificity
   // .no-flexbox.no-flexboxtweener {
   //   .topbar__mobile-menu {
