@@ -7,6 +7,9 @@
 * update colors
 * update placeholder images
 * update active class names in topbar, main-nav, accordion (BREAKING)
+* update main-nav & header styles
+* update header (remove offcanvas, BREAKING)
+* add offcanvas organism (in progress)
 
 ## 4.4.1
 * node v4.5.0 is defined in nvrmc

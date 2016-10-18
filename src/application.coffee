@@ -8,7 +8,7 @@
 #=require materials/molecules/scroll_to/scroll_to.coffee
 #=require materials/molecules/dropdown/dropdown.coffee
 
-#=require materials/organisms/header/offcanvas.coffee
+#=require materials/organisms/offcanvas/offcanvas.coffee
 
 $ ->
   $('html').removeClass('no-js')
