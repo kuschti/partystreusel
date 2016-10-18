@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## v4.5.0
 * remove molecules teaser, linklist, iconbar
 * remove jquery cycle plugin (used for slider)
 * add vendor flickity.js (used for slider)
