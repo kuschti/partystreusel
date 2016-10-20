@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v4.5.1
+* add handlebars helper "increment"
+
 ## v4.5.0
 * remove molecules teaser, linklist, iconbar
 * remove jquery cycle plugin (used for slider)
@@ -13,7 +16,6 @@
 * update main-nav & header styles
 * update header (remove offcanvas, BREAKING)
 * add offcanvas organism (in progress)
-* add handlebars helper "increment"
 
 ## 4.4.1
 * node v4.5.0 is defined in nvrmc
