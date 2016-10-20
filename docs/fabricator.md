@@ -1,3 +1,15 @@
+### helpers
+
+#### iterate
+{{#iterate 5}}
+  Helper to iterate x times
+{{/iterate}}
+
+#### increment
+Helper to increment index with 1
+{{increment @index}} = actual @index +1
+{{increment 1}} = 2 (1+1)
+
 ### Data
 Im atoms/form/checkbox.html einen Button einbinden und daten via yml übergeben.
 
