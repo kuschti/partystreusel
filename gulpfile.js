@@ -95,7 +95,7 @@ gulp.task('styles:application', function () {
   return gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
     .pipe(sass({
-      includePaths: [neat, bourbon]
+      includePaths: [neat, bourbon, 'node_modules']
     }).on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
