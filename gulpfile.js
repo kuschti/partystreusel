@@ -255,6 +255,9 @@ gulp.task('assemble', function (done) {
     helpers: {
       currentVersion: function() {
         return metadata.version;
+      },
+      increment: function(value) {
+        return parseInt(value) + 1;
       }
     }
   });
