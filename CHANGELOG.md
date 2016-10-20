@@ -1,5 +1,6 @@
 # CHANGELOG
 
+## v4.5.2
 * update normalize to v5.0.0
 * include normalize with npm instead of vendor file
 
