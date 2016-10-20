@@ -1,5 +1,8 @@
 # CHANGELOG
 
+* update normalize to v5.0.0
+* include normalize with npm instead of vendor file
+
 ## v4.5.1
 * add handlebars helper "increment"
 
