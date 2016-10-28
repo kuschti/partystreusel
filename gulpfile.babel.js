@@ -25,12 +25,17 @@ var neat          = require('bourbon-neat').includePaths;
 var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
 var ghPages       = require('gulp-gh-pages');
-var postcss     	= require('gulp-postcss');
+var postcss       = require('gulp-postcss');
 var postcss_syntax_scss = require('postcss-scss');
-var reporter    	= require('postcss-reporter');
-var stylelint   	= require('stylelint');
+var reporter      = require('postcss-reporter');
+var stylelint     = require('stylelint');
 var doiuse        = require('doiuse');
 var metadata      = require('./package.json');
+
+import babel         from 'gulp-babel';
+import eslint        from 'gulp-eslint';
+import webpackStream from 'webpack-stream';
+import webpackConfigBabel from './webpack.config.babel';
 
 // configuration
 // ----------------------------------------
@@ -62,7 +67,18 @@ var config = {
     iconsystem:  'src/materials/atoms/icons'
   },
   dest: 'dist',
-  browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH']
+  browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
+  webpack: {
+    allSrcJs: 'src/**/*.js?(x)',
+    serverSrcJs: 'src/server/**/*.js?(x)',
+    sharedSrcJs: 'src/shared/**/*.js?(x)',
+    clientEntryPoint: 'src/client/app.js',
+    clientBundle: 'dist/client-bundle.js?(.map)',
+    gulpFile: 'gulpfile.babel.js',
+    webpackFile: 'webpack.config.babel.js',
+    libDir: 'lib',
+    distDir: 'dist',
+  }
 };
 
 // webpack
@@ -167,15 +183,47 @@ gulp.task('scripts', function (done) {
   });
 });
 
-gulp.task('coffee', function() {
-  gulp.src(config.src.scripts.application)
-    .pipe(include())
-    .pipe(coffee())
-    .pipe(addsrc.prepend(config.src.scripts.vendor))
-    .pipe(concat("application.js"))
-    .pipe(gulpif(!config.dev, uglify()))
-    .pipe(gulp.dest(config.dest + '/assets/scripts'))
-    .pipe(browserSync.reload({stream: true}))
+//gulp.task('coffee', function() {
+  //gulp.src(config.src.scripts.application)
+    //.pipe(include())
+    //.pipe(coffee())
+    //.pipe(addsrc.prepend(config.src.scripts.vendor))
+    //.pipe(concat("application.js"))
+    //.pipe(gulpif(!config.dev, uglify()))
+    //.pipe(gulp.dest(config.dest + '/assets/scripts'))
+    //.pipe(browserSync.reload({stream: true}))
+//});
+
+gulp.task('lint', () =>
+  gulp.src([
+    config.webpack.allSrcJs,
+    config.webpack.gulpFile,
+    config.webpack.webpackFile,
+  ])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+);
+
+gulp.task('clean', () => del([
+  config.webpack.libDir,
+  config.webpack.clientBundle,
+]));
+
+gulp.task('build', ['lint', 'clean'], () =>
+  gulp.src(config.webpack.allSrcJs)
+    .pipe(babel())
+    .pipe(gulp.dest(config.webpack.libDir))
+);
+
+gulp.task('main', ['lint', 'clean'], () =>
+  gulp.src(config.webpack.clientEntryPoint)
+    .pipe(webpackStream(webpackConfigBabel))
+    .pipe(gulp.dest(config.webpack.distDir))
+);
+
+gulp.task('watch', () => {
+  gulp.watch(config.webpack.allSrcJs, ['main']);
 });
 
 gulp.task('polyfills', function() {
@@ -277,7 +325,7 @@ gulp.task('deploy', function() {
     [
       'styles',
       'scripts',
-      'coffee',
+      'main',
       'polyfills',
       'fonts',
       'images',
@@ -342,12 +390,11 @@ gulp.task('serve', function () {
   gulp.task('scripts:watch', ['scripts'], browserSync.reload);
   gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['scripts:watch']).on('change', webpackCache);
 
-  gulp.task('coffee:watch', ['coffee'], browserSync.reload);
-  gulp.watch('src/materials/**/*.coffee', ['coffee:watch']);
+  //gulp.task('coffee:watch', ['coffee'], browserSync.reload);
+  //gulp.watch('src/materials/**/*.coffee', ['coffee:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
-
 });
 
 gulp.task('build', ['default']);
@@ -359,7 +406,7 @@ gulp.task('default', ['clean'], function () {
   var tasks = [
     'styles',
     'scripts',
-    'coffee',
+    'main',
     'polyfills',
     'fonts',
     'images',
@@ -373,5 +420,4 @@ gulp.task('default', ['clean'], function () {
       gulp.start('serve');
     }
   });
-
 });
