@@ -162,7 +162,7 @@ gulp.task('styles:doiuse', () => {
 
 // SCRIPTS
 // ----------------------------------------
-gulp.task('scripts', (done) => {
+gulp.task('scripts:fabricator', (done) => {
   webpackCompiler.run((error, result) => {
     if (error) {
       gutil.log(gutil.colors.red(error));
@@ -178,11 +178,8 @@ gulp.task('scripts', (done) => {
   });
 });
 
-gulp.task('lint', () =>
+gulp.task('scripts:application:lint', () =>
   gulp.src([
-    config.src.scripts.application,
-    config.src.scripts.base,
-    config.src.scripts.settings,
     config.webpack.allSrcJs,
     config.webpack.gulpFile,
     config.webpack.webpackFile,
@@ -192,19 +189,19 @@ gulp.task('lint', () =>
     .pipe(eslint.failAfterError())
 );
 
-gulp.task('clean', () => del([
+gulp.task('scripts:application:clean', () => del([
   config.webpack.libDir,
   config.webpack.clientBundle,
 ]));
 
 // Check why this is used
-gulp.task('build', ['lint', 'clean'], () =>
+gulp.task('build', ['scripts:application:lint', 'scripts:application:clean'], () =>
   gulp.src(config.webpack.allSrcJs)
     .pipe(babel())
     .pipe(gulp.dest(config.webpack.libDir))
 );
 
-gulp.task('main', ['lint', 'clean'], () =>
+gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () =>
   gulp.src(config.webpack.clientEntryPoint)
     .pipe(webpackStream(webpackConfigBabel))
     .pipe(gulp.dest(config.webpack.distDir))
@@ -308,8 +305,8 @@ gulp.task('deploy', () => {
     'clean',
     [
       'styles',
-      'scripts',
-      'main',
+      'scripts:fabricator',
+      'scripts:application',
       'polyfills',
       'fonts',
       'images',
@@ -373,14 +370,14 @@ gulp.task('serve', () => {
   gulp.task('styles:application:watch', ['styles:application']);
   gulp.watch(config.src.styles.applicationpartials, ['styles:application:watch']);
 
-  gulp.task('scripts:watch', ['scripts'], browserSync.reload);
-  gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['scripts:watch']).on('change', webpackCache);
+  gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
+  gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
+
+  gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
+  gulp.watch(config.webpack.allSrcJs, ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
-
-  gulp.task('watch', ['main'], browserSync.reload);
-  gulp.watch(config.webpack.allSrcJs, ['watch']);
 });
 
 gulp.task('build', ['default']);
@@ -391,8 +388,8 @@ gulp.task('default', ['clean'], () => {
   // define build tasks
   const tasks = [
     'styles',
-    'scripts',
-    'main',
+    'scripts:fabricator',
+    'scripts:application',
     'polyfills',
     'fonts',
     'images',
