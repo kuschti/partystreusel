@@ -1,6 +1,6 @@
 export default {
   output: {
-    filename: 'client-bundle.js',
+    filename: 'application.js',
   },
   devtool: 'source-map',
   module: {

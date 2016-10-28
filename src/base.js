@@ -35,4 +35,4 @@ class Base {
   }
 }
 
-Base.className = 'Base';
+export default Base;
