@@ -1,5 +1,5 @@
-import Base from '../../../base';
 import $ from 'jquery';
+import Base from '../../../base';
 
 class Topbar extends Base {
   constructor(el) {
@@ -10,17 +10,17 @@ class Topbar extends Base {
     this.$el.find('.topbar__item').on('click', this.toggleItem);
   }
 
-  toggle(e) {
-    return this.$el.toggleClass('topbar--open');
+  toggle() {
+    this.$el.toggleClass('topbar--open');
   }
 
-  toggleItem(e) {
-    var item = $(e.target).closest('.topbar__item');
-    var subList = item.find('.topbar__sub-list');
+  static toggleItem(e) {
+    const item = $(e.target).closest('.topbar__item');
+    const subList = item.find('.topbar__sub-list');
     if (subList.length === 0) { return; }
 
     subList.toggleClass('topbar__sub-list--open');
-    return e.preventDefault();
+    e.preventDefault();
   }
 }
 

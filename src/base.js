@@ -6,17 +6,16 @@ class Base {
     var prefix = Partystreusel.selectorPrefix || 'streusel';
     if (Streusel.selectorType === 'css_class') {
       return `.${prefix}-${this.className.toLowerCase()}`;
-    } else {
-      return `[data-${prefix}-${this.className.toLowerCase()}]`;
     }
+    return `[data-${prefix}-${this.className.toLowerCase()}]`;
   }
 
   static init(element = $('body')) {
-    element.find(this.selector()).addBack(this.selector()).filter(function(i, el) {
+    element.find(this.selector()).addBack(this.selector()).filter((i, el) => {
       return !($(el).data('object') != null);
-    }).map((function(_this) {
-      return function(i, el) {
-        console.log('Partystreusel init: ' + _this.className);
+    }).map((function (_this) {
+      return function (i, el) {
+        console.log(`Partystreusel init: ${_this.className}`);
         return new _this(el);
       };
     })(this));
