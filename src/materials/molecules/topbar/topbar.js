@@ -1,3 +1,6 @@
+import Base from '../../../base';
+import $ from 'jquery';
+
 class Topbar extends Base {
   constructor(el) {
     super(el);
@@ -21,4 +24,5 @@ class Topbar extends Base {
   }
 }
 
+Topbar.className = 'Topbar';
 export default Topbar;

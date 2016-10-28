@@ -41,8 +41,10 @@ const config = {
         './src/_styleguide/fabricator/scripts/fabricator.js',
         './src/_styleguide/fabricator/scripts/partystreusel.js',
       ],
-      application: './src/application.coffee',
-      vendor: './src/vendor/*.js',
+      application: 'src/application.js',
+      base: 'src/base.js',
+      settings: 'src/settings.js',
+      vendor: 'src/vendor/*.js',
       polyfills: 'src/vendor/polyfills/*',
     },
     styles: {
@@ -63,15 +65,13 @@ const config = {
   dest: 'dist',
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
   webpack: {
-    allSrcJs: 'src/**/*.js?(x)',
-    serverSrcJs: 'src/server/**/*.js?(x)',
-    sharedSrcJs: 'src/shared/**/*.js?(x)',
+    allSrcJs: 'src/materials/**/*.js?(x)',
     clientEntryPoint: 'src/application.js',
     clientBundle: 'dist/scripts/application.js?(.map)',
     gulpFile: 'gulpfile.babel.js',
     webpackFile: 'webpack.config.babel.js',
     libDir: 'lib',
-    distDir: 'dist',
+    distDir: 'dist/assets/scripts/',
   },
 };
 
@@ -180,7 +180,10 @@ gulp.task('scripts', (done) => {
 
 gulp.task('lint', () =>
   gulp.src([
-    // config.webpack.allSrcJs,
+    config.src.scripts.application,
+    config.src.scripts.base,
+    config.src.scripts.settings,
+    config.webpack.allSrcJs,
     config.webpack.gulpFile,
     config.webpack.webpackFile,
   ])
@@ -206,10 +209,6 @@ gulp.task('main', ['lint', 'clean'], () =>
     .pipe(webpackStream(webpackConfigBabel))
     .pipe(gulp.dest(config.webpack.distDir))
 );
-
-gulp.task('watch', () => {
-  gulp.watch(config.webpack.allSrcJs, ['main']);
-});
 
 gulp.task('polyfills', () => {
   gulp.src(config.src.scripts.polyfills)
@@ -379,6 +378,9 @@ gulp.task('serve', () => {
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
+
+  gulp.task('watch', ['main'], browserSync.reload);
+  gulp.watch(config.webpack.allSrcJs, ['watch']);
 });
 
 gulp.task('build', ['default']);

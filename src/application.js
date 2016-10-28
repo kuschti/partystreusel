@@ -1,7 +1,9 @@
 import 'babel-polyfill';
+import $ from 'jquery';
+import Topbar from './materials/molecules/topbar/topbar';
 
-import Base from './base.js';
+$(() => {
+  $('html').removeClass('no-js');
 
-import Topbar from './materials/molecules/topbar/topbar.js';
-
-console.log('init');
+  Topbar.init();
+});

@@ -72,11 +72,12 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.1.1",
-    "gulp-svg-symbols": "^2.0.0",
+    "gulp-svg-symbols": "^2.0.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "jstransformer-marked": "^1.0.1",
     "node-bourbon": "^4.2.8",
+    "path": "^0.12.7",
     "postcss-reporter": "^1.4.1",
     "postcss-scss": "^0.3.1",
     "run-sequence": "^1.2.2",
@@ -88,8 +89,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
-    "gulp-svg-symbols": "^2.0.1",
     "normalize.css": "^5.0.0",
-    "path": "^0.12.7"
+    "jquery": "^3.1.1"
   }
 }

@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import Settings from './settings';
+
 class Base {
   static selector() {
     var prefix = Partystreusel.selectorPrefix || 'streusel';
@@ -9,11 +12,6 @@ class Base {
   }
 
   static init(element = $('body')) {
-    // OLD CODE
-    // return element.find(this.selector()).addBack(this.selector()).filter(function(i, el) {
-    //   return !(($(el).data('object') != null)).map((i, el) => new this(el));
-    // });
-
     element.find(this.selector()).addBack(this.selector()).filter(function(i, el) {
       return !($(el).data('object') != null);
     }).map((function(_this) {
