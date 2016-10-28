@@ -4,14 +4,13 @@ import Base from '../../../base';
 class Topbar extends Base {
   constructor(el) {
     super(el);
-    this.toggle = this.toggle.bind(this);
-    this.toggleItem = this.toggleItem.bind(this);
-    this.$el.find('.topbar__mobile-menu').on('click', this.toggle);
-    this.$el.find('.topbar__item').on('click', this.toggleItem);
+    this.el = $(el);
+    $(el).find('.topbar__mobile-menu').on('click', this.toggle.bind(this));
+    $(el).find('.topbar__item').on('click', this.toggleItem);
   }
 
   toggle() {
-    this.$el.toggleClass('topbar--open');
+    this.el.toggleClass('topbar--open');
   }
 
   static toggleItem(e) {
