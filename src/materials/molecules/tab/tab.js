@@ -61,8 +61,7 @@ class Tab extends Base {
   findItemAndPanel(name) {
     let target = name;
 
-    if (target == null) { return undefined; }
-    if (!(target.length > 0)) { return undefined; }
+    if (target == null || target.length <= 0) { return undefined; }
     if (target.indexOf('#') === 0) { target = target.slice(1); }
 
     const panel = this.$panels.filter(`[id=${target}]`);
