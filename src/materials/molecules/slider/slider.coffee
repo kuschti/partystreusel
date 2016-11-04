@@ -1,5 +1,4 @@
 class Slider extends Partystreusel.Base
-  @className = 'Slider'
 
   constructor: (el) ->
     super
