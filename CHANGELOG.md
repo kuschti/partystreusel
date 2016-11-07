@@ -1,5 +1,8 @@
 # CHANGELOG
 
+* replace neat grid system with susy
+* update dependencies
+
 ## v4.6.0
 * refactor css (and demo of atoms) for input fields
 * refactor radio/checkbox styling, with class `option`.
