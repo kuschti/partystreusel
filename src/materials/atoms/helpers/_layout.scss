@@ -36,4 +36,8 @@ article {
   article {
     padding: 0 rem(24);
   }
+
+  main {
+    @include container();
+  }
 }

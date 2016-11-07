@@ -20,17 +20,6 @@
   overflow: hidden;
 }
 
-// Mixin to reset the neat omega mixin
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) {
-    margin-right: +flex-gutter();
-  }
-
-  &:nth-child(#{$nth}+1) {
-    clear: none;
-  }
-}
-
 // Shorthand Mixin for Susy Media Queries
 @mixin mq($query, $mq__breakpoints: $breakpoints) {
   $mq: '';

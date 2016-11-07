@@ -1,5 +1,5 @@
 .two-column {
-  @include outer-container;
+  @include container;
 }
 
 // LARGE
@@ -7,6 +7,10 @@
 @include mq(large) {
   .two-column__first,
   .two-column__second {
-    @include span-columns(6);
+    @include span(6);
+  }
+
+  .two-column__second {
+    @include last;
   }
 }
