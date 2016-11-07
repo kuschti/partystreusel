@@ -1,7 +1,23 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@function rem($font-size, $rem-base: 16) {
+  @return ($font-size/$rem-base) *1rem;
+}
+
 @mixin hide-text {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 // Mixin to reset the neat omega mixin
@@ -15,24 +31,28 @@
   }
 }
 
-// Mixin for Media Queries
-@mixin mq($mq__breakpoint, $mq__direction: 'min-width', $mq__breakpoints: $breakpoints, $mq__media: '') {
-  $mq__query: '';
+// Shorthand Mixin for Susy Media Queries
+@mixin mq($query, $mq__breakpoints: $breakpoints) {
+  $mq: '';
+  $susy-settings: '';
 
-  @if $mq__breakpoint == landscape or $mq__breakpoint == portrait {
-    $mq__query: '#{$mq__media} (orientation: #{$mq__breakpoint})';
-  }
+  // If $mq__breakpoint is a key that exists in
+  // $mq__breakpoints, get and use the value
+  @if map-has-key($mq__breakpoints, $query) {
+    $map: map-get($mq__breakpoints, $query);
 
-  @else {
-    // If $mq__breakpoint is a key that exists in
-    // $mq__breakpoints, get and use the value
-    @if map-has-key($mq__breakpoints, $mq__breakpoint) {
-      $mq__breakpoint: map-get($mq__breakpoints, $mq__breakpoint);
+    @if map-has-key($map, 'mq') {
+      $mq: map-get($map, 'mq');
+      // @debug $mq;
     }
-    $mq__query: '#{$mq__media} (#{$mq__direction}: #{$mq__breakpoint})';
+
+    @if map-has-key($map, 'susy-settings') {
+      $susy-settings: map-get($map, 'susy-settings');
+      // @debug $susy-settings;
+    }
   }
 
-  @media #{$mq__query} {
+  @include susy-breakpoint($mq, $susy-settings) {
     @content;
   }
 }
@@ -42,4 +62,91 @@
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
+}
+
+// Triangle Mixin from bourbon.io
+@mixin triangle($size, $color, $direction) {
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  $foreground-color: nth($color, 1);
+  $background-color: if(length($color) == 2, nth($color, 2), transparent);
+  height: 0;
+  width: 0;
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    $width: $width / 2;
+    $height: if(length($size) > 1, $height, $height/2);
+
+    @if $direction == up {
+      border-bottom: $height solid $foreground-color;
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+    }
+
+    @else if $direction == right {
+      border-bottom: $width solid $background-color;
+      border-left: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    }
+
+    @else if $direction == down {
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+      border-top: $height solid $foreground-color;
+    }
+
+    @else if $direction == left {
+      border-bottom: $width solid $background-color;
+      border-right: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    }
+  }
+
+  @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $height solid $foreground-color;
+
+    @if $direction == up-right {
+      border-left: $width solid $background-color;
+    }
+
+    @else if $direction == up-left {
+      border-right: $width solid $background-color;
+    }
+  }
+
+  @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $height solid $foreground-color;
+
+    @if $direction == down-right {
+      border-left: $width solid $background-color;
+    }
+
+    @else if $direction == down-left {
+      border-right: $width solid $background-color;
+    }
+  }
+
+  @else if ($direction == inset-up) {
+    border-color: $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $height $width;
+  }
+
+  @else if ($direction == inset-down) {
+    border-color: $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $height $width;
+  }
+
+  @else if ($direction == inset-right) {
+    border-color: $background-color $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $width $height;
+  }
+
+  @else if ($direction == inset-left) {
+    border-color: $background-color $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $width $height;
+  }
 }

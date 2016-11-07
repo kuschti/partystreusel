@@ -1,7 +1,7 @@
 .grid__container {
-  @include outer-container;
+  @include container;
 }
 
 .grid__row {
-  @include row;
+  @include break;
 }

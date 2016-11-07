@@ -1,15 +1,12 @@
 // Normalize CSS
 @import 'normalize.css/normalize';
 
-// Bourbon imports
-@import 'bourbon';
+// Susy
+@import 'susy/sass/susy';
 
 // Project settings
-@import 'neat-helpers';
+@import 'materials/atoms/mixins';
 @import 'materials/atoms/settings';
-
-// Bourbon Neat imports
-@import 'neat';
 
 // PLUGIN styles
 // ----------------------------------------
@@ -18,7 +15,6 @@
 // Atoms
 // ----------------------------------------
 @import 'materials/atoms/functions';
-@import 'materials/atoms/mixins';
 @import 'materials/atoms/helpers/utilities';
 @import 'materials/atoms/helpers/layout';
 @import 'materials/atoms/02-typography/typography';
