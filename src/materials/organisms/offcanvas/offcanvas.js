@@ -10,10 +10,6 @@ class Offcanvas extends Base {
 
   toggle() {
     this.$el.toggleClass('offcanvas--open');
-    if (this.$el.hasClass('offcanvas--open')) {
-      return this.trigger('open', this.$el);
-    }
-    return this.trigger('close', this.$el);
   }
 }
 

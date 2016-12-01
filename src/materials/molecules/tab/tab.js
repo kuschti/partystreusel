@@ -46,16 +46,14 @@ class Tab extends Base {
 
     const itemAndPanelToClose = this.findItemAndPanel(this.currentPanelName());
     if (itemAndPanelToClose) {
-      const closeName = this.currentPanelName();
       itemAndPanelToClose[0].removeClass('tab__nav-item--active');
       itemAndPanelToClose[1].removeClass('tab__panel--active');
-      this.trigger('close', closeName, itemAndPanelToClose[0], itemAndPanelToClose[1]);
     }
 
     itemAndPanelToOpen[0].addClass('tab__nav-item--active');
     itemAndPanelToOpen[1].addClass('tab__panel--active');
 
-    return this.trigger('open', this.currentPanelName(), itemAndPanelToOpen[0], itemAndPanelToOpen[1]);
+    return itemAndPanelToOpen;
   }
 
   findItemAndPanel(name) {

@@ -15,14 +15,9 @@ class Accordion extends Base {
     const item = $(e.target).closest('.accordion__item');
     const currentOpen = item.hasClass(this.openClass);
 
-    this.items.filter(this.openClass).each((_, i) => {
-      this.trigger('close', $(i));
-    });
-
     this.items.removeClass(this.openClass);
     if (!currentOpen) {
       item.toggleClass(this.openClass);
-      this.trigger('open', item);
     }
 
     e.preventDefault();
