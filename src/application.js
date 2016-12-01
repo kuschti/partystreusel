@@ -9,11 +9,12 @@ import Offcanvas from './materials/organisms/offcanvas/offcanvas';
 
 $(() => {
   $('html').removeClass('no-js');
+  const Streusel = window.Streusel = {};
 
-  Topbar.init()
-  Accordion.init()
-  Tab.init()
-  Dropdown.init()
-  Slider.init()
-  Offcanvas.init()
+  Streusel.Accordion = Accordion.init();
+  Streusel.Topbar = Topbar.init();
+  Streusel.Tab = Tab.init();
+  Streusel.Dropdown = Dropdown.init();
+  Streusel.Slider = Slider.init();
+  Streusel.Offcanvas = Offcanvas.init();
 });
