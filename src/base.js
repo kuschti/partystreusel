@@ -2,6 +2,11 @@ import $ from 'jquery';
 import Streusel from './streusel';
 
 class Base {
+  constructor(el) {
+    this.$el = $(el);
+    this.$el.data('object', this);
+  }
+
   static selector() {
     const prefix = Streusel.selectorPrefix || 'streusel';
     if (Streusel.selectorType === 'css_class') {
@@ -10,26 +15,16 @@ class Base {
     return `[data-${prefix}-${this.className.toLowerCase()}]`;
   }
 
+  /* eslint-disable no-console */
   static init(element = $('body')) {
-    element.find(this.selector()).addBack(this.selector()).filter((i, el) => {
-      return !($(el).data('object') != null);
-    }).map((function (_this) {
-      return function (i, el) {
-        console.log(`Partystreusel init: ${_this.className}`);
-        return new _this(el);
-      };
-    })(this));
+    const selector = this.selector();
+    const elementsToInit = element.find(selector).addBack(selector).filter((i, el) => !($(el).data('object') != null));
+    return elementsToInit.map((i, el) => {
+      console.log(`Partystreusel init: ${this.className}`);
+      return new this(el);
+    });
   }
-
-  constructor(el) {
-    this.$el = $(el);
-    this.$el.data('object', this);
-  }
-
-  trigger(name) {
-    arguments[0] = `${this.constructor.className.toLowerCase()}-${name}`;
-    return this.$el.trigger.apply(this.$el, arguments);
-  }
+  /* eslint-enable no-console */
 }
 
 export default Base;
