@@ -20,7 +20,7 @@ class Base {
     const selector = this.selector();
     const elementsToInit = element.find(selector).addBack(selector).filter((i, el) => !($(el).data('object') != null));
     return elementsToInit.map((i, el) => {
-      console.log(`Partystreusel init: ${this.className}`);
+      console.log(`Streusel init: ${this.className}`);
       return new this(el);
     });
   }
