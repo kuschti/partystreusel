@@ -126,13 +126,13 @@ gulp.task('styles:lint', () => {
     }),
   ];
 
-  return gulp.src(
-      ['src/**/*.scss',
-      // Ignore linting vendor assets:
-      '!src/_styleguide/**/*.scss',
-      '!src/vendor/*'],
-    )
-    .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
+  return gulp.src([
+    'src/**/*.scss',
+    // Ignore linting vendor assets:
+    '!src/_styleguide/**/*.scss',
+    '!src/vendor/*',
+  ])
+  .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
 gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
@@ -151,12 +151,12 @@ gulp.task('styles:doiuse', () => {
     }),
   ];
 
-  return gulp.src(
-      ['src/**/*.scss',
-      '!src/_styleguide/**/*.scss',
-      '!src/vendor/*'],
-    )
-    .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
+  return gulp.src([
+    'src/**/*.scss',
+    '!src/_styleguide/**/*.scss',
+    '!src/vendor/*',
+  ])
+  .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
 
