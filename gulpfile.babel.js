@@ -65,6 +65,7 @@ const config = {
   dest: 'dist',
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
   webpack: {
+    applicationJs: 'src/{application,base,streusel}.js',
     allSrcJs: 'src/materials/**/*.js?(x)',
     clientEntryPoint: 'src/application.js',
     clientBundle: 'dist/scripts/application.js?(.map)',
@@ -180,6 +181,7 @@ gulp.task('scripts:fabricator', (done) => {
 
 gulp.task('scripts:application:lint', () =>
   gulp.src([
+    config.webpack.applicationJs,
     config.webpack.allSrcJs,
     config.webpack.gulpFile,
     config.webpack.webpackFile,
@@ -374,7 +376,7 @@ gulp.task('serve', () => {
   gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
-  gulp.watch(config.webpack.allSrcJs, ['scripts:application:watch']);
+  gulp.watch([config.webpack.applicationJs, config.webpack.allSrcJs], ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
