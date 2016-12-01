@@ -48,7 +48,6 @@ const config = {
       applicationBundle: 'dist/scripts/application.js?(.map)',
       gulpFile: 'gulpfile.babel.js',
       webpackFile: 'webpack.config.babel.js',
-      dest: 'dist/assets/scripts/',
     },
     styles: {
       fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
@@ -190,7 +189,7 @@ gulp.task('scripts:application:clean', () => del([
 gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () =>
   gulp.src(config.src.scripts.applicationEntryPoint)
     .pipe(webpackStream(webpackConfigBabel))
-    .pipe(gulp.dest(config.src.scripts.dest))
+    .pipe(gulp.dest(`${config.dest}/assets/scripts/`))
 );
 
 gulp.task('polyfills', () => {
