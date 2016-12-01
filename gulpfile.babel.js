@@ -25,13 +25,12 @@ import postcssSyntaxScss from 'postcss-scss';
 import reporter from 'postcss-reporter';
 import stylelint from 'stylelint';
 import doiuse from 'doiuse';
-import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
 import webpackStream from 'webpack-stream';
 import metadata from './package.json';
 import webpackConfigBabel from './webpack.config.babel';
 
-// configuration
+// CONFIG
 // ----------------------------------------
 const config = {
   dev: gutil.env.dev === true,
@@ -41,11 +40,15 @@ const config = {
         './src/_styleguide/fabricator/scripts/fabricator.js',
         './src/_styleguide/fabricator/scripts/partystreusel.js',
       ],
-      application: 'src/application.js',
-      base: 'src/base.js',
-      settings: 'src/settings.js',
+      application: 'src/{application,base,streusel}.js',
       vendor: 'src/vendor/*.js',
       polyfills: 'src/vendor/polyfills/*',
+      materials: 'src/materials/**/*.js',
+      applicationEntryPoint: 'src/application.js',
+      applicationBundle: 'dist/scripts/application.js?(.map)',
+      gulpFile: 'gulpfile.babel.js',
+      webpackFile: 'webpack.config.babel.js',
+      dest: 'dist/assets/scripts/',
     },
     styles: {
       fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
@@ -64,25 +67,15 @@ const config = {
   },
   dest: 'dist',
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
-  webpack: {
-    applicationJs: 'src/{application,base,streusel}.js',
-    allSrcJs: 'src/materials/**/*.js?(x)',
-    clientEntryPoint: 'src/application.js',
-    clientBundle: 'dist/scripts/application.js?(.map)',
-    gulpFile: 'gulpfile.babel.js',
-    webpackFile: 'webpack.config.babel.js',
-    libDir: 'lib',
-    distDir: 'dist/assets/scripts/',
-  },
 };
 
-// webpack
+// WEBPACK
 // ----------------------------------------
 const webpackConfig = require('./webpack.config')(config);
 
 const webpackCompiler = webpack(webpackConfig);
 
-// clean
+// CLEAN
 // ----------------------------------------
 gulp.task('clean', () => del([
   config.dest,
@@ -90,7 +83,6 @@ gulp.task('clean', () => del([
 
 // STYLES
 // ----------------------------------------
-
 gulp.task('styles:fabricator', () => {
   gulp.src(config.src.styles.fabricator)
     .pipe(sass({
@@ -181,10 +173,10 @@ gulp.task('scripts:fabricator', (done) => {
 
 gulp.task('scripts:application:lint', () =>
   gulp.src([
-    config.webpack.applicationJs,
-    config.webpack.allSrcJs,
-    config.webpack.gulpFile,
-    config.webpack.webpackFile,
+    config.src.scripts.application,
+    config.src.scripts.materials,
+    config.src.scripts.gulpFile,
+    config.src.scripts.webpackFile,
   ])
     .pipe(eslint())
     .pipe(eslint.format())
@@ -192,28 +184,19 @@ gulp.task('scripts:application:lint', () =>
 );
 
 gulp.task('scripts:application:clean', () => del([
-  config.webpack.libDir,
-  config.webpack.clientBundle,
+  config.src.scripts.applicationBundle,
 ]));
 
-// Check why this is used
-gulp.task('build', ['scripts:application:lint', 'scripts:application:clean'], () =>
-  gulp.src(config.webpack.allSrcJs)
-    .pipe(babel())
-    .pipe(gulp.dest(config.webpack.libDir))
-);
-
 gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () =>
-  gulp.src(config.webpack.clientEntryPoint)
+  gulp.src(config.src.scripts.applicationEntryPoint)
     .pipe(webpackStream(webpackConfigBabel))
-    .pipe(gulp.dest(config.webpack.distDir))
+    .pipe(gulp.dest(config.src.scripts.dest))
 );
 
 gulp.task('polyfills', () => {
   gulp.src(config.src.scripts.polyfills)
     .pipe(gulp.dest(`${config.dest}/assets/scripts/polyfills`));
 });
-
 
 // IMAGES
 // ----------------------------------------
@@ -228,7 +211,6 @@ gulp.task('images', () => {
 
 // ICONS
 // ----------------------------------------
-
 gulp.task('svgmin', () => {
   gulp.src(`${config.src.icons}*.svg`)
     .pipe(imagemin([
@@ -271,7 +253,7 @@ gulp.task('fonts', () => {
    .pipe(gulp.dest(`${config.dest}/assets/fonts`));
 });
 
-// assemble
+// Assemble
 // ----------------------------------------
 gulp.task('assemble', (done) => {
   assemble({
@@ -376,7 +358,7 @@ gulp.task('serve', () => {
   gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
-  gulp.watch([config.webpack.applicationJs, config.webpack.allSrcJs], ['scripts:application:watch']);
+  gulp.watch([config.src.scripts.application, config.src.scripts.materials], ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
