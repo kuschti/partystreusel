@@ -26,15 +26,6 @@
     "deploy": "gulp deploy:github",
     "test": "gulp styles:lint && gulp styles:doiuse"
   },
-  "eslintConfig": {
-    "extends": "airbnb",
-    "plugins": [
-      "import"
-    ],
-    "env": {
-      "browser": true
-    }
-  },
   "babel": {
     "presets": [
       "latest"

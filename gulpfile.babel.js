@@ -46,6 +46,7 @@ const config = {
       materials: 'src/materials/**/*.js',
       applicationEntryPoint: 'src/application.js',
       applicationBundle: 'dist/scripts/application.js?(.map)',
+      eslintRc: '.eslintrc.js',
       gulpFile: 'gulpfile.babel.js',
       webpackFile: 'webpack.config.babel.js',
     },
@@ -174,6 +175,7 @@ gulp.task('scripts:application:lint', () =>
   gulp.src([
     config.src.scripts.application,
     config.src.scripts.materials,
+    config.src.scripts.eslintRc,
     config.src.scripts.gulpFile,
     config.src.scripts.webpackFile,
   ])
