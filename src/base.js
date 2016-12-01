@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import Settings from './settings';
+import Streusel from './streusel';
 
 class Base {
   static selector() {
-    var prefix = Partystreusel.selectorPrefix || 'streusel';
+    const prefix = Streusel.selectorPrefix || 'streusel';
     if (Streusel.selectorType === 'css_class') {
       return `.${prefix}-${this.className.toLowerCase()}`;
     }
