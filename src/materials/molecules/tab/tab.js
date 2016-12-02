@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Base from '../../../base';
+import Base from '../../../_config/base';
 
 class Tab extends Base {
   constructor(el) {

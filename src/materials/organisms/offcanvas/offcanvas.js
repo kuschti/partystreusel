@@ -1,4 +1,4 @@
-import Base from '../../../base';
+import Base from '../../../_config/base';
 
 class Offcanvas extends Base {
   constructor(el) {

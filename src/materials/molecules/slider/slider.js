@@ -1,5 +1,5 @@
 import Flickity from 'flickity';
-import Base from '../../../base';
+import Base from '../../../_config/base';
 
 class Slider extends Base {
   constructor(el) {
