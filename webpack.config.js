@@ -1,17 +1,14 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = function(fabricatorConfig) {
-
-  "use strict";
-
-  var config = {
+module.exports = (gulpConfig) => {
+  const config = {
     entry: {
-      'partystreusel/scripts/p': fabricatorConfig.src.scripts.fabricator
+      'partystreusel/scripts/p': gulpConfig.src.scripts.fabricator,
     },
     output: {
-      path: path.resolve(__dirname, fabricatorConfig.dest, 'assets'),
-      filename: '[name].js'
+      path: path.resolve(__dirname, gulpConfig.dest, 'assets'),
+      filename: '[name].js',
     },
     module: {
       loaders: [
@@ -19,15 +16,15 @@ module.exports = function(fabricatorConfig) {
           test: /\.js$/,
           exclude: /(node_modules|prism\.js)/,
           loaders: ['babel'],
-          presets: ['es2015', 'stage-2']
-        }
-      ]
+          presets: ['es2015', 'stage-2'],
+        },
+      ],
     },
     plugins: [],
-    cache: {}
+    cache: {},
   };
 
-  if (!fabricatorConfig.dev) {
+  if (!gulpConfig.dev) {
     config.plugins.push(
       new webpack.optimize.UglifyJsPlugin()
     );
