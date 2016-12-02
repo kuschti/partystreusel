@@ -27,8 +27,9 @@ import stylelint from 'stylelint';
 import doiuse from 'doiuse';
 import eslint from 'gulp-eslint';
 import webpackStream from 'webpack-stream';
+import named from 'vinyl-named';
+
 import metadata from './package.json';
-import webpackConfigBabel from './webpack.config.babel';
 
 // CONFIG
 // ----------------------------------------
@@ -40,9 +41,10 @@ const config = {
         './src/_styleguide/fabricator/scripts/fabricator.js',
         './src/_styleguide/fabricator/scripts/partystreusel.js',
       ],
-      application: 'src/{application,base,streusel}.js',
+      application: 'src/*.js',
+      config: 'src/_config/{base,streusel}.js',
       vendor: 'src/vendor/*.js',
-      polyfills: 'src/vendor/polyfills/*',
+      polyfills: 'src/polyfills.js',
       materials: 'src/materials/**/*.js',
       applicationEntryPoint: 'src/application.js',
       applicationBundle: 'dist/scripts/application.js?(.map)',
@@ -72,6 +74,7 @@ const config = {
 // WEBPACK
 // ----------------------------------------
 const webpackConfig = require('./webpack.config')(config);
+const webpackConfigBabel = require('./webpack.config.babel')(config);
 
 const webpackCompiler = webpack(webpackConfig);
 
@@ -123,7 +126,7 @@ gulp.task('styles:lint', () => {
     'src/**/*.scss',
     // Ignore linting vendor assets:
     '!src/_styleguide/**/*.scss',
-    '!src/vendor/*',
+    '!src/vendor/*.{css,scss}',
   ])
   .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
@@ -174,6 +177,8 @@ gulp.task('scripts:fabricator', (done) => {
 gulp.task('scripts:application:lint', () =>
   gulp.src([
     config.src.scripts.application,
+    '!src/polyfills.js',
+    config.src.scripts.config,
     config.src.scripts.materials,
     config.src.scripts.eslintRc,
     config.src.scripts.gulpFile,
@@ -189,14 +194,28 @@ gulp.task('scripts:application:clean', () => del([
 ]));
 
 gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () =>
-  gulp.src(config.src.scripts.applicationEntryPoint)
+  gulp.src([
+    config.src.scripts.application,
+    '!src/polyfills.js',
+  ])
+    .pipe(named())
     .pipe(webpackStream(webpackConfigBabel))
     .pipe(gulp.dest(`${config.dest}/assets/scripts/`))
 );
 
 gulp.task('polyfills', () => {
   gulp.src(config.src.scripts.polyfills)
-    .pipe(gulp.dest(`${config.dest}/assets/scripts/polyfills`));
+    .pipe(named())
+    .pipe(webpackStream({
+      plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false,
+          },
+        }),
+      ],
+    }))
+    .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
 });
 
 // IMAGES
@@ -359,7 +378,7 @@ gulp.task('serve', () => {
   gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
-  gulp.watch([config.src.scripts.application, config.src.scripts.materials], ['scripts:application:watch']);
+  gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
