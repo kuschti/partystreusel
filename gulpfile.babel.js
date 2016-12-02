@@ -1,6 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-// modules
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import gulpif from 'gulp-if';
@@ -43,7 +40,6 @@ const config = {
       ],
       application: 'src/*.js',
       config: 'src/_config/{base,streusel}.js',
-      vendor: 'src/vendor/*.js',
       polyfills: 'src/polyfills.js',
       materials: 'src/materials/**/*.js',
       applicationEntryPoint: 'src/application.js',
