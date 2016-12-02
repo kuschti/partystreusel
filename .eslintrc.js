@@ -1,7 +1,7 @@
 module.exports = {
-  extends: "airbnb",
+  extends: 'airbnb',
   plugins: [
-    "import",
+    'import',
   ],
   env: {
     browser: true,
