@@ -1,17 +1,31 @@
-export default {
-  output: {
-    filename: 'application.js',
-  },
-  devtool: 'source-map',
-  module: {
-    loaders: [
-      {
-        loader: 'babel-loader',
-        exclude: [/node_modules/],
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['', '.js'],
-  },
+import webpack from 'webpack';
+
+module.exports = (gulpConfig) => {
+  const config = {
+    output: {
+      filename: '[name].js',
+    },
+    devtool: 'source-map',
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: [/node_modules/],
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['', '.js'],
+    },
+    plugins: [],
+  };
+
+  if (!gulpConfig.dev) {
+    config.plugins.push(
+      new webpack.optimize.UglifyJsPlugin()
+    );
+  }
+
+  return config;
 };
