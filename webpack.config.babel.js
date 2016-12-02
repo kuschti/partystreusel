@@ -2,9 +2,6 @@ import webpack from 'webpack';
 
 module.exports = (gulpConfig) => {
   const config = {
-    output: {
-      filename: '[name].js',
-    },
     devtool: 'source-map',
     module: {
       loaders: [
