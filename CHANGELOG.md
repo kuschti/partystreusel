@@ -1,5 +1,6 @@
 # CHANGELOG
 
+## v4.7.0
 * replace neat grid system with susy
 * update dependencies
 * add yarn support
