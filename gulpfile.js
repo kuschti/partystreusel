@@ -106,7 +106,7 @@ gulp.task("styles:lint", function() {
     stylelint(),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false
     })
   ];
@@ -131,7 +131,7 @@ gulp.task("styles:doiuse", function() {
     }),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false
     })
   ];
