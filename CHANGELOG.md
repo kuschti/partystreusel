@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.7.0
+* replace neat grid system with susy
+* update dependencies
+* add yarn support
+* add "inProgress" state for materials
+
 ## v4.6.0
 * refactor css (and demo of atoms) for input fields
 * refactor radio/checkbox styling, with class `option`.

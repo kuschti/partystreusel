@@ -1,39 +1,46 @@
 /* stylelint-disable declaration-colon-space-after */
-// Disable Bourbon Prefixes
-$prefix-for-webkit:    false;
-$prefix-for-mozilla:   false;
-$prefix-for-microsoft: false;
-$prefix-for-opera:     false;
-$prefix-for-spec:      false;
 
 // This is the the base for the em/rem mixins and the grid calculation.
 // If your $body__font-size is 100%, leave it at 16px.
-$em-base: 16px;
+$rem-base: 16px;
 
 // GRID
 // ----------------------------------------
-// Since the typical default browser font-size is 16px,
-// that makes the calculation for grid size.
-//
-// THIS VARIABLES ARE FOR NEAT SETTING! DON'T RENAME!
-$gutter:              1.25em;
-$grid-columns:        12;
-$max-width:           rem(1200);
-$border-box-sizing:   true;
+//settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
+$susy: (
+  debug: (
+    image: hide,  // show
+    output: background, // or overlay
+    toggle: bottom right
+  ),
+  global-box-sizing: border-box,
+  columns: 12,
+  gutters: 0.25
+);
 
-// Debug Grid
-$visual-grid:         false;
-$visual-grid-color:   #f00;
-$visual-grid-index:   back;
-$visual-grid-opacity: 0.1;
+//grid defintion for large $breakpoint
+$susy-large: (
+  global-box-sizing: border-box,
+  columns: 12,
+  container: rem(1440),
+  gutters: 0.25
+);
 
-// MEDIAQUERIES
+// Map for MEDIAQUERIES & Susy Settings (used by the mq() mixin, shorthand for susy-breakpoint)
 // ----------------------------------------
-// 640px, 800px, 1200px
 $breakpoints: (
-  medium:   40em,
-  large:    50em,
-  xlarge:   75em
+  medium: (
+    mq: 40em, //640
+    susy-settings: $susy
+  ),
+  large: (
+    mq: 50em, //800
+    susy-settings: $susy-large
+  ),
+  xlarge: (
+    mq: 75em, //1200
+    susy-settings: $susy-large
+  )
 );
 
 // COLORS

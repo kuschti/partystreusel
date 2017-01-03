@@ -20,8 +20,6 @@ var imagemin      = require('gulp-imagemin');
 var svgSymbols    = require('gulp-svg-symbols');
 var sass          = require('gulp-sass');
 var sourcemaps    = require('gulp-sourcemaps');
-var bourbon       = require('node-bourbon').includePaths;
-var neat          = require('bourbon-neat').includePaths;
 var autoprefixer  = require('gulp-autoprefixer');
 var notify        = require('gulp-notify');
 var ghPages       = require('gulp-gh-pages');
@@ -39,16 +37,16 @@ var config = {
   src: {
     scripts: {
       fabricator: [
-        './src/_styleguide/fabricator/scripts/fabricator.js',
-        './src/_styleguide/fabricator/scripts/partystreusel.js'
+        './src/_partystreusel/fabricator/scripts/fabricator.js',
+        './src/_partystreusel/fabricator/scripts/partystreusel.js'
       ],
       application: './src/application.coffee',
       vendor:      './src/vendor/*.js',
       polyfills:   'src/vendor/polyfills/*'
     },
     styles: {
-      fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
-      fabricatorpartials: 'src/_styleguide/**/*.scss',
+      fabricator: 'src/_partystreusel/fabricator/styles/fabricator.scss',
+      fabricatorpartials: 'src/_partystreusel/**/*.scss',
       application: 'src/application.scss',
       applicationpartials: 'src/materials/**/*.scss'
     },
@@ -81,9 +79,7 @@ gulp.task('clean', function () {
 
 gulp.task('styles:fabricator', function () {
   return gulp.src(config.src.styles.fabricator)
-    .pipe(sass({
-      includePaths: [neat, bourbon]
-    }).on('error', notify.onError()))
+    .pipe(sass().on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
@@ -95,7 +91,7 @@ gulp.task('styles:application', function () {
   return gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
     .pipe(sass({
-      includePaths: [neat, bourbon, 'node_modules']
+      includePaths: ['node_modules']
     }).on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
@@ -110,7 +106,7 @@ gulp.task("styles:lint", function() {
     stylelint(),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false
     })
   ];
@@ -118,7 +114,7 @@ gulp.task("styles:lint", function() {
   return gulp.src(
       ['src/**/*.scss',
       // Ignore linting vendor assets:
-      '!src/_styleguide/**/*.scss',
+      '!src/_partystreusel/**/*.scss',
       '!src/vendor/*']
     )
     .pipe(postcss(processors, {syntax: postcss_syntax_scss}));
@@ -135,14 +131,14 @@ gulp.task("styles:doiuse", function() {
     }),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false
     })
   ];
 
   return gulp.src(
       ['src/**/*.scss',
-      '!src/_styleguide/**/*.scss',
+      '!src/_partystreusel/**/*.scss',
       '!src/vendor/*']
     )
     .pipe(postcss(processors, {syntax: postcss_syntax_scss}));
@@ -247,8 +243,8 @@ gulp.task('assemble', function (done) {
     logErrors: config.dev,
     layout: 'partystreusel',
     layouts: 'src/materials/templates/*.html',
-    layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
-    views: ['src/_styleguide/fabricator/views/**/*', 'src/pages/**/*'],
+    layoutIncludes: 'src/_partystreusel/fabricator/layouts/includes/*',
+    views: ['src/_partystreusel/fabricator/views/**/*', 'src/pages/**/*'],
     materials: 'src/materials/**/!(_)*.html',
     data: 'src/materials/**/*.{json,yml}',
     docs: ['docs/**/*.md', 'src/materials/**/*.md'],
@@ -340,7 +336,7 @@ gulp.task('serve', function () {
   gulp.watch(config.src.styles.applicationpartials, ['styles:application:watch']);
 
   gulp.task('scripts:watch', ['scripts'], browserSync.reload);
-  gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['scripts:watch']).on('change', webpackCache);
+  gulp.watch('src/_partystreusel/fabricator/scripts/**/*.js', ['scripts:watch']).on('change', webpackCache);
 
   gulp.task('coffee:watch', ['coffee'], browserSync.reload);
   gulp.watch('src/materials/**/*.coffee', ['coffee:watch']);

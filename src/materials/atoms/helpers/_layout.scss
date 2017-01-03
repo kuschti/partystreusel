@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html,
 body {
   height: 100%;
@@ -12,11 +22,11 @@ body {
 }
 
 main {
-  @include outer-container;
+  @include container;
 }
 
 article {
-  @include span-columns(12);
+  @include full;
   padding: 0 rem(12);
 }
 
@@ -25,5 +35,9 @@ article {
 @include mq(large) {
   article {
     padding: 0 rem(24);
+  }
+
+  main {
+    @include container();
   }
 }
