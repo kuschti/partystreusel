@@ -223,7 +223,16 @@
 
 	<div class="f-item-group">
 		<h2 id="fabricator"><a href="#fabricator">Fabricator</a></h2>
-		<h3>Data</h3>
+		<h3>helpers</h3>
+<h4>iterate</h4>
+<p>{{#iterate 5}}
+Helper to iterate x times
+{{/iterate}}</p>
+<h4>increment</h4>
+<p>Helper to increment index with 1
+{{increment @index}} = actual @index +1
+{{increment 1}} = 2 (1+1)</p>
+<h3>Data</h3>
 <p>Im atoms/form/checkbox.html einen Button einbinden und daten via yml übergeben.</p>
 <p>checkboxdata.yml (liegt im selben Ordner wie html)
 {{{material 'buttons.default' checkboxdata}}}</p>
@@ -428,13 +437,13 @@ $ -&gt;
 		<h2 id="Grid"><a href="#Grid">Grid</a></h2>
 		<h2>Documentation</h2>
 <h3>Grid Container</h3>
-<p><code>grid__container</code> to mark an element as an outer container, centered, width grid max-width and cleared</p>
-<p>In Sass, the mixin <code>@include outer-container()</code> can be used.
-See <a href="http://thoughtbot.github.io/neat-docs/latest/#outer-container">Neat documentation</a></p>
+<p><code>grid__container</code> to mark an element as an container, centered, width grid max-width and cleared</p>
+<p>In Sass, the mixin <code>@include container()</code> can be used.
+See <a href="http://susydocs.oddbird.net/en/latest/toolkit/#container">Susy documentation for container()</a></p>
 <h3>Grid Row</h3>
-<p><code>grid__row</code> clear the floats and is diplay:block</p>
-<p>In Sass, the mixin `@include row() can be used.
-See <a href="http://thoughtbot.github.io/neat-docs/latest/#row">Neat documentation</a></p>
+<p><code>.grid__row</code> clear the floats and is diplay:block</p>
+<p>In Sass, the mixin <code>@include break()</code> can be used.
+See <a href="http://susydocs.oddbird.net/en/latest/toolkit/#rows-edges">Susy documentation for break()</a></p>
 
 	</div>
 
