@@ -12,8 +12,6 @@ import imagemin from 'gulp-imagemin';
 import svgSymbols from 'gulp-svg-symbols';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
-import bourbon from 'node-bourbon';
-import neat from 'bourbon-neat';
 import autoprefixer from 'gulp-autoprefixer';
 import notify from 'gulp-notify';
 import ghPages from 'gulp-gh-pages';
@@ -35,8 +33,8 @@ const config = {
   src: {
     scripts: {
       fabricator: [
-        './src/_styleguide/fabricator/scripts/fabricator.js',
-        './src/_styleguide/fabricator/scripts/partystreusel.js',
+        './src/_partystreusel/fabricator/scripts/fabricator.js',
+        './src/_partystreusel/fabricator/scripts/partystreusel.js',
       ],
       application: 'src/*.js',
       config: 'src/_config/{base,streusel}.js',
@@ -49,8 +47,8 @@ const config = {
       webpackFile: 'webpack.config.babel.js',
     },
     styles: {
-      fabricator: 'src/_styleguide/fabricator/styles/fabricator.scss',
-      fabricatorpartials: 'src/_styleguide/**/*.scss',
+      fabricator: 'src/_partystreusel/fabricator/styles/fabricator.scss',
+      fabricatorpartials: 'src/_partystreusel/**/*.scss',
       application: 'src/application.scss',
       applicationpartials: 'src/materials/**/*.scss',
     },
@@ -84,9 +82,7 @@ gulp.task('clean', () => del([
 // ----------------------------------------
 gulp.task('styles:fabricator', () => {
   gulp.src(config.src.styles.fabricator)
-    .pipe(sass({
-      includePaths: [neat.includePaths, bourbon.includePaths],
-    }).on('error', notify.onError()))
+    .pipe(sass().on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
@@ -98,7 +94,7 @@ gulp.task('styles:application', () => {
   gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
     .pipe(sass({
-      includePaths: [neat.includePaths, bourbon.includePaths, 'node_modules'],
+      includePaths: ['node_modules'],
     }).on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
@@ -113,7 +109,7 @@ gulp.task('styles:lint', () => {
     stylelint(),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false,
     }),
   ];
@@ -121,7 +117,7 @@ gulp.task('styles:lint', () => {
   return gulp.src([
     'src/**/*.scss',
     // Ignore linting vendor assets:
-    '!src/_styleguide/**/*.scss',
+    '!src/_partystreusel/**/*.scss',
     '!src/vendor/*.{css,scss}',
   ])
   .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
@@ -138,14 +134,14 @@ gulp.task('styles:doiuse', () => {
     }),
     // Pretty reporting config
     reporter({
-      clearMessages: true,
+      clearAllMessages: true,
       throwError: false,
     }),
   ];
 
   return gulp.src([
     'src/**/*.scss',
-    '!src/_styleguide/**/*.scss',
+    '!src/_partystreusel/**/*.scss',
     '!src/vendor/*',
   ])
   .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
@@ -276,8 +272,8 @@ gulp.task('assemble', (done) => {
     logErrors: config.dev,
     layout: 'partystreusel',
     layouts: 'src/materials/templates/*.html',
-    layoutIncludes: 'src/_styleguide/fabricator/layouts/includes/*',
-    views: ['src/_styleguide/fabricator/views/**/*', 'src/pages/**/*'],
+    layoutIncludes: 'src/_partystreusel/fabricator/layouts/includes/*',
+    views: ['src/_partystreusel/fabricator/views/**/*', 'src/pages/**/*'],
     materials: 'src/materials/**/!(_)*.html',
     data: 'src/materials/**/*.{json,yml}',
     docs: ['docs/**/*.md', 'src/materials/**/*.md'],
@@ -371,7 +367,7 @@ gulp.task('serve', () => {
   gulp.watch(config.src.styles.applicationpartials, ['styles:application:watch']);
 
   gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
-  gulp.watch('src/_styleguide/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
+  gulp.watch('src/_partystreusel/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
   gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);

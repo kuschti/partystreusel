@@ -10,7 +10,7 @@
 }
 
 .slider__inner {
-  @include span-columns($grid-columns);
+  @include full;
   position: relative;
 }
 

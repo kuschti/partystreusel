@@ -26,7 +26,20 @@ input::placeholder {
   color: $color__accent--dark;
 }
 
-#{$all-text-inputs},
+[type='text'],
+[type='password'],
+[type='email'],
+[type='number'],
+[type='url'],
+[type='tel'],
+[type='time'],
+[type='date'],
+[type='datetime'],
+[type='month'],
+[type='week'],
+[type='search'],
+[type='range'],
+[type='reset'],
 textarea {
   display: block;
   width: 100%;
@@ -166,17 +179,17 @@ select {
 @include mq(medium) {
   // STATES
   .form--horizontal {
-    @include outer-container;
+    @include container;
     margin-bottom: rem(18);
 
     label {
-      @include span-columns(3);
+      @include span(3);
       padding-top: rem(9);
     }
 
     input,
     select {
-      @include span-columns(9);
+      @include span(9);
     }
   }
 }
