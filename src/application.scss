@@ -5,8 +5,8 @@
 @import 'susy/sass/susy';
 
 // Project settings
-@import 'materials/atoms/mixins';
-@import 'materials/atoms/settings';
+@import '_config/mixins';
+@import '_config/settings';
 
 // PLUGIN styles
 // ----------------------------------------
@@ -14,7 +14,7 @@
 
 // Atoms
 // ----------------------------------------
-@import 'materials/atoms/functions';
+@import '_config/functions';
 @import 'materials/atoms/helpers/utilities';
 @import 'materials/atoms/helpers/layout';
 @import 'materials/atoms/02-typography/typography';
