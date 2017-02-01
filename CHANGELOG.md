@@ -52,7 +52,7 @@
 * update dependencies
 
 ## 4.2.1
-* add styling for styleguide notes
+* add styling for pattern library notes
 * update dependencies
 
 ## 4.2.0
