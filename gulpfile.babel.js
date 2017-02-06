@@ -67,10 +67,10 @@ const config = {
 
 // WEBPACK
 // ----------------------------------------
-const webpackConfig = require('./webpack.config')(config);
-const webpackConfigBabel = require('./webpack.config.babel')(config);
+const webpackConfigFabricator = require('./webpack.config.babel')(config, 'fabricator');
+const webpackConfigStreusel = require('./webpack.config.babel')(config, 'streusel');
 
-const webpackCompiler = webpack(webpackConfig);
+const webpackCompiler = webpack(webpackConfigFabricator);
 
 // CLEAN
 // ----------------------------------------
@@ -191,7 +191,7 @@ gulp.task('scripts:application', ['scripts:application:lint', 'scripts:applicati
     '!src/polyfills.js',
   ])
     .pipe(named())
-    .pipe(webpackStream(webpackConfigBabel))
+    .pipe(webpackStream(webpackConfigStreusel, webpack))
     .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
 });
 
@@ -206,7 +206,7 @@ gulp.task('polyfills', () => {
           },
         }),
       ],
-    }))
+    }, webpack))
     .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
 });
 
@@ -340,7 +340,7 @@ gulp.task('serve', () => {
    * manually remove the changed file path from the cache
    */
   function webpackCache(e) {
-    const keys = Object.keys(webpackConfig.cache);
+    const keys = Object.keys(webpackConfigFabricator.cache);
     let keyIndex;
     let key;
     let matchedKey;
@@ -353,7 +353,7 @@ gulp.task('serve', () => {
       }
     }
     if (matchedKey) {
-      delete webpackConfig.cache[matchedKey];
+      delete webpackConfigFabricator.cache[matchedKey];
     }
   }
 
