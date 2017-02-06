@@ -8,7 +8,7 @@ import Offcanvas from './materials/organisms/offcanvas/offcanvas';
 
 $(() => {
   $('html').removeClass('no-js');
-  const Streusel = window.Streusel = {};
+  const Streusel = window.Streusel || {};
 
   Streusel.Accordion = Accordion.init();
   Streusel.Topbar = Topbar.init();

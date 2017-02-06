@@ -166,7 +166,7 @@ gulp.task('scripts:fabricator', (done) => {
   });
 });
 
-gulp.task('scripts:application:lint', () =>
+gulp.task('scripts:application:lint', () => {
   gulp.src([
     config.src.scripts.application,
     '!src/polyfills.js',
@@ -178,22 +178,22 @@ gulp.task('scripts:application:lint', () =>
   ])
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-);
+    .pipe(eslint.failAfterError());
+});
 
 gulp.task('scripts:application:clean', () => del([
   config.src.scripts.applicationBundle,
 ]));
 
-gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () =>
+gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () => {
   gulp.src([
     config.src.scripts.application,
     '!src/polyfills.js',
   ])
     .pipe(named())
     .pipe(webpackStream(webpackConfigBabel))
-    .pipe(gulp.dest(`${config.dest}/assets/scripts/`))
-);
+    .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
+});
 
 gulp.task('polyfills', () => {
   gulp.src(config.src.scripts.polyfills)
@@ -309,7 +309,7 @@ gulp.task('deploy', () => {
       'icons',
       'assemble',
     ],
-    'deploy:github'
+    'deploy:github',
   );
 });
 

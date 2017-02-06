@@ -67,8 +67,7 @@ class Tab extends Base {
     if (panel.length === 0) { return undefined; }
 
     const navItem = this.$navItems.filter((index, item) =>
-      $(item).find(`[href='#${target}']`).length > 0
-    );
+      $(item).find(`[href='#${target}']`).length > 0);
 
     if (navItem.length === 0) { return undefined; }
 
