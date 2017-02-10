@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v5.0.0-rc.1
+* replace coffeescript with js
+* upgrade js code to ES6
+* upgrade Babel & Webpack
+* use vendor stuff from node_modules
+
 ## v4.7.0
 * replace neat grid system with susy
 * update dependencies
