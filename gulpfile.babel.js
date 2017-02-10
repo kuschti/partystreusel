@@ -23,8 +23,9 @@ import doiuse from 'doiuse';
 import eslint from 'gulp-eslint';
 import webpackStream from 'webpack-stream';
 import named from 'vinyl-named';
-
 import metadata from './package.json';
+
+require('gulp-release-tag')(gulp);
 
 // CONFIG
 // ----------------------------------------
