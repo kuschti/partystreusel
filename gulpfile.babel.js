@@ -29,18 +29,17 @@ require('gulp-release-tag')(gulp);
 
 // CONFIG
 // ----------------------------------------
+const partystreuselRoot = './src';
 const config = {
   dev: gutil.env.dev === true,
   src: {
+    docs: 'docs',
     scripts: {
-      fabricator: [
-        './src/_partystreusel/fabricator/scripts/fabricator.js',
-        './src/_partystreusel/fabricator/scripts/partystreusel.js',
-      ],
-      application: 'src/*.js',
-      config: 'src/_config/{base,streusel}.js',
+      fabricator: `${partystreuselRoot}/_partystreusel/fabricator/scripts/*.js`,
+      application: `${partystreuselRoot}/src/*.js`,
+      config: `${partystreuselRoot}/src/_config/{base,streusel}.js`,
       polyfills: 'src/polyfills.js',
-      materials: 'src/materials/**/*.js',
+      materials: 'materials/**/*.js',
       applicationEntryPoint: 'src/application.js',
       applicationBundle: 'dist/scripts/application.js?(.map)',
       eslintRc: '.eslintrc.js',
@@ -48,21 +47,25 @@ const config = {
       webpackFile: 'webpack.config.babel.js',
     },
     styles: {
-      fabricator: 'src/_partystreusel/fabricator/styles/fabricator.scss',
-      fabricatorpartials: 'src/_partystreusel/**/*.scss',
-      application: 'src/application.scss',
-      applicationpartials: 'src/materials/**/*.scss',
+      config: '_config/*.scss',
+      fabricator: '_partystreusel/fabricator/styles/fabricator.scss',
+      fabricatorpartials: '_partystreusel/**/*.scss',
+      application: 'application.scss',
+      applicationpartials: 'materials/**/*.scss',
     },
-    fonts: 'src/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
-    imagesfolder: 'src/images/',
+    fonts: 'materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
+    imagesfolder: 'images/',
     images: [
       'src/images/**/*',
       '!src/images/icons/*',
     ],
-    icons: 'src/images/icons/',
-    iconsystem: 'src/materials/atoms/icons',
+    icons: 'images/icons/',
+    iconsystem: 'materials/atoms/icons',
   },
-  dest: 'dist',
+  dest: {
+    dir: 'dist',
+    assets: 'dist/assets',
+  },
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
 };
 
@@ -76,7 +79,7 @@ const webpackCompiler = webpack(webpackConfigFabricator);
 // CLEAN
 // ----------------------------------------
 gulp.task('clean', () => del([
-  config.dest,
+  config.dest.dir,
 ]));
 
 // STYLES
@@ -87,7 +90,7 @@ gulp.task('styles:fabricator', () => {
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
-    .pipe(gulp.dest(`${config.dest}/assets/partystreusel/styles`))
+    .pipe(gulp.dest(`${config.dest.assets}/partystreusel/styles`))
     .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
 });
 
@@ -100,7 +103,7 @@ gulp.task('styles:application', () => {
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
     .pipe(gulpif(config.dev, sourcemaps.write('./')))
-    .pipe(gulp.dest(`${config.dest}/assets/styles`))
+    .pipe(gulp.dest(`${config.dest.assets}/styles`))
     .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
 });
 
@@ -193,7 +196,7 @@ gulp.task('scripts:application', ['scripts:application:lint', 'scripts:applicati
   ])
     .pipe(named())
     .pipe(webpackStream(webpackConfigStreusel, webpack))
-    .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
+    .pipe(gulp.dest(`${config.dest.assets}/scripts/`));
 });
 
 gulp.task('polyfills', () => {
@@ -208,7 +211,7 @@ gulp.task('polyfills', () => {
         }),
       ],
     }, webpack))
-    .pipe(gulp.dest(`${config.dest}/assets/scripts/`));
+    .pipe(gulp.dest(`${config.dest.assets}/scripts/`));
 });
 
 // IMAGES
@@ -219,7 +222,7 @@ gulp.task('images', () => {
       imagemin.jpegtran({ progressive: true }),
     ]))
     .pipe(gulp.dest(config.src.imagesfolder))
-    .pipe(gulp.dest(`${config.dest}/assets/images`));
+    .pipe(gulp.dest(`${config.dest.assets}/images`));
 });
 
 // ICONS
@@ -250,7 +253,7 @@ gulp.task('svgsprite', ['svgmin'], () => {
       ],
     }))
     .pipe(gulpif(/[.]svg$/, rename('icon-sprite.svg')))
-    .pipe(gulpif(/[.]svg$/, gulp.dest(`${config.dest}/assets/images/icons`)))
+    .pipe(gulpif(/[.]svg$/, gulp.dest(`${config.dest.assets}/images/icons`)))
     .pipe(gulpif(/[.]html$/, rename('all-icons.html')))
     .pipe(gulpif(/[.]html$/, gulp.dest(config.src.iconsystem)));
 });
@@ -263,7 +266,7 @@ gulp.task('icons', ['svgmin', 'svgsprite']);
 // ----------------------------------------
 gulp.task('fonts', () => {
   gulp.src(config.src.fonts)
-   .pipe(gulp.dest(`${config.dest}/assets/fonts`));
+   .pipe(gulp.dest(`${config.dest.assets}/fonts`));
 });
 
 // Assemble
@@ -271,16 +274,19 @@ gulp.task('fonts', () => {
 gulp.task('assemble', (done) => {
   assemble({
     logErrors: config.dev,
-    layout: 'partystreusel',
-    layouts: 'src/materials/templates/*.html',
-    layoutIncludes: 'src/_partystreusel/fabricator/layouts/includes/*',
-    views: ['src/_partystreusel/fabricator/views/**/*', 'src/pages/**/*'],
-    materials: 'src/materials/**/!(_)*.html',
-    data: 'src/materials/**/*.{json,yml}',
-    docs: ['docs/**/*.md', 'src/materials/**/*.md'],
+    layout: 'defaultTemplate',
+    layouts: `${partystreuselRoot}/materials/templates/*.html`,
+    layoutIncludes: `${partystreuselRoot}/_partystreusel/fabricator/layouts/includes/*`,
+    views: [`${partystreuselRoot}_partystreusel/fabricator/views/**/*`, `${partystreuselRoot}/pages/**/*`],
+    materials: `${partystreuselRoot}/materials/**/!(_)*.html`,
+    data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
+    docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
     helpers: {
       currentVersion() {
         return metadata.version;
+      },
+      projectName() {
+        return metadata.name;
       },
       increment(value) {
         return parseInt(value, 10) + 1;
@@ -293,7 +299,7 @@ gulp.task('assemble', (done) => {
 // DEPLOY
 // ----------------------------------------
 gulp.task('deploy:github', () => {
-  gulp.src('./dist/**/*')
+  gulp.src(`${config.dest.dir}/**/*`)
     .pipe(ghPages());
 });
 
@@ -330,7 +336,7 @@ gulp.task('deploy', () => {
 gulp.task('serve', () => {
   browserSync({
     server: {
-      baseDir: config.dest,
+      baseDir: config.dest.dir,
     },
     notify: false,
     logPrefix: 'FABRICATOR',
@@ -359,19 +365,24 @@ gulp.task('serve', () => {
   }
 
   gulp.task('assemble:watch', ['assemble'], browserSync.reload);
-  gulp.watch(['docs/*.md', 'src/**/*.{html,md,json,yml}'], ['assemble:watch']);
+  gulp.watch([`${config.src.docs}/*.md`, `${partystreuselRoot}**/*.{html,md,json,yml}`], ['assemble:watch']);
 
   gulp.task('styles:fabricator:watch', ['styles:fabricator']);
   gulp.watch(config.src.styles.fabricatorpartials, ['styles:fabricator:watch']);
 
   gulp.task('styles:application:watch', ['styles:application']);
-  gulp.watch(config.src.styles.applicationpartials, ['styles:application:watch']);
+  gulp.watch([
+    config.src.styles.config,
+    config.src.styles.applicationpartials], ['styles:application:watch']);
 
   gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
   gulp.watch('src/_partystreusel/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
-  gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);
+  gulp.watch([
+    config.src.scripts.application,
+    config.src.scripts.materials,
+    config.src.scripts.config], ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
