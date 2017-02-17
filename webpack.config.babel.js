@@ -27,7 +27,7 @@ module.exports = (gulpConfig, target) => {
         'partystreusel/scripts/p': gulpConfig.src.scripts.fabricator,
       },
       output: {
-        path: path.resolve(__dirname, gulpConfig.dest, 'assets'),
+        path: path.resolve(__dirname, gulpConfig.dest.assets),
         filename: '[name].js',
       },
       module: {

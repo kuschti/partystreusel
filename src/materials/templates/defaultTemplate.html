@@ -6,14 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{title}}</title>
+    <title>{{#if title}}{{title}} - {{/if}}{{projectName}}</title>
 
-    {{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/assets/partystreusel/styles/p.css">{{/if}}
+    {{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/{{assetsFolder}}partystreusel/styles/p.css">{{/if}}
 
     <!-- Pattern Libary styles&scripts -->
-    <link rel="stylesheet" href="./{{baseurl}}/assets/styles/application.css">
+    <link rel="stylesheet" href="./{{baseurl}}/{{assetsFolder}}styles/application.css">
 
-    <script src="./{{baseurl}}/assets/scripts/polyfills.js"></script>
+    <script src="./{{baseurl}}/{{assetsFolder}}scripts/polyfills.js"></script>
     <!-- /Pattern Libary styles&scripts -->
 
     {{> p-icons-include}}
@@ -34,11 +34,11 @@
 
     {{#if fabricator}}
       </div>
-    <script src="./{{baseurl}}/assets/partystreusel/scripts/p.js"></script>
+    <script src="./{{baseurl}}/{{assetsFolder}}partystreusel/scripts/p.js"></script>
     {{/if}}
 
     <!-- toolkit scripts -->
-    <script src="./{{baseurl}}/assets/scripts/application.js" async></script>
+    <script src="./{{baseurl}}/{{assetsFolder}}scripts/application.js" async></script>
     <!-- /toolkit scripts -->
 
   </body>

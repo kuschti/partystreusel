@@ -1,10 +1,10 @@
 $base-colors: (
-	bright: #fff,
+  bright: #fff,
   dark: hsl(0, 0%, 12%),
   medium: hsl(0, 0%, 46%),
   light: hsl(0, 0%, 80%),
-	ultralight: hsl(0, 0%, 90%),
-	yellow: hsl(40, 70%, 95%),
+  ultralight: hsl(0, 0%, 90%),
+  yellow: hsl(40, 70%, 95%),
   accent: map-get($settings, accent)
 );
 

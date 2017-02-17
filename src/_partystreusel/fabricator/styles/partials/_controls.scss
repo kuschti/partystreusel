@@ -1,3 +1,4 @@
+//stylelint-disable no-descending-specificity
 .f-controls {
   @include clearfix;
   @include border-box;
@@ -61,3 +62,4 @@
     margin-bottom: -1px;
   }
 }
+//stylelint-enable no-descending-specificity
