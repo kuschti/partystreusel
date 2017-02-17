@@ -1,10 +1,10 @@
 body {
   font-family: $body__font-family;
   font-weight: $body__font-weight;
-  font-style: $body__font-style;
+  font-style: normal;
   font-size: $body__font-size;
-  line-height: $body__line-height;
-  background-color: $body__background-color;
+  line-height: 1.2;
+  background-color: $color__bright;
   color: $body__font-color;
 }
 
@@ -22,10 +22,10 @@ h6,
 .h6 {
   font-family: $heading__font-family;
   font-weight: $heading__font-weight;
-  font-style: $heading__font-style;
-  text-rendering: $heading__text-rendering;
-  color: $heading__font-color;
+  font-style: normal;
   text-transform: uppercase;
+  text-rendering: auto;
+  color: $body__font-color;
 }
 
 h1,
@@ -67,37 +67,37 @@ p {
   line-height: $paragraph__line-height;
   margin-top: 0;
   margin-bottom: $paragraph__margin-bottom;
-  text-rendering: $paragraph__text-rendering;
+  text-rendering: auto;
 }
 
 a {
-  text-decoration: $anchor__text-decoration;
-  color: $anchor__font-color;
+  text-decoration: none;
+  color: $anchor__color;
 
   &:hover {
-    color: $anchor__font-color-hover;
+    color: $anchor__color--hover;
   }
 
   &:active {
-    color: $anchor__font-color-active;
+    color: $anchor__color--active;
   }
 }
 
 ul,
 ol {
-  list-style-position: $list__style-position;
-  margin-left: $list__side-margin;
-  padding-left: $list__side-padding;
-  font-size: $list__font-size;
+  list-style-position: outside;
+  margin-left: 0;
+  padding-left: rem(18);
+  font-size: $paragraph__font-size;
 }
 
 ol {
-  padding-left: $list__ol-side-padding;
+  padding-left: rem(23);
 }
 
 ul ul,
 ol ol {
-  margin-left: $list__nested-margin;
+  margin-left: 0;
 }
 
 hr {
@@ -113,14 +113,12 @@ small {
 }
 
 blockquote {
-  font-family: $blockquote__font-family;
-  font-size: $blockquote__font-size;
-  font-style: $blockquote__font-style;
-  margin: $blockquote__margin;
+  font-family: inherit;
+  font-size: $paragraph__font-size;
+  font-style: italic;
+  margin: 0 0 $paragraph__margin-bottom 0;
 }
 
-// MEDIUM
-// ----------------------------------------
 @include mq(medium) {
   h1,
   .h1 {

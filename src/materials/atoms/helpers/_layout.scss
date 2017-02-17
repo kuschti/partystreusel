@@ -25,18 +25,9 @@ main {
   @include container;
 }
 
-article {
-  @include full;
-  padding: 0 rem(12);
-}
-
 // LARGE
 // ----------------------------------------
 @include mq(large) {
-  article {
-    padding: 0 rem(24);
-  }
-
   main {
     @include container();
   }

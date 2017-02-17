@@ -5,8 +5,7 @@
 $rem-base: 16px;
 
 // GRID
-// ----------------------------------------
-//settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
+// - settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
 $susy: (
   debug: (
     image: hide,  // show
@@ -18,7 +17,7 @@ $susy: (
   gutters: 0.25
 );
 
-//grid defintion for large $breakpoint
+// Grid defintion for large $breakpoint
 $susy-large: (
   global-box-sizing: border-box,
   columns: 12,
@@ -26,8 +25,9 @@ $susy-large: (
   gutters: 0.25
 );
 
-// Map for MEDIAQUERIES & Susy Settings (used by the mq() mixin, shorthand for susy-breakpoint)
-// ----------------------------------------
+// MEDIAQUERIES
+// - Map for mediaqueries & Susy Settings
+// - used by the mq() mixin, shorthand for susy-breakpoint)
 $breakpoints: (
   medium: (
     mq: 40em, //640
@@ -44,10 +44,7 @@ $breakpoints: (
 );
 
 // COLORS
-// --------------------------
-
-// COLOR NAMING
-// use general variable naming!
+// - use general variable naming!
 $color__dark:               #333;
 $color__bright:             #fff;
 
@@ -64,16 +61,6 @@ $color__success:            #43ac6a;
 $color__warning:            #f08a24;
 $color__info:               #a0d3e8;
 
-// SPACES
-// ----------------------------------------
-$space__default-value: 10;  // e.g. used for paddings
-
-$grid__paddings: (
-  small: rem(10),
-  medium: rem(15),
-  large: rem(20)
-);
-
 // TYPOGRAPHY
 // ----------------------------------------
 $font-weight--light:         300;
@@ -81,34 +68,26 @@ $font-weight--regular:       400;
 $font-weight--medium:        400;
 $font-weight--bold:          700;
 
-$body__font-family:           'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
-$body__font-size:             100%;
-$body__font-weight:           normal;
-$body__font-style:            normal;
-$body__font-color:            $color__dark;
-$body__line-height:           1.2;
-$body__background-color:      $color__bright;
+$body__font-family:          'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body__font-size:            100%;
+$body__font-weight:          $font-weight--regular;
+$body__font-color:           $color__dark;
 
 // HEADINGS font styles
-$heading__font-family:        $body__font-family;
-$heading__font-weight:        900;
-$heading__font-style:         normal;
-$heading__font-color:         $body__font-color;
-$heading__text-rendering:     auto;
+$heading__font-family:       $body__font-family;
+$heading__font-weight:       900;
 
 // PARAGRAPHS
-$paragraph__font-family:      inherit;
-$paragraph__font-weight:      normal;
-$paragraph__font-size:        rem(16);
-$paragraph__line-height:      1.5;
-$paragraph__margin-bottom:    rem(12);
-$paragraph__text-rendering:   auto;
+$paragraph__font-family:     inherit;
+$paragraph__font-weight:     $font-weight--regular;
+$paragraph__font-size:       rem(16);
+$paragraph__line-height:     1.5;
+$paragraph__margin-bottom:   rem(12);
 
 // ANCHORS
-$anchor__text-decoration:     none;
-$anchor__font-color:          $color__brand--one;
-$anchor__font-color-hover:    $color__brand--two;
-$anchor__font-color-active:   $color__dark;
+$anchor__color:          $color__brand--one;
+$anchor__color--hover:    $color__brand--two;
+$anchor__color--active:   $color__dark;
 
 // <HR>
 $hr__margin-top:              rem(18);
@@ -116,20 +95,6 @@ $hr__margin-bottom:           $hr__margin-top;
 $hr__border-width:            rem(1);
 $hr__border-style:            solid;
 $hr__border-color:            $body__font-color;
-
-// LISTS
-$list__style-position:        outside;
-$list__side-margin:           0;
-$list__nested-margin:         0;
-$list__side-padding:          rem(18);
-$list__ol-side-padding:       rem(23);
-$list__font-size:             $paragraph__font-size;
-
-// BLOCKQUOTE
-$blockquote__font-family:     inherit;
-$blockquote__font-size:       rem(16);
-$blockquote__font-style:      italic;
-$blockquote__margin:          0 0 $paragraph__margin-bottom 0;
 
 // RADIUS
 $border-radius:               0;
