@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## v5.0.0-rc.2
 * rename button-group classname
 * cleanup sass files & sass settings
 * add gulp-release-tag plugin
