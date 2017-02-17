@@ -36,31 +36,31 @@ const config = {
     docs: 'docs',
     scripts: {
       fabricator: `${partystreuselRoot}/_partystreusel/fabricator/scripts/*.js`,
-      application: `${partystreuselRoot}/src/*.js`,
-      config: `${partystreuselRoot}/src/_config/{base,streusel}.js`,
-      polyfills: 'src/polyfills.js',
-      materials: 'materials/**/*.js',
-      applicationEntryPoint: 'src/application.js',
-      applicationBundle: 'dist/scripts/application.js?(.map)',
+      application: `${partystreuselRoot}/*.js`,
+      config: `${partystreuselRoot}/_config/{base,streusel}.js`,
+      polyfills: `${partystreuselRoot}/polyfills.js`,
+      materials: `${partystreuselRoot}materials/**/*.js`,
+      applicationEntryPoint: `${partystreuselRoot}/application.js`,
+      applicationBundle: 'scripts/application.js?(.map)',
       eslintRc: '.eslintrc.js',
       gulpFile: 'gulpfile.babel.js',
       webpackFile: 'webpack.config.babel.js',
     },
     styles: {
-      config: '_config/*.scss',
-      fabricator: '_partystreusel/fabricator/styles/fabricator.scss',
-      fabricatorpartials: '_partystreusel/**/*.scss',
-      application: 'application.scss',
-      applicationpartials: 'materials/**/*.scss',
+      config: `${partystreuselRoot}/_config/*.scss`,
+      fabricator: `${partystreuselRoot}/_partystreusel/fabricator/styles/fabricator.scss`,
+      fabricatorpartials: `${partystreuselRoot}/_partystreusel/**/*.scss`,
+      application: `${partystreuselRoot}/application.scss`,
+      applicationpartials: `${partystreuselRoot}/materials/**/*.scss`,
     },
-    fonts: 'materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}',
-    imagesfolder: 'images/',
+    fonts: `${partystreuselRoot}/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}`,
+    imagesfolder: `${partystreuselRoot}/images/`,
     images: [
       'src/images/**/*',
       '!src/images/icons/*',
     ],
-    icons: 'images/icons/',
-    iconsystem: 'materials/atoms/icons',
+    icons: `${partystreuselRoot}/images/icons/`,
+    iconsystem: `${partystreuselRoot}/materials/atoms/icons`,
   },
   dest: {
     dir: 'dist',
@@ -186,7 +186,7 @@ gulp.task('scripts:application:lint', () => {
 });
 
 gulp.task('scripts:application:clean', () => del([
-  config.src.scripts.applicationBundle,
+  config.dest.assets + config.src.scripts.applicationBundle,
 ]));
 
 gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () => {
@@ -273,11 +273,12 @@ gulp.task('fonts', () => {
 // ----------------------------------------
 gulp.task('assemble', (done) => {
   assemble({
+    dist: config.dest.dir,
     logErrors: config.dev,
     layout: 'defaultTemplate',
     layouts: `${partystreuselRoot}/materials/templates/*.html`,
     layoutIncludes: `${partystreuselRoot}/_partystreusel/fabricator/layouts/includes/*`,
-    views: [`${partystreuselRoot}_partystreusel/fabricator/views/**/*`, `${partystreuselRoot}/pages/**/*`],
+    views: [`${partystreuselRoot}/_partystreusel/fabricator/views/**/*`, `${partystreuselRoot}/pages/**/*`],
     materials: `${partystreuselRoot}/materials/**/!(_)*.html`,
     data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
     docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
