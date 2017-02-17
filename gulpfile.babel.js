@@ -69,6 +69,9 @@ const config = {
   dest: {
     dir: 'dist',
     assets: 'dist/assets',
+    // used for include path in fabricator assemble, default is 'assets/'.
+    // use empty string for kirby setup
+    fabricatorAssetFolder: 'assets/',
   },
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
 };
@@ -273,7 +276,7 @@ gulp.task('fonts', () => {
 // ----------------------------------------
 gulp.task('assemble', (done) => {
   assemble({
-    dist: config.dest.dir,
+    dest: config.dest.dir,
     logErrors: config.dev,
     layout: 'defaultTemplate',
     layouts: `${partystreuselRoot}/materials/templates/*.html`,
@@ -283,6 +286,9 @@ gulp.task('assemble', (done) => {
     data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
     docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
     helpers: {
+      assetsFolder() {
+        return config.dest.fabricatorAssetFolder;
+      },
       currentVersion() {
         return metadata.version;
       },

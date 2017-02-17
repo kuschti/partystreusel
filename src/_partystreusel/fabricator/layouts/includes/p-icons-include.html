@@ -1,6 +1,6 @@
 <script>
   var ajax = new XMLHttpRequest();
-  ajax.open("GET", "./{{baseurl}}/assets/images/icons/icon-sprite.svg", true);
+  ajax.open("GET", "./{{baseurl}}/{{assetsFolder}}images/icons/icon-sprite.svg", true);
   ajax.onload = function(e) {
     var div = document.createElement("div");
     div.innerHTML = ajax.responseText;
