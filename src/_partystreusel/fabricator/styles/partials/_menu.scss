@@ -23,6 +23,12 @@
     padding-left: 0;
   }
 
+  li {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   > ul {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -30,12 +36,6 @@
     > li {
       margin-top: 1rem;
     }
-  }
-
-  li {
-    list-style-type: none;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   a {

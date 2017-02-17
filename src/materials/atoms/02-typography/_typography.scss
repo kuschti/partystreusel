@@ -155,7 +155,7 @@ blockquote {
   p,
   ul,
   ol {
-    font-size: $paragraph__font-size * 1.125;
+    font-size: rem(18);
   }
 
   blockquote {
@@ -188,7 +188,7 @@ blockquote {
   p,
   ul,
   ol {
-    font-size: $paragraph__font-size * 1.25;
+    font-size: rem(20);
   }
 
   hr {
