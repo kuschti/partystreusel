@@ -29,13 +29,17 @@ require('gulp-release-tag')(gulp);
 
 // CONFIG
 // ----------------------------------------
-const partystreuselRoot = './src';
+const partystreuselRoot = 'src';
 const config = {
   dev: gutil.env.dev === true,
   src: {
     docs: 'docs',
+    fabricator: `./${partystreuselRoot}/_partystreusel/fabricator`,
     scripts: {
-      fabricator: `${partystreuselRoot}/_partystreusel/fabricator/scripts/*.js`,
+      fabricator: [
+        `./${partystreuselRoot}/_partystreusel/fabricator/scripts/fabricator.js`,
+        `./${partystreuselRoot}/_partystreusel/fabricator/scripts/partystreusel.js`,
+      ],
       application: `${partystreuselRoot}/*.js`,
       config: `${partystreuselRoot}/_config/{base,streusel}.js`,
       polyfills: `${partystreuselRoot}/polyfills.js`,
@@ -56,8 +60,8 @@ const config = {
     fonts: `${partystreuselRoot}/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}`,
     imagesfolder: `${partystreuselRoot}/images/`,
     images: [
-      'src/images/**/*',
-      '!src/images/icons/*',
+      `${partystreuselRoot}/images/**/*`,
+      `!${partystreuselRoot}/images/icons/*`,
     ],
     icons: `${partystreuselRoot}/images/icons/`,
     iconsystem: `${partystreuselRoot}/materials/atoms/icons`,
@@ -119,10 +123,7 @@ gulp.task('styles:lint', () => {
   ];
 
   return gulp.src([
-    'src/**/*.scss',
-    // Ignore linting vendor assets:
-    '!src/_partystreusel/**/*.scss',
-    '!src/vendor/*.{css,scss}',
+    `${partystreuselRoot}/**/*.scss`,
   ])
   .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
@@ -144,9 +145,8 @@ gulp.task('styles:doiuse', () => {
   ];
 
   return gulp.src([
-    'src/**/*.scss',
-    '!src/_partystreusel/**/*.scss',
-    '!src/vendor/*',
+    `${partystreuselRoot}/**/*.scss`,
+    `!${config.src.styles.fabricatorpartials}`,
   ])
   .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
@@ -173,7 +173,7 @@ gulp.task('scripts:fabricator', (done) => {
 gulp.task('scripts:application:lint', () => {
   gulp.src([
     config.src.scripts.application,
-    '!src/polyfills.js',
+    `!${config.src.scripts.polyfills}`,
     config.src.scripts.config,
     config.src.scripts.materials,
     config.src.scripts.eslintRc,
@@ -192,7 +192,7 @@ gulp.task('scripts:application:clean', () => del([
 gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () => {
   gulp.src([
     config.src.scripts.application,
-    '!src/polyfills.js',
+    `!${config.src.scripts.polyfills}`,
   ])
     .pipe(named())
     .pipe(webpackStream(webpackConfigStreusel, webpack))
@@ -277,8 +277,8 @@ gulp.task('assemble', (done) => {
     logErrors: config.dev,
     layout: 'defaultTemplate',
     layouts: `${partystreuselRoot}/materials/templates/*.html`,
-    layoutIncludes: `${partystreuselRoot}/_partystreusel/fabricator/layouts/includes/*`,
-    views: [`${partystreuselRoot}/_partystreusel/fabricator/views/**/*`, `${partystreuselRoot}/pages/**/*`],
+    layoutIncludes: `${config.src.fabricator}/layouts/includes/*`,
+    views: [`${config.src.fabricator}/views/**/*`, `${partystreuselRoot}/pages/**/*`],
     materials: `${partystreuselRoot}/materials/**/!(_)*.html`,
     data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
     docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
@@ -321,17 +321,6 @@ gulp.task('deploy', () => {
   );
 });
 
-// // Install & require 'gulp-sftp' for this task
-// gulp.task('deploy:remote', function () {
-//   return gulp.src('dist/**/*')
-//     .pipe(sftp({
-//       host: 'php1.brandleadership.ch',
-//       user: 'www-data',
-//       remotePath: '/home/www-data/REPLACEME/'
-//     }));
-// });
-
-
 // SERVER
 // ----------------------------------------
 gulp.task('serve', () => {
@@ -366,24 +355,19 @@ gulp.task('serve', () => {
   }
 
   gulp.task('assemble:watch', ['assemble'], browserSync.reload);
-  gulp.watch([`${config.src.docs}/*.md`, `${partystreuselRoot}**/*.{html,md,json,yml}`], ['assemble:watch']);
+  gulp.watch([`${config.src.docs}/*.md`, `${partystreuselRoot}/**/*.{html,md,json,yml}`], ['assemble:watch']);
 
   gulp.task('styles:fabricator:watch', ['styles:fabricator']);
   gulp.watch(config.src.styles.fabricatorpartials, ['styles:fabricator:watch']);
 
   gulp.task('styles:application:watch', ['styles:application']);
-  gulp.watch([
-    config.src.styles.config,
-    config.src.styles.applicationpartials], ['styles:application:watch']);
+  gulp.watch([config.src.styles.config, config.src.styles.applicationpartials], ['styles:application:watch']);
 
   gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
-  gulp.watch('src/_partystreusel/fabricator/scripts/**/*.js', ['fabricator:watch']).on('change', webpackCache);
+  gulp.watch(config.src.scripts.fabricator, ['fabricator:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
-  gulp.watch([
-    config.src.scripts.application,
-    config.src.scripts.materials,
-    config.src.scripts.config], ['scripts:application:watch']);
+  gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);
 
   gulp.task('images:watch', ['images'], browserSync.reload);
   gulp.watch(config.src.images, ['images:watch']);
