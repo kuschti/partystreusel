@@ -43,6 +43,7 @@ const config = {
       application: `${partystreuselRoot}/*.js`,
       config: `${partystreuselRoot}/_config/{base,streusel}.js`,
       polyfills: `${partystreuselRoot}/polyfills.js`,
+      vendorFiles: `${partystreuselRoot}/vendor/*.js`,
       materials: `${partystreuselRoot}materials/**/*.js`,
       applicationEntryPoint: `${partystreuselRoot}/application.js`,
       applicationBundle: 'scripts/application.js?(.map)',
@@ -217,6 +218,11 @@ gulp.task('polyfills', () => {
     .pipe(gulp.dest(`${config.dest.assets}/scripts/`));
 });
 
+gulp.task('scripts:vendor', () => {
+  gulp.src(config.src.scripts.vendorFiles)
+    .pipe(gulp.dest(`${config.dest.assets}/scripts/`));
+});
+
 // IMAGES
 // ----------------------------------------
 gulp.task('images', () => {
@@ -318,6 +324,7 @@ gulp.task('deploy', () => {
       'scripts:fabricator',
       'scripts:application',
       'polyfills',
+      'scripts:vendor',
       'fonts',
       'images',
       'icons',
@@ -390,6 +397,7 @@ gulp.task('default', ['clean'], () => {
     'scripts:fabricator',
     'scripts:application',
     'polyfills',
+    'scripts:vendor',
     'fonts',
     'images',
     'icons',
