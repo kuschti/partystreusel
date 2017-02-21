@@ -44,7 +44,7 @@ const config = {
       config: `${partystreuselRoot}/_config/{base,streusel}.js`,
       polyfills: `${partystreuselRoot}/polyfills.js`,
       vendorFiles: `${partystreuselRoot}/vendor/*.js`,
-      materials: `${partystreuselRoot}materials/**/*.js`,
+      materials: `${partystreuselRoot}/materials/**/*.js`,
       applicationEntryPoint: `${partystreuselRoot}/application.js`,
       applicationBundle: 'scripts/application.js?(.map)',
       eslintRc: '.eslintrc.js',
