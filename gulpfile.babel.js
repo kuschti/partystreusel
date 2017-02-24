@@ -76,6 +76,17 @@ const config = {
   },
   browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
 };
+const buildTasks = [
+  'styles',
+  'scripts:fabricator',
+  'scripts:application',
+  'polyfills',
+  'scripts:vendor',
+  'fonts',
+  'images',
+  'icons',
+  'assemble',
+];
 
 // WEBPACK
 // ----------------------------------------
@@ -93,17 +104,19 @@ gulp.task('clean', () => del([
 // STYLES
 // ----------------------------------------
 gulp.task('styles:fabricator', () => {
-  gulp.src(config.src.styles.fabricator)
+  const styles = gulp.src(config.src.styles.fabricator)
     .pipe(sass().on('error', notify.onError()))
     .pipe(autoprefixer(config.browsers))
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
     .pipe(gulp.dest(`${config.dest.assets}/partystreusel/styles`))
     .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
+
+  return styles;
 });
 
 gulp.task('styles:application', () => {
-  gulp.src(config.src.styles.application)
+  const styles = gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
     .pipe(sass({
       includePaths: ['node_modules'],
@@ -113,6 +126,8 @@ gulp.task('styles:application', () => {
     .pipe(gulpif(config.dev, sourcemaps.write('./')))
     .pipe(gulp.dest(`${config.dest.assets}/styles`))
     .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
+
+  return styles;
 });
 
 // Lint styles
@@ -226,18 +241,20 @@ gulp.task('scripts:vendor', () => {
 // IMAGES
 // ----------------------------------------
 gulp.task('images', () => {
-  gulp.src(config.src.images)
+  const images = gulp.src(config.src.images)
     .pipe(imagemin([
       imagemin.jpegtran({ progressive: true }),
     ]))
     .pipe(gulp.dest(config.src.imagesfolder))
     .pipe(gulp.dest(`${config.dest.assets}/images`));
+
+  return images;
 });
 
 // ICONS
 // ----------------------------------------
 gulp.task('svgmin', () => {
-  gulp.src(`${config.src.icons}*.svg`)
+  const svgs = gulp.src(`${config.src.icons}*.svg`)
     .pipe(imagemin([
       imagemin.svgo({
         plugins: [
@@ -248,6 +265,8 @@ gulp.task('svgmin', () => {
       }),
     ]))
     .pipe(gulp.dest(config.src.icons));
+
+  return svgs;
 });
 
 gulp.task('svgsprite', ['svgmin'], () => {
@@ -274,8 +293,10 @@ gulp.task('icons', ['svgmin', 'svgsprite']);
 // Fonts
 // ----------------------------------------
 gulp.task('fonts', () => {
-  gulp.src(config.src.fonts)
-   .pipe(gulp.dest(`${config.dest.assets}/fonts`));
+  const fonts = gulp.src(config.src.fonts)
+    .pipe(gulp.dest(`${config.dest.assets}/fonts`));
+
+  return fonts;
 });
 
 // Assemble
@@ -312,24 +333,16 @@ gulp.task('assemble', (done) => {
 // DEPLOY
 // ----------------------------------------
 gulp.task('deploy:github', () => {
-  gulp.src(`${config.dest.dir}/**/*`)
+  const pages = gulp.src(`./${config.dest.dir}/**/*`)
     .pipe(ghPages());
+
+  return pages;
 });
 
 gulp.task('deploy', () => {
   runSequence(
     'clean',
-    [
-      'styles',
-      'scripts:fabricator',
-      'scripts:application',
-      'polyfills',
-      'scripts:vendor',
-      'fonts',
-      'images',
-      'icons',
-      'assemble',
-    ],
+    buildTasks,
     'deploy:github',
   );
 });
@@ -391,21 +404,7 @@ gulp.task('build', ['default']);
 // DEFAULT BUILD TASK
 // ----------------------------------------
 gulp.task('default', ['clean'], () => {
-  // define build tasks
-  const tasks = [
-    'styles',
-    'scripts:fabricator',
-    'scripts:application',
-    'polyfills',
-    'scripts:vendor',
-    'fonts',
-    'images',
-    'icons',
-    'assemble',
-  ];
-
-  // run build
-  runSequence(tasks, () => {
+  runSequence(buildTasks, () => {
     if (config.dev) {
       gulp.start('serve');
     }

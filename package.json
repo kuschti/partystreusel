@@ -26,8 +26,8 @@
   "scripts": {
     "start": "gulp --dev",
     "build": "gulp --production",
-    "deploy": "gulp deploy:github",
-    "test": "gulp styles:lint && gulp styles:doiuse"
+    "deploy": "gulp deploy",
+    "test": "gulp styles:lint && gulp styles:doiuse && scripts:application:lint"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -37,7 +37,7 @@
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "doiuse": "^2.5.0",
-    "eslint": "^3.15.0",
+    "eslint": "^3.16.1",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.0.1",
     "fabricator-assemble": "^1.2.0",
@@ -65,7 +65,7 @@
     "postcss-scss": "^0.4.1",
     "run-sequence": "^1.2.2",
     "script-loader": "^0.7.0",
-    "stylelint": "^7.8.0",
+    "stylelint": "^7.9.0",
     "stylelint-config-partystreusel": "^2.1.0",
     "susy": "^2.2.12",
     "vinyl-named": "^1.1.0",
