@@ -10,8 +10,8 @@ $(() => {
   $('html').removeClass('no-js');
   const Streusel = window.Streusel || {};
 
-  Streusel.Accordion = Accordion.init();
   Streusel.Topbar = Topbar.init();
+  Streusel.Accordion = Accordion.init();
   Streusel.Tab = Tab.init();
   Streusel.Dropdown = Dropdown.init();
   Streusel.Slider = Slider.init();
