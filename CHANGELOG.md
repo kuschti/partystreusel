@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## v5.0.0
+
 ## v5.0.0-rc.2
 * rename button-group classname
 * cleanup sass files & sass settings
