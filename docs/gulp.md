@@ -17,6 +17,6 @@
 - Use ```$ gulp images``` to minify & copy image files
 - Use ```$ gulp icons``` to generate sprite & demo site
 
-### Deploy Styleguide
+### Deploy Pattern Library
 - Use ```$ gulp deploy``` to deploy on staging
 - Use ```$ gulp deploy:github``` to deploy to GitHub-Pages

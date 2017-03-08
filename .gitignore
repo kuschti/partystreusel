@@ -7,7 +7,7 @@ tmp/
 log/
 .sass-cache
 node_modules
-styleguide/build/
 .project
 .publish
 dist/
+assets/

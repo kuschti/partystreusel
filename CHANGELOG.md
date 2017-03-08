@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## v5.0.0-rc.2
+* rename button-group classname
+* cleanup sass files & sass settings
+* add gulp-release-tag plugin
+* use name from package.json for index.html Title and title tags
+* better path management in gulpfile
+  * simplified for use with kirby or other CMS
+  * set `partystreuselRoot` and `config.dest` paths
+
+## v5.0.0-rc.1
+* replace coffeescript with js
+* upgrade js code to ES6
+* upgrade Babel & Webpack
+* use vendor stuff from node_modules
+
 ## v4.7.0
 * replace neat grid system with susy
 * update dependencies
@@ -52,7 +67,7 @@
 * update dependencies
 
 ## 4.2.1
-* add styling for styleguide notes
+* add styling for pattern library notes
 * update dependencies
 
 ## 4.2.0

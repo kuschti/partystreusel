@@ -1,0 +1,102 @@
+/* stylelint-disable declaration-colon-space-after */
+
+// This is the the base for the em/rem mixins and the grid calculation.
+// If your $body__font-size is 100%, leave it at 16px.
+$rem-base: 16px;
+
+// GRID
+// - settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
+$susy: (
+  debug: (
+    image: hide,  // show
+    output: background, // or overlay
+    toggle: bottom right
+  ),
+  global-box-sizing: border-box,
+  columns: 12,
+  gutters: 0.25
+);
+
+// Grid defintion for large $breakpoint
+$susy-large: (
+  global-box-sizing: border-box,
+  columns: 12,
+  container: rem(1440),
+  gutters: 0.25
+);
+
+// MEDIAQUERIES
+// - Map for mediaqueries & Susy Settings
+// - used by the mq() mixin, shorthand for susy-breakpoint)
+$breakpoints: (
+  medium: (
+    mq: 40em, //640
+    susy-settings: $susy
+  ),
+  large: (
+    mq: 50em, //800
+    susy-settings: $susy-large
+  ),
+  xlarge: (
+    mq: 75em, //1200
+    susy-settings: $susy-large
+  )
+);
+
+// COLORS
+// - use general variable naming!
+$color__dark:               #333;
+$color__bright:             #fff;
+
+$color__brand--one:         #d60051;
+$color__brand--dark:        #381c2e;
+$color__brand--two:         #00d2d3;
+
+$color__accent:             #acacac;
+$color__accent--light:      #f0f0f0;
+$color__accent--dark:       #6e6e6e;
+
+$color__alert:              #f00;
+$color__success:            #43ac6a;
+$color__warning:            #f08a24;
+$color__info:               #a0d3e8;
+
+// TYPOGRAPHY
+// ----------------------------------------
+$font-weight--light:         300;
+$font-weight--regular:       400;
+$font-weight--medium:        400;
+$font-weight--bold:          700;
+
+$body__font-family:          'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body__font-size:            100%;
+$body__font-weight:          $font-weight--regular;
+$body__font-color:           $color__dark;
+
+// HEADINGS font styles
+$heading__font-family:       $body__font-family;
+$heading__font-weight:       900;
+
+// PARAGRAPHS
+$paragraph__font-family:     inherit;
+$paragraph__font-weight:     $font-weight--regular;
+$paragraph__font-size:       rem(16);
+$paragraph__line-height:     1.5;
+$paragraph__margin-bottom:   rem(12);
+
+// ANCHORS
+$anchor__color:          $color__brand--one;
+$anchor__color--hover:    $color__brand--two;
+$anchor__color--active:   $color__dark;
+
+// <HR>
+$hr__margin-top:              rem(18);
+$hr__margin-bottom:           $hr__margin-top;
+$hr__border-width:            rem(1);
+$hr__border-style:            solid;
+$hr__border-color:            $body__font-color;
+
+// RADIUS
+$border-radius:               0;
+$border-radius--round:        100%;
+/* stylelint-enable declaration-colon-space-after */

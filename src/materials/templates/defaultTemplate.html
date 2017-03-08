@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="DE">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{#if title}}{{title}} - {{/if}}{{projectName}}</title>
+
+    {{#if fabricator}}<link rel="stylesheet" href="./{{baseurl}}/{{assetsFolder}}partystreusel/styles/p.css">{{/if}}
+
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="./{{baseurl}}/{{assetsFolder}}styles/application.css">
+
+    <script src="./{{baseurl}}/{{assetsFolder}}scripts/polyfills.js"></script>
+    <!-- /Pattern Libary styles&scripts -->
+
+    {{> p-icons-include}}
+
+  </head>
+  <body>
+
+    {{#if fabricator}}
+      {{> f-icons}}
+      {{> f-menu}}
+      <div class="f-container">
+        {{> f-control-bar}}
+    {{/if}}
+
+
+    {% body %}
+
+
+    {{#if fabricator}}
+      </div>
+    <script src="./{{baseurl}}/{{assetsFolder}}partystreusel/scripts/p.js"></script>
+    {{/if}}
+
+    <!-- toolkit scripts -->
+    <script src="./{{baseurl}}/{{assetsFolder}}scripts/application.js" async></script>
+    <!-- /toolkit scripts -->
+
+  </body>
+</html>
