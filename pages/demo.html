@@ -1,38 +1,38 @@
 <!doctype html>
 <html class="no-js" lang="DE">
-	<head>
+  <head>
 
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title></title>
+    <title>partystreusel</title>
 
-		
+    
 
-		<!-- Pattern Libary styles&scripts -->
-		<link rel="stylesheet" href="./../assets/styles/application.css">
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="./../assets/styles/application.css">
 
-		<script src="./../assets/scripts/polyfills/picturefill.min.js"></script>
-		<!-- /Pattern Libary styles&scripts -->
+    <script src="./../assets/scripts/polyfills.js"></script>
+    <!-- /Pattern Libary styles&scripts -->
 
-		<script>
-		  var ajax = new XMLHttpRequest();
-		  ajax.open("GET", "./../assets/images/icons/icon-sprite.svg", true);
-		  ajax.onload = function(e) {
-		    var div = document.createElement("div");
-		    div.innerHTML = ajax.responseText;
-		    document.body.insertBefore(div, document.body.childNodes[0]);
-		  }
-		  ajax.send();
-		</script>
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "./../assets/images/icons/icon-sprite.svg", true);
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+      ajax.send();
+    </script>
 
-	</head>
-	<body>
+  </head>
+  <body>
 
 
 
-		<div class="js-offcanvas">
+    <div class="js-offcanvas">
   <div class="offcanvas">
     <div class="offcanvas__pusher">
 			<header class="header">
@@ -135,9 +135,9 @@
 
 
 
-		<!-- toolkit scripts -->
-		<script src="./../assets/scripts/application.js" async></script>
-		<!-- /toolkit scripts -->
+    <!-- toolkit scripts -->
+    <script src="./../assets/scripts/application.js" async></script>
+    <!-- /toolkit scripts -->
 
-	</body>
+  </body>
 </html>
