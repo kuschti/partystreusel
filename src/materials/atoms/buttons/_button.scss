@@ -25,6 +25,7 @@ $btn__size: rem(23);
     width: $btn__size;
     height: $btn__size;
     vertical-align: top;
+    pointer-events: none;
   }
 
   &:hover {
