@@ -201,7 +201,7 @@ gulp.task('scripts:application:lint', () => {
   ])
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(gulpif(!config.dev, eslint.failAfterError()));
 });
 
 gulp.task('scripts:application:clean', () => del([
