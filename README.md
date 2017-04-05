@@ -5,7 +5,7 @@
 You will need [Node.js](http://nodejs.org)
 Use npm or [yarn](https://yarnpkg.com) as your package manager. 
 
-    $ git clone https://github.com/brandleadership/partystreusel.git YOUR_APP_DIRECTORY
+    $ git clone https://github.com/brandleadership/partystreusel.git YOUR_APP_DIRECTORY --depth 1
     $ cd YOUR_APP_DIRECTORY
     $ git remote rename origin upstream
 
