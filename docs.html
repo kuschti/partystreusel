@@ -185,9 +185,6 @@
       					<a href="docs.html#gulp">Gulp</a>
       				</li>
       				<li>
-      					<a href="docs.html#javascript">Javascript</a>
-      				</li>
-      				<li>
       					<a href="docs.html#plugins">Plugins</a>
       				</li>
       				<li>
@@ -195,6 +192,9 @@
       				</li>
       				<li>
       					<a href="docs.html#Icons">Icons</a>
+      				</li>
+      				<li>
+      					<a href="docs.html#ScrollTo">Scrollto</a>
       				</li>
       				<li>
       					<a href="docs.html#Offcanvas">Offcanvas</a>
@@ -323,80 +323,6 @@ foo: bar
 
 
 	<div class="f-item-group">
-		<h2 id="javascript"><a href="#javascript">Javascript</a></h2>
-		<h3>JS &lt;-&gt; DOM</h3>
-<p>If you have the JS object use</p>
-<pre><code>myJsObject.$el
-</code></pre>
-<p>to access the corresponding DOM element.</p>
-<p>If you have the DOM element use</p>
-<pre><code>$('.myselector').data('object')
-</code></pre>
-<p>to access the correspoindg partystreusel JS object.</p>
-<h3>Events</h3>
-<p>Partystreusel components tirgger some events. All events are
-prefixed with the moulename. Eg. Readmore triggers the event
-'readmore-open' and 'readmore-close'.</p>
-<p>You can trigger an event directly on the JS object. Eg.
-if you have a readmore object:</p>
-<pre><code>readmoreObject = $('.myreadmore).data('object')
-readmoreObject.trigger('myevent')
-</code></pre>
-<p>Would triger a new event on $('.myreadmore') with name
-'readmore-event'.</p>
-<h3>Module Usage</h3>
-<p>Available modules:</p>
-<ul>
-<li>Streusel.scrollTo</li>
-<li>Streusel.Readmore</li>
-</ul>
-<h4>Scroll To</h4>
-<p>Add to application.js.coffee:</p>
-<pre><code>#= require partystreusel/scroll_to
-</code></pre>
-<p>This is just a function. Usage:</p>
-<pre><code># scroll to a[name=linkname]
-Streusel.scrollTo(link: 'linkname')
-
-# scroll to selector
-Streusel.scrollTo('selector')
-
-# scroll to jquery element
-Streusel.scrollTo($('selector'))
-
-# you can scroll to element with a pixeloffset
-# selector will be 12px below window top
-Streusel.scrollTo('selector', offset: -12)
-</code></pre>
-<p>hint: If element to scroll to could not be found, the function returns
-false. If element was found, return the found jquery element.</p>
-<h4>Read More</h4>
-<p>Use code below depending on environment you are in. If the content is
-empty or contains only whitespaces, nothing will be displayed.</p>
-<pre><code>#= require partystreusel/readmore
-
-$ -&gt;
-  Streusel.Readmore.init()
-</code></pre>
-<p>If you only want to initialize readmore for a part of the document:</p>
-<pre><code>Streusel.Readmore.init($('body article.loadedwithajax'))
-</code></pre>
-<h5>Html</h5>
-<pre><code>&lt;div class='mycustomclass' data-streusel-readmore&gt;
-  Your text....
-&lt;/div&gt;
-</code></pre>
-<p>Will be rendered to something like:</p>
-<pre><code>&lt;div class='mycustomclass' data-streusel-readmore&gt;
-  &lt;div&gt;Your text....&lt;/div&gt;
-  &lt;a ...&gt;Read more&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-
-	</div>
-
-
-	<div class="f-item-group">
 		<h2 id="plugins"><a href="#plugins">Plugins</a></h2>
 		<h3>recommendation</h3>
 <ul>
@@ -460,6 +386,31 @@ See <a href="http://susydocs.oddbird.net/en/latest/toolkit/#rows-edges">Susy doc
 <p>Or embed the icon directly with the svg/use html syntax:</p>
 <pre><code>&lt;svg title=&quot;NAME&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; class=&quot;icon icon--NAME&quot;&gt;&lt;use  xlink:href=&quot;#icon--NAME&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
 </code></pre>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="ScrollTo"><a href="#ScrollTo">Scrollto</a></h2>
+		<p>Add to your module js</p>
+<pre><code>#= require partystreusel/scroll_to
+</code></pre>
+<p>This is just a function. Usage:</p>
+<pre><code># scroll to a[name=linkname]
+Streusel.scrollTo(link: 'linkname')
+
+# scroll to selector
+Streusel.scrollTo('selector')
+
+# scroll to jquery element
+Streusel.scrollTo($('selector'))
+
+# you can scroll to element with a pixeloffset
+# selector will be 12px below window top
+Streusel.scrollTo('selector', offset: -12)
+</code></pre>
+<p>hint: If element to scroll to could not be found, the function returns
+false. If element was found, return the found jquery element.</p>
 
 	</div>
 
