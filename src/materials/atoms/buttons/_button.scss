@@ -63,8 +63,8 @@ $btn__size: rem(23);
   &:active,
   &.btn--active {
     color: $color__bright;
-    background-color: $color__dark;
-    border-color: $color__dark;
+    background-color: $color__brand--dark;
+    border-color: $color__brand--dark;
   }
 }
 

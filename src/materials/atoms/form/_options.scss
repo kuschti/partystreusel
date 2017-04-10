@@ -85,6 +85,7 @@ $option--alternate-color: $color__bright;
 
         &::after {
           display: inline-block;
+          background-color: $color__brand--one;
         }
       }
     }
