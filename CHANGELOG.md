@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## dev
+* update node version & dependencies
+
 ## v5.0.1
 * update js gulp task: don'to stop on eslint error in dev mode.
 * fix #29: disable pointer events for icons in buttons
