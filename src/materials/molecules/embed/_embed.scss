@@ -1,8 +1,8 @@
-$embeds__ratio: (720/1280)*100%;
+$embed__ratio: (720/1280)*100%;
 
-.embeds {
+.embed {
   position: relative;
-  padding-bottom: $embeds__ratio;
+  padding-bottom: $embed__ratio;
   padding-top: rem(25);
   height: 0;
   margin-bottom: space(2);
