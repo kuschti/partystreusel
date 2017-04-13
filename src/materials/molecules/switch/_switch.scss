@@ -1,5 +1,5 @@
-$switch__width: rem(54);
-$switch__height: rem(30);
+$switch__width: rem(80);
+$switch__height: rem(40);
 $switch__inner-space: rem(4);
 
 $switch__radius: $switch__height;
@@ -50,6 +50,23 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
   @include hide-text;
 }
 
+.switch__active,
+.switch__inactive {
+  color: $color__bright;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch__active {
+  display: none;
+  left: 15%;
+}
+
+.switch__inactive {
+  right: 15%;
+}
+
 // STATES
 .switch:hover {
   .switch__label {
@@ -64,5 +81,15 @@ $switch__knob-size: $switch__height - $switch__inner-space * 2;
     &::after {
       left: $switch__width - $switch__knob-size - $switch__inner-space;
     }
+
+    // stylelint-disable selector-max-specificity
+    .switch__inactive {
+      display: none;
+    }
+
+    .switch__active {
+      display: inline;
+    }
+    // stylelint-enable selector-max-specificity
   }
 }
