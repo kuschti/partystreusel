@@ -1,0 +1,38 @@
+.input-addon {
+  display: flex;
+
+  &__field {
+    flex: 1;
+  }
+
+  &__item {
+    margin-bottom: 0;
+  }
+}
+
+// INPUT WITH ICON BUTTON INSIDE
+.input-addon--overlay {
+  position: relative;
+
+  .input-addon__input {
+    padding-right: rem(50);
+  }
+
+  .input-addon__item {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0;
+    color: $body__font-color;
+
+    &,
+    &:hover,
+    &:active {
+      background-color: transparent;
+    }
+
+    &:hover {
+      color: $color__accent--dark;
+    }
+  }
+}
