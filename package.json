@@ -58,7 +58,7 @@
     "gulp-release-tag": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^2.5.1",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.7",
@@ -71,7 +71,7 @@
     "stylelint-config-partystreusel": "^2.1.0",
     "susy": "^2.2.12",
     "vinyl-named": "^1.1.0",
-    "webpack": "^2.3.3",
+    "webpack": "^2.4.1",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
