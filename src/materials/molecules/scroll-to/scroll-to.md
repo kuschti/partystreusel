@@ -1,6 +1,6 @@
 Add to your module js
 
-    import ScrollTo from '../../../materials/molecules/scroll_to/scrollTo';
+    import ScrollTo from '../../../materials/molecules/scroll-to/scroll-to';
 
 This is just a function. Usage:
 

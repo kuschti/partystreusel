@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import Base from '../../../_config/base';
-import ScrollTo from '../../../materials/molecules/scroll_to/scrollTo';
+import ScrollTo from '../../../materials/molecules/scroll-to/scroll-to';
 
 class Accordion extends Base {
   constructor(el) {
