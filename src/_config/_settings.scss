@@ -1,5 +1,3 @@
-/* stylelint-disable declaration-colon-space-after */
-
 // This is the the base for the em/rem mixins and the grid calculation.
 // If your $body__font-size is 100%, leave it at 16px.
 $rem-base: 16px;
@@ -63,31 +61,32 @@ $color__info:               #a0d3e8;
 
 // TYPOGRAPHY
 // ----------------------------------------
-$font-weight--light:         300;
-$font-weight--regular:       400;
-$font-weight--medium:        400;
-$font-weight--bold:          700;
+$font-weight--light:          300;
+$font-weight--regular:        400;
+$font-weight--medium:         400;
+$font-weight--bold:           700;
 
-$body__font-family:          'Helvetica Neue', Helvetica, Arial, sans-serif;
-$body__font-size:            100%;
-$body__font-weight:          $font-weight--regular;
-$body__font-color:           $color__dark;
+$body__font-family:           'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body__font-size:             100%;
+$body__font-weight:           $font-weight--regular;
+$body__font-color:            $color__dark;
 
 // HEADINGS font styles
-$heading__font-family:       $body__font-family;
-$heading__font-weight:       900;
+$heading__font-family:        $body__font-family;
+$heading__font-weight:        900;
 
 // PARAGRAPHS
-$paragraph__font-family:     inherit;
-$paragraph__font-weight:     $font-weight--regular;
-$paragraph__font-size:       rem(16);
-$paragraph__line-height:     1.5;
-$paragraph__margin-bottom:   rem(12);
+$paragraph__font-family:      inherit;
+$paragraph__font-weight:      $font-weight--regular;
+$paragraph__font-size:        rem(16);
+$paragraph__font-size--large: rem(20);
+$paragraph__line-height:      1.5;
+$paragraph__margin-bottom:    rem(12);
 
 // ANCHORS
-$anchor__color:          $color__brand--one;
-$anchor__color--hover:    $color__brand--two;
-$anchor__color--active:   $color__dark;
+$anchor__color:               $color__brand--one;
+$anchor__color--hover:        $color__brand--two;
+$anchor__color--active:       $color__dark;
 
 // <HR>
 $hr__margin-top:              rem(18);
@@ -99,4 +98,3 @@ $hr__border-color:            $body__font-color;
 // RADIUS
 $border-radius:               0;
 $border-radius--round:        100%;
-/* stylelint-enable declaration-colon-space-after */

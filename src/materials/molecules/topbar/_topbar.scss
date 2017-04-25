@@ -1,25 +1,18 @@
-//stylelint-disable no-descending-specificity
+// stylelint-disable no-descending-specificity
 $topbar__border: rem(1) solid $color__accent;
 
 .topbar__mobile-menu {
-  background-color: $color__accent--light;
-  border-bottom: $topbar__border;
-  color: $color__accent--dark;
   display: block;
-  padding: 0 rem(12);
-  text-align: right;
+  background-color: $color__accent--light;
+  color: $color__accent--dark;
+  border: 0;
+  padding: rem(7) rem(10) rem(6);
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
 
-  button {
-    background-color: $color__accent--light;
-    border: 0;
-    color: $body__font-color;
-    outline: none;
-    padding: rem(7) 0 rem(6) rem(6);
-    position: relative;
-
-    &:hover {
-      color: $color__accent--dark;
-    }
+  &:hover {
+    color: $color__accent--dark;
   }
 }
 
@@ -34,24 +27,17 @@ $topbar__border: rem(1) solid $color__accent;
 .topbar__item {
   background-color: $color__accent--light;
   display: block;
+}
 
-  a {
-    border-bottom: $topbar__border;
-    display: block;
-    padding: rem(12);
-  }
-
-  > a {
-    color: $color__accent--dark;
-  }
+.topbar__link {
+  border-bottom: $topbar__border;
+  display: block;
+  padding: rem(12);
+  color: $color__accent--dark;
 
   &:hover {
     transition: all 0.1s linear;
     background-color: $color__bright;
-
-    > a {
-      color: $body__font-color;
-    }
   }
 }
 
@@ -63,7 +49,7 @@ $topbar__border: rem(1) solid $color__accent;
 .topbar__sub {
   display: block;
 
-  > a {
+  .topbar__link {
     background-color: $color__bright;
     border-color: $color__bright;
     color: $color__accent--dark;
@@ -117,17 +103,16 @@ $topbar__border: rem(1) solid $color__accent;
 
   .topbar__item {
     flex: 1 1 auto;
-    border-right: $topbar__border;
     position: relative;
 
-    > a {
-      padding: rem(11) rem(18);
-      text-align: center;
+    &:not(:last-child) {
+      border-right: $topbar__border;
     }
+  }
 
-    &:last-child {
-      border-right: 0;
-    }
+  .topbar__link {
+    padding: rem(11) rem(18);
+    text-align: center;
   }
 
   .topbar__sub-list {

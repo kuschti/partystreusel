@@ -23,7 +23,6 @@ h6,
   font-family: $heading__font-family;
   font-weight: $heading__font-weight;
   font-style: normal;
-  text-transform: uppercase;
   text-rendering: auto;
   color: $body__font-color;
 }
@@ -32,21 +31,21 @@ h1,
 .h1 {
   font-size: rem(36);
   line-height: 1;
-  margin: rem(30) 0 rem(12);
+  margin: 0 0 rem(12);
 }
 
 h2,
 .h2 {
   font-size: rem(24);
   line-height: 1;
-  margin: rem(27) 0 rem(9);
+  margin: 0 0 rem(9);
 }
 
 h3,
 .h3 {
   font-size: rem(19);
   line-height: 1.26;
-  margin: rem(24) 0 rem(3);
+  margin: 0 0 rem(3);
 }
 
 h4,
@@ -57,7 +56,7 @@ h6,
 .h6 {
   font-size: rem(16);
   line-height: 1.125;
-  margin: rem(21) 0 rem(3);
+  margin: 0 0 rem(3);
 }
 
 p {
@@ -129,13 +128,11 @@ blockquote {
   h2,
   .h2 {
     font-size: rem(36);
-    line-height: 1;
   }
 
   h3,
   .h3 {
     font-size: rem(20);
-    line-height: 1.26;
     margin-bottom: rem(6);
   }
 
@@ -147,7 +144,6 @@ blockquote {
   .h6 {
     font-size: rem(18);
     margin-bottom: rem(6);
-    line-height: 1;
   }
 
   p,
@@ -180,13 +176,12 @@ blockquote {
   .h5,
   .h6 {
     font-size: rem(20);
-    line-height: 1.2;
   }
 
   p,
   ul,
   ol {
-    font-size: rem(20);
+    font-size: $paragraph__font-size--large;
   }
 
   hr {
@@ -195,6 +190,6 @@ blockquote {
   }
 
   blockquote {
-    font-size: rem(20);
+    font-size: $paragraph__font-size--large;
   }
 }

@@ -4,9 +4,10 @@ notes: |
 ---
 <nav class="main-nav">
   <ul class="main-nav__list">
-    <li><a href="#" class="main-nav__link">Nav Item</a></li>
-    <li><a href="#" class="main-nav__link main-nav--active">Nav Item</a></li>
-    <li><a href="#" class="main-nav__link">Nav Item</a></li>
-    <li><a href="#" class="main-nav__link">Nav Item</a></li>
+    {{#each main-nav}}
+      <li>
+        <a href="#" class="main-nav__link{{#if active}} main-nav--active{{/if}}">{{title}}</a>
+      </li>
+    {{/each}}
   </ul>
 </nav>

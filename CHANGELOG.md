@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## dev
+* update node version & dependencies
+* add input-addon as molecule (instead of form atom)
+* add switch active/inactive text
+* refactor switch
+* rename `embeds` to `embed`
+* refactor tab
+* refactor topbar
+* refactor main-nav
+* fix accordion markup
+* update button colors
+* update dropdown js
+* rename scrollto molecule files
+
 ## v5.0.1
 * update js gulp task: don'to stop on eslint error in dev mode.
 * fix #29: disable pointer events for icons in buttons

@@ -1,21 +1,12 @@
 <section data-scroll-offset="-10" class="accordion js-accordion">
-  <section class="accordion__item accordion--open">
-    <h1 class="accordion__title">Lorem ipsum dolor</h1>
-    <div class="accordion__content">
-      <section class="content">
-        <p>
-          <Lorem>ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</Lorem>
-        </p>
-      </section>
-    </div>
-  </section>
-  {{#iterate 3}}
-    <section class="accordion__item">
-      <h1 class="accordion__title">Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor</h1>
+  {{#each accordion}}
+    <section class="accordion__item{{#if open}} accordion--open{{/if}}">
+      <h1 class="accordion__title">{{title}}</h1>
       <div class="accordion__content">
         <section class="content">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+          {{{content}}}
         </section>
       </div>
     </section>
-  {{/iterate}}
+  {{/each}}
+</section>
