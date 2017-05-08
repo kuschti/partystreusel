@@ -306,6 +306,17 @@ autoprefixer@^6.0.0:
     postcss "^5.2.11"
     postcss-value-parser "^3.2.3"
 
+autoprefixer@^7.0.0:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.0.1.tgz#472d7620a1b286e55ad1d8345a09d76aaed99d92"
+  dependencies:
+    browserslist "^2.1.2"
+    caniuse-lite "^1.0.30000665"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.1"
+    postcss-value-parser "^3.2.3"
+
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -1129,6 +1140,13 @@ browserslist@^1.1.1, browserslist@^1.1.3, browserslist@~1.6.0:
     caniuse-db "^1.0.30000613"
     electron-to-chromium "^1.2.0"
 
+browserslist@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.1.2.tgz#a9dd0791342dab019861c2dd1cd0fd5d83230d39"
+  dependencies:
+    caniuse-lite "^1.0.30000665"
+    electron-to-chromium "^1.3.9"
+
 bs-recipes@1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/bs-recipes/-/bs-recipes-1.3.4.tgz#0d2d4d48a718c8c044769fdc4f89592dc8b69585"
@@ -1258,6 +1276,10 @@ camelcase@^3.0.0:
 caniuse-db@^1.0.30000187, caniuse-db@^1.0.30000613:
   version "1.0.30000615"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000615.tgz#605bc071db4c5031acfb5e469c3b50a531dd5d04"
+
+caniuse-lite@^1.0.30000665:
+  version "1.0.30000666"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000666.tgz#831b63247e24fa408e20c6c546c4173d27c5a1a5"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2107,6 +2129,10 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.0.tgz#3bd7761f85bd4163602259ae6c7ed338050b17e7"
+
+electron-to-chromium@^1.3.9:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.9.tgz#db1cba2a26aebcca2f7f5b8b034554468609157d"
 
 elliptic@^6.0.0:
   version "6.3.2"
@@ -3105,13 +3131,13 @@ gulp-add-src@^0.2.0:
     through2 "~0.4.1"
     vinyl-fs "~0.3.11"
 
-gulp-autoprefixer@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/gulp-autoprefixer/-/gulp-autoprefixer-3.1.1.tgz#75230051cd0d171343d783b7e9b5d1120eeef9b0"
+gulp-autoprefixer@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-autoprefixer/-/gulp-autoprefixer-4.0.0.tgz#e00a8c571b85d06516ac26341be90dfd9fc1eab0"
   dependencies:
-    autoprefixer "^6.0.0"
+    autoprefixer "^7.0.0"
     gulp-util "^3.0.0"
-    postcss "^5.0.4"
+    postcss "^6.0.1"
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
@@ -3232,12 +3258,12 @@ gulp-notify@^3.0.0:
     node.extend "^1.1.6"
     through2 "^2.0.3"
 
-gulp-postcss@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-6.4.0.tgz#78a32e3c87aa6cdcec5ae1c905e196d478e8c5d5"
+gulp-postcss@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-7.0.0.tgz#cfb62a19fa947f8be67ce9ecae89ceb959f0cf93"
   dependencies:
     gulp-util "^3.0.8"
-    postcss "^5.2.12"
+    postcss "^6.0.0"
     postcss-load-config "^1.2.0"
     vinyl-sourcemaps-apply "^0.2.1"
 
@@ -4995,9 +5021,9 @@ normalize-selector@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/normalize-selector/-/normalize-selector-0.2.0.tgz#d0b145eb691189c63a78d201dc4fdb1293ef0c03"
 
-normalize.css@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-6.0.0.tgz#22188c2707c911fb3ad3c1aac0677ff68661bea8"
+normalize.css@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -5458,11 +5484,17 @@ postcss-resolve-nested-selector@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/postcss-resolve-nested-selector/-/postcss-resolve-nested-selector-0.1.1.tgz#29ccbc7c37dedfac304e9fff0bf1596b3f6a0e4e"
 
-postcss-scss@^0.4.0, postcss-scss@^0.4.1:
+postcss-scss@^0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-0.4.1.tgz#ad771b81f0f72f5f4845d08aa60f93557653d54c"
   dependencies:
     postcss "^5.2.13"
+
+postcss-scss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-1.0.0.tgz#4957013097973dfd5bd9b1ad8a6dc13456a5d1ba"
+  dependencies:
+    postcss "^6.0.1"
 
 postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.1.1:
   version "2.2.2"
@@ -5476,12 +5508,20 @@ postcss-value-parser@^3.1.1, postcss-value-parser@^3.2.3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^5.0.0, postcss@^5.0.18, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.8, postcss@^5.2.11, postcss@^5.2.12, postcss@^5.2.13, postcss@^5.2.4:
+postcss@^5.0.0, postcss@^5.0.18, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.8, postcss@^5.2.11, postcss@^5.2.13, postcss@^5.2.4:
   version "5.2.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.14.tgz#47b4fbde363fd4f81e547f7e0e43d6d300267330"
   dependencies:
     chalk "^1.1.3"
     js-base64 "^2.1.9"
+    source-map "^0.5.6"
+    supports-color "^3.2.3"
+
+postcss@^6.0.0, postcss@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.1.tgz#000dbd1f8eef217aa368b9a212c5fc40b2a8f3f2"
+  dependencies:
+    chalk "^1.1.3"
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
@@ -7168,9 +7208,9 @@ webpack@^1.12.9:
     watchpack "^0.2.1"
     webpack-core "~0.6.9"
 
-webpack@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.4.1.tgz#15a91dbe34966d8a4b99c7d656efd92a2e5a6f6a"
+webpack@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.5.1.tgz#61742f0cf8af555b87460a9cd8bba2f1e3ee2fce"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
