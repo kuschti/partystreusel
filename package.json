@@ -45,7 +45,7 @@
     "fabricator-assemble": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^6.1.2",
     "gulp-csso": "^3.0.0",
     "gulp-eslint": "^3.0.1",
@@ -54,7 +54,7 @@
     "gulp-imagemin": "^3.2.0",
     "gulp-include": "^2.3.1",
     "gulp-notify": "^3.0.0",
-    "gulp-postcss": "^6.4.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-release-tag": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
@@ -64,21 +64,21 @@
     "gulp-util": "^3.0.7",
     "jstransformer-marked": "^1.0.1",
     "postcss-reporter": "^3.0.0",
-    "postcss-scss": "^0.4.1",
+    "postcss-scss": "^1.0.0",
     "run-sequence": "^1.2.2",
     "script-loader": "^0.7.0",
     "stylelint": "^7.10.1",
     "stylelint-config-partystreusel": "^2.1.0",
     "susy": "^2.2.12",
     "vinyl-named": "^1.1.0",
-    "webpack": "^2.4.1",
+    "webpack": "^2.5.1",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
     "flickity": "^2.0.5",
     "jquery": "^3.2.1",
     "lazysizes": "^3.0.0",
-    "normalize.css": "^6.0.0",
+    "normalize.css": "^7.0.0",
     "picturefill": "^3.0.2"
   }
 }
