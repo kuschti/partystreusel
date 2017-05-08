@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v5.1.1
+* update dependencies
+
 ## v5.1.0
 * update node version & dependencies
 * add input-addon as molecule (instead of form atom)
