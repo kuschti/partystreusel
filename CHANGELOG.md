@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## dev
+* update dependencies
+* update node version (nvrmc) to v8.1.0
+* remove gulp-release-tag plugin
+* rewrite dropdown.js (without jQuery)
+* add element-closest polyfill
+
 ## v5.1.1
 * update dependencies
 
