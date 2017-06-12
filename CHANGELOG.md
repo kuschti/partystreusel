@@ -7,6 +7,7 @@
 * remove scroll-to.js js from partystreusel
 * rewrite dropdown.js (without jQuery)
 * rewrite accordion.js (without jQuery)
+* rewrite offcanvas.js (without jQuery)
 * add element-closest polyfill
 * add moveTo plugin as dependencies
  * use moveTo in accordion.js
