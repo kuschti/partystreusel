@@ -4,8 +4,12 @@
 * update dependencies
 * update node version (nvrmc) to v8.1.0
 * remove gulp-release-tag plugin
+* remove scroll-to.js js from partystreusel
 * rewrite dropdown.js (without jQuery)
+* rewrite accordion.js (without jQuery)
 * add element-closest polyfill
+* add moveTo plugin as dependencies
+ * use moveTo in accordion.js
 
 ## v5.1.1
 * update dependencies
