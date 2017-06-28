@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## v5.2.0
 * update dependencies
 * update node version (nvrmc) to v8.1.0
 * remove gulp-release-tag plugin
