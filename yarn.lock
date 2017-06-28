@@ -476,9 +476,9 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-loader@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.1.0.tgz#3fbf2581f085774bd9642dca9990e6d6c1491144"
+babel-loader@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.1.1.tgz#b87134c8b12e3e4c2a94e0546085bc680a2b8488"
   dependencies:
     find-cache-dir "^1.0.0"
     loader-utils "^1.0.2"
@@ -3584,9 +3584,9 @@ html-minifier@^2.1.7:
     relateurl "0.2.x"
     uglify-js "2.6.x"
 
-html-tags@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-1.1.1.tgz#869f43859f12d9bdc3892419e494a628aa1b204e"
+html-tags@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-2.0.0.tgz#10b30a386085f43cede353cc8fa7cb0deeea668b"
 
 htmlparser2@^3.9.1:
   version "3.9.2"
@@ -6707,9 +6707,9 @@ stylelint-config-partystreusel@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-partystreusel/-/stylelint-config-partystreusel-2.1.0.tgz#c5c3818aec3069734417105b6316100d8cea253f"
 
-stylelint@^7.11.1:
-  version "7.11.1"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.11.1.tgz#c816c658baf7d9e5d167d82273fead37c97ae49d"
+stylelint@^7.12.0:
+  version "7.12.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.12.0.tgz#bf302c265d7c2d6fe79b154a9fd873a80f8b4aa4"
   dependencies:
     autoprefixer "^6.0.0"
     balanced-match "^0.4.0"
@@ -6723,7 +6723,7 @@ stylelint@^7.11.1:
     get-stdin "^5.0.0"
     globby "^6.0.0"
     globjoin "^0.1.4"
-    html-tags "^1.1.1"
+    html-tags "^2.0.0"
     ignore "^3.2.0"
     imurmurhash "^0.1.4"
     known-css-properties "^0.2.0"
