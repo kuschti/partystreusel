@@ -1,21 +1,23 @@
-import $ from 'jquery';
 import Base from '../../../_config/base';
 
 class Dropdown extends Base {
   constructor(el) {
     super(el);
-    this.openClass = 'dropdown--open';
-    this.activeClass = 'btn--active';
-    this.toggler = '.js-dropdown__toggler';
-    this.actions = '.js-dropdown__actions a';
 
-    this.$el.on('click', this.toggler, this.toggleDropdown.bind(this));
-    this.$el.on('click', this.actions, this.toggleDropdown.bind(this));
+    this.config = {
+      openClass: 'dropdown--open',
+      btnActiveClass: 'btn--active',
+      togglerSelector: '.js-dropdown__toggler',
+    };
+
+    this.button = this.$el[0].querySelector(this.config.togglerSelector);
+
+    this.$el[0].addEventListener('click', this.triggerToggle.bind(this));
   }
 
-  toggleDropdown() {
-    $(this.toggler).toggleClass(this.activeClass);
-    return this.$el.toggleClass(this.openClass);
+  triggerToggle() {
+    this.$el[0].classList.toggle(this.config.openClass);
+    this.button.classList.toggle(this.config.btnActiveClass);
   }
 }
 

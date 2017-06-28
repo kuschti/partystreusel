@@ -1,27 +1,42 @@
-import $ from 'jquery';
+import MoveTo from 'moveto';
 import Base from '../../../_config/base';
-import ScrollTo from '../../../materials/molecules/scroll-to/scroll-to';
 
 class Accordion extends Base {
   constructor(el) {
     super(el);
-    this.openClass = 'accordion--open';
-    this.items = this.$el.find('.accordion__item');
-    this.offset = this.$el.data('scroll-offset');
-    this.$el.find('.accordion__title').on('click', this.toggleItem.bind(this));
+
+    this.config = {
+      openClass: 'accordion--open',
+      titleClass: 'accordion__title',
+      itemSelector: '.accordion__item',
+    };
+
+    this.items = this.$el[0].querySelectorAll(this.config.itemSelector);
+    this.offset = this.$el[0].getAttribute('data-mt-tolerance');
+
+    this.$el[0].addEventListener('click', this.toggleItem.bind(this));
   }
 
   toggleItem(e) {
-    const item = $(e.target).closest('.accordion__item');
-    const currentOpen = item.hasClass(this.openClass);
+    const target = e.target;
+    if (target.classList.contains(this.config.titleClass)) {
+      const item = e.target.closest(this.config.itemSelector);
+      const currentOpen = item.classList.contains(this.config.openClass);
 
-    this.items.removeClass(this.openClass);
-    if (!currentOpen) {
-      item.toggleClass(this.openClass);
+      for (let i = 0; i < this.items.length; i += 1) {
+        this.items[i].classList.remove(this.config.openClass);
+      }
+
+      if (!currentOpen) {
+        item.classList.toggle(this.config.openClass);
+      }
+
+      e.preventDefault();
+      const moveTo = new MoveTo({
+        tolerance: this.offset ? this.offset : 0,
+      });
+      moveTo.move(item);
     }
-
-    e.preventDefault();
-    return ScrollTo.to(item, this.offset);
   }
 }
 

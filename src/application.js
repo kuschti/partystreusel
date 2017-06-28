@@ -7,8 +7,10 @@ import Slider from './materials/molecules/slider/slider';
 import Offcanvas from './materials/organisms/offcanvas/offcanvas';
 
 $(() => {
-  $('html').removeClass('no-js');
+  const html = document.querySelector('html');
   const Streusel = window.Streusel || {};
+
+  html.classList.remove('no-js');
 
   Streusel.Topbar = Topbar.init();
   Streusel.Accordion = Accordion.init();

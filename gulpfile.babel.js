@@ -25,8 +25,6 @@ import webpackStream from 'webpack-stream';
 import named from 'vinyl-named';
 import metadata from './package.json';
 
-require('gulp-release-tag')(gulp);
-
 // CONFIG
 // ----------------------------------------
 const partystreuselRoot = 'src';
@@ -74,7 +72,6 @@ const config = {
     // use empty string for kirby setup
     fabricatorAssetFolder: 'assets/',
   },
-  browsers: ['last 2 versions', 'ie >= 10', '> 1% in CH'],
 };
 const buildTasks = [
   'styles',
@@ -106,7 +103,7 @@ gulp.task('clean', () => del([
 gulp.task('styles:fabricator', () => {
   const styles = gulp.src(config.src.styles.fabricator)
     .pipe(sass().on('error', notify.onError()))
-    .pipe(autoprefixer(config.browsers))
+    .pipe(autoprefixer())
     .pipe(gulpif(!config.dev, csso()))
     .pipe(rename('p.css'))
     .pipe(gulp.dest(`${config.dest.assets}/partystreusel/styles`))
@@ -121,7 +118,7 @@ gulp.task('styles:application', () => {
     .pipe(sass({
       includePaths: ['node_modules'],
     }).on('error', notify.onError()))
-    .pipe(autoprefixer(config.browsers))
+    .pipe(autoprefixer())
     .pipe(gulpif(!config.dev, csso()))
     .pipe(gulpif(config.dev, sourcemaps.write('./')))
     .pipe(gulp.dest(`${config.dest.assets}/styles`))
@@ -153,7 +150,7 @@ gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
 gulp.task('styles:doiuse', () => {
   const processors = [
     doiuse({
-      browsers: config.browsers,
+      browsers: metadata.browserlist,
       ignore: ['rem', 'flexbox'],
     }),
     // Pretty reporting config
