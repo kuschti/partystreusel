@@ -188,13 +188,13 @@
       					<a href="docs.html#plugins">Plugins</a>
       				</li>
       				<li>
+      					<a href="docs.html#scroll-to">Scroll To</a>
+      				</li>
+      				<li>
       					<a href="docs.html#Grid">Grid</a>
       				</li>
       				<li>
       					<a href="docs.html#Icons">Icons</a>
-      				</li>
-      				<li>
-      					<a href="docs.html#ScrollTo">Scrollto</a>
       				</li>
       				<li>
       					<a href="docs.html#Offcanvas">Offcanvas</a>
@@ -360,6 +360,14 @@ foo: bar
 
 
 	<div class="f-item-group">
+		<h2 id="scroll-to"><a href="#scroll-to">Scroll To</a></h2>
+		<h3>MoveTo - Scroll To</h3>
+<p>See <a href="https://github.com/hsnaydd/moveTo">https://github.com/hsnaydd/moveTo</a> for documentation.</p>
+
+	</div>
+
+
+	<div class="f-item-group">
 		<h2 id="Grid"><a href="#Grid">Grid</a></h2>
 		<h2>Documentation</h2>
 <h3>Grid Container</h3>
@@ -386,31 +394,6 @@ See <a href="http://susydocs.oddbird.net/en/latest/toolkit/#rows-edges">Susy doc
 <p>Or embed the icon directly with the svg/use html syntax:</p>
 <pre><code>&lt;svg title=&quot;NAME&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; class=&quot;icon icon--NAME&quot;&gt;&lt;use  xlink:href=&quot;#icon--NAME&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
 </code></pre>
-
-	</div>
-
-
-	<div class="f-item-group">
-		<h2 id="ScrollTo"><a href="#ScrollTo">Scrollto</a></h2>
-		<p>Add to your module js</p>
-<pre><code>import ScrollTo from '../../../materials/molecules/scroll_to/scrollTo';
-</code></pre>
-<p>This is just a function. Usage:</p>
-<pre><code># scroll to a[name=linkname]
-ScrollTo.to(link: 'linkname');
-
-# scroll to selector
-ScrollTo.to('selector');
-
-# scroll to jquery element
-ScrollTo.to($('selector'));
-
-# you can scroll to element with a pixeloffset
-# selector will be 12px below window top
-ScrollTo.to('selector', offset: -12)
-</code></pre>
-<p>hint: If element to scroll to could not be found, the function returns
-false. If element was found, return the found jquery element.</p>
 
 	</div>
 

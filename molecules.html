@@ -188,13 +188,13 @@
       					<a href="docs.html#plugins">Plugins</a>
       				</li>
       				<li>
+      					<a href="docs.html#scroll-to">Scroll To</a>
+      				</li>
+      				<li>
       					<a href="docs.html#Grid">Grid</a>
       				</li>
       				<li>
       					<a href="docs.html#Icons">Icons</a>
-      				</li>
-      				<li>
-      					<a href="docs.html#ScrollTo">Scrollto</a>
       				</li>
       				<li>
       					<a href="docs.html#Offcanvas">Offcanvas</a>
@@ -237,7 +237,7 @@
         	</span>
         </div>
       </div><div class="f-item-preview">
-	<section data-scroll-offset="-10" class="accordion js-accordion">
+	<section class="accordion js-accordion" data-mt-tolerance="10">
 	<section class="accordion__item accordion--open">
 		<h1 class="accordion__title">Lorem ipsum dolor</h1>
 		<div class="accordion__content">
@@ -277,7 +277,7 @@
 </section>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;section data-scroll-offset&#x3D;&quot;-10&quot; class&#x3D;&quot;accordion js-accordion&quot;&gt;
+	<pre><code class="language-markup">&lt;section class&#x3D;&quot;accordion js-accordion&quot; data-mt-tolerance&#x3D;&quot;10&quot;&gt;
 	&lt;section class&#x3D;&quot;accordion__item accordion--open&quot;&gt;
 		&lt;h1 class&#x3D;&quot;accordion__title&quot;&gt;Lorem ipsum dolor&lt;/h1&gt;
 		&lt;div class&#x3D;&quot;accordion__content&quot;&gt;
@@ -341,20 +341,20 @@
 	<ol aria-label="You are here:" vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumb">
 	<li property="itemListElement" typeof="ListItem" class="breadcrumb__item">
 		<a href="#" property="item" typeof="WebPage">
-			<span property="name">Stufe 1</span>
-		</a>
+      <span property="name">Stufe 1</span>
+    </a>
 		<meta property="position" content="1" />
 	</li>
 	<li property="itemListElement" typeof="ListItem" class="breadcrumb__item">
 		<a href="#" property="item" typeof="WebPage">
-			<span property="name">Stufe 2</span>
-		</a>
+      <span property="name">Stufe 2</span>
+    </a>
 		<meta property="position" content="2" />
 	</li>
 	<li property="itemListElement" typeof="ListItem" class="breadcrumb__item">
 		<a href="#" property="item" typeof="WebPage">
-			<span property="name">Stufe 3</span>
-		</a>
+      <span property="name">Stufe 3</span>
+    </a>
 		<meta property="position" content="3" />
 	</li>
 	<li property="itemListElement" typeof="ListItem" class="breadcrumb__item breadcrumb__item--active">
@@ -367,20 +367,20 @@
 	<pre><code class="language-markup">&lt;ol aria-label&#x3D;&quot;You are here:&quot; vocab&#x3D;&quot;http://schema.org/&quot; typeof&#x3D;&quot;BreadcrumbList&quot; class&#x3D;&quot;breadcrumb&quot;&gt;
 	&lt;li property&#x3D;&quot;itemListElement&quot; typeof&#x3D;&quot;ListItem&quot; class&#x3D;&quot;breadcrumb__item&quot;&gt;
 		&lt;a href&#x3D;&quot;#&quot; property&#x3D;&quot;item&quot; typeof&#x3D;&quot;WebPage&quot;&gt;
-			&lt;span property&#x3D;&quot;name&quot;&gt;Stufe 1&lt;/span&gt;
-		&lt;/a&gt;
+      &lt;span property&#x3D;&quot;name&quot;&gt;Stufe 1&lt;/span&gt;
+    &lt;/a&gt;
 		&lt;meta property&#x3D;&quot;position&quot; content&#x3D;&quot;1&quot; /&gt;
 	&lt;/li&gt;
 	&lt;li property&#x3D;&quot;itemListElement&quot; typeof&#x3D;&quot;ListItem&quot; class&#x3D;&quot;breadcrumb__item&quot;&gt;
 		&lt;a href&#x3D;&quot;#&quot; property&#x3D;&quot;item&quot; typeof&#x3D;&quot;WebPage&quot;&gt;
-			&lt;span property&#x3D;&quot;name&quot;&gt;Stufe 2&lt;/span&gt;
-		&lt;/a&gt;
+      &lt;span property&#x3D;&quot;name&quot;&gt;Stufe 2&lt;/span&gt;
+    &lt;/a&gt;
 		&lt;meta property&#x3D;&quot;position&quot; content&#x3D;&quot;2&quot; /&gt;
 	&lt;/li&gt;
 	&lt;li property&#x3D;&quot;itemListElement&quot; typeof&#x3D;&quot;ListItem&quot; class&#x3D;&quot;breadcrumb__item&quot;&gt;
 		&lt;a href&#x3D;&quot;#&quot; property&#x3D;&quot;item&quot; typeof&#x3D;&quot;WebPage&quot;&gt;
-			&lt;span property&#x3D;&quot;name&quot;&gt;Stufe 3&lt;/span&gt;
-		&lt;/a&gt;
+      &lt;span property&#x3D;&quot;name&quot;&gt;Stufe 3&lt;/span&gt;
+    &lt;/a&gt;
 		&lt;meta property&#x3D;&quot;position&quot; content&#x3D;&quot;3&quot; /&gt;
 	&lt;/li&gt;
 	&lt;li property&#x3D;&quot;itemListElement&quot; typeof&#x3D;&quot;ListItem&quot; class&#x3D;&quot;breadcrumb__item breadcrumb__item--active&quot;&gt;
@@ -578,21 +578,21 @@
         	</span>
         </div>
       </div><div class="f-item-preview">
-	<div class="form__field-container">
+	<div>
 	<label for="input1">Label 1</label>
-	<span class="input-addon">
-    <input id="input1" type="text" name="input1" placeholder="input1 placeholder" class="input-addon__field"/>
-    <button href="#" class="btn btn--primary input-addon__item">Search</button>
-  </span>
+	<div class="input-addon">
+		<input id="input1" type="text" name="input1" placeholder="input1 placeholder" class="input-addon__field" />
+		<button href="#" class="btn btn--primary input-addon__item">Search</button>
+	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;form__field-container&quot;&gt;
+	<pre><code class="language-markup">&lt;div&gt;
 	&lt;label for&#x3D;&quot;input1&quot;&gt;Label 1&lt;/label&gt;
-	&lt;span class&#x3D;&quot;input-addon&quot;&gt;
-    &lt;input id&#x3D;&quot;input1&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;input1&quot; placeholder&#x3D;&quot;input1 placeholder&quot; class&#x3D;&quot;input-addon__field&quot;/&gt;
-    &lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn--primary input-addon__item&quot;&gt;Search&lt;/button&gt;
-  &lt;/span&gt;
+	&lt;div class&#x3D;&quot;input-addon&quot;&gt;
+		&lt;input id&#x3D;&quot;input1&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;input1&quot; placeholder&#x3D;&quot;input1 placeholder&quot; class&#x3D;&quot;input-addon__field&quot; /&gt;
+		&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn--primary input-addon__item&quot;&gt;Search&lt;/button&gt;
+	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
@@ -608,21 +608,25 @@
         	</span>
         </div>
       </div><div class="f-item-preview">
-	<div class="input-overlay">
+	<div>
 	<label for="input2">Label 2</label>
-	<input id="input2" type="search" name="input2" placeholder="input2 placeholder" class="input-overlay__input" />
-	<button href="#" class="btn btn--icon input-overlay__button"><svg class="icon icon--search " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<div class="input-addon input-addon--overlay">
+		<input id="input2" type="search" name="input2" placeholder="input2 placeholder" class="input-addon__field" />
+		<button href="#" class="btn btn--icon input-addon__item"><svg class="icon icon--search " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <use xlink:href="#icon--search" />
 </svg></button>
+	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;input-overlay&quot;&gt;
+	<pre><code class="language-markup">&lt;div&gt;
 	&lt;label for&#x3D;&quot;input2&quot;&gt;Label 2&lt;/label&gt;
-	&lt;input id&#x3D;&quot;input2&quot; type&#x3D;&quot;search&quot; name&#x3D;&quot;input2&quot; placeholder&#x3D;&quot;input2 placeholder&quot; class&#x3D;&quot;input-overlay__input&quot; /&gt;
-	&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn--icon input-overlay__button&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--search &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
+	&lt;div class&#x3D;&quot;input-addon input-addon--overlay&quot;&gt;
+		&lt;input id&#x3D;&quot;input2&quot; type&#x3D;&quot;search&quot; name&#x3D;&quot;input2&quot; placeholder&#x3D;&quot;input2 placeholder&quot; class&#x3D;&quot;input-addon__field&quot; /&gt;
+		&lt;button href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn--icon input-addon__item&quot;&gt;&lt;svg class&#x3D;&quot;icon icon--search &quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;&gt;
   &lt;use xlink:href&#x3D;&quot;#icon--search&quot; /&gt;
 &lt;/svg&gt;&lt;/button&gt;
+	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
@@ -780,6 +784,8 @@
 	<input class="switch__input" type="checkbox" name="Switch 1" id="switchid" />
 	<label class="switch__label" for="switchid">
     <span class="switch__text">Published</span>
+    <span class="switch__active" aria-hidden="true">Yes</span>
+    <span class="switch__inactive" aria-hidden="true">No</span>
   </label>
 </div>
 </div>
@@ -788,6 +794,8 @@
 	&lt;input class&#x3D;&quot;switch__input&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;Switch 1&quot; id&#x3D;&quot;switchid&quot; /&gt;
 	&lt;label class&#x3D;&quot;switch__label&quot; for&#x3D;&quot;switchid&quot;&gt;
     &lt;span class&#x3D;&quot;switch__text&quot;&gt;Published&lt;/span&gt;
+    &lt;span class&#x3D;&quot;switch__active&quot; aria-hidden&#x3D;&quot;true&quot;&gt;Yes&lt;/span&gt;
+    &lt;span class&#x3D;&quot;switch__inactive&quot; aria-hidden&#x3D;&quot;true&quot;&gt;No&lt;/span&gt;
   &lt;/label&gt;
 &lt;/div&gt;</code></pre>
 </div>
