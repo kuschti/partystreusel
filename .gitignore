@@ -10,4 +10,4 @@ node_modules
 .project
 .publish
 dist/
-assets/
+/assets/
