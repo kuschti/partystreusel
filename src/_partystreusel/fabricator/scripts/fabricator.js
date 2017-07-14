@@ -281,6 +281,28 @@ fabricator.singleItemToggle = function () {
 
 };
 
+/**
+ * Handler for single item code toggling
+ */
+fabricator.bgToggle = function () {
+
+	var itemToggleSingle = document.querySelectorAll('.f-item-group [data-f-toggle-bg]');
+
+	// toggle single
+	var toggleBG = function (e) {
+		var group = this.parentNode.parentNode.parentNode,
+			type = e.currentTarget.getAttribute('data-f-toggle-bg');
+
+		group.querySelector('.f-item-preview').classList.toggle('f-item--no-bg');
+	};
+
+	for (var i = 0; i < itemToggleSingle.length; i++) {
+		itemToggleSingle[i].addEventListener('click', toggleBG);
+	}
+
+	return this;
+
+};
 
 /**
  * Automatically select code when code block is clicked
@@ -346,7 +368,8 @@ fabricator.setInitialMenuState = function () {
 		.setInitialMenuState()
 		.menuToggle()
 		.allItemsToggles()
-		.singleItemToggle()
+    .singleItemToggle()
+    .bgToggle()
 		.buildColorChips()
 		.setActiveItem()
 		.bindCodeAutoSelect();
