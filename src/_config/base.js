@@ -15,16 +15,11 @@ class Base {
     return `[data-${prefix}-${this.className.toLowerCase()}]`;
   }
 
-  /* eslint-disable no-console */
   static init(element = $('body')) {
     const selector = this.selector();
     const elementsToInit = element.find(selector).addBack(selector).filter((i, el) => !($(el).data('object') != null));
-    return elementsToInit.map((i, el) => {
-      console.log(`Streusel init: ${this.className}`);
-      return new this(el);
-    });
+    return elementsToInit.map((i, el) => new this(el));
   }
-  /* eslint-enable no-console */
 }
 
 export default Base;
