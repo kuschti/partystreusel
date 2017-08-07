@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## dev
+## v5.3.0
 * update dependencies
 * update pattern item view with a "transparent" background
 * update pattern control styles
