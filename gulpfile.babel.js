@@ -336,9 +336,8 @@ gulp.task('deploy:github', () => {
   return pages;
 });
 
-gulp.task('deploy', () => {
+gulp.task('deploy', ['clean'], () => {
   runSequence(
-    'clean',
     buildTasks,
     'deploy:github',
   );
