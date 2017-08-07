@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## dev
+* update dependencies
+* update pattern item view with a "transparent" background
+* update pattern control styles
+* add pattern background toggle button
+
 ## v5.2.0
 * update dependencies
 * update node version (nvrmc) to v8.1.0

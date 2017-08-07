@@ -10,11 +10,18 @@
     width: percentage(1 / 3);
     margin: 0;
     padding: 1rem 0;
-    color: if($theme == $theme-dark, color(normal), color(light));
+    color: if($theme == $theme-dark, color(normal), color(accent));
+    background-color: color(ultralight);
+
+    &:hover {
+      color: color(accent);
+      background-color: color(light);
+    }
 
     &.f-active {
-      box-shadow: inset 0 0.25rem 0 0 color(accent);
-      color: color(menu-text);
+      // box-shadow: inset 0 0.25rem 0 0 color(accent);
+      color: color(bright);
+      background-color: color(accent);
     }
 
     svg {
@@ -49,17 +56,31 @@
 
 .f-control-bar {
   @include clearfix;
-  padding: 1rem 0;
+  padding: 0.4rem 0;
 }
 
 .f-menu-toggle {
   cursor: pointer;
   vertical-align: middle;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color(ultralight);
+
+  &:hover {
+    background-color: color(light);
+  }
 
   svg {
     display: block;
     float: left;
     margin-bottom: -1px;
+
+    use {
+      fill: color(accent);
+    }
   }
 }
 //stylelint-enable no-descending-specificity

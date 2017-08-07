@@ -9,5 +9,6 @@ log/
 node_modules
 .project
 .publish
+.chrome
 dist/
-assets/
+/assets/

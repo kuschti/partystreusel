@@ -43,6 +43,11 @@
   @include clearfix;
   border: 1px solid color(ultralight);
   padding: 1rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVvoWCgBGAMmMQACQAAuK72AWHjK4wAAAAASUVORK5CYII=');
+
+  &.f-item--no-bg {
+    background-image: none;
+  }
 }
 
 .f-item-border-bottom {
@@ -67,16 +72,21 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 0.5rem;
+  float: right;
 
   .f-control {
-    width: 0.875rem;
-    height: 0.875rem;
-    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
     float: left;
-    color: color(light);
+    color: color(accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color(ultralight);
+    border: 1px solid color(light);
 
     &:hover {
-      color: color(normal);
+      background-color: color(light);
     }
 
     use {

@@ -141,7 +141,7 @@ gulp.task('styles:lint', () => {
   return gulp.src([
     `${partystreuselRoot}/**/*.scss`,
   ])
-  .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
+    .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
 gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
@@ -164,7 +164,7 @@ gulp.task('styles:doiuse', () => {
     `${partystreuselRoot}/**/*.scss`,
     `!${config.src.styles.fabricatorpartials}`,
   ])
-  .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
+    .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
 
@@ -336,9 +336,8 @@ gulp.task('deploy:github', () => {
   return pages;
 });
 
-gulp.task('deploy', () => {
+gulp.task('deploy', ['clean'], () => {
   runSequence(
-    'clean',
     buildTasks,
     'deploy:github',
   );
