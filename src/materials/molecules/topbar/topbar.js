@@ -11,11 +11,6 @@ class Topbar extends Base {
       firstLvlClass: 'topbar__item',
       sublistSelector: '.topbar__sub-list',
     };
-
-    // const menuButton = this.$el[0].querySelector('.topbar__mobile-menu');
-    // const firstLvlLinks = this.$el[0].querySelectorAll('.topbar__item > .topbar__link');
-
-    // menuButton.addEventListener('click', this.toggle.bind(this));
     this.$el[0].addEventListener('click', this.eventHandler.bind(this));
   }
 
