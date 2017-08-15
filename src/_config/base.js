@@ -1,10 +1,9 @@
-import $ from 'jquery';
+import arrayFrom from 'array-from';
 import Streusel from './streusel';
 
 class Base {
   constructor(el) {
-    this.$el = $(el);
-    this.$el.data('object', this);
+    this.$el = el;
   }
 
   static selector() {
@@ -15,10 +14,12 @@ class Base {
     return `[data-${prefix}-${this.className.toLowerCase()}]`;
   }
 
-  static init(element = $('body')) {
+  static init(element = document.body) {
     const selector = this.selector();
-    const elementsToInit = element.find(selector).addBack(selector).filter((i, el) => !($(el).data('object') != null));
-    return elementsToInit.map((i, el) => new this(el));
+    const elementsToInit = element.querySelectorAll(selector);
+
+    // return elementsToInit.forEach(el => new this(el), this);
+    return arrayFrom(elementsToInit).forEach(el => new this(el), this);
   }
 }
 

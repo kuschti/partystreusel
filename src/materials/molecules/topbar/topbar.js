@@ -3,6 +3,7 @@ import Base from '../../../_config/base';
 class Topbar extends Base {
   constructor(el) {
     super(el);
+    console.log('topbar');
 
     this.config = {
       openClass: 'topbar--open',
@@ -11,7 +12,7 @@ class Topbar extends Base {
       firstLvlClass: 'topbar__item',
       sublistSelector: '.topbar__sub-list',
     };
-    this.$el[0].addEventListener('click', this.eventHandler.bind(this));
+    this.$el.addEventListener('click', this.eventHandler.bind(this));
   }
 
   eventHandler(e) {
@@ -23,7 +24,7 @@ class Topbar extends Base {
   }
 
   toggleMenu(e) {
-    this.$el[0].classList.toggle(this.config.openClass);
+    this.$el.classList.toggle(this.config.openClass);
     e.preventDefault();
   }
 

@@ -82,11 +82,11 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
+    "array-from": "^2.1.1",
     "autoprefixer": "^7.1.2",
     "browserslist": "^2.3.1",
     "element-closest": "^2.0.2",
     "flickity": "^2.0.9",
-    "jquery": "^3.2.1",
     "lazysizes": "^4.0.0-rc3",
     "moveto": "^1.6.1",
     "normalize.css": "^7.0.0",

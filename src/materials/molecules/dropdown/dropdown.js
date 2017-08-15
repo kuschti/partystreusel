@@ -10,13 +10,13 @@ class Dropdown extends Base {
       togglerSelector: '.js-dropdown__toggler',
     };
 
-    this.button = this.$el[0].querySelector(this.config.togglerSelector);
+    this.button = this.$el.querySelector(this.config.togglerSelector);
 
-    this.$el[0].addEventListener('click', this.triggerToggle.bind(this));
+    this.$el.addEventListener('click', this.triggerToggle.bind(this));
   }
 
   triggerToggle() {
-    this.$el[0].classList.toggle(this.config.openClass);
+    this.$el.classList.toggle(this.config.openClass);
     this.button.classList.toggle(this.config.btnActiveClass);
   }
 }
