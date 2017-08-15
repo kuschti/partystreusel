@@ -1,19 +1,15 @@
 <section>
   <div class="tab js-tab">
-    <ul role="tablist" class="tab__nav">
+    <ul role="tablist" class="tab__nav" data-tabs>
       {{#each tab}}
-        <li role="presentation" class="tab__nav-item{{#if active}} tab__nav-item--active{{/if}}">
-          <a href="#panel{{@index}}" role="tab">{{title}}</a>
+        <li role="presentation" class="tab__nav-item{{#if active}} tab--active{{/if}}">
+          <a href="#panel{{@index}}" role="tab" data-tab>{{title}}</a>
         </li>
       {{/each}}
-      <!-- <li role="presentation" class="tab__nav-item"><a href="#panel2" role="tab">Tab second 2</a></li>
-      <li role="presentation" class="tab__nav-item{{#if active}}tab__nav-item--active{{/if}}"><a href="#panel3" role="tab">Tab active 3</a></li>
-      <li role="presentation" class="tab__nav-item"><a href="#panel4" role="tab">Tab long title 4</a></li>
-      <li role="presentation" class="tab__nav-item"><a href="#panel5" role="tab">Tab long title 5</a></li> -->
     </ul>
-    <div class="tab__panels">
+    <div class="tab__panels" data-tabs-content>
       {{#each tab}}
-        <section role="tabpanel" id="panel{{@index}}" class="tab__panel{{#if active}} tab__panel--active{{/if}}">
+        <section role="tabpanel" id="panel{{@index}}" class="tab__panel{{#if active}} tab--active{{/if}}" data-tabs-pane>
           {{#if content}}
             {{{material content this}}}
           {{else}}
