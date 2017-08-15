@@ -77,7 +77,7 @@ const buildTasks = [
   'styles',
   'scripts:fabricator',
   'scripts:application',
-  'polyfills',
+  'scripts:polyfills',
   'scripts:vendor',
   'fonts',
   'images',
@@ -215,7 +215,7 @@ gulp.task('scripts:application', ['scripts:application:lint', 'scripts:applicati
     .pipe(gulp.dest(`${config.dest.assets}/scripts/`));
 });
 
-gulp.task('polyfills', () => {
+gulp.task('scripts:polyfills', () => {
   gulp.src(config.src.scripts.polyfills)
     .pipe(named())
     .pipe(webpackStream({
@@ -386,7 +386,10 @@ gulp.task('serve', () => {
   gulp.watch([config.src.styles.config, config.src.styles.applicationpartials], ['styles:application:watch']);
 
   gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
-  gulp.watch(config.src.scripts.fabricator, ['fabricator:watch']).on('change', webpackCache);
+  gulp.watch(config.src.scripts.fabricator, ['scripts:fabricator:watch']).on('change', webpackCache);
+
+  gulp.task('scripts:polyfills:watch', ['scripts:polyfills'], browserSync.reload);
+  gulp.watch(config.src.scripts.polyfills, ['scripts:polyfills:watch']).on('change', webpackCache);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
   gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);
