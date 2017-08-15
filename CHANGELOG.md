@@ -4,7 +4,12 @@
 * update dependencies
 * update pattern item view with a "transparent" background
 * update pattern control styles
+* add prism as dependency
 * add pattern background toggle button
+* rewrite tab (without jQuery)
+* rewrite topbar (without jQuery)
+* rewrite dom ready (without jQuery)
+* remove jQuery
 
 ## v5.2.0
 * update dependencies
