@@ -1,9 +1,9 @@
-import Topbar from './materials/molecules/topbar/topbar';
-import Accordion from './materials/molecules/accordion/accordion';
-import Tab from './materials/molecules/tab/tab';
-import Dropdown from './materials/molecules/dropdown/dropdown';
-import Slider from './materials/molecules/slider/slider';
-import Offcanvas from './materials/organisms/offcanvas/offcanvas';
+import Topbar from './02-molecules/topbar/topbar';
+import Accordion from './02-molecules/accordion/accordion';
+import Tab from './02-molecules/tab/tab';
+import Dropdown from './02-molecules/dropdown/dropdown';
+import Slider from './02-molecules/slider/slider';
+import Offcanvas from './03-organisms/offcanvas/offcanvas';
 
 function ready(fn) {
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {

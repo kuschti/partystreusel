@@ -1,5 +1,5 @@
 import MoveTo from 'moveto';
-import Base from '../../../_config/base';
+import Base from '../../_config/base';
 
 class Accordion extends Base {
   constructor(el) {

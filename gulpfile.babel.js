@@ -4,7 +4,6 @@ import gulpif from 'gulp-if';
 import del from 'del';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
-import assemble from 'fabricator-assemble';
 import webpack from 'webpack';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
@@ -27,7 +26,7 @@ import metadata from './package.json';
 
 // CONFIG
 // ----------------------------------------
-const partystreuselRoot = 'src';
+const partystreuselRoot = 'components';
 const config = {
   dev: gutil.env.dev === true,
   src: {
@@ -42,7 +41,7 @@ const config = {
       config: `${partystreuselRoot}/_config/{base,streusel}.js`,
       polyfills: `${partystreuselRoot}/polyfills.js`,
       vendorFiles: `${partystreuselRoot}/vendor/*.js`,
-      materials: `${partystreuselRoot}/materials/**/*.js`,
+      materials: `${partystreuselRoot}/**/*.js`,
       applicationEntryPoint: `${partystreuselRoot}/application.js`,
       applicationBundle: 'scripts/application.js?(.map)',
       eslintRc: '.eslintrc.js',
@@ -54,16 +53,16 @@ const config = {
       fabricator: `${partystreuselRoot}/_partystreusel/fabricator/styles/fabricator.scss`,
       fabricatorpartials: `${partystreuselRoot}/_partystreusel/**/*.scss`,
       application: `${partystreuselRoot}/application.scss`,
-      applicationpartials: `${partystreuselRoot}/materials/**/*.scss`,
+      applicationpartials: `${partystreuselRoot}/**/*.scss`,
     },
-    fonts: `${partystreuselRoot}/materials/atoms/fonts/*.{eot,woff,woff2,ttf,svg}`,
+    fonts: `${partystreuselRoot}/01-atoms/fonts/*.{eot,woff,woff2,ttf,svg}`,
     imagesfolder: `${partystreuselRoot}/images/`,
     images: [
       `${partystreuselRoot}/images/**/*`,
       `!${partystreuselRoot}/images/icons/*`,
     ],
     icons: `${partystreuselRoot}/images/icons/`,
-    iconsystem: `${partystreuselRoot}/materials/atoms/icons`,
+    iconsystem: `${partystreuselRoot}/01-atoms/icons`,
   },
   dest: {
     dir: 'dist',
@@ -296,34 +295,34 @@ gulp.task('fonts', () => {
   return fonts;
 });
 
-// Assemble
+// odable
 // ----------------------------------------
 gulp.task('assemble', (done) => {
-  assemble({
-    dest: config.dest.dir,
-    logErrors: config.dev,
-    layout: 'defaultTemplate',
-    layouts: `${partystreuselRoot}/materials/templates/*.html`,
-    layoutIncludes: `${config.src.fabricator}/layouts/includes/*`,
-    views: [`${config.src.fabricator}/views/**/*`, `${partystreuselRoot}/pages/**/*`],
-    materials: `${partystreuselRoot}/materials/**/!(_)*.html`,
-    data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
-    docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
-    helpers: {
-      assetsFolder() {
-        return config.dest.fabricatorAssetFolder;
-      },
-      currentVersion() {
-        return metadata.version;
-      },
-      projectName() {
-        return metadata.name;
-      },
-      increment(value) {
-        return parseInt(value, 10) + 1;
-      },
-    },
-  });
+  // assemble({
+  //   dest: config.dest.dir,
+  //   logErrors: config.dev,
+  //   layout: 'defaultTemplate',
+  //   layouts: `${partystreuselRoot}/materials/templates/*.html`,
+  //   layoutIncludes: `${config.src.fabricator}/layouts/includes/*`,
+  //   views: [`${config.src.fabricator}/views/**/*`, `${partystreuselRoot}/pages/**/*`],
+  //   materials: `${partystreuselRoot}/materials/**/!(_)*.html`,
+  //   data: `${partystreuselRoot}/materials/**/*.{json,yml}`,
+  //   docs: [`${config.src.docs}/**/*.md`, `${partystreuselRoot}/materials/**/*.md`],
+  //   helpers: {
+  //     assetsFolder() {
+  //       return config.dest.fabricatorAssetFolder;
+  //     },
+  //     currentVersion() {
+  //       return metadata.version;
+  //     },
+  //     projectName() {
+  //       return metadata.name;
+  //     },
+  //     increment(value) {
+  //       return parseInt(value, 10) + 1;
+  //     },
+  //   },
+  // });
   done();
 });
 

@@ -1,5 +1,5 @@
 import tabby from 'tabbyjs';
-import Base from '../../../_config/base';
+import Base from '../../_config/base';
 
 class Tab extends Base {
   constructor(el) {
