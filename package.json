@@ -25,7 +25,9 @@
   },
   "scripts": {
     "start": "gulp --dev",
-    "build": "gulp --production",
+    "fractal": "fractal start --sync",
+    "dev": "cross-env NODE_ENV=development webpack --progress --watch",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "gulp deploy",
     "test": "gulp styles:lint && gulp styles:doiuse && gulp scripts:application:lint"
   },
@@ -43,6 +45,7 @@
     "babel-plugin-transform-proto-to-assign": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.13",
+    "cross-env": "^5.0.5",
     "del": "^3.0.0",
     "doiuse": "^3.0.0",
     "eslint": "^4.4.1",

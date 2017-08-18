@@ -1,52 +1,35 @@
 import path from 'path';
 import webpack from 'webpack';
 
-module.exports = (gulpConfig, target) => {
+module.exports = () => {
   let config = {};
 
-  if (target === 'streusel') {
-    config = {
-      devtool: 'source-map',
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: [/node_modules/],
-          },
-        ],
-      },
-      resolve: {
-        extensions: ['.js'],
-      },
-      plugins: [],
-    };
-  } else if (target === 'fabricator') {
-    config = {
-      entry: {
-        'partystreusel/scripts/p': gulpConfig.src.scripts.fabricator,
-      },
-      output: {
-        path: path.resolve(__dirname, gulpConfig.dest.assets),
-        filename: '[name].js',
-      },
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /(node_modules|prism\.js)/,
-          },
-        ],
-      },
-      plugins: [],
-      cache: {},
-    };
-  } else {
-    config = {};
-  }
+  config = {
+    entry: {
+      application: './components/application.js',
+      polyfills: './components/polyfills.js',
+    },
+    output: {
+      path: path.resolve(__dirname, './public/js/'),
+      filename: '[name].js',
+    },
+    devtool: 'source-map',
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: [/node_modules/],
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.js'],
+    },
+    plugins: [],
+  };
 
-  if (!gulpConfig.dev) {
+  if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
       new webpack.optimize.UglifyJsPlugin(),
     );

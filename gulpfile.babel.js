@@ -33,10 +33,6 @@ const config = {
     docs: 'docs',
     fabricator: `./${partystreuselRoot}/_partystreusel/fabricator`,
     scripts: {
-      fabricator: [
-        `./${partystreuselRoot}/_partystreusel/fabricator/scripts/fabricator.js`,
-        `./${partystreuselRoot}/_partystreusel/fabricator/scripts/partystreusel.js`,
-      ],
       application: `${partystreuselRoot}/*.js`,
       config: `${partystreuselRoot}/_config/{base,streusel}.js`,
       polyfills: `${partystreuselRoot}/polyfills.js`,
@@ -50,8 +46,6 @@ const config = {
     },
     styles: {
       config: `${partystreuselRoot}/_config/*.scss`,
-      fabricator: `${partystreuselRoot}/_partystreusel/fabricator/styles/fabricator.scss`,
-      fabricatorpartials: `${partystreuselRoot}/_partystreusel/**/*.scss`,
       application: `${partystreuselRoot}/application.scss`,
       applicationpartials: `${partystreuselRoot}/**/*.scss`,
     },
@@ -67,14 +61,10 @@ const config = {
   dest: {
     dir: 'dist',
     assets: 'dist/assets',
-    // used for include path in fabricator assemble, default is 'assets/'.
-    // use empty string for kirby setup
-    fabricatorAssetFolder: 'assets/',
   },
 };
 const buildTasks = [
   'styles',
-  'scripts:fabricator',
   'scripts:application',
   'scripts:polyfills',
   'scripts:vendor',
@@ -86,10 +76,7 @@ const buildTasks = [
 
 // WEBPACK
 // ----------------------------------------
-const webpackConfigFabricator = require('./webpack.config.babel')(config, 'fabricator');
 const webpackConfigStreusel = require('./webpack.config.babel')(config, 'streusel');
-
-const webpackCompiler = webpack(webpackConfigFabricator);
 
 // CLEAN
 // ----------------------------------------
@@ -99,18 +86,6 @@ gulp.task('clean', () => del([
 
 // STYLES
 // ----------------------------------------
-gulp.task('styles:fabricator', () => {
-  const styles = gulp.src(config.src.styles.fabricator)
-    .pipe(sass().on('error', notify.onError()))
-    .pipe(autoprefixer())
-    .pipe(gulpif(!config.dev, csso()))
-    .pipe(rename('p.css'))
-    .pipe(gulp.dest(`${config.dest.assets}/partystreusel/styles`))
-    .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
-
-  return styles;
-});
-
 gulp.task('styles:application', () => {
   const styles = gulp.src(config.src.styles.application)
     .pipe(gulpif(config.dev, sourcemaps.init()))
@@ -143,7 +118,7 @@ gulp.task('styles:lint', () => {
     .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
-gulp.task('styles', ['styles:lint', 'styles:fabricator', 'styles:application']);
+gulp.task('styles', ['styles:lint', 'styles:application']);
 
 // Check styles wit caniuse/doiuse
 gulp.task('styles:doiuse', () => {
@@ -159,32 +134,14 @@ gulp.task('styles:doiuse', () => {
     }),
   ];
 
-  return gulp.src([
-    `${partystreuselRoot}/**/*.scss`,
-    `!${config.src.styles.fabricatorpartials}`,
-  ])
+  return gulp.src(
+    `${partystreuselRoot}/**/*.scss`)
     .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
 
 // SCRIPTS
 // ----------------------------------------
-gulp.task('scripts:fabricator', (done) => {
-  webpackCompiler.run((error, result) => {
-    if (error) {
-      gutil.log(gutil.colors.red(error));
-      notify.onError();
-    }
-    const resultJson = result.toJson();
-    if (resultJson.errors.length) {
-      resultJson.errors.forEach(() => {
-        gutil.log(gutil.colors.red(error));
-      });
-    }
-    done();
-  });
-});
-
 gulp.task('scripts:application:lint', () => {
   gulp.src([
     config.src.scripts.application,
@@ -350,30 +307,7 @@ gulp.task('serve', () => {
       baseDir: config.dest.dir,
     },
     notify: false,
-    logPrefix: 'FABRICATOR',
   });
-
-  /**
-   * Because webpackCompiler.watch() isn't being used
-   * manually remove the changed file path from the cache
-   */
-  function webpackCache(e) {
-    const keys = Object.keys(webpackConfigFabricator.cache);
-    let keyIndex;
-    let key;
-    let matchedKey;
-
-    for (keyIndex = 0; keyIndex < keys.length; keyIndex += 1) {
-      key = keys[keyIndex];
-      if (key.indexOf(e.path) !== -1) {
-        matchedKey = key;
-        break;
-      }
-    }
-    if (matchedKey) {
-      delete webpackConfigFabricator.cache[matchedKey];
-    }
-  }
 
   gulp.task('assemble:watch', ['assemble'], browserSync.reload);
   gulp.watch([`${config.src.docs}/*.md`, `${partystreuselRoot}/**/*.{html,md,json,yml}`], ['assemble:watch']);
@@ -385,10 +319,10 @@ gulp.task('serve', () => {
   gulp.watch([config.src.styles.config, config.src.styles.applicationpartials], ['styles:application:watch']);
 
   gulp.task('scripts:fabricator:watch', ['scripts:fabricator'], browserSync.reload);
-  gulp.watch(config.src.scripts.fabricator, ['scripts:fabricator:watch']).on('change', webpackCache);
+  gulp.watch(config.src.scripts.fabricator, ['scripts:fabricator:watch']);
 
   gulp.task('scripts:polyfills:watch', ['scripts:polyfills'], browserSync.reload);
-  gulp.watch(config.src.scripts.polyfills, ['scripts:polyfills:watch']).on('change', webpackCache);
+  gulp.watch(config.src.scripts.polyfills, ['scripts:polyfills:watch']);
 
   gulp.task('scripts:application:watch', ['scripts:application'], browserSync.reload);
   gulp.watch([config.src.scripts.application, config.src.scripts.materials, config.src.scripts.config], ['scripts:application:watch']);
