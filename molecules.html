@@ -859,41 +859,37 @@
       </div><div class="f-item-preview">
 	<section>
 	<div class="tab js-tab">
-		<ul role="tablist" class="tab__nav">
+		<ul role="tablist" class="tab__nav" data-tabs>
 			<li role="presentation" class="tab__nav-item">
-				<a href="#panel0" role="tab">Tab titel 1</a>
-			</li>
-			<li role="presentation" class="tab__nav-item">
-				<a href="#panel1" role="tab">Tab titel 2</a>
-			</li>
-			<li role="presentation" class="tab__nav-item tab__nav-item--active">
-				<a href="#panel2" role="tab">Tab titel 3</a>
+				<a href="#panel0" role="tab" data-tab>Tab titel 1</a>
 			</li>
 			<li role="presentation" class="tab__nav-item">
-				<a href="#panel3" role="tab">Tab titel 4</a>
+				<a href="#panel1" role="tab" data-tab>Tab titel 2</a>
+			</li>
+			<li role="presentation" class="tab__nav-item tab--active">
+				<a href="#panel2" role="tab" data-tab>Tab titel 3</a>
 			</li>
 			<li role="presentation" class="tab__nav-item">
-				<a href="#panel4" role="tab">Tab titel 5</a>
+				<a href="#panel3" role="tab" data-tab>Tab titel 4</a>
 			</li>
-			<!-- <li role="presentation" class="tab__nav-item"><a href="#panel2" role="tab">Tab second 2</a></li>
-      <li role="presentation" class="tab__nav-item"><a href="#panel3" role="tab">Tab active 3</a></li>
-      <li role="presentation" class="tab__nav-item"><a href="#panel4" role="tab">Tab long title 4</a></li>
-      <li role="presentation" class="tab__nav-item"><a href="#panel5" role="tab">Tab long title 5</a></li> -->
+			<li role="presentation" class="tab__nav-item">
+				<a href="#panel4" role="tab" data-tab>Tab titel 5</a>
+			</li>
 		</ul>
-		<div class="tab__panels">
-			<section role="tabpanel" id="panel0" class="tab__panel">
+		<div class="tab__panels" data-tabs-content>
+			<section role="tabpanel" id="panel0" class="tab__panel" data-tabs-pane>
 				Lorem ipsum 0
 			</section>
-			<section role="tabpanel" id="panel1" class="tab__panel">
+			<section role="tabpanel" id="panel1" class="tab__panel" data-tabs-pane>
 				Lorem ipsum 1
 			</section>
-			<section role="tabpanel" id="panel2" class="tab__panel tab__panel--active">
+			<section role="tabpanel" id="panel2" class="tab__panel tab--active" data-tabs-pane>
 				Lorem ipsum 2
 			</section>
-			<section role="tabpanel" id="panel3" class="tab__panel">
+			<section role="tabpanel" id="panel3" class="tab__panel" data-tabs-pane>
 				Lorem ipsum 3
 			</section>
-			<section role="tabpanel" id="panel4" class="tab__panel">
+			<section role="tabpanel" id="panel4" class="tab__panel" data-tabs-pane>
 				Lorem ipsum 4
 			</section>
 		</div>
@@ -903,41 +899,37 @@
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;section&gt;
 	&lt;div class&#x3D;&quot;tab js-tab&quot;&gt;
-		&lt;ul role&#x3D;&quot;tablist&quot; class&#x3D;&quot;tab__nav&quot;&gt;
+		&lt;ul role&#x3D;&quot;tablist&quot; class&#x3D;&quot;tab__nav&quot; data-tabs&gt;
 			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;
-				&lt;a href&#x3D;&quot;#panel0&quot; role&#x3D;&quot;tab&quot;&gt;Tab titel 1&lt;/a&gt;
-			&lt;/li&gt;
-			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;
-				&lt;a href&#x3D;&quot;#panel1&quot; role&#x3D;&quot;tab&quot;&gt;Tab titel 2&lt;/a&gt;
-			&lt;/li&gt;
-			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item tab__nav-item--active&quot;&gt;
-				&lt;a href&#x3D;&quot;#panel2&quot; role&#x3D;&quot;tab&quot;&gt;Tab titel 3&lt;/a&gt;
+				&lt;a href&#x3D;&quot;#panel0&quot; role&#x3D;&quot;tab&quot; data-tab&gt;Tab titel 1&lt;/a&gt;
 			&lt;/li&gt;
 			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;
-				&lt;a href&#x3D;&quot;#panel3&quot; role&#x3D;&quot;tab&quot;&gt;Tab titel 4&lt;/a&gt;
+				&lt;a href&#x3D;&quot;#panel1&quot; role&#x3D;&quot;tab&quot; data-tab&gt;Tab titel 2&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item tab--active&quot;&gt;
+				&lt;a href&#x3D;&quot;#panel2&quot; role&#x3D;&quot;tab&quot; data-tab&gt;Tab titel 3&lt;/a&gt;
 			&lt;/li&gt;
 			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;
-				&lt;a href&#x3D;&quot;#panel4&quot; role&#x3D;&quot;tab&quot;&gt;Tab titel 5&lt;/a&gt;
+				&lt;a href&#x3D;&quot;#panel3&quot; role&#x3D;&quot;tab&quot; data-tab&gt;Tab titel 4&lt;/a&gt;
 			&lt;/li&gt;
-			&lt;!-- &lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;&lt;a href&#x3D;&quot;#panel2&quot; role&#x3D;&quot;tab&quot;&gt;Tab second 2&lt;/a&gt;&lt;/li&gt;
-      &lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;&lt;a href&#x3D;&quot;#panel3&quot; role&#x3D;&quot;tab&quot;&gt;Tab active 3&lt;/a&gt;&lt;/li&gt;
-      &lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;&lt;a href&#x3D;&quot;#panel4&quot; role&#x3D;&quot;tab&quot;&gt;Tab long title 4&lt;/a&gt;&lt;/li&gt;
-      &lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;&lt;a href&#x3D;&quot;#panel5&quot; role&#x3D;&quot;tab&quot;&gt;Tab long title 5&lt;/a&gt;&lt;/li&gt; --&gt;
+			&lt;li role&#x3D;&quot;presentation&quot; class&#x3D;&quot;tab__nav-item&quot;&gt;
+				&lt;a href&#x3D;&quot;#panel4&quot; role&#x3D;&quot;tab&quot; data-tab&gt;Tab titel 5&lt;/a&gt;
+			&lt;/li&gt;
 		&lt;/ul&gt;
-		&lt;div class&#x3D;&quot;tab__panels&quot;&gt;
-			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel0&quot; class&#x3D;&quot;tab__panel&quot;&gt;
+		&lt;div class&#x3D;&quot;tab__panels&quot; data-tabs-content&gt;
+			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel0&quot; class&#x3D;&quot;tab__panel&quot; data-tabs-pane&gt;
 				Lorem ipsum 0
 			&lt;/section&gt;
-			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel1&quot; class&#x3D;&quot;tab__panel&quot;&gt;
+			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel1&quot; class&#x3D;&quot;tab__panel&quot; data-tabs-pane&gt;
 				Lorem ipsum 1
 			&lt;/section&gt;
-			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel2&quot; class&#x3D;&quot;tab__panel tab__panel--active&quot;&gt;
+			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel2&quot; class&#x3D;&quot;tab__panel tab--active&quot; data-tabs-pane&gt;
 				Lorem ipsum 2
 			&lt;/section&gt;
-			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel3&quot; class&#x3D;&quot;tab__panel&quot;&gt;
+			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel3&quot; class&#x3D;&quot;tab__panel&quot; data-tabs-pane&gt;
 				Lorem ipsum 3
 			&lt;/section&gt;
-			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel4&quot; class&#x3D;&quot;tab__panel&quot;&gt;
+			&lt;section role&#x3D;&quot;tabpanel&quot; id&#x3D;&quot;panel4&quot; class&#x3D;&quot;tab__panel&quot; data-tabs-pane&gt;
 				Lorem ipsum 4
 			&lt;/section&gt;
 		&lt;/div&gt;
