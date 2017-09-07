@@ -3,7 +3,6 @@ import Base from '../../../_config/base';
 class Topbar extends Base {
   constructor(el) {
     super(el);
-    console.log('topbar');
 
     this.config = {
       openClass: 'topbar--open',
