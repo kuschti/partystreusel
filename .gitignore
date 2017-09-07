@@ -1,3 +1,5 @@
+Icon
+.DS_Store
 *.gem
 .bundle
 Gemfile.lock
@@ -6,23 +8,16 @@ tmp/
 log/
 .sass-cache
 node_modules
-styleguide/build/
 .project
 .publish
 .chrome
 dist/
-
-# System files
-# ------------
-
-Icon
-.DS_Store
-
-# Temporary files
-# ---------------
-
 /assets/*
+styleguide/build/
 
+
+# Kirby CMS files
+# ---------------
 /content/*
 !/content/.gitkeep
 
@@ -31,10 +26,6 @@ Icon
 
 /site/cache/*
 !/site/cache/index.html
-
-# -------------SECURITY-------------
-# NEVER publish these files via Git!
-# -------------SECURITY-------------
 
 # Kirby accounts
 /site/accounts/*
