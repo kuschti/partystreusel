@@ -1,8 +1,9 @@
+Icon
+.DS_Store
 *.gem
 .bundle
 Gemfile.lock
 pkg/*
-.DS_Store
 tmp/
 log/
 .sass-cache
@@ -11,4 +12,25 @@ node_modules
 .publish
 .chrome
 dist/
-/assets/
+/assets/*
+styleguide/build/
+
+
+# Kirby CMS files
+# ---------------
+/content/*
+!/content/.gitkeep
+
+/thumbs/*
+!/thumbs/index.html
+
+/site/cache/*
+!/site/cache/index.html
+
+# Kirby accounts
+/site/accounts/*
+!/site/accounts/index.html
+
+# Avatars
+/assets/avatars/*
+!/assets/avatars/index.html
