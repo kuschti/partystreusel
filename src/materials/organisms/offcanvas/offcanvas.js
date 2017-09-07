@@ -11,9 +11,9 @@ class Offcanvas extends Base {
       closeButtonSelector: '.offcanvas__close',
     };
 
-    const togglerOpen = this.$el[0].querySelector(this.config.openButtonSelector);
-    const togglerClose = this.$el[0].querySelector(this.config.closeButtonSelector);
-    const overlay = this.$el[0].querySelector(this.config.overlaySelector);
+    const togglerOpen = this.$el.querySelector(this.config.openButtonSelector);
+    const togglerClose = this.$el.querySelector(this.config.closeButtonSelector);
+    const overlay = this.$el.querySelector(this.config.overlaySelector);
 
     togglerOpen.addEventListener('click', this.toggle.bind(this));
     togglerClose.addEventListener('click', this.toggle.bind(this));
@@ -21,7 +21,7 @@ class Offcanvas extends Base {
   }
 
   toggle() {
-    this.$el[0].classList.toggle(this.config.openClass);
+    this.$el.classList.toggle(this.config.openClass);
   }
 }
 

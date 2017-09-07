@@ -11,10 +11,10 @@ class Accordion extends Base {
       itemSelector: '.accordion__item',
     };
 
-    this.items = this.$el[0].querySelectorAll(this.config.itemSelector);
-    this.offset = this.$el[0].getAttribute('data-mt-tolerance');
+    this.items = this.$el.querySelectorAll(this.config.itemSelector);
+    this.offset = this.$el.getAttribute('data-mt-tolerance');
 
-    this.$el[0].addEventListener('click', this.toggleItem.bind(this));
+    this.$el.addEventListener('click', this.toggleItem.bind(this));
   }
 
   toggleItem(e) {

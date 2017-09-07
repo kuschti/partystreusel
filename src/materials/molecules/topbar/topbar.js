@@ -1,24 +1,38 @@
-import $ from 'jquery';
 import Base from '../../../_config/base';
 
 class Topbar extends Base {
   constructor(el) {
     super(el);
-    this.toggleClass = 'topbar__sub-list--open';
-    this.$el.find('.topbar__mobile-menu').on('click', this.toggle.bind(this));
-    this.$el.on('click', '.topbar__item > .topbar__link', this.toggleItem.bind(this));
+    console.log('topbar');
+
+    this.config = {
+      openClass: 'topbar--open',
+      openClassSublist: 'topbar__sub-list--open',
+      menuButtonClass: 'topbar__mobile-menu',
+      firstLvlClass: 'topbar__item',
+      sublistSelector: '.topbar__sub-list',
+    };
+    this.$el.addEventListener('click', this.eventHandler.bind(this));
   }
 
-  toggle() {
-    this.$el.toggleClass('topbar--open');
+  eventHandler(e) {
+    if (e.target.classList.contains(this.config.menuButtonClass)) {
+      this.toggleMenu(e);
+    } else if (e.target.parentNode.classList.contains(this.config.firstLvlClass)) {
+      this.toggleSublist(e);
+    }
   }
 
-  toggleItem(e) {
-    const item = $(e.target).closest('.topbar__item');
-    const subList = item.find('.topbar__sub-list');
+  toggleMenu(e) {
+    this.$el.classList.toggle(this.config.openClass);
+    e.preventDefault();
+  }
+
+  toggleSublist(e) {
+    const subList = e.target.parentNode.querySelector(this.config.sublistSelector);
     if (subList.length === 0) { return; }
 
-    subList.toggleClass(this.toggleClass);
+    subList.classList.toggle(this.config.openClassSublist);
     e.preventDefault();
   }
 }

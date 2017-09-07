@@ -1,6 +1,7 @@
 'use strict';
 
-require('./prism');
+// require('./prism');
+import 'prismjs';
 
 /**
  * Global `fabricator` object

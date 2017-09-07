@@ -25,7 +25,7 @@ $tab__space: rem(10);
     padding: rem(10);
   }
 
-  &--active {
+  &.tab--active {
     a {
       background-color: $color__bright;
       color: $color__brand--one;
@@ -38,12 +38,27 @@ $tab__space: rem(10);
 }
 
 .tab__panel {
-  display: none;
-}
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 
-// STATES
-.tab__panel--active {
-  display: block;
+  &:focus {
+    outline: none;
+  }
+
+  &.tab--active {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
 }
 
 // LARGE
