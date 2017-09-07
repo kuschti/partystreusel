@@ -2,13 +2,44 @@
 .bundle
 Gemfile.lock
 pkg/*
-.DS_Store
 tmp/
 log/
 .sass-cache
 node_modules
+styleguide/build/
 .project
 .publish
 .chrome
 dist/
-/assets/
+
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Temporary files
+# ---------------
+
+/assets/*
+
+/content/*
+!/content/.gitkeep
+
+/thumbs/*
+!/thumbs/index.html
+
+/site/cache/*
+!/site/cache/index.html
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Kirby accounts
+/site/accounts/*
+!/site/accounts/index.html
+
+# Avatars
+/assets/avatars/*
+!/assets/avatars/index.html
