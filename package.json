@@ -83,12 +83,12 @@
   },
   "dependencies": {
     "array-from": "^2.1.1",
-    "autoprefixer": "^7.1.4",
-    "browserslist": "^2.4.0",
+    "autoprefixer": "^7.1.6",
+    "browserslist": "^2.5.1",
     "element-closest": "^2.0.2",
-    "flickity": "^2.0.9",
-    "lazysizes": "^4.0.0-rc3",
-    "moveto": "^1.6.1",
+    "flickity": "^2.0.10",
+    "lazysizes": "^4.0.0",
+    "moveto": "^1.7.1",
     "normalize.css": "^7.0.0",
     "picturefill": "^3.0.2",
     "tabbyjs": "^11.2.0"
