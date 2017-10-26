@@ -47,9 +47,7 @@ module.exports = (gulpConfig, target) => {
   }
 
   if (!gulpConfig.dev) {
-    config.plugins.push(
-      new webpack.optimize.UglifyJsPlugin(),
-    );
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   }
 
   return config;

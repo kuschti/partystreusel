@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## dev
+* update dependencies
+* lint js
+
 ## v5.4.0
 * update dependencies
 * add prism as dependency
