@@ -19,7 +19,6 @@ import postcssSyntaxScss from 'postcss-scss';
 import reporter from 'postcss-reporter';
 import stylelint from 'stylelint';
 import doiuse from 'doiuse';
-import eslint from 'gulp-eslint';
 import webpackStream from 'webpack-stream';
 import named from 'vinyl-named';
 import metadata from './package.json';
@@ -40,7 +39,6 @@ const config = {
       materials: `${partystreuselRoot}/**/*.js`,
       applicationEntryPoint: `${partystreuselRoot}/application.js`,
       applicationBundle: 'scripts/application.js?(.map)',
-      eslintRc: '.eslintrc.js',
       gulpFile: 'gulpfile.babel.js',
       webpackFile: 'webpack.config.babel.js',
     },
@@ -141,26 +139,11 @@ gulp.task('styles:doiuse', () => {
 
 // SCRIPTS
 // ----------------------------------------
-gulp.task('scripts:application:lint', () => {
-  gulp.src([
-    config.src.scripts.application,
-    `!${config.src.scripts.polyfills}`,
-    config.src.scripts.config,
-    config.src.scripts.materials,
-    config.src.scripts.eslintRc,
-    config.src.scripts.gulpFile,
-    config.src.scripts.webpackFile,
-  ])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(gulpif(!config.dev, eslint.failAfterError()));
-});
-
 gulp.task('scripts:application:clean', () => del([
   config.dest.assets + config.src.scripts.applicationBundle,
 ]));
 
-gulp.task('scripts:application', ['scripts:application:lint', 'scripts:application:clean'], () => {
+gulp.task('scripts:application', ['scripts:application:clean'], () => {
   gulp.src([
     config.src.scripts.application,
     `!${config.src.scripts.polyfills}`,

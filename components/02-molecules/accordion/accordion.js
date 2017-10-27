@@ -18,8 +18,7 @@ class Accordion extends Base {
   }
 
   toggleItem(e) {
-    const target = e.target;
-    if (target.classList.contains(this.config.titleClass)) {
+    if (e.target.classList.contains(this.config.titleClass)) {
       const item = e.target.closest(this.config.itemSelector);
       const currentOpen = item.classList.contains(this.config.openClass);
 
