@@ -134,8 +134,7 @@ gulp.task('styles:doiuse', () => {
     }),
   ];
 
-  return gulp.src(
-    `${partystreuselRoot}/**/*.scss`)
+  return gulp.src(`${partystreuselRoot}/**/*.scss`)
     .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
 });
 
