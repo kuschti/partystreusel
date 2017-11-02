@@ -1,25 +1,4 @@
----
-
-fields:
-  - text
-  - password
-  - url
-  - email
-  - tel
-  - time
-  - date
-  - datetime
-  - month
-  - week
-  - number
-  - search
-  - hidden
-  - color
-  - range
-  - file
-
----
-{{#each form-input-types.fields}}
+{{#each input-types}}
   <p>
     <label for="{{this}}">{{this}} Input</label>
     <input id="{{this}}" type="{{this}}" placeholder="Lorem ipsum">

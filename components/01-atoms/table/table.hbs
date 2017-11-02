@@ -1,8 +1,6 @@
----
-notes: |
-  table with `table-wrapper` div for horizontal scrolling on small screen
----
-<div class="table-wrapper">
+{{#if wrapped}}
+  <div class="table-wrapper">
+{{/if}}
   <table>
     <thead>
       <tr>
@@ -14,7 +12,7 @@ notes: |
       </tr>
     </thead>
     <tbody>
-      {{#iterate 5}}
+      {{#each rows}}
       <tr>
         <td>Row {{@index}} with long copy</td>
         <td>Row {{@index}}</td>
@@ -22,7 +20,7 @@ notes: |
         <td>Row {{@index}}</td>
         <td>Row {{@index}}</td>
       </tr>
-      {{/iterate}}
+      {{/each}}
     </tbody>
     <tfoot>
       <tr>
@@ -34,4 +32,6 @@ notes: |
       </tr>
     </tfoot>
   </table>
-</div>
+{{#if wrapped}}
+  </div>
+{{/if}}

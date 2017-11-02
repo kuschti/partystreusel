@@ -1,0 +1,18 @@
+context:
+  input-types:
+    - text
+    - password
+    - url
+    - email
+    - tel
+    - time
+    - date
+    - datetime
+    - month
+    - week
+    - number
+    - search
+    - hidden
+    - color
+    - range
+    - file
