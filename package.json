@@ -24,20 +24,24 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "start": "gulp --dev",
+    "start": "npm-run-all --parallel gulp dev fractal",
     "fractal": "fractal start --sync",
+    "fractal:build": "fractal build",
+    "gulp": "gulp",
     "dev": "cross-env NODE_ENV=development webpack --progress --watch",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "gulp deploy",
-    "test": "gulp styles:lint && gulp styles:doiuse && gulp scripts:application:lint"
+    "test": "gulp styles:lint && gulp styles:doiuse"
   },
   "browserlist": [
     "last 2 versions",
-    "ie >= 10",
-    "> 1% in CH",
+    "ie >= 11",
     "not OperaMini all",
     "not OperaMobile > 0"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -53,9 +57,7 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
-    "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-babel": "^7.0.0",
     "gulp-csso": "^3.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-if": "^2.0.2",
@@ -69,18 +71,14 @@
     "gulp-svg-symbols": "^2.0.2",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
-    "jstransformer-marked": "^1.0.1",
+    "npm-run-all": "^4.1.1",
     "postcss-reporter": "^5.0.0",
     "postcss-scss": "^1.0.2",
-    "prismjs": "^1.8.3",
     "run-sequence": "^2.2.0",
-    "script-loader": "^0.7.2",
     "stylelint": "^8.2.0",
     "stylelint-config-partystreusel": "^2.1.0",
     "susy": "^2.2.12",
-    "vinyl-named": "^1.1.0",
-    "webpack": "^3.8.1",
-    "webpack-stream": "^4.0.0"
+    "webpack": "^3.8.1"
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.7",

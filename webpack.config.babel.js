@@ -6,12 +6,12 @@ module.exports = () => {
 
   config = {
     entry: {
-      application: './components/application.js',
+      main: './components/main.js',
       polyfills: './components/polyfills.js',
     },
     output: {
-      path: path.resolve(__dirname, './public/js/'),
       filename: '[name].js',
+      path: path.resolve(__dirname, './public/js/'),
     },
     devtool: 'source-map',
     module: {
@@ -30,9 +30,7 @@ module.exports = () => {
   };
 
   if (process.env.NODE_ENV === 'production') {
-    config.plugins.push(
-      new webpack.optimize.UglifyJsPlugin(),
-    );
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
   }
 
   return config;
