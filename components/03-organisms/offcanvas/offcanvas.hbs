@@ -1,19 +1,14 @@
----
-notes: |
-  Not final!
----
 <div class="js-offcanvas">
   <div class="offcanvas">
     <div class="offcanvas__pusher">
       INSERT HEADER
       <div class="offcanvas__content">
         <div class="offcanvas__content-inner">
-          <button class="offcanvas__close">{{> icons.icon icon-name="close"}}Close</button>
+          <button class="offcanvas__close">{{> @icon name="close"}} Close</button>
           INSERT NAV
         </div>
       </div>
-      <button class="offcanvas__opener">{{> icons.icon icon-name="menu"}}Menu</button>
-
+      <button class="offcanvas__opener">{{> @icon name="menu"}}Menu</button>
       INSERT MAIN
       <div class="offcanvas__overlay"></div>
     </div>

@@ -1,0 +1,9 @@
+notes: Add class `main-nav--active` to the active `<a>`
+context:
+  items:
+    - text: Nav Item 1
+    - text: Nav Item 2
+      modifier: main-nav--active
+    - text: Nav Item 3
+    - text: Nav Item 4
+    - text: Nav Item 5

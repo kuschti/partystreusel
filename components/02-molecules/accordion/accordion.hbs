@@ -1,11 +1,9 @@
 <section class="accordion js-accordion" data-mt-tolerance="10">
-  {{#each accordion}}
+  {{#each items}}
     <section class="accordion__item{{#if open}} accordion--open{{/if}}">
       <h1 class="accordion__title">{{title}}</h1>
       <div class="accordion__content">
-        <section class="content">
-          {{{content}}}
-        </section>
+        {{{content}}}
       </div>
     </section>
   {{/each}}

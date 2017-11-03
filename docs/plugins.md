@@ -1,6 +1,6 @@
-### recommendation
-* see http://www.vanillalist.com/ for plain JS Plugins
-* see http://www.unheap.com/ for JS Plugins (some with jQuery)
+---
+title: Plugin recommendation
+---
 
 #### slider
 * flickity (http://flickity.metafizzy.co/)

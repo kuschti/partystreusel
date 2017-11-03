@@ -4,7 +4,6 @@ import gulpif from 'gulp-if';
 import del from 'del';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
-// import webpack from 'webpack';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
@@ -18,10 +17,6 @@ import postcss from 'gulp-postcss';
 import postcssSyntaxScss from 'postcss-scss';
 import reporter from 'postcss-reporter';
 import stylelint from 'stylelint';
-import doiuse from 'doiuse';
-// import webpackStream from 'webpack-stream';
-// import named from 'vinyl-named';
-import metadata from './package.json';
 
 // CONFIG
 // ----------------------------------------
@@ -29,17 +24,6 @@ const partystreuselRoot = 'components';
 const config = {
   dev: gutil.env.dev === true,
   src: {
-    docs: 'docs',
-    // fabricator: `./${partystreuselRoot}/_partystreusel/fabricator`,
-    scripts: {
-      application: `${partystreuselRoot}/*.js`,
-      config: `${partystreuselRoot}/_config/{base,streusel}.js`,
-      polyfills: `${partystreuselRoot}/polyfills.js`,
-      vendorFiles: `${partystreuselRoot}/vendor/*.js`,
-      materials: `${partystreuselRoot}/**/*.js`,
-      applicationEntryPoint: `${partystreuselRoot}/main.js`,
-      applicationBundle: 'scripts/main.js?(.map)',
-    },
     styles: {
       config: `${partystreuselRoot}/_config/*.scss`,
       application: `${partystreuselRoot}/main.scss`,
@@ -107,25 +91,6 @@ gulp.task('styles:lint', () => {
 });
 
 gulp.task('styles', ['styles:lint', 'styles:application']);
-
-// Check styles wit caniuse/doiuse
-gulp.task('styles:doiuse', () => {
-  const processors = [
-    doiuse({
-      browsers: metadata.browserlist,
-      ignore: ['rem', 'flexbox'],
-    }),
-    // Pretty reporting config
-    reporter({
-      clearAllMessages: true,
-      throwError: false,
-    }),
-  ];
-
-  return gulp.src(`${partystreuselRoot}/**/*.scss`)
-    .pipe(postcss(processors, { syntax: postcssSyntaxScss }));
-});
-
 
 // IMAGES
 // ----------------------------------------
@@ -226,9 +191,5 @@ gulp.task('build', ['default']);
 // DEFAULT BUILD TASK
 // ----------------------------------------
 gulp.task('default', ['clean'], () => {
-  runSequence(buildTasks, () => {
-    // if (config.dev) {
-    //   gulp.start('serve');
-    // }
-  });
+  runSequence(buildTasks);
 });

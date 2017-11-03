@@ -1,0 +1,12 @@
+context:
+  buttons:
+    - componentName: '\@button'
+      context:
+        text: Button 1
+        modifier: btn--primary
+    - componentName: '\@button'
+      context:
+        text: Button 2
+    - componentName: '\@button'
+      context:
+        text: Button 3

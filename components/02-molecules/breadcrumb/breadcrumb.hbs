@@ -1,0 +1,10 @@
+<ol aria-label="You are here:" vocab="http://schema.org/" typeof="BreadcrumbList" class="breadcrumb">
+  {{#each items}}
+    <li property="itemListElement" typeof="ListItem" class="breadcrumb__item {{modifier}}">
+      <a href="#" property="item" typeof="WebPage">
+        <span property="name">Stufe {{title}}</span>
+      </a>
+      <meta property="position" content="{{title}}"/>
+    </li>
+  {{/each}}
+</ol>

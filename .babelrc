@@ -1,15 +1,7 @@
 {
   "presets": [
     ["env", {
-      "targets": {
-        "browsers": [
-          "last 2 versions",
-          "ie >= 10",
-          "> 1% in CH",
-          "not OperaMini all",
-          "not OperaMobile > 0"
-        ]
-      }
+      "useBuiltIns": true
     }]
   ],
   "plugins": [

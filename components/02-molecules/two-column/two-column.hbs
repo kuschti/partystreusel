@@ -1,14 +1,14 @@
 <div class="two-column">
   <div class="two-column__first">
-    {{#if two-column-material1}}
-      {{{material two-column-material1 this}}}
+    {{#if column1}}
+      {{render (lookup . 'column1')}}
     {{else}}
       Lorem Ipsum
     {{/if}}
   </div>
   <div class="two-column__second">
-    {{#if two-column-material2}}
-      {{{material two-column-material2 this}}}
+    {{#if column2}}
+      {{render (lookup . 'column2')}}
     {{else}}
       Lorem Ipsum
     {{/if}}
