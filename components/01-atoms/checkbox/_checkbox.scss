@@ -1,0 +1,165 @@
+// stylelint-disable max-nesting-depth,no-descending-specificity,selector-max-specificity
+
+$checkbox__size: rem(24);
+$checkbox__border-size: rem(2);
+$checkbox__label-size: rem(42);
+$checkbox__label-padding: ($checkbox__label-size - $checkbox__size) / 2;
+
+$checkbox__knuble-size: $checkbox__size / 2;
+$checkbox__knuble-distance: $checkbox__knuble-size / 2;
+
+$checkbox--alternate-color: $color__bright;
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox__input {
+  position: absolute;
+  overflow: hidden;
+  width: rem(1);
+  height: rem(1);
+  padding: 0;
+  margin: rem(-1);
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  &:focus {
+    + .checkbox__label::before {
+      color: $color__accent--dark;
+      border-color: currentColor;
+    }
+  }
+}
+
+.checkbox__label {
+  position: relative;
+  vertical-align: top;
+  padding: $checkbox__label-padding $checkbox__label-padding $checkbox__label-padding $checkbox__label-size;
+  margin-bottom: 0;
+  font-size: rem(18);
+  // line-height: 1.2;
+  text-transform: none;
+
+  &:hover {
+    &::before {
+      color: $color__accent--dark;
+      border-color: $color__dark;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: $checkbox__border-size solid $color__accent--dark;
+    background-color: $color__bright;
+    top: ($checkbox__label-size - $checkbox__size) / 2;
+    left: ($checkbox__label-size - $checkbox__size) / 2;
+    width: $checkbox__size;
+    height: $checkbox__size;
+    transition: background-color 0.1s ease;
+  }
+}
+
+// STATE checked
+.checkbox__input {
+  &:checked,
+  &:checked:hover {
+    + .checkbox__label {
+      color: $color__dark;
+
+      &::before {
+        color: $color__dark;
+        border-color: transparent;
+        background-color: $color__brand--one;
+        transition: background-color 0.1s ease;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: rem(3) + $checkbox__label-padding;
+        left: rem(8) + $checkbox__label-padding;
+        width: rem(8);
+        height: rem(14);
+        border: solid white;
+        border-width: 0 rem(2) rem(2) 0;
+        transform: rotate(45deg);
+        content: '';
+      }
+    }
+  }
+}
+
+// --------------------------
+// STATES
+// --------------------------
+.checkbox--alternate {
+  .checkbox__label {
+    color: $checkbox--alternate-color;
+
+    &::before {
+      border-color: $checkbox--alternate-color;
+      background-color: transparent;
+    }
+
+    &:hover {
+      &::before {
+        color: $checkbox--alternate-color;
+      }
+    }
+  }
+
+  // STATE CHECKED
+  .checkbox__input {
+    &:checked,
+    &:checked:hover {
+      + .checkbox__label {
+        color: $checkbox--alternate-color;
+
+        &::after {
+          display: block;
+          position: absolute;
+          top: 0.2rem;
+          left: 0.375rem;
+          width: 0.25rem;
+          height: 0.5rem;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+// --------------------------
+// IE8 Fallback
+// --------------------------
+.lt-ie9 {
+  .checkbox__input {
+    position: inherit;
+    overflow: visible;
+    width: 20px;
+    height: 20px;
+    padding: inherit;
+    margin: inherit;
+    border: inherit;
+    clip: auto;
+
+    + label {
+      padding: 0;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+// stylelint-enable max-nesting-depth,no-descending-specificity,selector-max-specificity

@@ -1,27 +1,18 @@
-'use strict';
-
-/*
-* Require the path module
-*/
 const path = require('path');
-
-/*
- * Require the Fractal module
- */
 const fractal = module.exports = require('@frctl/fractal').create();
+const pkg = require(path.join(__dirname, 'package.json'));
 
-/*
- * Give your project a title.
- */
 fractal.set('project.title', 'Partystreusel');
+fractal.set('project.version', pkg.version);
 
 /*
- * Tell Fractal where to look for components.
+ * Components.
  */
 fractal.components.set('path', path.join(__dirname, 'components'));
+fractal.components.set('label', 'Patterns');
 
 /*
- * Tell Fractal where to look for documentation pages.
+ * Documentation pages.
  */
 fractal.docs.set('path', path.join(__dirname, 'docs'));
 

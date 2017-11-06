@@ -15,16 +15,17 @@
 // Atoms
 // ----------------------------------------
 @import '_config/functions';
-@import '01-atoms/00-helpers/utilities';
-@import '01-atoms/00-helpers/layout';
-@import '01-atoms/02-typography/typography';
+@import '01-atoms/helpers/utilities';
+@import '01-atoms/helpers/layout';
 @import '01-atoms/fonts/fonts';
 @import '01-atoms/icons/icons';
+@import '01-atoms/typography/typography';
 @import '01-atoms/button/button';
+@import '01-atoms/form/form';
+@import '01-atoms/checkbox/checkbox';
+@import '01-atoms/radio/radio';
 @import '01-atoms/table/table';
 @import '01-atoms/image/image';
-@import '01-atoms/form/form';
-@import '01-atoms/form/options';
 
 // Molecules
 // ----------------------------------------
