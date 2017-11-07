@@ -8,7 +8,7 @@ fractal.set('project.version', pkg.version);
 /*
  * Components.
  */
-fractal.components.set('path', path.join(__dirname, 'components'));
+fractal.components.set('path', path.join(__dirname, 'patterns'));
 fractal.components.set('label', 'Patterns');
 
 /*
