@@ -6,8 +6,8 @@ module.exports = () => {
 
   config = {
     entry: {
-      main: './components/main.js',
-      polyfills: './components/polyfills.js',
+      main: './patterns/main.js',
+      polyfills: './patterns/polyfills.js',
     },
     output: {
       filename: '[name].js',

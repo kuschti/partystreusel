@@ -1,18 +1,14 @@
 import gulp from 'gulp';
-import gutil from 'gulp-util';
 import gulpif from 'gulp-if';
-import del from 'del';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
 import runSequence from 'run-sequence';
-import browserSync from 'browser-sync';
 import imagemin from 'gulp-imagemin';
 import svgSymbols from 'gulp-svg-symbols';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
 import notify from 'gulp-notify';
-import ghPages from 'gulp-gh-pages';
 import postcss from 'gulp-postcss';
 import postcssSyntaxScss from 'postcss-scss';
 import reporter from 'postcss-reporter';
@@ -20,9 +16,9 @@ import stylelint from 'stylelint';
 
 // CONFIG
 // ----------------------------------------
-const partystreuselRoot = 'components';
+const partystreuselRoot = 'patterns';
 const config = {
-  dev: gutil.env.dev === true,
+  dev: process.env.NODE_ENV === 'development',
   src: {
     styles: {
       config: `${partystreuselRoot}/_config/*.scss`,
@@ -39,7 +35,7 @@ const config = {
     iconsystem: `${partystreuselRoot}/01-atoms/icons`,
   },
   dest: {
-    dir: 'public',
+    dir: 'build',
     assets: 'public',
   },
 };
@@ -49,12 +45,6 @@ const buildTasks = [
   'images',
   'icons',
 ];
-
-// CLEAN
-// ----------------------------------------
-gulp.task('clean', () => del([
-  config.dest.dir,
-]));
 
 // STYLES
 // ----------------------------------------
@@ -67,8 +57,7 @@ gulp.task('styles:application', () => {
     .pipe(autoprefixer())
     .pipe(gulpif(!config.dev, csso()))
     .pipe(gulpif(config.dev, sourcemaps.write('./')))
-    .pipe(gulp.dest(`${config.dest.assets}/css`))
-    .pipe(gulpif(config.dev, browserSync.stream({ match: '**/*.css' })));
+    .pipe(gulp.dest(`${config.dest.assets}/css`));
 
   return styles;
 });
@@ -153,43 +142,24 @@ gulp.task('fonts', () => {
   return fonts;
 });
 
-// DEPLOY
+// WATCHERS
 // ----------------------------------------
-gulp.task('deploy:github', () => {
-  const pages = gulp.src(`./${config.dest.dir}/**/*`)
-    .pipe(ghPages());
-
-  return pages;
-});
-
-gulp.task('deploy', ['clean'], () => {
-  runSequence(
-    buildTasks,
-    'deploy:github',
-  );
-});
-
-// SERVER
-// ----------------------------------------
-gulp.task('serve', () => {
-  browserSync({
-    server: {
-      baseDir: config.dest.dir,
-    },
-    notify: false,
-  });
-
+gulp.task('watchers', () => {
   gulp.task('styles:application:watch', ['styles:application']);
   gulp.watch([config.src.styles.config, config.src.styles.applicationpartials], ['styles:application:watch']);
 
-  gulp.task('images:watch', ['images'], browserSync.reload);
+  gulp.task('images:watch', ['images']);
   gulp.watch(config.src.images, ['images:watch']);
 });
 
+// DEFAULT & BUILD TASK
+// ----------------------------------------
 gulp.task('build', ['default']);
 
-// DEFAULT BUILD TASK
-// ----------------------------------------
-gulp.task('default', ['clean'], () => {
-  runSequence(buildTasks);
+gulp.task('default', () => {
+  runSequence(buildTasks, () => {
+    if (config.dev) {
+      gulp.start('watchers');
+    }
+  });
 });
