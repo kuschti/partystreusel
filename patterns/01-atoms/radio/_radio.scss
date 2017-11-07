@@ -111,10 +111,6 @@ $radio--alternate-color: $color__bright;
       background-color: transparent;
     }
 
-    &::after {
-      background-color: $radio--alternate-color;
-    }
-
     &:hover {
       &::before {
         color: $radio--alternate-color;
@@ -130,7 +126,11 @@ $radio--alternate-color: $color__bright;
         color: $radio--alternate-color;
 
         &::before {
-          color: $radio--alternate-color;
+          background-color: $radio--alternate-color;
+        }
+
+        &::after {
+          border-color: $color__brand--one;
         }
       }
     }

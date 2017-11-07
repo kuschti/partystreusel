@@ -119,17 +119,12 @@ $checkbox--alternate-color: $color__bright;
       + .checkbox__label {
         color: $checkbox--alternate-color;
 
+        &::before {
+          background-color: $checkbox--alternate-color;
+        }
+
         &::after {
-          display: block;
-          position: absolute;
-          top: 0.2rem;
-          left: 0.375rem;
-          width: 0.25rem;
-          height: 0.5rem;
-          border: solid white;
-          border-width: 0 2px 2px 0;
-          transform: rotate(45deg);
-          content: '';
+          border-color: $color__brand--one;
         }
       }
     }
