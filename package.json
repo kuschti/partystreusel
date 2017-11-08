@@ -24,16 +24,17 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "start": "npm-run-all --parallel clean:public clean:build fonts css gulp:dev webpack:dev fractal",
-    "build": "npm-run-all clean:public clean:build fonts css gulp:build webpack:build fractal:build",
+    "start": "npm-run-all --parallel clean:public clean:build fonts sass:build gulp:dev webpack:dev fractal sass:watch",
+    "build": "npm-run-all clean:public clean:build fonts sass:build gulp:build webpack:build fractal:build",
     "fractal": "fractal start --sync",
     "fractal:build": "fractal build",
-    "gulp:dev": "cross-env NODE_ENV=development gulp",
-    "gulp:build": "cross-env NODE_ENV=production gulp",
+    "gulp:dev": "gulp",
+    "gulp:build": "gulp build",
     "webpack:dev": "cross-env NODE_ENV=development webpack --progress --watch",
     "webpack:build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "css": "del-cli public/css && npm run sass && npm run autoprefixer",
     "sass": "node-sass --include-path 'node_modules' --output-style compressed --source-map true -o public/css patterns",
+    "sass:watch": "onchange 'patterns/**/*.scss' -- npm run sass:build",
+    "sass:build": "npm run sass && npm run autoprefixer",
     "autoprefixer": "postcss -m true -u autoprefixer -r public/css/*.css",
     "fonts": "cpx 'patterns/fonts/*.{eot,woff,woff2,ttf,svg}' public/fonts",
     "clean:public": "del-cli public/*",
@@ -63,17 +64,14 @@
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.4.0",
-    "gulp-include": "^2.3.1",
     "gulp-rename": "^1.2.2",
     "gulp-svg-symbols": "^2.0.2",
-    "gulp-uglify": "^3.0.0",
     "node-sass": "^4.6.0",
     "npm-run-all": "^4.1.1",
+    "onchange": "^3.2.1",
     "postcss-cli": "^4.1.1",
-    "run-sequence": "^2.2.0",
     "stylelint": "^8.2.0",
     "stylelint-config-partystreusel": "^2.1.0",
-    "susy": "^2.2.12",
     "webpack": "^3.8.1"
   },
   "dependencies": {
@@ -87,6 +85,7 @@
     "moveto": "^1.7.1",
     "normalize.css": "^7.0.0",
     "picturefill": "^3.0.2",
+    "susy": "^2.2.12",
     "tabbyjs": "^11.2.0"
   }
 }

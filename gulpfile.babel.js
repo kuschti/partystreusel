@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import rename from 'gulp-rename';
-import runSequence from 'run-sequence';
 import imagemin from 'gulp-imagemin';
 import svgSymbols from 'gulp-svg-symbols';
 
@@ -9,7 +8,6 @@ import svgSymbols from 'gulp-svg-symbols';
 // ----------------------------------------
 const partystreuselRoot = 'patterns';
 const config = {
-  dev: process.env.NODE_ENV === 'development',
   src: {
     imagesfolder: `${partystreuselRoot}/images/`,
     images: [
@@ -24,10 +22,6 @@ const config = {
     assets: 'public',
   },
 };
-const buildTasks = [
-  'images',
-  'icons',
-];
 
 // IMAGES
 // ----------------------------------------
@@ -89,12 +83,5 @@ gulp.task('watchers', () => {
 
 // DEFAULT & BUILD TASK
 // ----------------------------------------
-gulp.task('build', ['default']);
-
-gulp.task('default', () => {
-  runSequence(buildTasks, () => {
-    if (config.dev) {
-      gulp.start('watchers');
-    }
-  });
-});
+gulp.task('build', ['images', 'icons']);
+gulp.task('default', ['images', 'icons', 'watchers']);
