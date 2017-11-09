@@ -66,7 +66,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-svg-symbols": "^2.0.2",
     "node-sass": "^4.6.0",
-    "npm-run-all": "^4.1.1",
+    "npm-run-all": "^4.1.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^4.1.1",
     "stylelint": "^8.2.0",
@@ -76,7 +76,7 @@
   "dependencies": {
     "array-from": "^2.1.1",
     "autoprefixer": "^7.1.6",
-    "browserslist": "^2.7.0",
+    "browserslist": "^2.8.0",
     "element-closest": "^2.0.2",
     "flickity": "^2.0.10",
     "lazysizes": "^4.0.1",
