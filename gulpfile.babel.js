@@ -74,14 +74,6 @@ gulp.task('svgsprite', ['svgmin'], () => {
 // Icon workflow
 gulp.task('icons', ['svgmin', 'svgsprite']);
 
-// WATCHERS
+// DEFAULT TASK
 // ----------------------------------------
-gulp.task('watchers', () => {
-  gulp.task('images:watch');
-  gulp.watch(config.src.images, ['images:watch']);
-});
-
-// DEFAULT & BUILD TASK
-// ----------------------------------------
-gulp.task('build', ['images', 'icons']);
-gulp.task('default', ['images', 'icons', 'watchers']);
+gulp.task('default', ['images', 'icons']);

@@ -24,30 +24,29 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "start": "npm-run-all --parallel clean:public clean:build fonts sass:build gulp:dev webpack:dev fractal sass:watch",
-    "build": "npm-run-all clean:public clean:build fonts sass:build gulp:build webpack:build fractal:build",
-    "fractal": "fractal start --sync",
+    "start": "npm-run-all clean fonts css:build gulp --parallel webpack:dev serve sass:watch",
+    "build": "npm-run-all clean fonts css:build gulp webpack:build fractal:build",
+    "serve": "fractal start --sync",
     "fractal:build": "fractal build",
-    "gulp:dev": "gulp",
-    "gulp:build": "gulp build",
+    "gulp": "gulp",
     "webpack:dev": "cross-env NODE_ENV=development webpack --progress --watch",
     "webpack:build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "sass": "node-sass --include-path 'node_modules' --output-style compressed --source-map true -o public/css patterns",
+    "css:build": "npm-run-all --sequential sass:build autoprefixer",
+    "sass:build": "node-sass -q --include-path 'node_modules' --output-style compressed --source-map true -o public/css patterns",
     "sass:watch": "onchange 'patterns/**/*.scss' -- npm run sass:build",
-    "sass:build": "npm run sass && npm run autoprefixer",
     "autoprefixer": "postcss -m true -u autoprefixer -r public/css/*.css",
     "fonts": "cpx 'patterns/fonts/*.{eot,woff,woff2,ttf,svg}' public/fonts",
-    "clean:public": "del-cli public/*",
-    "clean:build": "del-cli build/*",
-    "deploy": "npm-run-all gulp webpack:build fractal:build deploy:github",
+    "clean": "del-cli public/* build/*",
+    "deploy": "npm-run-all --sequential gulp webpack:build fractal:build deploy:github",
     "deploy:github": "gh-pages -d build",
     "lint": "stylelint 'patterns/**/*.scss' --syntax scss",
-    "test": "npm run sass & npm run lint"
+    "test": "npm-run-all --sequential css:build lint"
   },
   "engines": {
     "node": ">=4"
   },
   "devDependencies": {
+    "@frctl/fractal": "^1.1.7",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
@@ -75,7 +74,6 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
     "array-from": "^2.1.1",
     "autoprefixer": "^7.1.6",
     "browserslist": "^2.7.0",
