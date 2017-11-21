@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 module.exports = () => {
   let config = {};
@@ -21,12 +22,46 @@ module.exports = () => {
           loaders: ['babel-loader', 'eslint-loader'],
           exclude: [/node_modules/],
         },
+        {
+          test: /\.scss$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].css',
+                outputPath: '../css/',
+              },
+            },
+            { loader: 'extract-loader' },
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: ['node_modules/'],
+              },
+            },
+          ],
+        },
       ],
     },
     resolve: {
       extensions: ['.js'],
     },
-    plugins: [],
+    plugins: [
+      new ExtractTextPlugin({ // define where to save the file
+        filename: 'public/[name].bundle.css',
+        allChunks: true,
+      }),
+    ],
   };
 
   if (process.env.NODE_ENV === 'production') {

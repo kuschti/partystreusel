@@ -5,6 +5,8 @@ import Dropdown from './02-molecules/dropdown/dropdown';
 import Slider from './02-molecules/slider/slider';
 import Offcanvas from './03-organisms/offcanvas/offcanvas';
 
+require('./main.scss');
+
 function ready(fn) {
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
     fn();
