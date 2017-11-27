@@ -20,4 +20,7 @@ title: Plugin recommendation
 * lazysizes (http://afarkas.github.io/lazysizes/)
 
 #### Sticky
-* stickr.js  (http://banago.github.io/Stickr.js/)
+* stickr.js (http://banago.github.io/Stickr.js/)
+
+#### Slideout/Offcanvas
+* slideout.js (https://slideout.js.org/)
