@@ -5,7 +5,7 @@
   * add clearlet's fractal
   * change folder structure
   * change patterns to hbs file format
-* remove most of gulp tasks, use yarn/npm scripts
+* remove gulp as taskrunner, use yarn/npm scripts
 * update patterns
   * checkbox now with checkmark
   * checkbox and radio as standalone atoms (not i form collection)

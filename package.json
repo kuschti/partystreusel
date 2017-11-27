@@ -24,8 +24,8 @@
     "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
-    "start": "npm-run-all clean --parallel fonts imagemin gulp webpack:dev fractal:start",
-    "build": "npm-run-all clean --parallel fonts imagemin gulp webpack:build --sequential fractal:build",
+    "start": "npm-run-all clean --parallel fonts imagemin svgsprite webpack:dev fractal:start",
+    "build": "npm-run-all clean --parallel fonts imagemin svgsprite webpack:build --sequential fractal:build",
     "webpack:dev": "cross-env NODE_ENV=development webpack --watch",
     "webpack:build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "fractal:start": "fractal start --sync",
@@ -33,11 +33,11 @@
     "clean": "del-cli public/* build/*",
     "fonts": "cpx 'patterns/fonts/*.{eot,woff,woff2,ttf,svg}' public/fonts",
     "imagemin": "imagemin patterns/images/* --out-dir=public/images",
+    "svgsprite": "svg-sprite --svg-xmldecl false --symbol --ss 'icon-sprite.svg' --sx true patterns/images/icons/*.svg --symbol-dest public/images/ --symbol-example-dest ../../patterns/01-atoms/icons/all-icons.hbs --symbol-example-template patterns/01-atoms/icons/_sprite-preview-template.html",
     "lint": "stylelint 'patterns/**/*.scss' --syntax scss",
     "test": "run-s css:build lint",
-    "deploy": "run-s gulp webpack:build fractal:build deploy:github",
+    "deploy": "run-run-all build deploy:github",
     "deploy:github": "gh-pages -d build",
-    "svgsprite": "svg-sprite --svg-xmldecl false --symbol --ss 'icon-sprite.svg' --sx true patterns/images/icons/*.svg --symbol-dest public/images/ --symbol-example-dest ../../patterns/01-atoms/icons",
     "gulp": "gulp"
   },
   "engines": {
@@ -64,11 +64,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "gh-pages": "^1.1.0",
-    "gulp": "^3.9.1",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^4.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-svg-symbols": "^2.0.2",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
