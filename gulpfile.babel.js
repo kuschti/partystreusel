@@ -9,32 +9,13 @@ import svgSymbols from 'gulp-svg-symbols';
 const partystreuselRoot = 'patterns';
 const config = {
   src: {
-    imagesfolder: `${partystreuselRoot}/images/`,
-    images: [
-      `${partystreuselRoot}/images/**/*`,
-      `!${partystreuselRoot}/images/icons/*`,
-    ],
     icons: `${partystreuselRoot}/images/icons/`,
     iconsystem: `${partystreuselRoot}/01-atoms/icons`,
   },
   dest: {
-    dir: 'build',
     assets: 'public',
   },
 };
-
-// IMAGES
-// ----------------------------------------
-gulp.task('images', () => {
-  const images = gulp.src(config.src.images)
-    .pipe(imagemin([
-      imagemin.jpegtran({ progressive: true }),
-    ]))
-    .pipe(gulp.dest(config.src.imagesfolder))
-    .pipe(gulp.dest(`${config.dest.assets}/images`));
-
-  return images;
-});
 
 // ICONS
 // ----------------------------------------
@@ -66,7 +47,7 @@ gulp.task('svgsprite', ['svgmin'], () => {
       ],
     }))
     .pipe(gulpif(/[.]svg$/, rename('icon-sprite.svg')))
-    .pipe(gulpif(/[.]svg$/, gulp.dest(`${config.dest.assets}/images/icons`)))
+    .pipe(gulpif(/[.]svg$/, gulp.dest(`${config.dest.assets}/images`)))
     .pipe(gulpif(/[.]html$/, rename('all-icons.html')))
     .pipe(gulpif(/[.]html$/, gulp.dest(config.src.iconsystem)));
 });
@@ -76,4 +57,4 @@ gulp.task('icons', ['svgmin', 'svgsprite']);
 
 // DEFAULT TASK
 // ----------------------------------------
-gulp.task('default', ['images', 'icons']);
+gulp.task('default', ['icons']);
