@@ -1,0 +1,6 @@
+context:
+  text: Lorem ipsum dolor
+variants:
+  - name: alternate
+    context:
+      modifier: radio--alternate

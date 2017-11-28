@@ -1,11 +1,17 @@
 # CHANGELOG
 
-## dev
-* update dependencies
-* lint js
+## dev v6
+* remove fabricator as pattern library generator
+  * add clearlet's fractal
+  * change folder structure
+  * change patterns to hbs file format
+* remove gulp as taskrunner, use yarn/npm scripts
+* update patterns
+  * checkbox now with checkmark
+  * checkbox and radio as standalone atoms (not i form collection)
+  * remove grid styles
 
 ## v5.4.0
-* update dependencies
 * add prism as dependency
 * rewrite tab (without jQuery)
 * rewrite topbar (without jQuery)
@@ -13,15 +19,11 @@
 * remove jQuery
 
 ## v5.3.0
-* update dependencies
 * update pattern item view with a "transparent" background
 * update pattern control styles
 * add pattern background toggle button
 
 ## v5.2.0
-* update dependencies
-* update node version (nvrmc) to v8.1.0
-* remove gulp-release-tag plugin
 * remove scroll-to.js js from partystreusel
 * rewrite dropdown.js (without jQuery)
 * rewrite accordion.js (without jQuery)
@@ -50,7 +52,6 @@
 ## v5.0.1
 * update js gulp task: don'to stop on eslint error in dev mode.
 * fix #29: disable pointer events for icons in buttons
-* update dependencies
 
 ## v5.0.0
 
@@ -71,7 +72,6 @@
 
 ## v4.7.0
 * replace neat grid system with susy
-* update dependencies
 * add yarn support
 * add "inProgress" state for materials
 
@@ -92,7 +92,6 @@
 * add vendor flickity.js (used for slider)
 * update vendor jquery to 3.1.1
 * update node version in nvrmc
-* update dependencies
 * update colors
 * update placeholder images
 * update active class names in topbar, main-nav, accordion (BREAKING)
@@ -102,7 +101,6 @@
 
 ## 4.4.1
 * node v4.5.0 is defined in nvrmc
-* update dependencies
 * fix image markup
 
 ## 4.4.0
@@ -110,25 +108,20 @@
 * update button styles
 * replace button class `btn--secondary` with `btn--primary`
 * remove read-more molecule
-* update npm script tasks
-* update dependencies
 
 ## 4.3.0
 * add stylelint rules
 * lint styles (descending specificity)
 * update gulp deploy task to run clean/build/deploy:github
 * update use of Sass color variables
-* update dependencies
 
 ## 4.2.1
 * add styling for pattern library notes
-* update dependencies
 
 ## 4.2.0
 * move grid from molecules to atoms
 * update stylelint config as dependency (stylelint-config-partystreusel)
 * update gulp tasks for imagemin (because of imagemin update)
-* update dependencies
 
 ## 4.1.1
 * fix gulp task "svgsprite"
@@ -145,7 +138,6 @@
 * update gulpfile
   * run csso in production
   * improve minify of images/icons
-* update dependencies
 * remove scss-lint
 * remove polyfills
   * html5shiv
@@ -158,7 +150,6 @@
 * extend media-query mixin
 * simplify icon system
   * remove gulpicon, remove png fallbacks
-* update dependencies
 * define node.js version to v4.4.1 in nvrmc
 
 ## 3.2.3
@@ -166,7 +157,6 @@
 * cleanup gulfpile & requires
 * add font files handling in gulp
 * add .editorconfig
-* update dependencies
 
 ## 3.2.2
 * fix back-to-index link

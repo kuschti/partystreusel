@@ -1,0 +1,13 @@
+status: wip
+notes: add class `topbar--active` to the active `<a>`
+context:
+  items:
+    - title: Nav content 1
+    - title: Nav active with Sub
+      modifier: topbar--active
+      sublist:
+        - Nav content 1
+        - Nav active 1
+    - title: Nav long long 1
+    - title: Nav another 1
+    - title: Nav last 1

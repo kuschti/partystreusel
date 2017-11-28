@@ -11,10 +11,10 @@ node_modules
 .project
 .publish
 .chrome
-dist/
-/assets/*
-styleguide/build/
-
+/assets
+/dist
+/build
+/public
 
 # Kirby CMS files
 # ---------------

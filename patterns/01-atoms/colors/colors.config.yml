@@ -1,0 +1,20 @@
+notes: This is not a module to use it, only for pattern library presentation.
+status: prototype
+context:
+  colors:
+    brand:
+      one: "#d60051"
+      dark: "#381c2e"
+      two: "#00d2d3"
+    base:
+      dark: "#333"
+      light: "#fff"
+    accent:
+      accent--light: "#f0f0f0"
+      accent: "#acacac"
+      accent--dark: "#6e6e6e"
+    states:
+      warning: "#f08a24"
+      alert: "#f00"
+      info: "#a0d3e8"
+      success: "#43ac6a"

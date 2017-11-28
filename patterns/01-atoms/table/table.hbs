@@ -1,0 +1,37 @@
+{{#if wrapped}}
+  <div class="table-wrapper">
+{{/if}}
+  <table>
+    <thead>
+      <tr>
+        <th>Header A</th>
+        <th>Header B</th>
+        <th>Header C</th>
+        <th>Header D</th>
+        <th>Header E</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rows}}
+      <tr>
+        <td>Row {{@index}} with long copy</td>
+        <td>Row {{@index}}</td>
+        <td>Row {{@index}} with long</td>
+        <td>Row {{@index}}</td>
+        <td>Row {{@index}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Footer A</th>
+        <th>Footer B</th>
+        <th>Footer C</th>
+        <th>Footer D</th>
+        <th>Footer E</th>
+      </tr>
+    </tfoot>
+  </table>
+{{#if wrapped}}
+  </div>
+{{/if}}

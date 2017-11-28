@@ -1,0 +1,8 @@
+context:
+  text: Lorem ipsum dolor
+variants:
+  - name: alternate
+    display:
+      background: red
+    context:
+      modifier: checkbox--alternate

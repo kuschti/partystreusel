@@ -1,0 +1,12 @@
+notes: "Wrap the table with a `<div class'table-wrapper'></div>` for horizontal scrolling on small screen"
+context:
+  rows:
+    - Row 1
+    - Row 2
+    - Row 3
+    - Row 4
+    - Row 5
+variants:
+  - name: wrapped
+    context:
+      wrapped: true
