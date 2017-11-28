@@ -2,11 +2,11 @@
 
 Use the following atom to build a icon inside the pattern library:
 
-    {{> icons.icon icon-name="folder"}}
+    {{> @icon icon-name="folder"}}
 
 You can add additional classes to the icon, e.g. for size modifiers (icon--m, icon--l) :
 
-    {{> icons.icon icon-name="folder" icon-modifier="icon--m"}}
+    {{> @icon icon-name="folder" icon-modifier="icon--m"}}
 
 Or embed the icon directly with the svg/use html syntax:
 

@@ -8,9 +8,9 @@
   fill: currentColor;
 }
 
-// sprite with all icons as symbol
+// div with svg sprite that includes all icons as symbol
 //stylelint-disable declaration-no-important
-.icon__sprite {
+.icon__sprite svg {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;
   height: 1px !important;

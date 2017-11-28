@@ -17,6 +17,7 @@
       ajax.open("GET", "{{ path '/images/icon-sprite.svg'}}", true);
       ajax.onload = function(e) {
         var div = document.createElement("div");
+        div.classList.add('icon__sprite');
         div.innerHTML = ajax.responseText;
         document.body.insertBefore(div, document.body.childNodes[0]);
       }
