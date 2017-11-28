@@ -16,20 +16,16 @@ Use [yarn](https://yarnpkg.com) as your package manager, or npm.
     # Install dependencies (with npm or yarn)
     $ yarn install
 
-    # Install Gulp globally if not already present
-    $ yarn global add gulp
-
-    # Run gulp to build all files
+    # Run to build all files (dev mode) and start a local server
     $ yarn start
 
-    # Or you can run in dev env to build & start a local server
+    # Or you can generate a production ready build
     $ yarn build
 
 
 ## Documentation
 
-- [gulp tasks](docs/gulp.md)
-- [javascript modules](docs/javascript.md)
+- Partystreusel is based on [fractal](https://fractal.build/guide) from clearleft.
 
 ## License information for included plugins
 * Flickity may be used in commercial projects and applications with the one-time purchase of a commercial license. http://flickity.metafizzy.co/license.html
