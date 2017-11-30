@@ -23,6 +23,15 @@ module.exports = () => {
           exclude: [/node_modules/],
         },
         {
+          test: /\.(woff2?|ttf|otf|eot)$/,
+          loader: 'file-loader',
+          exclude: /node_modules/,
+          options: {
+            name: '[name].[ext]',
+            outputPath: '../fonts/',
+          },
+        },
+        {
           test: /\.scss$/,
           use: [
             {

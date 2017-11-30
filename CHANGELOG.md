@@ -3,6 +3,7 @@
 ## dev
 * update switch pattern demo
 * update icon sprite workflow
+* fix webfont handling with webpack
 
 ## v6.0.0-rc.1
 * remove fabricator as pattern library generator
