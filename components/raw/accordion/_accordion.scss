@@ -1,0 +1,105 @@
+.accordion {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion__item {
+  display: block;
+  border-top: rem(2) solid $color__brand--dark;
+}
+
+.accordion__title {
+  display: block;
+  min-height: rem(66);
+  margin: 0;
+  padding: rem(15) rem(50) rem(15) 0;
+  position: relative;
+  font-size: rem(16);
+  line-height: 1.125;
+  font-weight: $heading__font-weight;
+  cursor: pointer;
+  color: $body__font-color;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: rem(13);
+    right: 0;
+    border: rem(1) solid $color__accent;
+    border-radius: $border-radius--round;
+  }
+
+  &::after {
+    @include triangle(rem(10), currentColor, down);
+    top: rem(31);
+    right: rem(15);
+  }
+
+  &:hover {
+    color: $color__accent;
+  }
+}
+
+.accordion__content {
+  display: none;
+}
+
+// STATES
+.accordion--open {
+  .accordion__title {
+    color: $color__brand--one;
+
+    &::after {
+      @include triangle(rem(10), currentColor, up);
+      top: rem(30);
+      border-top: 0;
+    }
+  }
+
+  .accordion__content {
+    display: block;
+  }
+}
+
+// NO-JS Fallback
+.no-js {
+  .accordion__content {
+    display: block;
+  }
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .accordion__title {
+    min-height: rem(70);
+    padding-top: rem(24);
+    font-size: rem(20);
+    line-height: 1.2;
+
+    &::before {
+      top: rem(15);
+    }
+
+    &::after {
+      top: rem(33);
+    }
+  }
+  // STATES
+  .accordion--open {
+    .accordion__title {
+      &::after {
+        top: rem(32);
+      }
+    }
+  }
+}

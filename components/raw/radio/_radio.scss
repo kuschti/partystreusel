@@ -1,0 +1,164 @@
+// stylelint-disable max-nesting-depth,no-descending-specificity,selector-max-specificity
+
+$radio__size: rem(24);
+$radio__border-size: rem(2);
+$radio__label-size: rem(42);
+$radio__label-padding: ($radio__label-size - $radio__size) / 2;
+
+$radio__knuble-size: $radio__size - (5 * $radio__border-size);
+$radio__knuble-distance: $radio__label-padding + (($radio__size - $radio__knuble-size) / 2);
+
+$radio--alternate-color: $color__bright;
+
+.radio {
+  display: inline-block;
+  position: relative;
+}
+
+.radio__input {
+  position: absolute;
+  overflow: hidden;
+  width: rem(1);
+  height: rem(1);
+  padding: 0;
+  margin: rem(-1);
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  &:focus {
+    + .radio__label::before {
+      color: $color__accent--dark;
+      border-color: currentColor;
+    }
+  }
+}
+
+.radio__label {
+  position: relative;
+  vertical-align: top;
+  padding: $radio__label-padding $radio__label-padding $radio__label-padding $radio__label-size;
+  margin-bottom: 0;
+  font-size: rem(18);
+  text-transform: none;
+
+  &::before,
+  &::after {
+    display: block;
+    top: ($radio__label-size - $radio__size) / 2;
+    left: ($radio__label-size - $radio__size) / 2;
+    border-radius: $border-radius--round;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: $radio__size;
+    height: $radio__size;
+    position: absolute;
+    border: $radio__border-size solid $color__accent--dark;
+    background-color: $color__bright;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: transparent;
+    width: $radio__knuble-size;
+    height: $radio__knuble-size;
+    left: $radio__knuble-distance;
+    top: $radio__knuble-distance;
+    transition: background-color 0.1s ease;
+  }
+
+  &:hover {
+    &::before {
+      color: $color__accent--dark;
+      border-color: $color__dark;
+    }
+  }
+}
+
+// STATE checked
+.radio__input {
+  &:checked,
+  &:checked:hover {
+    + .radio__label {
+      color: $color__dark;
+
+      &::before {
+        color: $color__dark;
+        border-color: currentColor;
+      }
+
+      &::after {
+        background-color: $color__brand--one;
+        transition: background-color 0.1s ease;
+      }
+    }
+  }
+}
+
+// --------------------------
+// STATES
+// --------------------------
+.radio--alternate {
+  .radio__label {
+    color: $radio--alternate-color;
+
+    &::before {
+      border-color: $radio--alternate-color;
+      background-color: transparent;
+    }
+
+    &:hover {
+      &::before {
+        color: $radio--alternate-color;
+      }
+    }
+  }
+
+  // STATE CHECKED
+  .radio__input {
+    &:checked,
+    &:checked:hover {
+      + .radio__label {
+        color: $radio--alternate-color;
+
+        &::before {
+          background-color: $radio--alternate-color;
+        }
+
+        &::after {
+          border-color: $color__brand--one;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------
+// IE8 Fallback
+// --------------------------
+.lt-ie9 {
+  .radio__input {
+    position: inherit;
+    overflow: visible;
+    width: 20px;
+    height: 20px;
+    padding: inherit;
+    margin: inherit;
+    border: inherit;
+    clip: auto;
+
+    + label {
+      padding: 0;
+
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+// stylelint-enable max-nesting-depth,no-descending-specificity,selector-max-specificity

@@ -1,0 +1,25 @@
+.main-nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  &__link {
+    display: block;
+    padding: rem(11) rem(18);
+    color: $color__accent;
+    font-size: rem(18);
+    line-height: 1.33;
+
+    &:hover,
+    &:focus,
+    &.main-nav--active {
+      color: $color__bright;
+      background-color: $color__brand--one;
+    }
+  }
+}

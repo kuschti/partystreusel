@@ -1,0 +1,23 @@
+.content--lead {
+  font-size: rem(19);
+}
+
+// MEDIUM
+// ----------------------------------------
+@include mq(medium) {
+  .content--lead {
+    font-size: rem(20);
+  }
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .content {
+    max-width: rem(780);
+  }
+
+  .content--lead {
+    font-size: rem(24);
+  }
+}

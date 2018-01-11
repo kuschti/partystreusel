@@ -1,0 +1,51 @@
+
+
+<!doctype html>
+<html class="no-js" lang="DE">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preview Layout</title>
+
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/polyfills.js"></script>
+
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "../../images/icon-sprite.svg", true);
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.classList.add('icon__sprite');
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+      ajax.send();
+    </script>
+    <!-- /Pattern Libary styles&scripts -->
+
+  </head>
+  <body>
+
+    <div>
+  <label for="input2">Label 2</label>
+  <div class="input-addon input-addon--overlay">
+    <input id="input2" type="search" name="input2" placeholder="input2 placeholder" class="input-addon__field"/>
+    <button class="btn btn--icon input-addon__item"><svg class="icon icon--search ">
+  <use xlink:href="#icon--search" />
+</svg>
+</button>
+  </div>
+</div>
+
+
+    <!-- toolkit scripts -->
+    <script src="../../js/main.js" async></script>
+    <!-- /toolkit scripts -->
+
+  </body>
+</html>
+

@@ -1,0 +1,97 @@
+
+
+<!doctype html>
+<html class="no-js" lang="DE">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preview Layout</title>
+
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/polyfills.js"></script>
+
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "../../images/icon-sprite.svg", true);
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.classList.add('icon__sprite');
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+      ajax.send();
+    </script>
+    <!-- /Pattern Libary styles&scripts -->
+
+  </head>
+  <body>
+
+    	<div class="f-color-chips">
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">one</div>
+			<div class="f-color-chip__color">#d60051</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">dark</div>
+			<div class="f-color-chip__color">#381c2e</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">two</div>
+			<div class="f-color-chip__color">#00d2d3</div>
+		</div>
+	</div>
+	<div class="f-color-chips">
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">dark</div>
+			<div class="f-color-chip__color">#333</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">light</div>
+			<div class="f-color-chip__color">#fff</div>
+		</div>
+	</div>
+	<div class="f-color-chips">
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">accent--light</div>
+			<div class="f-color-chip__color">#f0f0f0</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">accent</div>
+			<div class="f-color-chip__color">#acacac</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">accent--dark</div>
+			<div class="f-color-chip__color">#6e6e6e</div>
+		</div>
+	</div>
+	<div class="f-color-chips">
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">warning</div>
+			<div class="f-color-chip__color">#f08a24</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">alert</div>
+			<div class="f-color-chip__color">#f00</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">info</div>
+			<div class="f-color-chip__color">#a0d3e8</div>
+		</div>
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">success</div>
+			<div class="f-color-chip__color">#43ac6a</div>
+		</div>
+	</div>
+
+
+    <!-- toolkit scripts -->
+    <script src="../../js/main.js" async></script>
+    <!-- /toolkit scripts -->
+
+  </body>
+</html>
+

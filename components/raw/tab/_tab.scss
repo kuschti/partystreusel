@@ -1,0 +1,77 @@
+$tab__space: rem(10);
+
+.tab__nav {
+  @include clearfix;
+  display: block;
+  list-style: none;
+  padding: 0 rem(10) rem(10);
+  margin: rem(10) 0 rem(20);
+  background-color: $color__accent;
+}
+
+.tab__nav-item {
+  display: block;
+  float: left;
+  margin: rem(10) rem(10) 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    display: block;
+    background-color: $color__accent--light;
+    color: $color__accent--dark;
+    padding: rem(10);
+  }
+
+  &.tab--active {
+    a {
+      background-color: $color__bright;
+      color: $color__brand--one;
+    }
+  }
+
+  a:hover {
+    color: $color__dark;
+  }
+}
+
+.tab__panel {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.tab--active {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .tab__nav {
+    margin-top: rem(20);
+    padding: 0 rem(20);
+  }
+
+  .tab__nav-item {
+    margin-top: rem(20);
+    margin-right: rem(10);
+    font-size: rem(18);
+  }
+}

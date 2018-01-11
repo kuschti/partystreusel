@@ -1,0 +1,16 @@
+.two-column {
+  @include container;
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .two-column__first,
+  .two-column__second {
+    @include span(6);
+  }
+
+  .two-column__second {
+    @include last;
+  }
+}

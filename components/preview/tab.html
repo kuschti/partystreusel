@@ -1,0 +1,79 @@
+
+
+<!doctype html>
+<html class="no-js" lang="DE">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preview Layout</title>
+
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/polyfills.js"></script>
+
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "../../images/icon-sprite.svg", true);
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.classList.add('icon__sprite');
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+      ajax.send();
+    </script>
+    <!-- /Pattern Libary styles&scripts -->
+
+  </head>
+  <body>
+
+    <section>
+  <div class="tab js-tab">
+    <ul role="tablist" class="tab__nav" data-tabs>
+        <li role="presentation" class="tab__nav-item ">
+          <a href="#panel0" role="tab" data-tab>Tab titel 1</a>
+        </li>
+        <li role="presentation" class="tab__nav-item ">
+          <a href="#panel1" role="tab" data-tab>Tab titel 2</a>
+        </li>
+        <li role="presentation" class="tab__nav-item tab--active">
+          <a href="#panel2" role="tab" data-tab>Tab titel 3</a>
+        </li>
+        <li role="presentation" class="tab__nav-item ">
+          <a href="#panel3" role="tab" data-tab>Tab titel 4</a>
+        </li>
+        <li role="presentation" class="tab__nav-item ">
+          <a href="#panel4" role="tab" data-tab>Tab titel 5</a>
+        </li>
+    </ul>
+    <div class="tab__panels" data-tabs-content>
+        <section role="tabpanel" id="panel0" class="tab__panel " data-tabs-pane>
+          Lorem ipsum 0
+        </section>
+        <section role="tabpanel" id="panel1" class="tab__panel " data-tabs-pane>
+          Lorem ipsum 1
+        </section>
+        <section role="tabpanel" id="panel2" class="tab__panel tab--active" data-tabs-pane>
+          Lorem ipsum 2
+        </section>
+        <section role="tabpanel" id="panel3" class="tab__panel " data-tabs-pane>
+          Lorem ipsum 3
+        </section>
+        <section role="tabpanel" id="panel4" class="tab__panel " data-tabs-pane>
+          Lorem ipsum 4
+        </section>
+    </div>
+  </div>
+</section>
+
+
+    <!-- toolkit scripts -->
+    <script src="../../js/main.js" async></script>
+    <!-- /toolkit scripts -->
+
+  </body>
+</html>
+

@@ -1,0 +1,168 @@
+// stylelint-disable no-descending-specificity
+$topbar__border: rem(1) solid $color__accent;
+
+.topbar__mobile-menu {
+  display: block;
+  background-color: $color__accent--light;
+  color: $color__accent--dark;
+  border: 0;
+  padding: rem(7) rem(10) rem(6);
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+
+  &:hover {
+    color: $color__accent--dark;
+  }
+}
+
+.topbar__list,
+.topbar__sub-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar__item {
+  background-color: $color__accent--light;
+  display: block;
+}
+
+.topbar__link {
+  border-bottom: $topbar__border;
+  display: block;
+  padding: rem(12);
+  color: $color__accent--dark;
+
+  &:hover {
+    transition: all 0.1s linear;
+    background-color: $color__bright;
+  }
+}
+
+.topbar__sub-list {
+  padding: 0;
+  background-color: $color__bright;
+}
+
+.topbar__sub {
+  display: block;
+
+  .topbar__link {
+    background-color: $color__bright;
+    border-color: $color__bright;
+    color: $color__accent--dark;
+    padding-left: rem(30);
+
+    &:hover {
+      color: $body__font-color;
+    }
+  }
+}
+
+// STATES
+.topbar--active {
+  background-color: $color__accent--light;
+  color: $color__brand--one;
+
+  &:hover {
+    background-color: $color__bright;
+  }
+}
+
+.topbar--open {
+  .topbar__list {
+    display: block;
+  }
+}
+
+.topbar__sub-list--open {
+  display: block;
+}
+
+// LARGE
+// ----------------------------------------
+@include mq(large) {
+  .topbar {
+    font-size: rem(18);
+  }
+
+  .topbar__mobile-menu {
+    display: none;
+  }
+
+  .topbar__list {
+    &,
+    .topbar--open & {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  .topbar__item {
+    flex: 1 1 auto;
+    position: relative;
+
+    &:not(:last-child) {
+      border-right: $topbar__border;
+    }
+  }
+
+  .topbar__link {
+    padding: rem(11) rem(18);
+    text-align: center;
+  }
+
+  .topbar__sub-list {
+    border: $topbar__border;
+    border-top-width: 0;
+    left: rem(-1);
+    min-width: rem(230);
+    position: absolute;
+
+    .topbar__item:last-child & {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .topbar__sub-item {
+    a {
+      padding: rem(11) rem(18);
+    }
+  }
+
+  // Flexbox Fallback, used for Projects with old browser support
+  //stylelint-disable selector-max-specificity
+  // .no-flexbox.no-flexboxtweener {
+  //   .topbar__mobile-menu {
+  //     display: none;
+  //   }
+  //
+  //   .topbar__list {
+  //     width: 100%;
+  //
+  //     &,
+  //     .topbar--open & {
+  //       display: table;
+  //     }
+  //   }
+  //
+  //   .topbar__item {
+  //     display: table-cell;
+  //   }
+  // }
+  // // No-JS Fallback
+  // .no-js {
+  //   .topbar__item:hover {
+  //     > .topbar__sub-list {
+  //       display: block;
+  //     }
+  //   }
+  // }
+  //stylelint-enable selector-max-specificity
+}
+
+//stylelint-enable no-descending-specificity

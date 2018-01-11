@@ -1,0 +1,47 @@
+
+
+<!doctype html>
+<html class="no-js" lang="DE">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preview Layout</title>
+
+    <!-- Pattern Libary styles&scripts -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/polyfills.js"></script>
+
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "../../images/icon-sprite.svg", true);
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.classList.add('icon__sprite');
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+      ajax.send();
+    </script>
+    <!-- /Pattern Libary styles&scripts -->
+
+  </head>
+  <body>
+
+    <figure class="image">
+  <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://source.unsplash.com/1200x800/weekly" />
+  <figcaption class="image__caption">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+  </figcaption>
+</figure>
+
+
+    <!-- toolkit scripts -->
+    <script src="../../js/main.js" async></script>
+    <!-- /toolkit scripts -->
+
+  </body>
+</html>
+
