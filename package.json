@@ -28,7 +28,7 @@
     "build": "npm-run-all clean --parallel imagemin svgsprite webpack:build --sequential fractal:build",
     "webpack:dev": "cross-env NODE_ENV=development webpack --watch",
     "webpack:build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "fractal:start": "fractal start --sync",
+    "fractal:start": "fractal start --sync --watch",
     "fractal:build": "fractal build",
     "clean": "del-cli public/* build/*",
     "imagemin": "imagemin patterns/images/* --out-dir=public/images",
