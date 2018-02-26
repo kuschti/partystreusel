@@ -14,13 +14,14 @@ html {
 }
 
 main {
-  @include container;
+  @include clearfix;
 }
 
 // LARGE
 // ----------------------------------------
 @include mq(large) {
   main {
-    @include container();
+    max-width: $grid__max-width;
+    margin: 0 auto;
   }
 }

@@ -5,22 +5,18 @@ $rem-base: 16px;
 // GRID
 // - settings for susy. $susy is default (mobile first), the others are settings used in $breakpoint map and mq() mixin.
 $susy: (
-  debug: (
-    image: hide,  // show
-    output: background, // or overlay
-    toggle: bottom right
-  ),
-  global-box-sizing: border-box,
-  columns: 12,
-  gutters: 0.25
+  columns: susy-repeat(12),
+  gutters: rem(10),
+  spread: 'narrow',
+  container-spread: 'narrow',
 );
 
 // Grid defintion for large $breakpoint
 $susy-large: (
-  global-box-sizing: border-box,
-  columns: 12,
-  container: rem(1440),
-  gutters: 0.25
+  columns: susy-repeat(12),
+  gutters: rem(20),
+  spread: 'narrow',
+  container-spread: 'narrow',
 );
 
 // MEDIAQUERIES
@@ -40,6 +36,8 @@ $breakpoints: (
     susy-settings: $susy-large
   )
 );
+
+$grid__max-width: rem(1440);
 
 // COLORS
 // - use general variable naming!

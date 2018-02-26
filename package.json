@@ -81,7 +81,7 @@
     "moveto": "^1.7.1",
     "normalize.css": "^8.0.0",
     "picturefill": "^3.0.2",
-    "susy": "^2.2.12",
+    "susy": "^3.0.3",
     "tabbyjs": "^11.2.0"
   }
 }
