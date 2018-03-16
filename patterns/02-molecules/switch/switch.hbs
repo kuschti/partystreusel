@@ -1,0 +1,10 @@
+<div class="switch">
+  <input class="switch__input" type="checkbox" name="Switch {{@index}}" id="switchid{{@index}}"/>
+  <label class="switch__label" for="switchid{{@index}}">
+    <span class="switch__text">{{label}}</span>
+    {{#if show-text}}
+      <span class="switch__active" aria-hidden="true">Yes</span>
+      <span class="switch__inactive" aria-hidden="true">No</span>
+    {{/if}}
+  </label>
+</div>

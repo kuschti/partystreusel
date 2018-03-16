@@ -1,0 +1,5 @@
+<div class="button-group" role="group" aria-label="...">
+  {{#each buttons}}
+    {{render (lookup . 'componentName') context}}
+  {{/each}}
+</div>

@@ -1,0 +1,16 @@
+context:
+  url: '#'
+  text: Button
+variants:
+  - name: primary
+    context:
+      modifier: btn--primary
+  - name: blank
+    context:
+      modifier: btn--blank
+  - name: small
+    context:
+      modifier: btn--small
+  - name: expanded
+    context:
+      modifier: btn--expanded

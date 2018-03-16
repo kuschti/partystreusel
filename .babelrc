@@ -1,6 +1,8 @@
 {
   "presets": [
-    "es2015"
+    ["env", {
+      "useBuiltIns": true
+    }]
   ],
   "plugins": [
     "transform-proto-to-assign",

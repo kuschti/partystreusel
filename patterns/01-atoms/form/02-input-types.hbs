@@ -1,0 +1,18 @@
+{{#each input-types}}
+  <p>
+    <label for="{{this}}">{{this}} Input</label>
+    <input id="{{this}}" type="{{this}}" placeholder="Lorem ipsum">
+  </p>
+{{/each}}
+
+<p>
+  With required:
+</p>
+<p>
+  <label for="required">Required Field <abbr title="Required">*</abbr></label>
+  <input id="required" type="text" required placeholder="This field is required">
+</p>
+<p>
+  <label for="textarea">Textarea</label>
+  <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+</p>

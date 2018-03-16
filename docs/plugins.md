@@ -1,6 +1,6 @@
-### recommendation
-* see http://www.vanillalist.com/ for plain JS Plugins
-* see http://www.unheap.com/ for JS Plugins (some with jQuery)
+---
+title: Plugin recommendation
+---
 
 #### slider
 * flickity (http://flickity.metafizzy.co/)
@@ -20,4 +20,7 @@
 * lazysizes (http://afarkas.github.io/lazysizes/)
 
 #### Sticky
-* stickr.js  (http://banago.github.io/Stickr.js/)
+* stickr.js (http://banago.github.io/Stickr.js/)
+
+#### Slideout/Offcanvas
+* slideout.js (https://slideout.js.org/)
