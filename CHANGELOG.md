@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## dev
+## v6.0.0
 * update switch pattern demo
 * update icon sprite workflow
 * fix webfont handling with webpack
 
-## v6.0.0-rc.1
+### v6.0.0-rc.1
 * remove fabricator as pattern library generator
   * add clearlet's fractal
   * change folder structure
