@@ -14,7 +14,6 @@ module.exports = () => {
       filename: '[name].js',
       path: path.resolve(__dirname, './public/js/'),
     },
-    devtool: 'source-map',
     module: {
       rules: [
         {
@@ -42,16 +41,8 @@ module.exports = () => {
               },
             },
             { loader: 'extract-loader' },
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true,
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-            },
+            { loader: 'css-loader' },
+            { loader: 'postcss-loader' },
             {
               loader: 'sass-loader',
               options: {
@@ -73,9 +64,9 @@ module.exports = () => {
     ],
   };
 
-  if (process.env.NODE_ENV === 'production') {
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  // }
 
   return config;
 };

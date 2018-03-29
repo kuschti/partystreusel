@@ -3,6 +3,7 @@
 ## dev
 * update switch pattern demo
 * update icon sprite workflow
+* update packages (webpack to v4)
 * fix webfont handling with webpack
 
 ## v6.0.0-rc.1
