@@ -57,16 +57,12 @@ module.exports = () => {
       extensions: ['.js'],
     },
     plugins: [
-      new ExtractTextPlugin({ // define where to save the file
+      new ExtractTextPlugin({
         filename: 'public/[name].bundle.css',
         allChunks: true,
       }),
     ],
   };
-
-  // if (process.env.NODE_ENV === 'production') {
-  //   config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-  // }
 
   return config;
 };
