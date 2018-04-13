@@ -1,8 +1,8 @@
 {
-  "name": "partystreusel",
+  "name": "fahrschule-fabienne_web",
   "description": "",
-  "version": "6.0.1",
-  "homepage": "http://brandleadership.github.io/partystreusel",
+  "version": "0.1.0",
+  "homepage": "http://brandleadership.github.io/fahrschule-fabienne_web",
   "main": "README.md",
   "license": "MIT",
   "author": "Calydo",
@@ -10,18 +10,14 @@
     {
       "name": "Pascal Kuster",
       "email": "pascal.kuster@calydo.com"
-    },
-    {
-      "name": "Phil Schilter",
-      "email": "philipp.schilter@calydo.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandleadership/partystreusel.git"
+    "url": "https://github.com/brandleadership/fahrschule-fabienne_web.git"
   },
   "bugs": {
-    "url": "https://github.com/brandleadership/partystreusel/issues"
+    "url": "https://github.com/brandleadership/fahrschule-fabienne_web/issues"
   },
   "scripts": {
     "start": "npm-run-all clean --parallel imagemin svgsprite webpack:dev fractal:start",

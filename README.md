@@ -1,13 +1,12 @@
-# Partystreusel
+# Fahrschule Fabienne - Web
 
 ## Getting started
 
 You will need [Node.js](http://nodejs.org)
-Use [yarn](https://yarnpkg.com) as your package manager, or npm. 
+Use [yarn](https://yarnpkg.com) as your package manager, or npm.
 
-    $ git clone https://github.com/brandleadership/partystreusel.git YOUR_APP_DIRECTORY --depth 1
-    $ cd YOUR_APP_DIRECTORY
-    $ git remote rename origin upstream
+    $ git clone https://github.com/brandleadership/fahrschule-fabienne_web.git
+    $ cd fahrschule-fabienne_web
 
     # Use node version defined in .nvrmc
     # if you use nvm as node version manager ->
