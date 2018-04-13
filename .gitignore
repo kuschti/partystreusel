@@ -10,6 +10,7 @@ node_modules
 .project
 .publish
 .chrome
+yarn-error.log
 /assets
 /dist
 /build
