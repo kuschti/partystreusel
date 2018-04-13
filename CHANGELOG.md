@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# v6.0.1
+* update configs for webpack v4
+* update sass&susy dependencies
+
 ## v6.0.0
 * update switch pattern demo
 * update icon sprite workflow
