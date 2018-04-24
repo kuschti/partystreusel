@@ -1,8 +1,8 @@
 {
-  "name": "fahrschule-fabienne_web",
+  "name": "partystreusel",
   "description": "",
-  "version": "0.1.0",
-  "homepage": "http://brandleadership.github.io/fahrschule-fabienne_web",
+  "version": "6.0.1",
+  "homepage": "http://brandleadership.github.io/partystreusel",
   "main": "README.md",
   "license": "MIT",
   "author": "Calydo",
@@ -10,14 +10,18 @@
     {
       "name": "Pascal Kuster",
       "email": "pascal.kuster@calydo.com"
+    },
+    {
+      "name": "Phil Schilter",
+      "email": "philipp.schilter@calydo.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandleadership/fahrschule-fabienne_web.git"
+    "url": "https://github.com/brandleadership/partystreusel.git"
   },
   "bugs": {
-    "url": "https://github.com/brandleadership/fahrschule-fabienne_web/issues"
+    "url": "https://github.com/brandleadership/partystreusel/issues"
   },
   "scripts": {
     "start": "npm-run-all clean --parallel imagemin svgsprite webpack:dev fractal:start",
@@ -30,7 +34,7 @@
     "imagemin": "imagemin patterns/images/* --out-dir=public/images",
     "svgsprite": "svg-sprite --svg-xmldecl false --symbol --ss 'icon-sprite.svg' --sx true patterns/images/./**/*.svg --symbol-dest public/images/ --symbol-example-dest ../../patterns/01-atoms/icons/all-icons.hbs --symbol-example-template patterns/01-atoms/icons/_sprite-preview-template.html",
     "lint": "stylelint 'patterns/**/*.scss' --syntax scss",
-    "test": "run-s webpack:build lint",
+    "test": "run-s css:build lint",
     "deploy": "npm-run-all build deploy:github",
     "deploy:github": "gh-pages -d build"
   },

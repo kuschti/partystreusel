@@ -2,7 +2,7 @@ const path = require('path');
 const fractal = module.exports = require('@frctl/fractal').create();
 const pkg = require(path.join(__dirname, 'package.json'));
 
-fractal.set('project.title', 'Fahrschule Fabienne - Web');
+fractal.set('project.title', 'Partystreusel');
 fractal.set('project.version', pkg.version);
 
 /*
